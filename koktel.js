@@ -174,7 +174,7 @@ function koktel_websiteGuidance(buttonClicked) {
         `;
 
         /* Filter Meal Type */
-    } else if (buttonClicked === 'show store mune page') {
+    } else if (buttonClicked === 'show kfc meal type page') {
 
         webGuidanceDiv.classList.add('kokteindo_filter_products_type_div');
 

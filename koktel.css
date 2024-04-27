@@ -343,10 +343,38 @@ header div {
     border: 1px solid white;
     border-radius: 7px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease-in-out;
 }
 
 #koktel_website_guidance_text:hover {
+    background: rgb(59, 59, 59);
+    color: rgb(0, 255, 0);
+    transform: scale(1.015);
+}
+
+#koktel_our_pages_links_div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#koktel_our_pages_links_div a{
+    text-decoration: none;
+    background: black;
+    color: white;
+    font-size: 2vw;
+    margin: 0 10px;
+    padding: 10px 18px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#koktel_our_pages_links_div a:hover {
     background: rgb(59, 59, 59);
     color: rgb(0, 255, 0);
     transform: scale(1.015);
@@ -363,7 +391,7 @@ header div {
     border: 1px solid white;
     border-radius: 7px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease-in-out;
 }
 
 #koktel_error_page_go_back_button:hover {
@@ -979,7 +1007,7 @@ body.nav-open #koktel_nav_options * {
     border: 2px solid white;
     background-color: rgb(159, 159, 159);
     vertical-align: middle;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .koktel_meal_info_option input[type="checkbox"]:checked+label::before {
@@ -2105,7 +2133,7 @@ body.nav-open #koktel_nav_options * {
     left: 0;
     width: 100%;
     height: auto;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .koktel_ads_only_img_div img {
@@ -2295,6 +2323,11 @@ footer img {
     }
 
     #koktel_website_guidance_text {
+        font-size: 3vw;
+        padding: 8px 14px;
+    }
+
+    #koktel_our_pages_links_div a{
         font-size: 3vw;
         padding: 8px 14px;
     }
@@ -2701,6 +2734,18 @@ footer img {
         font-size: 8vw;
     }
 
+    #koktel_website_guidance_text {
+        font-size: 4vw;
+        margin: 3px 0;
+        padding: 8px;
+    }
+
+    #koktel_our_pages_links_div a{
+        font-size: 4vw;
+        margin: 0 5px;
+        padding: 8px;
+    }
+    
     #koktel_nav_logo {
         width: 16vw;
     }
@@ -3089,10 +3134,6 @@ footer img {
         font-size: 4vw;
     }
 
-    #koktel_website_guidance_text {
-        font-size: 4vw;
-    }
-
     .web_guidance_div a {
         font-size: 3vw;
         padding: 8px 10px;
@@ -3173,6 +3214,18 @@ footer img {
     }
 
     .koktel_web_intro_contact_us {
+        padding: 6px;
+    }
+
+    #koktel_website_guidance_text {
+        font-size: 4.5vw;
+        margin: 2px 0;
+        padding: 6px;
+    }
+
+    #koktel_our_pages_links_div a{
+        font-size: 5vw;
+        margin: 0 3px;
         padding: 6px;
     }
 

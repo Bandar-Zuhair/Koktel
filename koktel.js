@@ -27,8 +27,8 @@ function koktel_show_full_screen_image(src) {
         /* Create The Big Image Element Based on The 'src' Value */
         let FullScreenImg = document.createElement('img');
         FullScreenImg.src = src;
-        FullScreenImg.alt = "كوكتيل-اندو";
-        FullScreenImg.title = "كوكتيل-اندو";
+        FullScreenImg.alt = "كوكتيل اندونيسيا - كوكتيل";
+        FullScreenImg.title = "كوكتيل اندونيسيا - كوكتيل";
         FullScreenImg.classList.add('koktel_big_img');
 
         /* Append Image Element to FullScreenImgOverlay */
@@ -784,7 +784,7 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
 
             let localStorageOrderCardContent = `
             <h2 onclick="koktel_show_order_details_page(${index})">منتج رقم ${index + 1}</h2>
-            <img src=${orderData.mealImgSrc} alt='كوكتيل-اندو-توصيل-مطاعم' onclick="koktel_show_order_details_page(${index})" title="كوكتيل-اندو-للتوصيل-من-المطاعم">
+            <img src=${orderData.mealImgSrc} alt='مطاعم اندونيسيا - كوكتيل' onclick="koktel_show_order_details_page(${index})" title="مطاعم اندونيسيا - كوكتيل">
             <div>
                 <h3 onclick="koktel_show_order_details_page(${index})">الإجمالي مع التوصيل = ${totalPriceWithDeliveryFormatted} Rp</h3>
             </div>
@@ -1013,7 +1013,7 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
                 // letruct the inner HTML content for the order
                 let localStorageOrderCardContent = `
                     <h2 onclick="koktel_show_order_details_page(${index})">طلب رقم ${index + 1}</h2>
-                        <img src=${orderData.mealImgSrc} alt='كوكتيل-اندو-للتوصيل-من-المطاعم' onclick="koktel_show_order_details_page(${index})" title="كوكتيل-اندو-للتوصيل-من-المطاعم">
+                        <img src=${orderData.mealImgSrc} alt="مطاعم اندونيسيا - كوكتيل" onclick="koktel_show_order_details_page(${index})" title="مطاعم اندونيسيا - كوكتيل">
                     <div>
                         <h3 onclick="koktel_show_order_details_page(${index})">الإجمالي مع التوصيل = ${(parseFloat(orderData.totalCurrentMealPrice.replace(',', '')) + 20000).toLocaleString()} Rp</h3>
                     </div>
@@ -1104,7 +1104,7 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
         // Create order details HTML content
         let orderDetailsContent = `
             <div id="koktel_order_details_text_img">
-                <img src=${order.mealImgSrc} alt="كوكتيل-اندو-للتوصيل-من-المطاعم" id="koktel_weblogo" title="كوكتيل-اندو-للتوصيل-من-المطاعم"  onclick="koktel_show_full_screen_image(this.src)">
+                <img src=${order.mealImgSrc} alt="مطاعم اندونيسيا - كوكتيل" id="koktel_weblogo" title="مطاعم اندونيسيا - كوكتيل"  onclick="koktel_show_full_screen_image(this.src)">
             </div>
             <div>
                 <h1 class="koktel_order_details_title">تفاصيل الطلب رقم ${orderIndexNumber + 1}</h1>
@@ -1660,7 +1660,7 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
             let localStorageOrderCardContent = `
                     <h2 style="margin-bottom: 5px; cursor: text;">منتج رقم ${index + 1}</h2>
                     <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
-                    <img src='${orderData.productImgSrc}' alt='كوكتيل-اندو-توصيل-مطاعم' onclick="koktel_show_full_screen_image(this.src)" title="كوكتيل-اندو-للتوصيل-من-السوبرماركت">
+                    <img src='${orderData.productImgSrc}' alt="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="سوبرماركت اندونيسيا - كوكتيل">
                     <div>
                         <h3 style="cursor: text;">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
                     </div>
@@ -1928,9 +1928,9 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
 
                 // Construct the inner HTML content for the order
                 let localStorageOrderCardContent = `
-                <h2 style="margin-bottom: 5px; cursor: text;">منتج رقم ${index + 1}</h2>
+                <h2 style=cursor: text;">منتج رقم ${index + 1}</h2>
                 <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
-                <img src='${orderData.productImgSrc}' alt='كوكتيل-اندو-توصيل-مطاعم' onclick="koktel_show_full_screen_image(this.src)" title="كوكتيل-اندو-للتوصيل-من-السوبرماركت">
+                <img src='${orderData.productImgSrc}' alt="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="سوبرماركت اندونيسيا - كوكتيل">
                 <div>
                     <h3 style="cursor: text;">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
                 </div>
@@ -2419,9 +2419,9 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
 
             // letruct the inner HTML content for the order
             let localStorageOrderCardContent = `
-                    <h2 style="margin-bottom: 5px; cursor: text;">منتج رقم ${index + 1}</h2>
+                    <h2 style="cursor: text;">منتج رقم ${index + 1}</h2>
                     <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
-                    <img src='${orderData.productImgSrc}' alt='كوكتيل-اندو-توصيل-مطاعم' onclick="koktel_show_full_screen_image(this.src)" title="كوكتيل-اندو-للتوصيل-من-السوبرماركت">
+                    <img src='${orderData.productImgSrc}' alt="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="مخبوزات اندونيسيا - كوكتيل">
                     <div>
                         <h3 style="cursor: text;">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
                     </div>
@@ -2687,9 +2687,9 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
 
                 // Construct the inner HTML content for the order
                 let localStorageOrderCardContent = `
-                <h2 style="margin-bottom: 5px; cursor: text;">منتج رقم ${index + 1}</h2>
+                <h2 style="cursor: text;">منتج رقم ${index + 1}</h2>
                 <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
-                <img src='${orderData.productImgSrc}' alt='كوكتيل-اندو-توصيل-مطاعم' onclick="koktel_show_full_screen_image(this.src)" title="كوكتيل-اندو-للتوصيل-من-السوبرماركت">
+                <img src='${orderData.productImgSrc}' alt="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="مخبوزات اندونيسيا - كوكتيل">
                 <div>
                     <h3 style="cursor: text;">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
                 </div>
@@ -2853,712 +2853,6 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* Down Villa Booking Down */
-if (document.getElementById("koktel_choose_villa_area_section")) {
-    /* Alwasy Hide The Following Section in Every User New Visit */
-    document.getElementById('koktel_villa_cards_section').style.display = 'none';
-    document.getElementById('koktel_villa_details').style.display = 'none';
-
-
-    // All The Variables For Filtering Villa Cards Later (MUST SET TO NULL)
-    let stored_Filter_Price_Id = null;
-    let stored_Filter_Type_Id = null;
-    let stored_Filter_Place_Id = null;
-    let stored_Filter_Pool_Id = null;
-
-    /* Scroll Down To Villa Details */
-    page_Scroll = function () {
-        setTimeout(function () {
-            /* Scroll down to the middle of 'koktel_villa_details_title' element after 1 second */
-            koktel_villa_details_title.scrollIntoView({
-                block: 'center',
-                inline: 'center',
-                behavior: 'smooth',
-            });
-        }, 500);
-    };
-
-    /* Funcion To Show Clciked Villa Card Details */
-    koktel_showVillaDetailsFunction = function (pass, areaName, uniqueNumber) {
-
-        /* in Case The 'koktel_villa_details' Element Was Hidden Then Show It */
-        if (koktel_villa_details.style.display === 'none') {
-            koktel_villa_details.style.display = 'block';
-        }
-
-        // Find The Clicked Card Array Based On The 'areaName' Value Passed To This Function.
-        let arraySelected = areaName === 'سيساروا' ? cards_Details_Array_Cisarua : cards_Details_Array_Cipanas;
-
-        // Find And Store The Object That is Inside The 'arraySelected' That is Related To The Clicked Card Based on The Pass Value
-        let clicked_Card_Details = arraySelected.find(item => item.pass === pass);
-
-
-        // Create A New Div Element To Contain All The Villa Details Elements
-        let villa_Details_Card = document.createElement("div");
-        villa_Details_Card.classList.add("koktel_villa_details_card");
-
-        /* Store The Description Content of The Clicked Villa card in A Variable To Edit it Later */
-        let card_Details_Description = clicked_Card_Details.description;
-
-        // Replace '+' in The Villa Details Description With Line Breaks
-        let newDescription = card_Details_Description.replace(/\+/g, "<br>");
-
-        // Craete The HTML Content For The 'villa_Details_Card'.
-        let villa_Details_Info = `
-        <a onclick="take_Me_Back(${uniqueNumber});" id="koktel_go_back_card">فيلا رقم ${uniqueNumber}</a>
-
-
-            <div id="koktel_villa_details_title">
-                <h2>موقع الفيلا</h2>
-                <h2>وصف الفيلا</h2>
-            </div>
-
-            <div id="villa_Details_Topic">
-            
-                <div id="villa_details_location">
-
-                    <h3 id="clicked_card_details_location_h1">${clicked_Card_Details.location}</h3>
-                    <h3 class="koktel_villa_details_buttons" title ="كوكتيل لحجز فلل اندونيسيا" onclick="koktel_show_full_screen_image('${clicked_Card_Details.video}')">شاهد الفيديو</h3>
-                    <h3 class="koktel_villa_details_text_villa_number"> فيلا رقم ${uniqueNumber}</h3>
-                    <h3 class="koktel_villa_details_buttons" onclick="koktel_villaBookingDateFunction('${clicked_Card_Details.pass}', '${clicked_Card_Details.location}', '${clicked_Card_Details.IDRprice}', '${clicked_Card_Details.SARprice}', '${clicked_Card_Details.USDprice}', '${newDescription}');" style="color: rgb(0, 255, 0);">احجز هذه الفيلا الآن</h3>
-
-                </div>
-
-
-                <div id="villa_Details_Description">
-                
-                    <h4>${newDescription}</h4>
-                    <h4 class="price">${clicked_Card_Details.IDRprice}</h4>
-                    <h4 class="price">${clicked_Card_Details.SARprice}</h4>
-                    <h4 class="price">${clicked_Card_Details.USDprice}</h4>
-                    <a class="Contact_For_More_Info_Btn" href="https://wa.me/+6282246117155" target="_blank">تواصل معنا للمزيد من المعلومات</a>
-
-                </div>
-            
-            </div>
-    `;
-
-
-        // Set The Inner HTML of The 'villa_Details_Card' To The 'villa_details_info' HTML.
-        villa_Details_Card.innerHTML = villa_Details_Info;
-
-        // Clear And Then Append The 'villa_Details_Card' To The 'koktel_villa_details_area'
-        koktel_villa_details_area.innerHTML = "";
-        koktel_villa_details_area.appendChild(villa_Details_Card);
-
-
-        // Pass All The Images From The 'clicked_Card_Details' To The 'create_Big_Img' Function.
-        create_Big_Img(clicked_Card_Details.imgAraay);
-    }
-
-    /* Create The Cards Based On The 'theChoosenArea' Value */
-    koktel_buildVillaCardsAreaType = function (theChoosenArea) {
-
-        // clear Any Pervious Content in These Two Area Div Elements
-        koktel_villa_cards_area.innerHTML = "";
-        koktel_villa_details_area.innerHTML = "";
-
-
-        // Hide The 'koktel_villa_details' Whenever You Build The Villa Cards
-        koktel_villa_details.style.display = "none";
-
-        // Scroll To The Middle of The 'koktel_villa_cards_title' Elemment
-        setTimeout(() => {
-            koktel_villa_cards_title.scrollIntoView({
-                block: 'center',
-                inline: 'center',
-                behavior: 'smooth',
-            });
-        }, 100);
-
-        // Set The 'villa_Cards_Title' InnerText Based on The 'theChoosenArea' Value Passed To This Function
-        // Then Call The 'create_Villa_Card' Function Based on The 'theChoosenArea' Value Passed To This Function
-        if (theChoosenArea === 'Cisarua') {
-            koktel_villa_cards_title.innerText = 'فلل في منطقة سيساروا'
-            create_Villa_Card(cards_Array_Cisarua, 'سيساروا');
-        } else {
-            koktel_villa_cards_title.innerText = 'فلل في منطقة شيباناس'
-            create_Villa_Card(cards_Array_Cipanas, 'شيباناس');
-        }
-
-        // Reset The Defualt Text in Everytime You Build Villa Cards
-        koktel_custom_cards_title.innerText = 'تصنيفات الفلل ▼';
-
-        // in Case The 'koktel_villa_cards_section' Was Hidden, Show it
-        if (koktel_villa_cards_section.style.display === 'none') {
-            koktel_villa_cards_section.style.display = 'block';
-        }
-    }
-
-    /* Create Cards */
-    /* The data word here referce to the cards array name (Cisarua or Cipanas Cards) */
-    function create_Villa_Card(data, areaName) {
-
-        // Counter For Creating Unique Numbers
-        let cardCounter = 1;
-
-        // Go Through Each Item in The 'data' Value Array (data = All Villa Cards Array Cisarua And Cipanas)
-        data.forEach((item, i) => {
-            // Get All The Properties From Each Item in The Object From The Choosen Array
-            let { pass, image, location, IDRprice } = item;
-
-            // Create A New Div Element For Each Villa Card
-            let koktel_villaCard = document.createElement("div");
-
-            // Create An Unique Number For Each Villa Card
-            let uniqueNumber = cardCounter++;
-
-            // Create The HTML Content For The 'koktel_villa_card' Element And Put All The Functions That You Want Them To Run Once The User Clicks on Any Card
-            koktel_villaCard.innerHTML = `
-            <div id="${uniqueNumber}" onclick="koktel_showVillaDetailsFunction('${pass}', '${areaName}', ${uniqueNumber}); page_Scroll();" class="koktel_villa_card">
-                <img src="${image}" alt="كوكتيل لحجز فلل اندونيسيا" title="كوكتيل لحجز فلل اندونيسيا">
-                <div class="villa_Info">
-                    <h3>${location}</h3>
-                    <h3 class="price">${IDRprice}</h3>
-                    <h3 class="koktel_villa_id">فيلا رقم ${uniqueNumber}</h3>
-                    <h3>${areaName}</h3>
-                </div>
-            </div>
-        `;
-
-            // Append The Created Villa Card in The 'koktel_villa_cards_area' Element
-            koktel_villa_cards_area.appendChild(koktel_villaCard);
-        });
-    }
-
-    /* Custom Cards */
-    koktel_filterVillaTypeFunction = function () {
-
-        // Disable scrolling
-        document.documentElement.style.overflow = 'hidden';
-
-        // Create A Div To Contain The Big Image
-        let FullScreenGuidanceOverlay = document.createElement('div');
-        FullScreenGuidanceOverlay.id = "koktel_full_screen_guidance_overlay";
-
-        // Create A Button To Exit The Big Image Page
-        let fullScreenOverlayExitButton = document.createElement('a');
-        fullScreenOverlayExitButton.classList.add('koktel_full_screen_overlay_exit_button');
-        fullScreenOverlayExitButton.innerText = "عودة";
-
-        // Create Website Guidance Content
-        let webGuidanceDiv = document.createElement('div');
-
-        webGuidanceDiv.classList.add('overlay');
-        webGuidanceDiv.id = 'custom_Cards_Overlay_Div';
-
-        let webGuidanceText = `
-            <div id="koktel_all_custom_card_box_div">
-
-                <div class="koktel_custom_card_box">
-
-                    <div class="koktel_custom_card_box_title">
-                        <h1>اسعار الفلل باليوم</h1>
-                    </div>
-
-                    <div class="koktel_custom_card_box_options">
-                        <h3 id="all_price" onclick="change_Clicked_Price_Btn_Color('all_price')">كل الاسعار</h3>
-                        <h3 id="five_million_and_less" onclick="change_Clicked_Price_Btn_Color('five_million_and_less')">خمسة مليون روبيه او اقل</h3>
-                        <h3 id="four_million_and_less" onclick="change_Clicked_Price_Btn_Color('four_million_and_less')">اربع مليون روبيه او اقل</h3>
-                        <h3 id="three_million_and_less" onclick="change_Clicked_Price_Btn_Color('three_million_and_less')">ثلاث مليون روبيه او اقل</h3>
-                        <h3 id="two_million_and_less" onclick="change_Clicked_Price_Btn_Color('two_million_and_less')">مليونين روبيه او اقل</h3>
-                        <h3 id="one_million_and_less" onclick="change_Clicked_Price_Btn_Color('one_million_and_less')">مليون روبيه او اقل</h3>
-                    </div>
-                </div>
-
-                <div class="koktel_custom_card_box">
-
-                    <div class="koktel_custom_card_box_title">
-                        <h1>مكان الفلل</h1>
-                    </div>
-
-                    <div class="koktel_custom_card_box_options">
-                        <h3 id="all_place" onclick="change_Clicked_Place_Btn_Color('all_place')">كل الاماكن</h3>
-                        <h3 id="inside" onclick="change_Clicked_Place_Btn_Color('inside')">داخل مجمع</h3>
-                        <h3 id="outside" onclick="change_Clicked_Place_Btn_Color('outside')">ليست بداخل مجمع</h3>
-                    </div>
-                </div>
-
-            
-
-                <div class="koktel_custom_card_box">
-
-                    <div class="koktel_custom_card_box_title">
-                        <h1>نوع الفلل</h1>
-                    </div>
-
-                    <div class="koktel_custom_card_box_options">
-                        <h3 id="all_people" onclick="change_Clicked_Type_Btn_Color('all_people')">كل الانواع</h3>
-                        <h3 id="family" onclick="change_Clicked_Type_Btn_Color('family')">للعوائل فقط</h3>
-                    </div>
-                </div>
-
-                <div class="koktel_custom_card_box">
-
-                    <div class="koktel_custom_card_box_title">
-                        <h1>ملحقات الفلل</h1>
-                    </div>
-
-                    <div class="koktel_custom_card_box_options">
-                        <h3 id="all_pool" onclick="change_Clicked_Pool_Btn_Color('all_pool')">كل الملحقات</h3>
-                        <h3 id="with_pool" onclick="change_Clicked_Pool_Btn_Color('with_pool')">مع مسبح</h3>
-                        <h3 id="without_pool" onclick="change_Clicked_Pool_Btn_Color('without_pool')">بدون مسبح</h3>
-                    </div>
-                </div>
-
-            </div>
-        `;
-
-        // Create a button element for submiting the custom cards
-        let submit_Custom_Cards_Btn = document.createElement("a");
-        submit_Custom_Cards_Btn.innerText = "بحث";
-        submit_Custom_Cards_Btn.style.opacity = "0";
-        submit_Custom_Cards_Btn.id = "submit_Custom_Cards_Btn";
-
-
-
-        // Append All The elements inside 'FullScreenGuidanceOverlay'
-        webGuidanceDiv.innerHTML = webGuidanceText;
-        FullScreenGuidanceOverlay.appendChild(webGuidanceDiv);
-        FullScreenGuidanceOverlay.appendChild(fullScreenOverlayExitButton);
-        FullScreenGuidanceOverlay.appendChild(submit_Custom_Cards_Btn);
-
-
-        // Hide And Show Different Sections
-        document.body.appendChild(FullScreenGuidanceOverlay);
-
-        // Function To Exit The Big Image Page
-        fullScreenOverlayExitButton.onclick = function () {
-
-            // Re-enable scrolling
-            document.documentElement.style.overflow = 'auto';
-
-            // Hide And Reset All Data Stored inside The 'FullScreenGuidanceOverlay' Element
-            let FullScreenGuidanceOverlay = document.getElementById('koktel_full_screen_guidance_overlay');
-            document.body.removeChild(FullScreenGuidanceOverlay);
-            FullScreenGuidanceOverlay.innerHTML = '';
-        }
-
-
-
-        // The First Function Will Be Explained And then All the 4 Down Functions Work in The Same Way
-        /* Function To Select Only One Button From Each Section in The Custom Cards Page */
-        change_Clicked_Price_Btn_Color = function (id) {
-
-            // Store The Id Value So You Can Use It Later in The 'update_Filtered_Cards' Function
-            stored_Filter_Price_Id = id;
-
-            // Reset All The Buttons Style Codes
-            all_price.style.backgroundColor = "rgb(41, 38, 38)";
-            all_price.style.borderColor = "white";
-            five_million_and_less.style.backgroundColor = "rgb(41, 38, 38)";
-            five_million_and_less.style.borderColor = "white";
-            four_million_and_less.style.backgroundColor = "rgb(41, 38, 38)";
-            four_million_and_less.style.borderColor = "white";
-            three_million_and_less.style.backgroundColor = "rgb(41, 38, 38)";
-            three_million_and_less.style.borderColor = "white";
-            two_million_and_less.style.backgroundColor = "rgb(41, 38, 38)";
-            two_million_and_less.style.borderColor = "white";
-            one_million_and_less.style.backgroundColor = "rgb(41, 38, 38)";
-            one_million_and_less.style.borderColor = "white";
-
-            // Store The Id Element in A Variable
-            let clicked_Btn = document.getElementById(id);
-
-            // Give The 'clicked_Btn' Element Style Codes
-            clicked_Btn.style.backgroundColor = "green";
-            clicked_Btn.style.borderColor = "orange";
-
-            /* Show 'submit_Custom_Cards_Btn' After Clicking on Any Option Button From The Custom Cards Options */
-            if (submit_Custom_Cards_Btn.style.opacity === '0') {
-                submit_Custom_Cards_Btn.style.opacity = "1";
-            }
-
-        }
-        change_Clicked_Type_Btn_Color = function (id) {
-
-            stored_Filter_Type_Id = id;
-
-
-            all_people.style.backgroundColor = "rgb(41, 38, 38)";
-            all_people.style.borderColor = "white";
-            family.style.backgroundColor = "rgb(41, 38, 38)";
-            family.style.borderColor = "white";
-
-            let clicked_Btn = document.getElementById(id);
-
-            clicked_Btn.style.backgroundColor = "green";
-            clicked_Btn.style.borderColor = "orange";
-
-            /* Show 'submit_Custom_Cards_Btn' After Clicking on Any Option Button From The Custom Cards Options */
-            if (submit_Custom_Cards_Btn.style.opacity === '0') {
-                submit_Custom_Cards_Btn.style.opacity = "1";
-            }
-
-        }
-        change_Clicked_Place_Btn_Color = function (id) {
-
-            stored_Filter_Place_Id = id;
-
-            all_place.style.backgroundColor = "rgb(41, 38, 38)";
-            all_place.style.borderColor = "white";
-            inside.style.backgroundColor = "rgb(41, 38, 38)";
-            inside.style.borderColor = "white";
-            outside.style.backgroundColor = "rgb(41, 38, 38)";
-            outside.style.borderColor = "white";
-
-            let clicked_Btn = document.getElementById(id);
-
-            clicked_Btn.style.backgroundColor = "green";
-            clicked_Btn.style.borderColor = "orange";
-
-            /* Show 'submit_Custom_Cards_Btn' After Clicking on Any Option Button From The Custom Cards Options */
-            if (submit_Custom_Cards_Btn.style.opacity === '0') {
-                submit_Custom_Cards_Btn.style.opacity = "1";
-            }
-
-        }
-        change_Clicked_Pool_Btn_Color = function (id) {
-
-            stored_Filter_Pool_Id = id;
-
-            all_pool.style.backgroundColor = "rgb(41, 38, 38)";
-            all_pool.style.borderColor = "white";
-            with_pool.style.backgroundColor = "rgb(41, 38, 38)";
-            with_pool.style.borderColor = "white";
-            without_pool.style.backgroundColor = "rgb(41, 38, 38)";
-            without_pool.style.borderColor = "white";
-
-            let clicked_Btn = document.getElementById(id);
-
-            clicked_Btn.style.backgroundColor = "green";
-            clicked_Btn.style.borderColor = "orange";
-
-            /* Show 'submit_Custom_Cards_Btn' After Clicking on Any Option Button From The Custom Cards Options */
-            if (submit_Custom_Cards_Btn.style.opacity === '0') {
-                submit_Custom_Cards_Btn.style.opacity = "1";
-            }
-
-        }
-
-
-        /* Function To Check if All Sections in Custom Villa cards Got One Buttun Selected */
-        submit_Custom_Cards_Btn.onclick = function () {
-
-            // if The Values in The 4 Variables Are Not Null (Means All Section Have One Button Selecetd) Then Run The 'update_Filtered_Cards' Function
-            if (stored_Filter_Price_Id && stored_Filter_Type_Id && stored_Filter_Place_Id && stored_Filter_Pool_Id !== null) {
-
-                /* Function To Display The Filtered Villa Cards */
-                update_Filtered_Cards();
-
-                // Hide And Reset All Data Stored inside The 'FullScreenGuidanceOverlay' Element
-                let FullScreenGuidanceOverlay = document.getElementById('koktel_full_screen_guidance_overlay');
-                document.body.removeChild(FullScreenGuidanceOverlay);
-                FullScreenGuidanceOverlay.innerHTML = '';
-
-                // Re-enable scrolling
-                document.documentElement.style.overflow = 'auto';
-
-
-            } else {
-                alert('- الرجاء التحقق من تحديد جميع الخيارات\n\n- Please ensure all the options are selected');
-            }
-
-
-        }
-
-        /* Function To Display The Filtered Villa Cards */
-        function update_Filtered_Cards() {
-            // Make Sure The 'new_Filterd_Cards' Value is The Same As The Current 'koktel_villa_cards_title' InnerText
-            let new_Filterd_Cards = koktel_villa_cards_title.innerText === 'فلل في منطقة سيساروا' ? cards_Array_Cisarua : cards_Array_Cipanas;
-
-            // Filter The 'filtered_Cards_Array' By Finding Objects With The Same Equirements
-            // in Case if The Value of The Clicked Buttons Was (ALL) Then The process of Filtering Villa Cards Will Be Cancelled
-            let filtered_Cards_Array = new_Filterd_Cards.filter(item =>
-                (stored_Filter_Price_Id !== "all_price" ? item.filterPrice === stored_Filter_Price_Id : true) &&
-                (stored_Filter_Type_Id !== "all_people" ? item.filterPeople === stored_Filter_Type_Id : true) &&
-                (stored_Filter_Place_Id !== "all_place" ? item.filterPlace === stored_Filter_Place_Id : true) &&
-                (stored_Filter_Pool_Id !== "all_pool" ? item.filterPool === stored_Filter_Pool_Id : true)
-            );
-
-            // Clear The 'koktel_villa_cards_area' Content After Filtering The Cards
-            koktel_villa_cards_area.innerHTML = "";
-
-            // Make Sure The 'areaName' Value is The Same As the 'koktel_villa_cards_title' InnerText
-            let areaName = koktel_villa_cards_title.innerText === 'فلل في منطقة سيساروا' ? 'سيساروا' : 'شيباناس';
-
-
-
-            // if There Was No Villa Cards Found Then Display The Following Element
-            if (filtered_Cards_Array.length === 0) {
-
-
-                // Display All of These Elements if There Was No Cards Found
-                koktel_no_cards_found_div.classList.remove('koktel_dispaly_none_class');
-                koktel_no_cards_found_h1.classList.remove('koktel_dispaly_none_class');
-                koktel_refresh_all_cards_btn.classList.remove('koktel_dispaly_none_class');
-
-
-            } else {
-
-                // if There Was Found Cards Then Do The Following Code
-                koktel_no_cards_found_h1.classList.add('koktel_dispaly_none_class');
-                koktel_no_cards_found_div.classList.remove('koktel_dispaly_none_class');
-
-                // if All The Filtering Values Are "All Kinds" Then Do The Following
-                if (stored_Filter_Price_Id == "all_price" & stored_Filter_Type_Id == "all_people" & stored_Filter_Place_Id == "all_place" & stored_Filter_Pool_Id == "all_pool") {
-
-                    /* Hide The Refresh Villa Cards Button And Show All Villa Cards Based on 'areaname' innerText Value */
-                    koktel_refresh_all_cards_btn.classList.add('koktel_dispaly_none_class');
-                    create_Villa_Card(filtered_Cards_Array, areaName);
-
-                } else {
-                    /* Show The Refresh Villa Cards Button And Show Only The Filtered Villa Cards Based on 'areaname' innerText Value */
-                    koktel_refresh_all_cards_btn.classList.remove('koktel_dispaly_none_class');
-                    create_Villa_Card(filtered_Cards_Array, areaName);
-                }
-
-            }
-
-
-            // Onclick The Refresh Villa Cards Button Clear And Then Reshow All The Orignal Cards Based on 'areaName' Value
-            koktel_refresh_all_cards_btn.onclick = function () {
-                koktel_no_cards_found_h1.classList.add('koktel_dispaly_none_class');
-
-                koktel_villa_cards_area.innerHTML = "";
-                koktel_refresh_all_cards_btn.classList.add('koktel_dispaly_none_class');
-                create_Villa_Card(new_Filterd_Cards, areaName);
-
-                /* Hide These Element if They Exist */
-                if (koktel_villa_details.style.display === 'block') {
-                    koktel_villa_details.style.display = 'none';
-                }
-
-                if (document.getElementById("koktel_order_details_div_id")) {
-                    document.getElementById("koktel_order_details_div_id").style.display = 'none';
-                }
-            }
-
-            // Reset All The Variables Values After Submitting The Filtering Villa Cards Process
-            stored_Filter_Price_Id = null;
-            stored_Filter_Type_Id = null;
-            stored_Filter_Place_Id = null;
-            stored_Filter_Pool_Id = null;
-
-
-            /* Hide These Element if They Exist */
-            if (koktel_villa_details.style.display === 'block') {
-                koktel_villa_details.style.display = 'none';
-            }
-            if (document.getElementById("koktel_order_details_div_id")) {
-                document.getElementById("koktel_order_details_div_id").style.display = 'none';
-            }
-        }
-    }
-
-    /* Create Villa Images */
-    function create_Big_Img(imgArray) {
-
-        /* Clear And Show The 'koktel_big_img_div' Element in Everytime This Function Run */
-        koktel_big_img_div.innerHTML = '';
-        koktel_big_img_div.style.display = 'flex';
-
-        // Add A Title For The Image Section.
-        let bigImgTitle = document.createElement('a');
-        bigImgTitle.textContent = 'صور الفيلا';
-        bigImgTitle.classList.add('koktel_section_intro_bigger_text');
-        bigImgTitle.style.backgroundColor = 'black';
-        bigImgTitle.style.color = 'rgb(0, 255, 0)';
-        bigImgTitle.classList.add('koktel_section_intro_bigger_text');
-        bigImgTitle.id = 'koktel_big_img_title';
-        bigImgTitle.style.marginBottom = '10px';
-        bigImgTitle.style.color = 'rgb(0, 255, 0)';
-        koktel_big_img_div.appendChild(bigImgTitle);
-
-        // Add A Button To Go Back To Villa Details And Set Its Opacity To 0.
-        let go_Back_Villa_Details = document.createElement('a');
-        go_Back_Villa_Details.textContent = 'تفاصيل الفيلا';
-        go_Back_Villa_Details.id = 'koktel_go_back_villa_details';
-        go_Back_Villa_Details.style.opacity = '0';
-        koktel_big_img_div.appendChild(go_Back_Villa_Details);
-
-        // When The 'go_Back_Villa_Details' Button is Clicked Scroll To The Villa Details Section Smoothly.
-        go_Back_Villa_Details.onclick = () => {
-            if (go_Back_Villa_Details.style.opacity === '1') {
-                koktel_villa_details_title.scrollIntoView({ block: 'center', inline: 'center', behavior: 'smooth' });
-            }
-        };
-
-        // Update The Opacity of The 'go_Back_Villa_Details' Button Based on User Scrolling Position.
-        window.addEventListener('scroll', () => {
-            if (koktel_villa_details.style.display === 'block') {
-                let bigImgTitle = document.querySelector('#koktel_big_img_title');
-                let bigImgTitlePosition = bigImgTitle.getBoundingClientRect();
-                go_Back_Villa_Details.style.opacity = bigImgTitlePosition.top <= 0 ? '1' : '0';
-                // Disable click event listener when opacity is 0
-                if (go_Back_Villa_Details.style.opacity === '0') {
-                    go_Back_Villa_Details.style.pointerEvents = 'none';
-                } else {
-                    go_Back_Villa_Details.style.pointerEvents = 'auto';
-                }
-            }
-        });
-
-
-        // Go Through Each Image Source in The Provided Array And Create Image Elements
-        imgArray.forEach(imgSrc => {
-            let imgElement = document.createElement('img');
-            imgElement.src = imgSrc;
-            imgElement.alt = 'كوكتيل لحجز فلل اندونيسيا';
-            imgElement.title = 'كوكتيل لحجز فلل اندونيسيا';
-            imgElement.setAttribute('data-image-source', imgSrc);
-            imgElement.addEventListener('click', () => koktel_show_full_screen_image(imgSrc));
-            koktel_big_img_div.appendChild(imgElement);
-        });
-    }
-
-    /* Function To Go Back To The Same Clciked Villa Card */
-    function take_Me_Back(id) {
-        // Find the Card element using the provided 'id'.
-        let card = document.getElementById(id);
-
-        // Calculate the offset needed for scrolling to center the element vertically in the viewport.
-        let offset = card.getBoundingClientRect().top - (window.innerHeight / 2 - card.clientHeight / 2);
-
-        // Scroll the window smoothly to bring the Card element to the center of the viewport.
-        window.scrollBy({
-            top: offset,
-            behavior: 'smooth',
-        });
-
-        // Change the background color of the Card element to green.
-        card.style.backgroundColor = "green";
-
-        // Change the border color of the Card element to orange.
-        card.style.borderColor = "orange";
-    }
-
-    /* Create Booking Date Content */
-    function koktel_villaBookingDateFunction(villaPass, villaLocation, villaIDRprice, villaSARprice, villaUSDprice, villaDescription) {
-
-        // Disable scrolling
-        document.documentElement.style.overflow = 'hidden';
-
-        let bookingDateDivContainerOverlay = document.createElement("div");
-        bookingDateDivContainerOverlay.id = 'koktel_booking_date_div_container_overlay';
-
-        let bookingDateDivInfo = `
-        <div id="koktel_booking_date_div_container">
-            <h5>تاريخ الحجز</h5>
-
-            <div class="koktel_booking_date_div">
-                <h6>من تاريخ</h6>
-                <div class="koktel_villa_book_date_note" style="margin-top: 5px;">
-                    <textarea placeholder="..." id="koktel_villa_book_date_id_1" maxlength="30"></textarea>
-                </div>
-            </div>
-
-            <div class="koktel_booking_date_div">
-                <h6>الى تاريخ</h6>
-                <div class="koktel_villa_book_date_note" style="margin-top: 5px;">
-                    <textarea placeholder="..." id="koktel_villa_book_date_id_2" maxlength="30"></textarea>
-                </div>
-            </div>
-
-            <div class="koktel_booking_date_div">
-                <h6 style="color: rgb(0, 255, 0);">إضافة ملاحظة (إختياري)</h6>
-                <div class="koktel_villa_book_date_note" style="margin-top: 5px;">
-                    <textarea placeholder="..." id="koktel_villa_book_date_id_3" maxlength="50"></textarea>
-                </div>
-            </div>
-
-            <div id="koktel_submit_booking_date_info">
-                <h6 onclick="koktel_submitBookingDateFunction(this)">إرسال</h6>
-                <h6 onclick="koktel_submitBookingDateFunction(this)">إلغاء</h6>
-            </div>
-        </div>
-    `;
-
-        /* Add All Booking Date Content To The Body */
-        bookingDateDivContainerOverlay.innerHTML = bookingDateDivInfo;
-        document.body.appendChild(bookingDateDivContainerOverlay);
-
-
-        koktel_submitBookingDateFunction = function (clickedAnswer) {
-            if (clickedAnswer.innerText === 'إلغاء') {
-                bookingDateDivContainerOverlay.style.display = 'none';
-                bookingDateDivContainerOverlay.innerHTML = '';
-
-                // Re-enable scrolling
-                document.documentElement.style.overflow = 'auto';
-
-            } else {
-
-                // Get the text inside the textarea
-                let noteTextarea1 = document.getElementById('koktel_villa_book_date_id_1');
-                let noteTextarea2 = document.getElementById('koktel_villa_book_date_id_2');
-                let noteTextarea3 = document.getElementById('koktel_villa_book_date_id_3');
-                let noteText1 = noteTextarea1 ? noteTextarea1.value.trim() : ''; // Check if textarea exists
-                let noteText2 = noteTextarea2 ? noteTextarea2.value.trim() : ''; // Check if textarea exists
-                let noteText3 = noteTextarea3 ? noteTextarea3.value.trim() : ''; // Check if textarea exists
-
-                // Check if both textareas have text
-                if (noteText1 === '' || noteText2 === '') {
-                    alert('يرجى ملئ جميع الحقول المطلوبة.');
-                    return; // Stop further processing
-                }
-
-                // Get today's date
-                let today = new Date();
-                let formattedDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
-
-
-                // Create the final message And join all order details
-                let finalMessage = `طلب جديد حجز فيلا ${villaPass}:\n`;
-                finalMessage += `تاريخ إرسال الطلب: ${formattedDate}\n\n`;
-                finalMessage += `${villaLocation}\n\n`;
-                finalMessage += `___________________________________\n\n`;
-                finalMessage += `من تاريخ: ${noteText1}\n`;
-                finalMessage += `الى تاريخ: ${noteText2}\n`;
-                finalMessage += `الملاحظات: ${noteText3}\n`;
-                finalMessage += `___________________________________\n\n`;
-                finalMessage += `سعر الفيلا\n`;
-                finalMessage += `${villaIDRprice}\n`;
-                finalMessage += `${villaSARprice}\n`;
-                finalMessage += `${villaUSDprice}\n`;
-                finalMessage += `- الدفع كاش فقط ويتم مع صاحب الفيلا بشكل مباشر\n\n`;
-
-                // Replace <br> tags with ' - ' in villaDescription
-                villaDescription = villaDescription.replace(/<br>/g, ' - ');
-
-                finalMessage += `وصف الفيلا:\n`;
-                finalMessage += `${villaDescription}`;
-
-                // Encode the message using encodeURIComponent
-                let encodedMessage = encodeURIComponent(finalMessage);
-
-                // Create the WhatsApp URL
-                let whatsappURL = `https://wa.me/6282246117155?text=${encodedMessage}`;
-
-                // Open WhatsApp in a new window
-                window.open(whatsappURL, '_blank');
-            }
-        }
-    }
-}
-/* Up Villa Booking Up */
 
 
 
@@ -4156,9 +3450,9 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
 
             // letruct the inner HTML content for the order
             let localStorageOrderCardContent = `
-                    <h2 style="margin-bottom: 5px; cursor: text;">منتج رقم ${index + 1}</h2>
+                    <h2 style="cursor: text;">منتج رقم ${index + 1}</h2>
                     <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
-                    <img src='${orderData.productImgSrc}' alt='توصيل من المطاعم - كوكتيل' onclick="koktel_show_full_screen_image(this.src)" title="توصيل من المطاعم - كوكتيل">
+                    <img src='${orderData.productImgSrc}' alt="صيدلية اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="صيدلية اندونيسيا - كوكتيل">
                     <div>
                         <h3 style="cursor: text;">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
                     </div>
@@ -4424,7 +3718,7 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
 
                 // Construct the inner HTML content for the order
                 let localStorageOrderCardContent = `
-                <h2 style="margin-bottom: 5px; cursor: text;">منتج رقم ${index + 1}</h2>
+                <h2 style="cursor: text;">منتج رقم ${index + 1}</h2>
                 <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
                 <img src='${orderData.productImgSrc}' alt='صيدلية اندونيسيا - كوكتيل' onclick="koktel_show_full_screen_image(this.src)" title="صيدلية اندونيسيا - كوكتيل">
                 <div>
@@ -4921,9 +4215,9 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
 
             // letruct the inner HTML content for the order
             let localStorageOrderCardContent = `
-                    <h2 style="margin-bottom: 5px; cursor: text;">منتج رقم ${index + 1}</h2>
+                    <h2 style="cursor: text;">منتج رقم ${index + 1}</h2>
                     <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
-                    <img src='${orderData.productImgSrc}' alt='كوكتيل-اندو-توصيل-مطاعم' onclick="koktel_show_full_screen_image(this.src)" title="كوكتيل-اندو-للتوصيل-من-السوبرماركت">
+                    <img src='${orderData.productImgSrc}' alt="معسلات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="معسلات اندونيسيا - كوكتيل">
                     <div>
                         <h3 style="cursor: text;">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
                     </div>
@@ -5189,9 +4483,9 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
 
                 // Construct the inner HTML content for the order
                 let localStorageOrderCardContent = `
-                <h2 style="margin-bottom: 5px; cursor: text;">منتج رقم ${index + 1}</h2>
+                <h2 style="cursor: text;">منتج رقم ${index + 1}</h2>
                 <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
-                <img src='${orderData.productImgSrc}' alt='كوكتيل-اندو-توصيل-مطاعم' onclick="koktel_show_full_screen_image(this.src)" title="كوكتيل-اندو-للتوصيل-من-السوبرماركت">
+                <img src='${orderData.productImgSrc}' alt="معسلات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="معسلات اندونيسيا - كوكتيل">
                 <div>
                     <h3 style="cursor: text;">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
                 </div>
@@ -5408,7 +4702,7 @@ if (document.getElementById('koktel_accounts_section')) {
         if (imgSrc) {
             /* Create The HTML Content For The Images */
             AdsImgInfo = `
-            <img src=${imgSrc} alt="استقدام من اندونيسيا - كوكتيل" title="استقدام من اندونيسيا - كوكتيل">
+            <img src=${imgSrc} alt="كوكتيل اندونيسيا - كوكتيل" title="كوكتيل اندونيسيا - كوكتيل">
         `;
 
             /* Set The InnerHTML Code For the 'AdsVideoDiv' */
@@ -5424,8 +4718,8 @@ if (document.getElementById('koktel_accounts_section')) {
         } else if (videoSrc) {
             /* Create The HTML Content For The Videos */
             AdsVideoInfo = `
-            <img src=${videoThumbnailSrc} alt="خدمات اندونيسيا - كوكتيل" class="koktel_ads_thumbnail_img" title="خدمات اندونيسيا - كوكتيل">
-            <video src=${videoSrc} controls title="خدمات اندونيسيا - كوكتيل" class="koktel_ads_orignal_video"></video>
+            <img src=${videoThumbnailSrc} alt="كوكتيل اندونيسيا - كوكتيل" class="koktel_ads_thumbnail_img" title="كوكتيل اندونيسيا - كوكتيل">
+            <video src=${videoSrc} controls title="كوكتيل اندونيسيا - كوكتيل" class="koktel_ads_orignal_video"></video>
         `;
 
             /* Set The InnerHTML Code For the 'AdsVideoDiv' */

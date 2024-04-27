@@ -783,14 +783,14 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
             let totalPriceWithDeliveryFormatted = totalPriceWithDeliveryForOrder.toLocaleString();
 
             let localStorageOrderCardContent = `
-            <h2 onclick="koktel_show_order_details_page(${index})">منتج رقم ${index + 1}</h2>
+            <h2 onclick="koktel_show_order_details_page(${index})">طلب رقم ${index + 1}</h2>
             <img src=${orderData.mealImgSrc} alt='مطاعم اندونيسيا - كوكتيل' onclick="koktel_show_order_details_page(${index})" title="مطاعم اندونيسيا - كوكتيل">
             <div>
-                <h3 onclick="koktel_show_order_details_page(${index})">الإجمالي مع التوصيل = ${totalPriceWithDeliveryFormatted} Rp</h3>
+                <h3>الإجمالي مع التوصيل = ${totalPriceWithDeliveryFormatted} Rp</h3>
             </div>
             <div class='koktel_orderFinished_info_and_delete'>
-                <h3 onclick="koktel_show_order_details_page(${index})">تفاصيل الطلب</h3>
-                <h3 onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
+                <h3 id="koktel_order_details_h3" onclick="koktel_show_order_details_page(${index})">تفاصيل الطلب</h3>
+                <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
             </div>`;
 
             localStorageOrderCardFinished.innerHTML = localStorageOrderCardContent;
@@ -1018,8 +1018,8 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
                         <h3 onclick="koktel_show_order_details_page(${index})">الإجمالي مع التوصيل = ${(parseFloat(orderData.totalCurrentMealPrice.replace(',', '')) + 20000).toLocaleString()} Rp</h3>
                     </div>
                     <div class='koktel_orderFinished_info_and_delete'>
-                        <h3 onclick="koktel_show_order_details_page(${index})">تفاصيل الطلب</h3>
-                        <h3 onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
+                        <h3 id="koktel_order_details_h3" onclick="koktel_show_order_details_page(${index})">تفاصيل الطلب</h3>
+                        <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
                     </div>
                     
                     
@@ -1121,7 +1121,7 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
             </div>
             <div id="koktel_order_details_text_bottom_button_div" style="background: linear-gradient(to right, rgb(132, 0, 255), rgb(60, 0, 117));">
                 <h5 onclick="koktel_hide_order_details_page()">عودة</h5>
-                <h5 onclick="koktel_ensure_delete_text_orders_box()">حذف الطلب</h5>
+                <h5 style="color: red;" onclick="koktel_ensure_delete_text_orders_box()">حذف الطلب</h5>
             </div>
 
             <div id='koktel_ensure_delete_text_orders_overlay' style='display:none'>
@@ -1661,13 +1661,13 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
                     <h2 style="margin-bottom: 5px; cursor: text;">منتج رقم ${index + 1}</h2>
                     <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
                     <img src='${orderData.productImgSrc}' alt="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="سوبرماركت اندونيسيا - كوكتيل">
-                    <div>
-                        <h3 style="cursor: text;">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
-                    </div>
+                    
                     <div class='koktel_orderFinished_info_and_delete'>
                         <h3 style="cursor: text;">العدد = ${orderData.productAmount}</h3>
-                        <h3 onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
+                        <h3 id="koktel_order_total_price_h3">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+                        <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
                     </div>
+
                     
                     <div id='koktel_ensure_delete_all_orders_overlay' style='display:none'>
                         <div id='koktel_ensure_delete_all_orders_div'>
@@ -1931,14 +1931,13 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
                 <h2 style=cursor: text;">منتج رقم ${index + 1}</h2>
                 <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
                 <img src='${orderData.productImgSrc}' alt="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="سوبرماركت اندونيسيا - كوكتيل">
-                <div>
-                    <h3 style="cursor: text;">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
-                </div>
+
                 <div class='koktel_orderFinished_info_and_delete'>
                     <h3 style="cursor: text;">العدد = ${orderData.productAmount}</h3>
-                    <h3 onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
+                    <h3 id="koktel_order_total_price_h3">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+                    <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
                 </div>
-                
+
                 <div id='koktel_ensure_delete_all_orders_overlay' style='display:none'>
                     <div id='koktel_ensure_delete_all_orders_div'>
                         <h6>متاكد من حذف جميع الطلبات؟</h6>
@@ -2422,12 +2421,11 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
                     <h2 style="cursor: text;">منتج رقم ${index + 1}</h2>
                     <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
                     <img src='${orderData.productImgSrc}' alt="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="مخبوزات اندونيسيا - كوكتيل">
-                    <div>
-                        <h3 style="cursor: text;">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
-                    </div>
+                        
                     <div class='koktel_orderFinished_info_and_delete'>
                         <h3 style="cursor: text;">العدد = ${orderData.productAmount}</h3>
-                        <h3 onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
+                        <h3 id="koktel_order_total_price_h3">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+                        <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
                     </div>
                     
                     <div id='koktel_ensure_delete_all_orders_overlay' style='display:none'>
@@ -2690,12 +2688,11 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
                 <h2 style="cursor: text;">منتج رقم ${index + 1}</h2>
                 <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
                 <img src='${orderData.productImgSrc}' alt="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="مخبوزات اندونيسيا - كوكتيل">
-                <div>
-                    <h3 style="cursor: text;">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
-                </div>
+                    
                 <div class='koktel_orderFinished_info_and_delete'>
                     <h3 style="cursor: text;">العدد = ${orderData.productAmount}</h3>
-                    <h3 onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
+                    <h3 id="koktel_order_total_price_h3">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+                    <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
                 </div>
                 
                 <div id='koktel_ensure_delete_all_orders_overlay' style='display:none'>
@@ -3453,12 +3450,11 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
                     <h2 style="cursor: text;">منتج رقم ${index + 1}</h2>
                     <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
                     <img src='${orderData.productImgSrc}' alt="صيدلية اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="صيدلية اندونيسيا - كوكتيل">
-                    <div>
-                        <h3 style="cursor: text;">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
-                    </div>
+                    
                     <div class='koktel_orderFinished_info_and_delete'>
                         <h3 style="cursor: text;">العدد = ${orderData.productAmount}</h3>
-                        <h3 onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
+                        <h3 id="koktel_order_total_price_h3">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+                        <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
                     </div>
                     
                     <div id='koktel_ensure_delete_all_orders_overlay' style='display:none'>
@@ -3721,12 +3717,11 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
                 <h2 style="cursor: text;">منتج رقم ${index + 1}</h2>
                 <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
                 <img src='${orderData.productImgSrc}' alt='صيدلية اندونيسيا - كوكتيل' onclick="koktel_show_full_screen_image(this.src)" title="صيدلية اندونيسيا - كوكتيل">
-                <div>
-                    <h3 style="cursor: text;">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
-                </div>
+                
                 <div class='koktel_orderFinished_info_and_delete'>
                     <h3 style="cursor: text;">العدد = ${orderData.productAmount}</h3>
-                    <h3 onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
+                    <h3 id="koktel_order_total_price_h3">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+                    <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
                 </div>
                 
                 <div id='koktel_ensure_delete_all_orders_overlay' style='display:none'>
@@ -4218,12 +4213,11 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
                     <h2 style="cursor: text;">منتج رقم ${index + 1}</h2>
                     <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
                     <img src='${orderData.productImgSrc}' alt="معسلات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="معسلات اندونيسيا - كوكتيل">
-                    <div>
-                        <h3 style="cursor: text;">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
-                    </div>
+                    
                     <div class='koktel_orderFinished_info_and_delete'>
                         <h3 style="cursor: text;">العدد = ${orderData.productAmount}</h3>
-                        <h3 onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
+                        <h3 id="koktel_order_total_price_h3">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+                        <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
                     </div>
                     
                     <div id='koktel_ensure_delete_all_orders_overlay' style='display:none'>
@@ -4486,12 +4480,11 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
                 <h2 style="cursor: text;">منتج رقم ${index + 1}</h2>
                 <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
                 <img src='${orderData.productImgSrc}' alt="معسلات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="معسلات اندونيسيا - كوكتيل">
-                <div>
-                    <h3 style="cursor: text;">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
-                </div>
+                    
                 <div class='koktel_orderFinished_info_and_delete'>
                     <h3 style="cursor: text;">العدد = ${orderData.productAmount}</h3>
-                    <h3 onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
+                    <h3 id="koktel_order_total_price_h3">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+                    <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
                 </div>
                 
                 <div id='koktel_ensure_delete_all_orders_overlay' style='display:none'>

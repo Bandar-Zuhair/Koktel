@@ -784,7 +784,7 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
 
             let localStorageOrderCardContent = `
             <h2 onclick="koktel_show_order_details_page(${index})">طلب رقم ${index + 1}</h2>
-            <img src=${orderData.mealImgSrc} alt='مطاعم اندونيسيا - كوكتيل' onclick="koktel_show_order_details_page(${index})" title="مطاعم اندونيسيا - كوكتيل">
+            <img src=${orderData.mealImgSrc} alt="مطاعم اندونيسيا - كوكتيل" title="مطاعم اندونيسيا - كوكتيل" onclick="koktel_show_order_details_page(${index})" loading="lazy">
             <div>
                 <h3>الإجمالي مع التوصيل = ${totalPriceWithDeliveryFormatted} Rp</h3>
             </div>
@@ -1013,7 +1013,7 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
                 // letruct the inner HTML content for the order
                 let localStorageOrderCardContent = `
                     <h2 onclick="koktel_show_order_details_page(${index})">طلب رقم ${index + 1}</h2>
-                        <img src=${orderData.mealImgSrc} alt="مطاعم اندونيسيا - كوكتيل" onclick="koktel_show_order_details_page(${index})" title="مطاعم اندونيسيا - كوكتيل">
+                        <img src=${orderData.mealImgSrc} alt="مطاعم اندونيسيا - كوكتيل" title="مطاعم اندونيسيا - كوكتيل" onclick="koktel_show_order_details_page(${index})" loading="lazy">
                     <div>
                         <h3 onclick="koktel_show_order_details_page(${index})">الإجمالي مع التوصيل = ${(parseFloat(orderData.totalCurrentMealPrice.replace(',', '')) + 20000).toLocaleString()} Rp</h3>
                     </div>
@@ -1104,7 +1104,7 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
         // Create order details HTML content
         let orderDetailsContent = `
             <div id="koktel_order_details_text_img">
-                <img src=${order.mealImgSrc} alt="مطاعم اندونيسيا - كوكتيل" id="koktel_weblogo" title="مطاعم اندونيسيا - كوكتيل"  onclick="koktel_show_full_screen_image(this.src)">
+                <img src=${order.mealImgSrc} alt="مطاعم اندونيسيا - كوكتيل" title="مطاعم اندونيسيا - كوكتيل" id="koktel_weblogo" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
             </div>
             <div>
                 <h1 class="koktel_order_details_title">تفاصيل الطلب رقم ${orderIndexNumber + 1}</h1>
@@ -1660,7 +1660,7 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
             let localStorageOrderCardContent = `
                     <h2 style="margin-bottom: 5px; cursor: text;">منتج رقم ${index + 1}</h2>
                     <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
-                    <img src='${orderData.productImgSrc}' alt="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="سوبرماركت اندونيسيا - كوكتيل">
+                    <img src="${orderData.productImgSrc}" alt="سوبرماركت اندونيسيا - كوكتيل" title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
                     
                     <div class='koktel_orderFinished_info_and_delete'>
                         <h3 style="cursor: text;">العدد = ${orderData.productAmount}</h3>
@@ -1930,7 +1930,7 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
                 let localStorageOrderCardContent = `
                 <h2 style=cursor: text;">منتج رقم ${index + 1}</h2>
                 <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
-                <img src='${orderData.productImgSrc}' alt="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="سوبرماركت اندونيسيا - كوكتيل">
+                <img src="${orderData.productImgSrc}" alt="سوبرماركت اندونيسيا - كوكتيل" title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
 
                 <div class='koktel_orderFinished_info_and_delete'>
                     <h3 style="cursor: text;">العدد = ${orderData.productAmount}</h3>
@@ -2420,7 +2420,7 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
             let localStorageOrderCardContent = `
                     <h2 style="cursor: text;">منتج رقم ${index + 1}</h2>
                     <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
-                    <img src='${orderData.productImgSrc}' alt="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="مخبوزات اندونيسيا - كوكتيل">
+                    <img src="${orderData.productImgSrc}" alt="مخبوزات اندونيسيا - كوكتيل" title="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
                         
                     <div class='koktel_orderFinished_info_and_delete'>
                         <h3 style="cursor: text;">العدد = ${orderData.productAmount}</h3>
@@ -2687,7 +2687,7 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
                 let localStorageOrderCardContent = `
                 <h2 style="cursor: text;">منتج رقم ${index + 1}</h2>
                 <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
-                <img src='${orderData.productImgSrc}' alt="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="مخبوزات اندونيسيا - كوكتيل">
+                <img src="${orderData.productImgSrc}" alt="مخبوزات اندونيسيا - كوكتيل" title="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
                     
                 <div class='koktel_orderFinished_info_and_delete'>
                     <h3 style="cursor: text;">العدد = ${orderData.productAmount}</h3>
@@ -3449,7 +3449,7 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
             let localStorageOrderCardContent = `
                     <h2 style="cursor: text;">منتج رقم ${index + 1}</h2>
                     <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
-                    <img src='${orderData.productImgSrc}' alt="صيدلية اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="صيدلية اندونيسيا - كوكتيل">
+                    <img src="${orderData.productImgSrc}" alt="صيدلية اندونيسيا - كوكتيل" title="صيدلية اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
                     
                     <div class='koktel_orderFinished_info_and_delete'>
                         <h3 style="cursor: text;">العدد = ${orderData.productAmount}</h3>
@@ -3716,7 +3716,7 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
                 let localStorageOrderCardContent = `
                 <h2 style="cursor: text;">منتج رقم ${index + 1}</h2>
                 <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
-                <img src='${orderData.productImgSrc}' alt='صيدلية اندونيسيا - كوكتيل' onclick="koktel_show_full_screen_image(this.src)" title="صيدلية اندونيسيا - كوكتيل">
+                <img src="${orderData.productImgSrc}" alt="صيدلية اندونيسيا - كوكتيل" title="صيدلية اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
                 
                 <div class='koktel_orderFinished_info_and_delete'>
                     <h3 style="cursor: text;">العدد = ${orderData.productAmount}</h3>
@@ -4212,7 +4212,7 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
             let localStorageOrderCardContent = `
                     <h2 style="cursor: text;">منتج رقم ${index + 1}</h2>
                     <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
-                    <img src='${orderData.productImgSrc}' alt="معسلات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="معسلات اندونيسيا - كوكتيل">
+                    <img src="${orderData.productImgSrc}" alt="معسلات اندونيسيا - كوكتيل" title="معسلات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
                     
                     <div class='koktel_orderFinished_info_and_delete'>
                         <h3 style="cursor: text;">العدد = ${orderData.productAmount}</h3>
@@ -4479,7 +4479,7 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
                 let localStorageOrderCardContent = `
                 <h2 style="cursor: text;">منتج رقم ${index + 1}</h2>
                 <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
-                <img src='${orderData.productImgSrc}' alt="معسلات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" title="معسلات اندونيسيا - كوكتيل">
+                <img src="${orderData.productImgSrc}" alt="معسلات اندونيسيا - كوكتيل" title="معسلات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
                     
                 <div class='koktel_orderFinished_info_and_delete'>
                     <h3 style="cursor: text;">العدد = ${orderData.productAmount}</h3>
@@ -4695,7 +4695,7 @@ if (document.getElementById('koktel_accounts_section')) {
         if (imgSrc) {
             /* Create The HTML Content For The Images */
             AdsImgInfo = `
-            <img src=${imgSrc} alt="كوكتيل اندونيسيا - كوكتيل" title="كوكتيل اندونيسيا - كوكتيل">
+            <img src=${imgSrc} alt="كوكتيل اندونيسيا - كوكتيل" title="كوكتيل اندونيسيا - كوكتيل" loading="lazy">
         `;
 
             /* Set The InnerHTML Code For the 'AdsVideoDiv' */
@@ -4711,7 +4711,7 @@ if (document.getElementById('koktel_accounts_section')) {
         } else if (videoSrc) {
             /* Create The HTML Content For The Videos */
             AdsVideoInfo = `
-            <img src=${videoThumbnailSrc} alt="كوكتيل اندونيسيا - كوكتيل" class="koktel_ads_thumbnail_img" title="كوكتيل اندونيسيا - كوكتيل">
+            <img src=${videoThumbnailSrc} alt="كوكتيل اندونيسيا - كوكتيل" title="كوكتيل اندونيسيا - كوكتيل" class="koktel_ads_thumbnail_img" loading="lazy">
             <video src=${videoSrc} controls title="كوكتيل اندونيسيا - كوكتيل" class="koktel_ads_orignal_video"></video>
         `;
 

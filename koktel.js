@@ -98,6 +98,17 @@ function koktel_websiteGuidance(buttonClicked) {
             <a>2- بعد اختيار الخدمة، خذ نظرة على تعليمات الخدمة.</a>
         `;
 
+        /* Website Language */
+    } else if (buttonClicked === 'website language') {
+
+        webGuidanceDiv.classList.add('web_guidance_div');
+
+        webGuidanceText = `
+            <a href="https://koktel.com">العربية - Arabic</a>
+            <a href="https://koktel.com">الإندونيسية - Indonesian</a>
+        `;
+
+
         /* Restaurant Page Guidance */
     } else if (buttonClicked === 'how to use restaurant type page') {
 
@@ -226,6 +237,13 @@ function koktel_websiteGuidance(buttonClicked) {
 
     // Hide And Show Different Sections
     document.body.appendChild(FullScreenGuidanceOverlay);
+
+    /* Hide The Nav Bar Element */
+    koktel_nav_options.style.opacity = "0";
+    koktel_nav_options.style.height = "0";
+    koktel_nav_options.style.right = "-50%"; // Move to the right (-50%)
+    document.body.classList.remove("nav-open");
+
 
     // Function To Exit The Big Image Page
     fullScreenOverlayExitButton.onclick = function () {
@@ -618,7 +636,7 @@ if (document.getElementById("koktel_meal_info_section")) {
             // Create Button To Show Orders Page
             let koktel_mealOrderIconDiv = document.createElement('div');
             koktel_mealOrderIconDiv.id = 'koktel_order_page_icon_div';
-            let koktel_mealOrderIcon = `<a href='https://bandar-zuhair.github.io/test/طلباتك-من-المطاعم.html' id="koktel_order_page_icon"><ion-icon name="cart-outline"></ion-icon></a>`;
+            let koktel_mealOrderIcon = `<a href='https://bandar-zuhair.github.io/koktel/طلباتك-من-المطاعم.html' id="koktel_order_page_icon"><ion-icon name="cart-outline"></ion-icon></a>`;
             koktel_mealOrderIconDiv.innerHTML = koktel_mealOrderIcon;
             koktel_mealOrderIconDiv.style.opacity = '0';
             document.body.appendChild(koktel_mealOrderIconDiv);
@@ -739,7 +757,7 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
             <div id="koktel_order_check_out_div" style="display: none;"></div>
 
 
-            <a href="https://bandar-zuhair.github.io/test/مطاعم-اندونيسيا.html" class="koktel_go_back_products_page_button"> <ion-icon name="arrow-forward-circle-outline"></ion-icon> .. قسم المطاعم</a>
+            <a href="https://bandar-zuhair.github.io/koktel/مطاعم-اندونيسيا.html" class="koktel_go_back_products_page_button"> <ion-icon name="arrow-forward-circle-outline"></ion-icon> .. قسم المطاعم</a>
         </div>`;
 
     /* Set The Inner HTML Code of The 'all_order_page_content' Inside The 'koktel_restaurant_order_details_body_id' Element */
@@ -1483,7 +1501,7 @@ if (document.getElementById("koktel_supermarket_section")) {
                     // Create Button To Show Orders Page
                     let koktel_mealOrderIconDiv = document.createElement('div');
                     koktel_mealOrderIconDiv.id = 'koktel_order_page_icon_div';
-                    let koktel_mealOrderIcon = `<a href='https://bandar-zuhair.github.io/test/طلباتك-من-السوبرماركت.html' id="koktel_order_page_icon"><ion-icon name="cart-outline"></ion-icon></a>`;
+                    let koktel_mealOrderIcon = `<a href='https://bandar-zuhair.github.io/koktel/طلباتك-من-السوبرماركت.html' id="koktel_order_page_icon"><ion-icon name="cart-outline"></ion-icon></a>`;
                     koktel_mealOrderIconDiv.innerHTML = koktel_mealOrderIcon;
                     koktel_mealOrderIconDiv.style.opacity = '0';
                     document.body.appendChild(koktel_mealOrderIconDiv);
@@ -1610,7 +1628,7 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
 
             <div id="koktel_order_check_out_div" style="display: none;"></div>
 
-            <a href="https://bandar-zuhair.github.io/test/سوبرماركت-اندونيسيا.html" class="koktel_go_back_products_page_button"> <ion-icon name="arrow-forward-circle-outline"></ion-icon> .. قسم السوبرماركت</a>
+            <a href="https://bandar-zuhair.github.io/koktel/سوبرماركت-اندونيسيا.html" class="koktel_go_back_products_page_button"> <ion-icon name="arrow-forward-circle-outline"></ion-icon> .. قسم السوبرماركت</a>
         </div>`;
 
 
@@ -2247,7 +2265,7 @@ if (document.getElementById("koktel_bread_section")) {
                     // Create Button To Show Orders Page
                     let koktel_mealOrderIconDiv = document.createElement('div');
                     koktel_mealOrderIconDiv.id = 'koktel_order_page_icon_div';
-                    let koktel_mealOrderIcon = `<a href='https://bandar-zuhair.github.io/test/طلباتك-من-المعسلات.html' id="koktel_order_page_icon"><ion-icon name="cart-outline"></ion-icon></a>`;
+                    let koktel_mealOrderIcon = `<a href='https://bandar-zuhair.github.io/koktel/طلباتك-من-المعسلات.html' id="koktel_order_page_icon"><ion-icon name="cart-outline"></ion-icon></a>`;
                     koktel_mealOrderIconDiv.innerHTML = koktel_mealOrderIcon;
                     koktel_mealOrderIconDiv.style.opacity = '0';
                     document.body.appendChild(koktel_mealOrderIconDiv);
@@ -2375,7 +2393,7 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
 
             <div id="koktel_order_check_out_div" style="display: none;"></div>
 
-            <a href="https://bandar-zuhair.github.io/test/مخبوزات-اندونيسيا.html" class="koktel_go_back_products_page_button"> <ion-icon name="arrow-forward-circle-outline"></ion-icon> .. قسم المعسلات</a>
+            <a href="https://bandar-zuhair.github.io/koktel/مخبوزات-اندونيسيا.html" class="koktel_go_back_products_page_button"> <ion-icon name="arrow-forward-circle-outline"></ion-icon> .. قسم المعسلات</a>
         </div>`;
 
 
@@ -3984,7 +4002,7 @@ if (document.getElementById("koktel_pharmacy_section")) {
                     // Create Button To Show Orders Page
                     let koktel_mealOrderIconDiv = document.createElement('div');
                     koktel_mealOrderIconDiv.id = 'koktel_order_page_icon_div';
-                    let koktel_mealOrderIcon = `<a href='https://bandar-zuhair.github.io/test/طلباتك-من-الصيدلية.html' id="koktel_order_page_icon"><ion-icon name="cart-outline"></ion-icon></a>`;
+                    let koktel_mealOrderIcon = `<a href='https://bandar-zuhair.github.io/koktel/طلباتك-من-الصيدلية.html' id="koktel_order_page_icon"><ion-icon name="cart-outline"></ion-icon></a>`;
                     koktel_mealOrderIconDiv.innerHTML = koktel_mealOrderIcon;
                     koktel_mealOrderIconDiv.style.opacity = '0';
                     document.body.appendChild(koktel_mealOrderIconDiv);
@@ -4112,7 +4130,7 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
 
             <div id="koktel_order_check_out_div" style="display: none;"></div>
 
-            <a href="https://bandar-zuhair.github.io/test/صيدلية-اندونيسيا.html" class="koktel_go_back_products_page_button"> <ion-icon name="arrow-forward-circle-outline"></ion-icon> .. قسم الصيدلية</a>
+            <a href="https://bandar-zuhair.github.io/koktel/صيدلية-اندونيسيا.html" class="koktel_go_back_products_page_button"> <ion-icon name="arrow-forward-circle-outline"></ion-icon> .. قسم الصيدلية</a>
         </div>`;
 
 
@@ -4749,7 +4767,7 @@ if (document.getElementById("koktel_shisha_section")) {
                     // Create Button To Show Orders Page
                     let koktel_mealOrderIconDiv = document.createElement('div');
                     koktel_mealOrderIconDiv.id = 'koktel_order_page_icon_div';
-                    let koktel_mealOrderIcon = `<a href='https://bandar-zuhair.github.io/test/طلباتك-من-المعسلات.html' id="koktel_order_page_icon"><ion-icon name="cart-outline"></ion-icon></a>`;
+                    let koktel_mealOrderIcon = `<a href='https://bandar-zuhair.github.io/koktel/طلباتك-من-المعسلات.html' id="koktel_order_page_icon"><ion-icon name="cart-outline"></ion-icon></a>`;
                     koktel_mealOrderIconDiv.innerHTML = koktel_mealOrderIcon;
                     koktel_mealOrderIconDiv.style.opacity = '0';
                     document.body.appendChild(koktel_mealOrderIconDiv);
@@ -4877,7 +4895,7 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
 
             <div id="koktel_order_check_out_div" style="display: none;"></div>
 
-            <a href="https://bandar-zuhair.github.io/test/معسلات-اندونيسيا.html" class="koktel_go_back_products_page_button"> <ion-icon name="arrow-forward-circle-outline"></ion-icon> .. قسم المعسلات</a>
+            <a href="https://bandar-zuhair.github.io/koktel/معسلات-اندونيسيا.html" class="koktel_go_back_products_page_button"> <ion-icon name="arrow-forward-circle-outline"></ion-icon> .. قسم المعسلات</a>
         </div>`;
 
 

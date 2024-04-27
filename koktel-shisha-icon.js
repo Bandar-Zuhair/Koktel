@@ -4,7 +4,7 @@ if (localStorage.getItem('shisha_orders')) {
     // Create Button To Show Orders Page
     let koktel_mealOrderIconDiv = document.createElement('div');
     koktel_mealOrderIconDiv.id = 'koktel_order_page_icon_div';
-    let koktel_mealOrderIcon = `<a href='https://bandar-zuhair.github.io/test/طلباتك-من-المعسلات.html' id="koktel_order_page_icon"><ion-icon name="cart-outline"></ion-icon></a>`;
+    let koktel_mealOrderIcon = `<a href='https://bandar-zuhair.github.io/koktel/طلباتك-من-المعسلات.html' id="koktel_order_page_icon"><ion-icon name="cart-outline"></ion-icon></a>`;
     koktel_mealOrderIconDiv.innerHTML = koktel_mealOrderIcon;
     document.body.appendChild(koktel_mealOrderIconDiv);
 

@@ -574,7 +574,7 @@ body.nav-open #koktel_nav_options * {
 }
 
 .koktel_main_page_text {
-    background: rgb(255, 166, 0);
+    background: rgb(255, 136, 0);
     font-size: 2.5vw;
     line-height: 1.4;
     margin: 10px 0;
@@ -587,7 +587,6 @@ body.nav-open #koktel_nav_options * {
 }
 
 #koktel_choose_service_area a {
-    background: black;
     background: rgb(255, 136, 0);
     color: white;
     text-decoration: none;
@@ -616,17 +615,15 @@ body.nav-open #koktel_nav_options * {
 .koktel_choose_service_title {
     background: rgb(255, 136, 0);
     width: 100%;
-    padding: 0 0 10px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: self-start;
+    align-items: center;
 }
 
 .koktel_choose_service_title h2 {
     width: 100%;
     font-size: 2.5vw;
-    padding: 10px 0;
+    padding: 15px 0;
     text-align: center;
 }
 
@@ -3078,6 +3075,7 @@ footer img {
 
     .koktel_choose_service_title h2 {
         font-size: 4vw;
+        padding: 0;
     }
 
     #koktel_accounts_section h1 {

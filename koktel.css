@@ -239,7 +239,7 @@ header div {
 }
 
 #koktel_web_logo_no_moving {
-    width: 70Vw;
+    width: 20Vw;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     cursor: pointer;
@@ -813,8 +813,7 @@ body.nav-open #koktel_nav_options * {
 }
 
 #koktel_restaurant_menu_area a {
-    background: black;
-    background: pink;
+    background: rgb(255, 136, 0);
     color: white;
     width: 100%;
     display: flex;
@@ -836,11 +835,16 @@ body.nav-open #koktel_nav_options * {
 }
 
 .koktel_store_menu_img {
-    width: 50%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .koktel_store_menu_img img {
-    width: 100%;
+    width: 50%;
+    box-shadow: 0 0 3px 0.5px black;
 }
 
 .koktel_store_menu_info div {
@@ -851,7 +855,7 @@ body.nav-open #koktel_nav_options * {
 }
 
 .koktel_meal_text {
-    background: green;
+    background: rgb(78, 78, 78);
     padding: 0 5px;
 }
 
@@ -912,7 +916,7 @@ body.nav-open #koktel_nav_options * {
 
 .koktel_meal_info_name_area {
     background: blue;
-    padding: 5px;
+    padding-bottom: 5px;
 }
 
 .koktel_meal_info_name_area * {
@@ -2211,6 +2215,10 @@ footer img {
 /* Media Queries */
 /* 1250px */
 @media(max-width:1250px) {
+    #koktel_web_logo_no_moving {
+        width: 30Vw;
+    }
+
     #koktel_nav_logo {
         width: 12vw;
     }
@@ -2690,7 +2698,7 @@ footer img {
     }
 
     #koktel_web_logo_no_moving {
-        width: 100Vw;
+        width: 40Vw;
     }
 
     #koktel_go_up_arrow {
@@ -3137,6 +3145,10 @@ footer img {
 
 /* 500px */
 @media(max-width:500px) {
+    #koktel_web_logo_no_moving {
+        width: 50Vw;
+    }
+
     #koktel_go_up_arrow {
         font-size: 9.5vw;
     }

@@ -3049,36 +3049,43 @@ if (document.getElementById("koktel_choose_massage_person_section")) {
         // Define the worker type specific message header
         let messageType = (workerType === 'female') ? 'انثى' : 'ذكر';
 
-
         // Get today's date
         let today = new Date();
         let formattedDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
 
-
         // Create the final message And join all order details
         let finalMessage = `طلب جديد حجز مساج ${messageType}\n`; // Initial message
         finalMessage += `تاريخ إرسال الطلب: ${formattedDate}\n\n`; // Add today's date
-
-
-        // Append the grand total to the final message
         finalMessage += `جميع طرق الدفع متوفرة سواء اونلاين او كاش\n\n`;
 
+        // Prompt user for location access
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    let { latitude, longitude } = position.coords;
+                    let mapsURL = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
+                    finalMessage += `يرجى التأكد من صحة موقعك:\n${mapsURL}\n`;
+                    finalizeMessage(finalMessage);
+                },
+                (error) => {
+                    console.error('Error getting location:', error);
+                    finalizeMessage(finalMessage + `يرجى إرسال موقعك..\n\n`);
+                }
+            );
+        } else {
+            console.error('Geolocation is not supported.');
+            finalizeMessage(finalMessage + `يرجى إرسال موقعك..\n\n`);
+        }
 
+        function finalizeMessage(message) {
+            message += `يرجى استخدام المعلومات التالية في حال كان الدفع بالتحويل البنكي\n`;
+            message += `Bank Central Asia (BCA)\nName: samir\nNo Rekening: 1971025609\n\n`;
+            message += `Dana: 087720208728`;
 
-        // If there's an error retrieving the location, proceed without appending the location to the message
-        finalMessage += `يرجى إرسال موقعك..\n\n`;
-        finalMessage += `يرجى استخدام المعلومات التالية في حال كان الدفع بالتحويل البنكي\n`;
-        finalMessage += `Bank Central Asia (BCA)\nName: samir\nNo Rekening: 1971025609\n\n`;
-        finalMessage += `Dana: 087720208728`;
-
-        // Encode the message using encodeURIComponent
-        let encodedMessage = encodeURIComponent(finalMessage);
-
-        // Create the WhatsApp URL
-        let whatsappURL = `https://wa.me/6282246117155?text=${encodedMessage}`;
-
-        // Open WhatsApp in a new window
-        window.open(whatsappURL, '_blank');
+            let encodedMessage = encodeURIComponent(message);
+            let whatsappURL = `https://wa.me/6282246117155?text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank');
+        }
     }
 }
 /* Up Massage Worker Up */

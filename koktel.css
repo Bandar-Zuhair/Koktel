@@ -1274,29 +1274,9 @@ body.nav-open #koktel_nav_options * {
     margin: 5px 0;
 }
 
-#koktel_ensure_delete_all_orders_overlay {
+.koktel_ensure_delete_orders_overlay {
     z-index: 999;
-    background: rgba(0, 0, 0, 0.6);
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-#koktel_ensure_delete_this_orders_overlay {
-    z-index: 999;
-    background: rgba(0, 0, 0, 0.6);
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-#koktel_ensure_delete_text_orders_overlay {
-    z-index: 999;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -1309,8 +1289,7 @@ body.nav-open #koktel_nav_options * {
     z-index: 997;
     background: #00ddff;
     width: 90vw;
-    height: 90vh;
-    padding: 0 50px;
+    padding: 20px 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1805,8 +1784,7 @@ body.nav-open #koktel_nav_options * {
     z-index: 997;
     background: #00ddff;
     width: 90vw;
-    height: 90vh;
-    padding: 0 50px;
+    padding: 20px 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -1023,7 +1023,7 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
                     </div>
                     
                     
-                    <div id='koktel_ensure_delete_all_orders_overlay' style='display:none'>
+                    <div id='koktel_ensure_delete_all_orders_overlay' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                         <div id='koktel_ensure_delete_all_orders_div'>
                             <h6>متاكد من حذف جميع الطلبات؟</h6>
                             <div id='koktel_ensure_delete_all_orders_answer_div'>
@@ -1033,7 +1033,7 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
                         </div>
                     </div>
 
-                    <div id='koktel_ensure_delete_this_orders_overlay_${index}' style='display:none'>
+                    <div id='koktel_ensure_delete_this_orders_overlay_${index}' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                         <div id='koktel_ensure_delete_all_orders_div'>
                             <h6>متاكد من حذف هذا الطلب؟</h6>
                             <div id='koktel_ensure_delete_all_orders_answer_div'>
@@ -1669,7 +1669,7 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
                     </div>
 
                     
-                    <div id='koktel_ensure_delete_all_orders_overlay' style='display:none'>
+                    <div id='koktel_ensure_delete_all_orders_overlay' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                         <div id='koktel_ensure_delete_all_orders_div'>
                             <h6>متاكد من حذف جميع الطلبات؟</h6>
                             <div id='koktel_ensure_delete_all_orders_answer_div'>
@@ -1679,7 +1679,7 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
                         </div>
                     </div>
 
-                    <div id='koktel_ensure_delete_this_orders_overlay_${index}' style='display:none'>
+                    <div id='koktel_ensure_delete_this_orders_overlay_${index}' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                         <div id='koktel_ensure_delete_all_orders_div'>
                             <h6>متاكد من حذف هذا الطلب؟</h6>
                             <div id='koktel_ensure_delete_all_orders_answer_div'>
@@ -1938,7 +1938,7 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
                     <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
                 </div>
 
-                <div id='koktel_ensure_delete_all_orders_overlay' style='display:none'>
+                <div id='koktel_ensure_delete_all_orders_overlay' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                     <div id='koktel_ensure_delete_all_orders_div'>
                         <h6>متاكد من حذف جميع الطلبات؟</h6>
                         <div id='koktel_ensure_delete_all_orders_answer_div'>
@@ -1948,7 +1948,7 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
                     </div>
                 </div>
 
-                <div id='koktel_ensure_delete_this_orders_overlay_${index}' style='display:none'>
+                <div id='koktel_ensure_delete_this_orders_overlay_${index}' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                     <div id='koktel_ensure_delete_all_orders_div'>
                         <h6>متاكد من حذف هذا الطلب؟</h6>
                         <div id='koktel_ensure_delete_all_orders_answer_div'>
@@ -2428,7 +2428,7 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
                         <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
                     </div>
                     
-                    <div id='koktel_ensure_delete_all_orders_overlay' style='display:none'>
+                    <div id='koktel_ensure_delete_all_orders_overlay' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                         <div id='koktel_ensure_delete_all_orders_div'>
                             <h6>متاكد من حذف جميع الطلبات؟</h6>
                             <div id='koktel_ensure_delete_all_orders_answer_div'>
@@ -2438,7 +2438,7 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
                         </div>
                     </div>
 
-                    <div id='koktel_ensure_delete_this_orders_overlay_${index}' style='display:none'>
+                    <div id='koktel_ensure_delete_this_orders_overlay_${index}' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                         <div id='koktel_ensure_delete_all_orders_div'>
                             <h6>متاكد من حذف هذا الطلب؟</h6>
                             <div id='koktel_ensure_delete_all_orders_answer_div'>
@@ -2695,7 +2695,7 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
                     <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
                 </div>
                 
-                <div id='koktel_ensure_delete_all_orders_overlay' style='display:none'>
+                <div id='koktel_ensure_delete_all_orders_overlay' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                     <div id='koktel_ensure_delete_all_orders_div'>
                         <h6>متاكد من حذف جميع الطلبات؟</h6>
                         <div id='koktel_ensure_delete_all_orders_answer_div'>
@@ -2705,7 +2705,7 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
                     </div>
                 </div>
 
-                <div id='koktel_ensure_delete_this_orders_overlay_${index}' style='display:none'>
+                <div id='koktel_ensure_delete_this_orders_overlay_${index}' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                     <div id='koktel_ensure_delete_all_orders_div'>
                         <h6>متاكد من حذف هذا الطلب؟</h6>
                         <div id='koktel_ensure_delete_all_orders_answer_div'>
@@ -3457,7 +3457,7 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
                         <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
                     </div>
                     
-                    <div id='koktel_ensure_delete_all_orders_overlay' style='display:none'>
+                    <div id='koktel_ensure_delete_all_orders_overlay' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                         <div id='koktel_ensure_delete_all_orders_div'>
                             <h6>متاكد من حذف جميع الطلبات؟</h6>
                             <div id='koktel_ensure_delete_all_orders_answer_div'>
@@ -3467,7 +3467,7 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
                         </div>
                     </div>
 
-                    <div id='koktel_ensure_delete_this_orders_overlay_${index}' style='display:none'>
+                    <div id='koktel_ensure_delete_this_orders_overlay_${index}' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                         <div id='koktel_ensure_delete_all_orders_div'>
                             <h6>متاكد من حذف هذا الطلب؟</h6>
                             <div id='koktel_ensure_delete_all_orders_answer_div'>
@@ -3724,7 +3724,7 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
                     <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
                 </div>
                 
-                <div id='koktel_ensure_delete_all_orders_overlay' style='display:none'>
+                <div id='koktel_ensure_delete_all_orders_overlay' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                     <div id='koktel_ensure_delete_all_orders_div'>
                         <h6>متاكد من حذف جميع الطلبات؟</h6>
                         <div id='koktel_ensure_delete_all_orders_answer_div'>
@@ -3734,7 +3734,7 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
                     </div>
                 </div>
 
-                <div id='koktel_ensure_delete_this_orders_overlay_${index}' style='display:none'>
+                <div id='koktel_ensure_delete_this_orders_overlay_${index}' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                     <div id='koktel_ensure_delete_all_orders_div'>
                         <h6>متاكد من حذف هذا الطلب؟</h6>
                         <div id='koktel_ensure_delete_all_orders_answer_div'>
@@ -4220,7 +4220,7 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
                         <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
                     </div>
                     
-                    <div id='koktel_ensure_delete_all_orders_overlay' style='display:none'>
+                    <div id='koktel_ensure_delete_all_orders_overlay' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                         <div id='koktel_ensure_delete_all_orders_div'>
                             <h6>متاكد من حذف جميع الطلبات؟</h6>
                             <div id='koktel_ensure_delete_all_orders_answer_div'>
@@ -4230,7 +4230,7 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
                         </div>
                     </div>
 
-                    <div id='koktel_ensure_delete_this_orders_overlay_${index}' style='display:none'>
+                    <div id='koktel_ensure_delete_this_orders_overlay_${index}' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                         <div id='koktel_ensure_delete_all_orders_div'>
                             <h6>متاكد من حذف هذا الطلب؟</h6>
                             <div id='koktel_ensure_delete_all_orders_answer_div'>
@@ -4487,7 +4487,7 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
                     <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
                 </div>
                 
-                <div id='koktel_ensure_delete_all_orders_overlay' style='display:none'>
+                <div id='koktel_ensure_delete_all_orders_overlay' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                     <div id='koktel_ensure_delete_all_orders_div'>
                         <h6>متاكد من حذف جميع الطلبات؟</h6>
                         <div id='koktel_ensure_delete_all_orders_answer_div'>
@@ -4497,7 +4497,7 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
                     </div>
                 </div>
 
-                <div id='koktel_ensure_delete_this_orders_overlay_${index}' style='display:none'>
+                <div id='koktel_ensure_delete_this_orders_overlay_${index}' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                     <div id='koktel_ensure_delete_all_orders_div'>
                         <h6>متاكد من حذف هذا الطلب؟</h6>
                         <div id='koktel_ensure_delete_all_orders_answer_div'>
@@ -4774,7 +4774,7 @@ if (document.getElementById("koktel_meal_info_section") || document.getElementBy
 }
 
 
-
+/* Open And Close Website Nav Bar */
 if (document.getElementById("koktel_nav")) {
     /* Hide And Show nav Bar */
     let koktel_showNavOptions = () => {
@@ -4782,6 +4782,9 @@ if (document.getElementById("koktel_nav")) {
         koktel_nav_options.style.height = "100%";
         koktel_nav_options.style.right = "0"; // Move from right (-50%) to the original position (0%)
         document.body.classList.add("nav-open");
+
+        // Disable Scrolling
+        document.documentElement.style.overflow = 'hidden';
     };
 
     let koktel_hideNavOptions = () => {
@@ -4789,6 +4792,9 @@ if (document.getElementById("koktel_nav")) {
         koktel_nav_options.style.height = "0";
         koktel_nav_options.style.right = "-50%"; // Move to the right (-50%)
         document.body.classList.remove("nav-open");
+
+        // Re-enable scrolling
+        document.documentElement.style.overflow = 'auto';
     };
 
     koktel_nav.onclick = (event) => {
@@ -4821,8 +4827,7 @@ function koktel_whatsApp() {
     window.open(whatsappURL, '_blank');
 }
 
-/* Scroll Up */
-/* Scroll Up To The Beginning Icon */
+/* Scroll Up To Top Website */
 function koktel_scrollUpIcon() {
     document.getElementById('koktel_header').scrollIntoView({ top: 0, behavior: 'smooth' });
 }

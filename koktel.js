@@ -3065,47 +3065,20 @@ if (document.getElementById("koktel_choose_massage_person_section")) {
 
 
 
-        // Retrieve the user's current location
-        navigator.geolocation.getCurrentPosition((position) => {
-            // Extract latitude and longitude from the position object
-            let { latitude, longitude } = position.coords;
+        // If there's an error retrieving the location, proceed without appending the location to the message
+        finalMessage += `يرجى إرسال موقعك..\n\n`;
+        finalMessage += `يرجى استخدام المعلومات التالية في حال كان الدفع بالتحويل البنكي\n`;
+        finalMessage += `Bank Central Asia (BCA)\nName: samir\nNo Rekening: 1971025609\n\n`;
+        finalMessage += `Dana: 087720208728`;
 
-            // Create the Google Maps URL with latitude and longitude
-            let mapsURL = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
+        // Encode the message using encodeURIComponent
+        let encodedMessage = encodeURIComponent(finalMessage);
 
-            // Append the user's location as a link to Google Maps to the final message
-            finalMessage += `يرجى التأكد من صحة موقعك:\n`;
-            finalMessage += mapsURL + '\n';
-            finalMessage += `إذا كان الموقع صحيح ارسل تم\n\n`;
-            finalMessage += `يرجى استخدام المعلومات التالية في حال كان الدفع بالتحويل البنكي\n`;
-            finalMessage += `Bank Central Asia (BCA)\nName: samir\nNo Rekening: 1971025609\n\n`;
-            finalMessage += `Dana: 087720208728`;
+        // Create the WhatsApp URL
+        let whatsappURL = `https://wa.me/6282246117155?text=${encodedMessage}`;
 
-            // Encode the message using encodeURIComponent
-            let encodedMessage = encodeURIComponent(finalMessage);
-
-            // Create the WhatsApp URL
-            let whatsappURL = `https://wa.me/6282246117155?text=${encodedMessage}`;
-
-            // Open WhatsApp in a new window
-            window.open(whatsappURL, '_blank');
-        }, (error) => {
-            console.error('Error getting location:', error);
-            // If there's an error retrieving the location, proceed without appending the location to the message
-            finalMessage += `يرجى إرسال موقعك..\n\n`;
-            finalMessage += `يرجى استخدام المعلومات التالية في حال كان الدفع بالتحويل البنكي\n`;
-            finalMessage += `Bank Central Asia (BCA)\nName: samir\nNo Rekening: 1971025609\n\n`;
-            finalMessage += `Dana: 087720208728`;
-
-            // Encode the message using encodeURIComponent
-            let encodedMessage = encodeURIComponent(finalMessage);
-
-            // Create the WhatsApp URL
-            let whatsappURL = `https://wa.me/6282246117155?text=${encodedMessage}`;
-
-            // Open WhatsApp in a new window
-            window.open(whatsappURL, '_blank');
-        });
+        // Open WhatsApp in a new window
+        window.open(whatsappURL, '_blank');
     }
 }
 /* Up Massage Worker Up */

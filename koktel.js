@@ -2868,59 +2868,51 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
 /* Down Worker And Driver Booking Down */
 if (document.getElementById("koktel_choose_worker_type_section")) {
 
-    /* Craete Home Worker WhatsApp Message */
     koktel_whatsApp_worker_message.onclick = function () {
-
-        // Get today's date
         let today = new Date();
         let formattedDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
-
-
-        // Create the final message And join all order details
-        let finalMessage = "طلب جديد حجز شغالة:\n"; // Initial message
-        finalMessage += `تاريخ إرسال الطلب: ${formattedDate}\n\n`; // Add today's date
-
-
-        // Append the grand total to the final message
-        finalMessage += `جميع طرق الدفع متوفرة سواء اونلاين او كاش`;
-
-        // Retrieve the user's current location
-        navigator.geolocation.getCurrentPosition((position) => {
-            // Extract latitude and longitude from the position object
+        let finalMessage = `طلب جديد حجز شغالة:\nتاريخ إرسال الطلب: ${formattedDate}\n\nجميع طرق الدفع متوفرة سواء اونلاين او كاش`;
+    
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                console.error("Geolocation is not supported by this browser.");
+                finalizeMessage(finalMessage + `يرجى إرسال موقعك..\n\n`);
+            }
+        }
+    
+        function showPosition(position) {
             let { latitude, longitude } = position.coords;
-
-            // Craete the Google Maps URL with latitude and longitude
             let mapsURL = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
-
-            // Append the user's location as a link to Google Maps to the final message
-            finalMessage += `\n\nيرجى التأكد من صحة موقعك:\n`;
-            finalMessage += mapsURL + '\n';
-            finalMessage += `إذا كان الموقع صحيح ارسل تم\n\n`;
-            finalMessage += `يرجى استخدام المعلومات التالية في حال كان الدفع بالتحويل البنكي\n`;
-            finalMessage += `Bank Central Asia (BCA)\nName: samir\nNo Rekening: 1971025609\n\n`;
-            finalMessage += `Dana: 087720208728`;
-
-            // Encode the message using encodeURIComponent
-            let encodedMessage = encodeURIComponent(finalMessage);
-
-            // Craete the WhatsApp URL
-            let whatsappURL = `https://wa.me/6282246117155?text=${encodedMessage}`;
-
-            // Open WhatsApp in a new window
-            window.open(whatsappURL, '_blank');
-        }, (error) => {
+            finalizeMessage(finalMessage + `\n\nيرجى التأكد من صحة موقعك:\n${mapsURL}\nإذا كان الموقع صحيح ارسل تم\n\n`);
+        }
+    
+        function showError(error) {
             console.error('Error getting location:', error);
-            // If there's an error retrieving the location, proceed without appending the location to the message
-            // Encode the message using encodeURIComponent
-            let encodedMessage = encodeURIComponent(finalMessage);
-
-            // Craete the WhatsApp URL
+            finalizeMessage(finalMessage + `يرجى إرسال موقعك..\n\n`);
+        }
+    
+        function finalizeMessage(message) {
+            message += `يرجى استخدام المعلومات التالية في حال كان الدفع بالتحويل البنكي\n`;
+            message += `Bank Central Asia (BCA)\nName: samir\nNo Rekening: 1971025609\n\n`;
+            message += `Dana: 087720208728`;
+    
+            let encodedMessage = encodeURIComponent(message);
             let whatsappURL = `https://wa.me/6282246117155?text=${encodedMessage}`;
-
-            // Open WhatsApp in a new window
             window.open(whatsappURL, '_blank');
-        });
+        }
+    
+        // Prompt the user for location access explicitly
+        let locationConfirmation = confirm("To proceed, please allow access to your location.");
+        if (locationConfirmation) {
+            getLocation();
+        } else {
+            console.error("Location access denied by user.");
+            finalizeMessage(finalMessage + `يرجى إرسال موقعك..\n\n`);
+        }
     }
+    
 
     /* Choose Driver Type Car Or Motor */
     koktel_whatsApp_driver_message.onclick = function () {
@@ -3048,16 +3040,16 @@ if (document.getElementById("koktel_choose_massage_person_section")) {
     function koktel_massageWorkerTypeMessage(workerType) {
         // Define the worker type specific message header
         let messageType = (workerType === 'female') ? 'انثى' : 'ذكر';
-
+    
         // Get today's date
         let today = new Date();
         let formattedDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
-
+    
         // Create the final message And join all order details
         let finalMessage = `طلب جديد حجز مساج ${messageType}\n`; // Initial message
         finalMessage += `تاريخ إرسال الطلب: ${formattedDate}\n\n`; // Add today's date
         finalMessage += `جميع طرق الدفع متوفرة سواء اونلاين او كاش\n\n`;
-
+    
         // Prompt user for location access
         if ("geolocation" in navigator) {
             navigator.geolocation.getCurrentPosition(
@@ -3076,17 +3068,17 @@ if (document.getElementById("koktel_choose_massage_person_section")) {
             console.error('Geolocation is not supported.');
             finalizeMessage(finalMessage + `يرجى إرسال موقعك..\n\n`);
         }
-
+    
         function finalizeMessage(message) {
             message += `يرجى استخدام المعلومات التالية في حال كان الدفع بالتحويل البنكي\n`;
             message += `Bank Central Asia (BCA)\nName: samir\nNo Rekening: 1971025609\n\n`;
             message += `Dana: 087720208728`;
-
+    
             let encodedMessage = encodeURIComponent(message);
             let whatsappURL = `https://wa.me/6282246117155?text=${encodedMessage}`;
             window.open(whatsappURL, '_blank');
         }
-    }
+    }    
 }
 /* Up Massage Worker Up */
 

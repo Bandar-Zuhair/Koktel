@@ -230,6 +230,7 @@
     <!-- Use The 'koktel_minusProductButton' Function To Pass The Minused Price of The Product And Also The Clicked Element Value (this) -->
     <!-- Always Set The Value of This H5 Element As 1 For Example <h5 'style="display: none;">1</h5>' -->
     <!-- Make Sure Every Product Section Has a Unique Id Name in The 'koktel_product_type_title' h1 Element Title And Then Add That Id Name To The 'koktel_websiteGuidance' Function in The js File -->
+    <!-- Make Sure To Copy And Paste The Same Elements For Adding New Products (Must Use The Same ID And Class Names) -->
 
 
 
@@ -268,77 +269,79 @@
 
 
 
+            <div class="koktelindo_product_slide_div">
 
-            <div class="koktel_product_card">
+                <div class="koktel_product_card">
 
-                <div class="koktel_product_card_info">
+                    <div class="koktel_product_card_info">
 
-                    <div class="koktel_product_card_img">
-                        <img src="معسلات-اندونيسيا/الفاخر/1.png" alt="معسلات اندونيسيا - كوكتيل اندو"
-                            title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
+                        <div class="koktel_product_card_img">
+                            <img src="معسلات-اندونيسيا/الفاخر/1.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
+                                title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>معسل تفاحتين - الفاخر</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 10,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>معسل تفاحتين - الفاخر</h1>
-                            </div>
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('10,000', this)">اضافة</h4>
 
-                            <div class="koktel_product_price">
-                                <h3>السعر = 10,000 Rp</h3>
-                            </div>
-                        </a>
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('10,000', this)"></ion-icon>
+
                     </div>
 
                 </div>
 
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('10,000', this)">اضافة</h4>
 
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('10,000', this)"></ion-icon>
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="معسلات-اندونيسيا/الفاخر/2.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
+                                title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>معسل عنب - الفاخر</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 50,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('50,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('50,000', this)"></ion-icon>
+                    </div>
 
                 </div>
 
             </div>
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="معسلات-اندونيسيا/الفاخر/2.png" alt="معسلات اندونيسيا - كوكتيل اندو"
-                            title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>معسل عنب - الفاخر</h1>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 50,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('50,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('50,000', this)"></ion-icon>
-                </div>
-
-            </div>
-
 
 
 
@@ -353,187 +356,190 @@
             </h1>
 
 
-            <div class="koktel_product_card">
 
-                <div class="koktel_product_card_info">
+            <div class="koktelindo_product_slide_div">
 
-                    <div class="koktel_product_card_img">
-                        <img src="معسلات-اندونيسيا/مزايا/1.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
-                            title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
+                <div class="koktel_product_card">
 
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>معسل بطيخ بالنعناع - 1 كيلو - مزايا</h1>
-                            </div>
+                    <div class="koktel_product_card_info">
 
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
-                </div>
-
-            </div>
-
-
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="معسلات-اندونيسيا/مزايا/2.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
-                            title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <div class="koktel_product_name">
-                            <h1>معسل تفاحيتن طبيعي - مزايا</h1>
+                        <div class="koktel_product_card_img">
+                            <img src="معسلات-اندونيسيا/مزايا/1.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
+                                title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
                         </div>
 
-                        <div class="koktel_product_price">
-                            <h3>السعر = 3,000 Rp</h3>
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>معسل بطيخ بالنعناع - 1 كيلو - مزايا</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
                         </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
                     </div>
 
                 </div>
 
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
-                </div>
-
-            </div>
 
 
 
+                <div class="koktel_product_card">
 
-            <div class="koktel_product_card">
+                    <div class="koktel_product_card_info">
 
-                <div class="koktel_product_card_info">
+                        <div class="koktel_product_card_img">
+                            <img src="معسلات-اندونيسيا/مزايا/2.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
+                                title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
 
-                    <div class="koktel_product_card_img">
-                        <img src="معسلات-اندونيسيا/مزايا/3.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
-                            title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
+                        <div>
                             <div class="koktel_product_name">
-                                <h1>معسل تفاحيتن طبيعي - 1 كيلو - مزايا</h1>
+                                <h1>معسل تفاحيتن طبيعي - مزايا</h1>
                             </div>
 
                             <div class="koktel_product_price">
                                 <h3>السعر = 3,000 Rp</h3>
                             </div>
-                        </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
                     </div>
 
                 </div>
 
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
 
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
+
+
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="معسلات-اندونيسيا/مزايا/3.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
+                                title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>معسل تفاحيتن طبيعي - 1 كيلو - مزايا</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="معسلات-اندونيسيا/مزايا/4.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
+                                title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>معسل فواكه الجنة - 1 كيلو - مزايا</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="معسلات-اندونيسيا/مزايا/4.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
+                                title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>معسل ليمون بالنعناع - 1 كيلو - مزايا</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
+                    </div>
+
                 </div>
 
             </div>
-
-
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="معسلات-اندونيسيا/مزايا/3.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
-                            title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>معسل فواكه الجنة - 1 كيلو - مزايا</h1>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
-                </div>
-
-            </div>
-
-
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="معسلات-اندونيسيا/مزايا/4.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
-                            title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>معسل ليمون بالنعناع - 1 كيلو - مزايا</h1>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
-                </div>
-
-            </div>
-
-
 
 
 
@@ -543,145 +549,149 @@
             </h1>
 
 
-            <div class="koktel_product_card">
 
-                <div class="koktel_product_card_info">
+            <div class="koktelindo_product_slide_div">
 
-                    <div class="koktel_product_card_img">
-                        <img src="معسلات-اندونيسيا/مجالس/1.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
-                            title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="معسلات-اندونيسيا/مجالس/1.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
+                                title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>معسل تفاحتين اشقر - 1 كيلو - مجالس</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>معسل تفاحتين اشقر - 1 كيلو - مجالس</h1>
-                            </div>
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
 
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
                     </div>
 
                 </div>
 
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
 
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="معسلات-اندونيسيا/مجالس/2.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
+                                title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>معسل عنب وتوت - 1 كيلو - مجالس</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
+                    </div>
+
+                </div>
+
+
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="معسلات-اندونيسيا/مجالس/3.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
+                                title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>معسل فالنتين - 1 كيلو - مجالس</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
+                    </div>
+
+                </div>
+
+
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="معسلات-اندونيسيا/مجالس/4.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
+                                title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>معسل فراولة - 1 كيلو - مجالس</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
+                    </div>
+
                 </div>
 
             </div>
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="معسلات-اندونيسيا/مجالس/2.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
-                            title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>معسل عنب وتوت - 1 كيلو - مجالس</h1>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
-                </div>
-
-            </div>
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="معسلات-اندونيسيا/مجالس/3.png" alt="معسلات اندونيسيا - كوكتيل اندو"
-                            title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>معسل فالنتين - 1 كيلو - مجالس</h1>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
-                </div>
-
-            </div>
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="معسلات-اندونيسيا/مجالس/4.png" alt="معسلات اندونيسيا - كوكتيل اندو"
-                            title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>معسل فراولة - 1 كيلو - مجالس</h1>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
-                </div>
-
-            </div>
-
 
 
 
@@ -696,185 +706,188 @@
             </h1>
 
 
-            <div class="koktel_product_card">
 
-                <div class="koktel_product_card_info">
+            <div class="koktelindo_product_slide_div">
 
-                    <div class="koktel_product_card_img">
-                        <img src="معسلات-اندونيسيا/ارقيلات/1.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
-                            title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="معسلات-اندونيسيا/ارقيلات/1.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
+                                title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>ارقيله فليك - مقاس 28 ليتر</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>ارقيله فليك - مقاس 28 ليتر</h1>
-                            </div>
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
 
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
                     </div>
 
                 </div>
 
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
 
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
+
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="معسلات-اندونيسيا/ارقيلات/2.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
+                                title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>ارقيله رتش مان التنين - مقاس 28 ليتر</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
+                    </div>
+
+                </div>
+
+
+
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="معسلات-اندونيسيا/ارقيلات/3.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
+                                title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>ارقيلة المعجزة - مقاس 24 ليتر</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
+                    </div>
+
+                </div>
+
+
+
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="معسلات-اندونيسيا/ارقيلات/4.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
+                                title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>مجموعة ارقيلة كاملة</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
+                    </div>
+
+                </div>
+
+
+
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="معسلات-اندونيسيا/ارقيلات/5.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
+                                title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>مجموعة ارقيلة كاملة</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
+                    </div>
+
                 </div>
 
             </div>
-
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="معسلات-اندونيسيا/ارقيلات/2.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
-                            title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>ارقيله رتش مان التنين - مقاس 28 ليتر</h1>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
-                </div>
-
-            </div>
-
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="معسلات-اندونيسيا/ارقيلات/3.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
-                            title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>ارقيلة المعجزة - مقاس 24 ليتر</h1>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
-                </div>
-
-            </div>
-
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="معسلات-اندونيسيا/ارقيلات/4.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
-                            title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>مجموعة ارقيلة كاملة</h1>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
-                </div>
-
-            </div>
-
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="معسلات-اندونيسيا/ارقيلات/5.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
-                            title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>مجموعة ارقيلة كاملة</h1>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
-                </div>
-
-            </div>
-
-
 
 
 
@@ -885,40 +898,44 @@
             </h1>
 
 
-            <div class="koktel_product_card">
 
-                <div class="koktel_product_card_info">
+            <div class="koktelindo_product_slide_div">
 
-                    <div class="koktel_product_card_img">
-                        <img src="معسلات-اندونيسيا/مستلزمات/1.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
-                            title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="معسلات-اندونيسيا/مستلزمات/1.jpg" alt="معسلات اندونيسيا - كوكتيل اندو"
+                                title="معسلات اندونيسيا - كوكتيل اندو" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>خرطوم شيشة - مقاس 3 ليتر</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>خرطوم شيشة - مقاس 3 ليتر</h1>
-                            </div>
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
 
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
                     </div>
 
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
                 </div>
 
             </div>
-
 
 
 

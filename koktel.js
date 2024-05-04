@@ -20,8 +20,8 @@ function koktel_show_full_screen_image(src) {
     fullScreenOverlayExitButton.style.zIndex = '1000'; // Ensure the exit button is above the overlay
 
     // Check if the source is an image or a video
-    const isImage = /\.(gif|jpg|jpeg|tiff|png|svg)$/i.test(src);
-    const isVideo = /\.(mp4|ogg|webm)$/i.test(src);
+    let isImage = /\.(gif|jpg|jpeg|tiff|png|svg)$/i.test(src);
+    let isVideo = /\.(mp4|ogg|webm)$/i.test(src);
 
     if (isImage) {
         /* Create The Big Image Element Based on The 'src' Value */
@@ -168,20 +168,40 @@ function koktel_websiteGuidance(buttonClicked) {
         webGuidanceDiv.classList.add('kokteindo_filter_products_type_div');
 
         webGuidanceText = `
-            <a onclick="koktel_scrollToRestaurantTypeId('kokteindo_main_meal_type')">وجبات سريعة</a>
-            <a onclick="koktel_scrollToRestaurantTypeId('kokteindo_meal_type_arabi_food')">اكلات عربية</a>
-            <a onclick="koktel_scrollToRestaurantTypeId('kokteindo_meal_type_sea_food')">اكلات بحرية</a>
+            <a onclick="koktel_scrollToRestaurantTypeId('kokteindo_special_restaurant_type')">مطاعم مميزة</a>
+            <a onclick="koktel_scrollToRestaurantTypeId('kokteindo_fast_food_restaurant_type')">وجبات سريعة</a>
+            <a onclick="koktel_scrollToRestaurantTypeId('kokteindo_arabic_restaurant_type')">اكلات عربية</a>
+            <a onclick="koktel_scrollToRestaurantTypeId('kokteindo_sea_food_restaurant_type')">اكلات بحرية</a>
         `;
 
-        /* Filter Meal Type */
+        /* Filter Koktel Meal Type */
+    } else if (buttonClicked === 'show koktel meal type page') {
+
+        webGuidanceDiv.classList.add('kokteindo_filter_products_type_div');
+
+        webGuidanceText = `
+            <a onclick="koktel_scrollToMealType('kokteindo_special_meal_type')">مميز</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_combo_meal_type')">وجبات رئيسية عربية</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_kids_meal_type')">شاورما</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_drinks_type')">مشروبات</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_breakfast_meal_type')">فطور</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_coffee_type')">قهوة</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_sweet_meal_type')">حلى</a>
+        `;
+
+        /* Filter KFC Meal Type */
     } else if (buttonClicked === 'show kfc meal type page') {
 
         webGuidanceDiv.classList.add('kokteindo_filter_products_type_div');
 
         webGuidanceText = `
-            <a onclick="koktel_scrollToMealType('kokteindo_meal_type_fast_food')">وجبات رئيسية</a>
-            <a onclick="koktel_scrollToMealType('kokteindo_family_meal_type')">وجبات عائلية</a>
-            <a onclick="koktel_scrollToMealType('kokteindo_chicken_meal_type')">صحون دجاج</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_special_meal_type')">مميز</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_combo_meal_type')">وجبات</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_drinks_type')">مشروبات</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_kids_meal_type')">وجبات الاطفال</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_breakfast_meal_type')">فطور</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_coffee_type')">قهوة</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_sweet_meal_type')">حلى</a>
         `;
 
         /* Filter Supermarket Product Type */
@@ -424,7 +444,7 @@ if (document.getElementById("koktel_meal_info_section")) {
     let koktel_mealInfoOptionsTitle = document.createElement('div');
     koktel_mealInfoOptionsTitle.classList.add('koktel_meal_info_options_title');
     let koktel_mealInfoOptionsTitleH2 = document.createElement('h2');
-    koktel_mealInfoOptionsTitleH2.innerHTML = `<h2>اضافة ملاحظة للتعديل على الطلب <samp style="color: rgb(0, 255, 0);">اختياري</samp></h2>`;
+    koktel_mealInfoOptionsTitleH2.innerHTML = `<h2>اضافة ملاحظة على الطلب <samp style="color: rgb(0, 255, 0);">اختياري</samp></h2>`;
     koktel_mealInfoOptionsTitle.appendChild(koktel_mealInfoOptionsTitleH2);
     koktel_mealInfoOptionsDiv.appendChild(koktel_mealInfoOptionsTitle);
     koktel_meal_info_options_area_id.appendChild(koktel_mealInfoOptionsDiv);
@@ -440,7 +460,7 @@ if (document.getElementById("koktel_meal_info_section")) {
     let koktel_mealInfoOptionsAmountTitle = document.createElement('div');
     koktel_mealInfoOptionsAmountTitle.classList.add('koktel_meal_info_options_amount_title');
     let koktel_mealInfoOptionsAmountTitleH2 = document.createElement('h2');
-    koktel_mealInfoOptionsAmountTitleH2.innerHTML = `<h2>العدد <samp style="color: red;">مطلوب</samp></h2>`;
+    koktel_mealInfoOptionsAmountTitleH2.innerHTML = `<h2>عدد الطلب</h2>`;
     koktel_mealInfoOptionsAmountTitle.appendChild(koktel_mealInfoOptionsAmountTitleH2);
     koktel_meal_info_options_area_id.appendChild(koktel_mealInfoOptionsAmountTitle);
 
@@ -504,6 +524,8 @@ if (document.getElementById("koktel_meal_info_section")) {
         }
     };
 
+
+
     // Function to add or remove numbers
     function koktel_addMoreNumberToPrice(clickedBox, addedNumber) {
         let mealAmountNumberElement = document.getElementById('koktel_amountNumberElement');
@@ -533,7 +555,31 @@ if (document.getElementById("koktel_meal_info_section")) {
 
         // Update the displayed total price
         koktel_totalPriceDiv.innerHTML = `<h6 onclick="koktel_createOrderText()">إضافة الطلب = ${totalCurrentMealPrice.toLocaleString()} Rp (بدون سعر التوصيل)</h6>`;
-    };
+    }
+
+
+    let clickedMinusedNumber = 0;
+
+    /* Make The Old Box Unchecked And Only The New Box Checked */
+    koktel_uncheckOldBox = function (clickedBoxId, minusedNumber) {
+
+        console.log(minusedNumber);
+
+        clickedMinusedNumber = minusedNumber;
+        // Get the parent div of the clicked checkbox
+        let parentDiv = document.getElementById(clickedBoxId).closest('.koktel_meal_info_options_div');
+
+        // Get all checkboxes within the parent div
+        let checkboxes = parentDiv.querySelectorAll('input[type="checkbox"]');
+
+        // Uncheck all checkboxes except for the clicked checkbox
+        checkboxes.forEach(checkbox => {
+            if (checkbox.id !== clickedBoxId) {
+                checkbox.checked = false;
+            }
+        });
+    }
+
 
 
     /* Get The Summry Text of The Order And Save it For Later Use */
@@ -720,22 +766,6 @@ if (document.getElementById("koktel_meal_info_section")) {
 
         }, 800); // Wait for 3 seconds before triggering fade-out
     }
-
-    /* Make The Old Box Unchecked And Only The New Box Checked */
-    koktel_uncheckOldBox = function (clickedBoxId) {
-        // Get the parent div of the clicked checkbox
-        let parentDiv = document.getElementById(clickedBoxId).closest('.koktel_meal_info_options_div');
-
-        // Get all checkboxes within the parent div
-        let checkboxes = parentDiv.querySelectorAll('input[type="checkbox"]');
-
-        // Uncheck all checkboxes except for the clicked checkbox
-        checkboxes.forEach(checkbox => {
-            if (checkbox.id !== clickedBoxId) {
-                checkbox.checked = false;
-            }
-        });
-    };
 }
 
 /* Function To Create Restaurant Order Details Page Content And Final WhatsApp Message */
@@ -798,11 +828,13 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
         });
 
 
-        /* Create The Bill Card Content */
-        let totalPrices = orders.map(order => parseFloat(order.totalCurrentMealPrice.replace(',', '')) + 20000);
-        let totalPriceSum = totalPrices.reduce((acc, price) => acc + price, 0);
-        let totalPriceSumFormatted = totalPriceSum.toLocaleString();
+        /* Calculate total price and tax amount */
+        let totalPriceSum = orders.reduce((acc, order) => acc + parseFloat(order.totalCurrentMealPrice.replace(',', '')), 0);
+        let taxAmount = totalPriceSum * 0.1;
+        let deliveryCharge = orders.length * 20000;
+        let totalPriceWithDelivery = totalPriceSum + taxAmount + deliveryCharge;
 
+        /* Create The Bill Card Content */
         let koktel_order_check_out_whatsApp_content = `
             <div id="koktel_order_check_out_whatsApp_div" onclick="koktel_createFinalWhatsAppMessage()">
                 <ion-icon name="logo-whatsapp"></ion-icon>
@@ -810,8 +842,10 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
             </div>
             <div id="koktel_order_check_out_bill_div">
                 <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
-                ${orders.map((order, index) => `<h6>الطلب رقم ${index + 1} : ${(parseFloat(order.totalCurrentMealPrice.replace(',', '')) + 20000).toLocaleString()} Rp</h6>`).join('')}
-                <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي مع التوصيل : ${totalPriceSumFormatted} Rp</h6>
+                ${orders.map((order, index) => `<h6>الطلب رقم ${index + 1} : ${order.totalCurrentMealPrice} Rp</h6>`).join('')}
+                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة: ${taxAmount.toLocaleString()} Rp</h6>
+                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل: ${deliveryCharge.toLocaleString()} Rp</h6>
+                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${totalPriceWithDelivery.toLocaleString()} Rp</h6>
             </div>
         `;
 
@@ -1055,11 +1089,13 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
 
             })
 
-            /* Create The Bill Card Content */
-            let totalPrices = orders.map(order => parseFloat(order.totalCurrentMealPrice.replace(',', '')) + 20000);
-            let totalPriceSum = totalPrices.reduce((acc, price) => acc + price, 0);
-            let totalPriceSumFormatted = totalPriceSum.toLocaleString();
+            /* Calculate total price and tax amount */
+            let totalPriceSum = orders.reduce((acc, order) => acc + parseFloat(order.totalCurrentMealPrice.replace(',', '')), 0);
+            let taxAmount = totalPriceSum * 0.1;
+            let deliveryCharge = orders.length * 20000;
+            let totalPriceWithDelivery = totalPriceSum + taxAmount + deliveryCharge;
 
+            /* Create The Bill Card Content */
             let koktel_order_check_out_whatsApp_content = `
                 <div id="koktel_order_check_out_whatsApp_div" onclick="koktel_createFinalWhatsAppMessage()">
                     <ion-icon name="logo-whatsapp"></ion-icon>
@@ -1067,10 +1103,13 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
                 </div>
                 <div id="koktel_order_check_out_bill_div">
                     <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
-                    ${orders.map((order, index) => `<h6>الطلب رقم ${index + 1} : ${(parseFloat(order.totalCurrentMealPrice.replace(',', '')) + 20000).toLocaleString()} Rp</h6>`).join('')}
-                    <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي مع التوصيل : ${totalPriceSumFormatted} Rp</h6>
+                    ${orders.map((order, index) => `<h6>الطلب رقم ${index + 1} : ${order.totalCurrentMealPrice} Rp</h6>`).join('')}
+                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : ${deliveryCharge.toLocaleString()} Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${totalPriceWithDelivery.toLocaleString()} Rp</h6>
                 </div>
             `;
+
 
             /* Show The Following Code if There is Any Data in The restaurant_orders Key */
             document.getElementById('koktel_order_check_out_div').innerHTML = koktel_order_check_out_whatsApp_content;
@@ -1089,7 +1128,6 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
 
     // Function to show order details
     function koktel_show_order_details_page(orderIndexNumber) {
-
         // Retrieve orders from localStorage
         let orders = JSON.parse(localStorage.getItem('restaurant_orders'));
         if (!orders) return; // Exit if there are no orders
@@ -1104,20 +1142,20 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
         // Create order details HTML content
         let orderDetailsContent = `
             <div id="koktel_order_details_text_img">
-                <img src=${order.mealImgSrc} alt="مطاعم اندونيسيا - كوكتيل" title="مطاعم اندونيسيا - كوكتيل" id="koktel_weblogo" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
+                <img src=${order.mealImgSrc} alt="مطاعم اندونيسيا - كوكتيل" title="مطاعم اندونيسيا - كوكتيل" id="koktel_web_logo_no_moving" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
             </div>
             <div>
                 <h1 class="koktel_order_details_title">تفاصيل الطلب رقم ${orderIndexNumber + 1}</h1>
             </div>
             <div id="koktel_order_details_text_background" style="background: linear-gradient(to right, rgb(0, 123, 255), rgb(0, 79, 163));">
-                <h4>الاسم: ${order.mealName}</h4>
-                <h4>الوصف: ${order.mealDetails}</h4>
-                <h4>الطلب:</h4>
-                ${order.orderText.split('\n').map(line => `<h4>${line}</h4>`).join('')}
-                <h4>${order.noteText}</h4>
-                <h4>عدد الطلب: ${order.mealAmountNumber}</h4>
-                <h4>سعر التوصيل = 20,000 Rp</h4>
-                <h4>سعر الطلب = ${order.totalCurrentMealPrice} (بدون سعر التوصيل)</h4>
+                <h4 style="color: rgb(255, 166, 0);">الاسم: ${order.mealName}</h4>
+                <h4 style="color: rgb(255, 166, 0);">الوصف: ${order.mealDetails}</h4>
+                ${order.orderText ? '<h4>الطلب:</h4>' : ''}
+                ${order.orderText ? order.orderText.split('\n').map(line => `<h4>${line}</h4>`).join('') : ''}
+                ${order.noteText ? `<h4>الملاحظة: ${order.noteText}</h4>` : ''}
+                <h4 style="color: rgb(255, 166, 0);">عدد الطلب: ${order.mealAmountNumber}</h4>
+                <h4 style="color: rgb(0, 255, 0);">سعر التوصيل = 20,000 Rp</h4>
+                <h4 style="color: rgb(0, 255, 0);">سعر الطلب = ${order.totalCurrentMealPrice} (بدون سعر التوصيل)</h4>
             </div>
             <div id="koktel_order_details_text_bottom_button_div" style="background: linear-gradient(to right, rgb(132, 0, 255), rgb(60, 0, 117));">
                 <h5 onclick="koktel_hide_order_details_page()">عودة</h5>
@@ -1138,11 +1176,11 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
         // Hide the order list container
         document.getElementById('koktel_order_details_div_id').style.display = 'none';
 
-
         // Append The Following Elements To Each Other
         orderDetailsContainer.innerHTML = orderDetailsContent;
         document.getElementById('koktel_restaurant_order_details_body_id').appendChild(orderDetailsContainer);
     }
+
 
     // Function to hide order details
     function koktel_hide_order_details_page() {
@@ -1587,10 +1625,6 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
                 <h4 id='koktel_delete_all_restaurant_orders_button' onclick='koktel_ensure_delete_orders_box(this)' style="display: none;">حذف جميع الطلبات</h4>
             </div>
 
-            <div>
-                <h4 class="koktel_orders_static_price_h4" id="koktel_orders_static_price_h4_id" style="display: none;">التوصيل = 20,000 Rp</h4>
-            </div>
-
             <div class="koktel_meal_info_note" id="koktel_meal_info_note_id" style="margin-top: 5px; display: none;">
                 <textarea placeholder="ملاحظاتك للسوبرماركت هنا" class="koktel_meal_info_note_textarea" maxlength="100"></textarea>
             </div>
@@ -1671,8 +1705,17 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
 
         });
 
-        // Calculate total price
-        let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0) + 20000;
+        /// Calculate total price sum of all products
+        let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0);
+
+        // Calculate tax amount based on the total price sum
+        let taxAmount = totalPriceSum * 0.1;
+
+        // Add tax amount to the total price sum
+        let totalPriceWithTax = totalPriceSum + taxAmount;
+
+        // Add delivery charge to the total price with tax
+        let totalPriceWithDelivery = totalPriceWithTax + 20000;
 
         let koktel_order_check_out_whatsApp_content = `
             <div id="koktel_order_check_out_whatsApp_div" onclick="koktel_createFinalWhatsAppMessage()">
@@ -1681,8 +1724,10 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
             </div>
             <div id="koktel_order_check_out_bill_div">
                 <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
-                ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1}: ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
-                <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي مع التوصيل : ${totalPriceSum.toLocaleString()} Rp</h6>
+                ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
+                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
+                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : 20,000 Rp</h6>
+                <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${totalPriceWithDelivery.toLocaleString()} Rp</h6>
             </div>
         `;
 
@@ -1690,7 +1735,6 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
         /* Show The Following Code if There is Any Data in The restaurant_orders Key */
         document.getElementById('koktel_order_check_out_div').innerHTML = koktel_order_check_out_whatsApp_content;
         document.getElementById('koktel_order_check_out_div').style.display = 'flex';
-        document.getElementById('koktel_orders_static_price_h4_id').style.display = 'block';
         document.getElementById('koktel_delete_all_restaurant_orders_button').style.display = 'block';
         document.getElementById('koktel_meal_info_note_id').style.display = 'block';
         document.getElementById('koktel_order_check_out_div').style.display = 'flex';
@@ -1938,8 +1982,17 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
             });
 
 
-            // Calculate total price Adding 20,000 To The Resuilt of All Products Price
-            let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0) + 20000;
+            /// Calculate total price sum of all products
+            let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0);
+
+            // Calculate tax amount based on the total price sum
+            let taxAmount = totalPriceSum * 0.1;
+
+            // Add tax amount to the total price sum
+            let totalPriceWithTax = totalPriceSum + taxAmount;
+
+            // Add delivery charge to the total price with tax
+            let totalPriceWithDelivery = totalPriceWithTax + 20000;
 
             let koktel_order_check_out_whatsApp_content = `
                 <div id="koktel_order_check_out_whatsApp_div" onclick="koktel_createFinalWhatsAppMessage()">
@@ -1949,9 +2002,12 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
                 <div id="koktel_order_check_out_bill_div">
                     <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
                     ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
-                    <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي مع التوصيل : ${totalPriceSum.toLocaleString()} Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : 20,000 Rp</h6>
+                    <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${totalPriceWithDelivery.toLocaleString()} Rp</h6>
                 </div>
             `;
+
 
             /* Show The Following Code if There is Any Data in The restaurant_orders Key */
             document.getElementById('koktel_order_check_out_div').innerHTML = koktel_order_check_out_whatsApp_content;
@@ -1961,7 +2017,6 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
 
             /* Hide The TextArea Element If There is No Any supermarket_orders Data */
             document.getElementById('koktel_meal_info_note_id').style.display = 'none';
-            document.getElementById('koktel_orders_static_price_h4_id').style.display = 'none';
         }
     }
 
@@ -2320,11 +2375,6 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
                 <h4 id='koktel_delete_all_restaurant_orders_button' onclick='koktel_ensure_delete_orders_box(this)' style="display: none;">حذف جميع الطلبات</h4>
             </div>
 
-            <div>
-                <h4 class="koktel_orders_static_price_h4" id="koktel_orders_static_price_h4_id" style="display: none;">التوصيل = 20,000 Rp</h4>
-            </div>
-
-
             <div class="koktel_meal_info_note" id="koktel_meal_info_note_id" style="margin-top: 5px; display: none;">
                 <textarea placeholder="ملاحظاتك للمخبوزات هنا" class="koktel_meal_info_note_textarea" maxlength="100"></textarea>
             </div>
@@ -2400,8 +2450,17 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
 
         });
 
-        // Calculate total price
-        let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0) + 20000;
+        /// Calculate total price sum of all products
+        let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0);
+
+        // Calculate tax amount based on the total price sum
+        let taxAmount = totalPriceSum * 0.1;
+
+        // Add tax amount to the total price sum
+        let totalPriceWithTax = totalPriceSum + taxAmount;
+
+        // Add delivery charge to the total price with tax
+        let totalPriceWithDelivery = totalPriceWithTax + 20000;
 
         let koktel_order_check_out_whatsApp_content = `
             <div id="koktel_order_check_out_whatsApp_div" onclick="koktel_createFinalWhatsAppMessage()">
@@ -2411,7 +2470,9 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
             <div id="koktel_order_check_out_bill_div">
                 <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
                 ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
-                <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي مع التوصيل : ${totalPriceSum.toLocaleString()} Rp</h6>
+                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
+                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : 20,000 Rp</h6>
+                <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${totalPriceWithDelivery.toLocaleString()} Rp</h6>
             </div>
         `;
 
@@ -2419,7 +2480,6 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
         document.getElementById('koktel_order_check_out_div').innerHTML = koktel_order_check_out_whatsApp_content;
         document.getElementById('koktel_order_check_out_div').style.display = 'flex';
         document.getElementById('koktel_delete_all_restaurant_orders_button').style.display = 'block';
-        document.getElementById('koktel_orders_static_price_h4_id').style.display = 'block';
         document.getElementById('koktel_meal_info_note_id').style.display = 'block';
         document.getElementById('koktel_order_check_out_div').style.display = 'flex';
 
@@ -2665,8 +2725,17 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
             });
 
 
-            // Calculate total price Adding 20,000 To The Resuilt of All Products Price
-            let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0) + 20000;
+            /// Calculate total price sum of all products
+            let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0);
+
+            // Calculate tax amount based on the total price sum
+            let taxAmount = totalPriceSum * 0.1;
+
+            // Add tax amount to the total price sum
+            let totalPriceWithTax = totalPriceSum + taxAmount;
+
+            // Add delivery charge to the total price with tax
+            let totalPriceWithDelivery = totalPriceWithTax + 20000;
 
             let koktel_order_check_out_whatsApp_content = `
                 <div id="koktel_order_check_out_whatsApp_div" onclick="koktel_createFinalWhatsAppMessage()">
@@ -2676,7 +2745,9 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
                 <div id="koktel_order_check_out_bill_div">
                     <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
                     ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
-                    <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي مع التوصيل : ${totalPriceSum.toLocaleString()} Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : 20,000 Rp</h6>
+                    <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${totalPriceWithDelivery.toLocaleString()} Rp</h6>
                 </div>
             `;
 
@@ -2687,7 +2758,6 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
 
             /* Hide The TextArea Element If There is No Any 'bread_orders' Data */
             document.getElementById('koktel_meal_info_note_id').style.display = 'none';
-            document.getElementById('koktel_orders_static_price_h4_id').style.display = 'none';
         }
     }
 
@@ -3236,11 +3306,6 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
                 <h4 id='koktel_delete_all_restaurant_orders_button' onclick='koktel_ensure_delete_orders_box(this)' style="display: none;">حذف جميع الطلبات</h4>
             </div>
 
-            <div>
-                <h4 class="koktel_orders_static_price_h4" id="koktel_orders_static_price_h4_id" style="display: none;">التوصيل = 20,000 Rp</h4>
-            </div>
-
-
             <div class="koktel_meal_info_note" id="koktel_meal_info_note_id" style="margin-top: 5px; display: none;">
                 <textarea placeholder="ملاحظاتك للسوبرماركت هنا" class="koktel_meal_info_note_textarea" maxlength="100"></textarea>
             </div>
@@ -3316,8 +3381,17 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
 
         });
 
-        // Calculate total price
-        let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0) + 20000;
+        /// Calculate total price sum of all products
+        let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0);
+
+        // Calculate tax amount based on the total price sum
+        let taxAmount = totalPriceSum * 0.1;
+
+        // Add tax amount to the total price sum
+        let totalPriceWithTax = totalPriceSum + taxAmount;
+
+        // Add delivery charge to the total price with tax
+        let totalPriceWithDelivery = totalPriceWithTax + 20000;
 
         let koktel_order_check_out_whatsApp_content = `
             <div id="koktel_order_check_out_whatsApp_div" onclick="koktel_createFinalWhatsAppMessage()">
@@ -3327,7 +3401,9 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
             <div id="koktel_order_check_out_bill_div">
                 <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
                 ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
-                <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي مع التوصيل : ${totalPriceSum.toLocaleString()} Rp</h6>
+                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
+                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : 20,000 Rp</h6>
+                <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${totalPriceWithDelivery.toLocaleString()} Rp</h6>
             </div>
         `;
 
@@ -3335,7 +3411,6 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
         document.getElementById('koktel_order_check_out_div').innerHTML = koktel_order_check_out_whatsApp_content;
         document.getElementById('koktel_order_check_out_div').style.display = 'flex';
         document.getElementById('koktel_delete_all_restaurant_orders_button').style.display = 'block';
-        document.getElementById('koktel_orders_static_price_h4_id').style.display = 'block';
         document.getElementById('koktel_meal_info_note_id').style.display = 'block';
         document.getElementById('koktel_order_check_out_div').style.display = 'flex';
 
@@ -3581,8 +3656,17 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
             });
 
 
-            // Calculate total price Adding 20,000 To The Resuilt of All Products Price
-            let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0) + 20000;
+            /// Calculate total price sum of all products
+            let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0);
+
+            // Calculate tax amount based on the total price sum
+            let taxAmount = totalPriceSum * 0.1;
+
+            // Add tax amount to the total price sum
+            let totalPriceWithTax = totalPriceSum + taxAmount;
+
+            // Add delivery charge to the total price with tax
+            let totalPriceWithDelivery = totalPriceWithTax + 20000;
 
             let koktel_order_check_out_whatsApp_content = `
                 <div id="koktel_order_check_out_whatsApp_div" onclick="koktel_createFinalWhatsAppMessage()">
@@ -3592,7 +3676,9 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
                 <div id="koktel_order_check_out_bill_div">
                     <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
                     ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
-                    <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي مع التوصيل : ${totalPriceSum.toLocaleString()} Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : 20,000 Rp</h6>
+                    <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${totalPriceWithDelivery.toLocaleString()} Rp</h6>
                 </div>
             `;
 
@@ -3603,7 +3689,6 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
 
             /* Hide The TextArea Element If There is No Any 'pharmacy_orders' Data */
             document.getElementById('koktel_meal_info_note_id').style.display = 'none';
-            document.getElementById('koktel_orders_static_price_h4_id').style.display = 'none';
         }
     }
 
@@ -3970,11 +4055,6 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
                 <h4 id='koktel_delete_all_restaurant_orders_button' onclick='koktel_ensure_delete_orders_box(this)' style="display: none;">حذف جميع الطلبات</h4>
             </div>
 
-            <div>
-                <h4 class="koktel_orders_static_price_h4" id="koktel_orders_static_price_h4_id" style="display: none;">التوصيل = 20,000 Rp</h4>
-            </div>
-
-
             <div class="koktel_meal_info_note" id="koktel_meal_info_note_id" style="margin-top: 5px; display: none;">
                 <textarea placeholder="ملاحظاتك للمعسلات هنا" class="koktel_meal_info_note_textarea" maxlength="100"></textarea>
             </div>
@@ -4050,8 +4130,17 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
 
         });
 
-        // Calculate total price
-        let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0) + 20000;
+        /// Calculate total price sum of all products
+        let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0);
+
+        // Calculate tax amount based on the total price sum
+        let taxAmount = totalPriceSum * 0.1;
+
+        // Add tax amount to the total price sum
+        let totalPriceWithTax = totalPriceSum + taxAmount;
+
+        // Add delivery charge to the total price with tax
+        let totalPriceWithDelivery = totalPriceWithTax + 20000;
 
         let koktel_order_check_out_whatsApp_content = `
             <div id="koktel_order_check_out_whatsApp_div" onclick="koktel_createFinalWhatsAppMessage()">
@@ -4061,7 +4150,9 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
             <div id="koktel_order_check_out_bill_div">
                 <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
                 ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
-                <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي مع التوصيل : ${totalPriceSum.toLocaleString()} Rp</h6>
+                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
+                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : 20,000 Rp</h6>
+                <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${totalPriceWithDelivery.toLocaleString()} Rp</h6>
             </div>
         `;
 
@@ -4069,7 +4160,6 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
         document.getElementById('koktel_order_check_out_div').innerHTML = koktel_order_check_out_whatsApp_content;
         document.getElementById('koktel_order_check_out_div').style.display = 'flex';
         document.getElementById('koktel_delete_all_restaurant_orders_button').style.display = 'block';
-        document.getElementById('koktel_orders_static_price_h4_id').style.display = 'block';
         document.getElementById('koktel_meal_info_note_id').style.display = 'block';
         document.getElementById('koktel_order_check_out_div').style.display = 'flex';
 
@@ -4315,8 +4405,17 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
             });
 
 
-            // Calculate total price Adding 20,000 To The Resuilt of All Products Price
-            let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0) + 20000;
+            /// Calculate total price sum of all products
+            let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0);
+
+            // Calculate tax amount based on the total price sum
+            let taxAmount = totalPriceSum * 0.1;
+
+            // Add tax amount to the total price sum
+            let totalPriceWithTax = totalPriceSum + taxAmount;
+
+            // Add delivery charge to the total price with tax
+            let totalPriceWithDelivery = totalPriceWithTax + 20000;
 
             let koktel_order_check_out_whatsApp_content = `
                 <div id="koktel_order_check_out_whatsApp_div" onclick="koktel_createFinalWhatsAppMessage()">
@@ -4326,7 +4425,9 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
                 <div id="koktel_order_check_out_bill_div">
                     <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
                     ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
-                    <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي مع التوصيل : ${totalPriceSum.toLocaleString()} Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : 20,000 Rp</h6>
+                    <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${totalPriceWithDelivery.toLocaleString()} Rp</h6>
                 </div>
             `;
 
@@ -4337,7 +4438,6 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
 
             /* Hide The TextArea Element If There is No Any 'shisha_orders' Data */
             document.getElementById('koktel_meal_info_note_id').style.display = 'none';
-            document.getElementById('koktel_orders_static_price_h4_id').style.display = 'none';
         }
     }
 
@@ -4583,6 +4683,46 @@ if (document.getElementById("koktel_nav")) {
         }
     });
 }
+
+
+
+
+
+/* Function To Scroll Products Horizontally */
+// Check if there are any elements with the class name 'koktelindo_product_slide_div'
+let productSlideDivs = document.querySelectorAll('.koktelindo_product_slide_div');
+if (productSlideDivs.length > 0) {
+    productSlideDivs.forEach(function (productSlideDiv) {
+        let isDragging = false;
+        let startX;
+        let scrollLeft;
+
+        productSlideDiv.addEventListener('mousedown', function (event) {
+            isDragging = true;
+            startX = event.pageX - productSlideDiv.offsetLeft;
+            scrollLeft = productSlideDiv.scrollLeft;
+            event.preventDefault(); // Prevent default click behavior
+        });
+
+        productSlideDiv.addEventListener('mouseleave', function () {
+            isDragging = false;
+        });
+
+        productSlideDiv.addEventListener('mouseup', function () {
+            isDragging = false;
+        });
+
+        productSlideDiv.addEventListener('mousemove', function (event) {
+            if (!isDragging) return;
+            event.preventDefault(); // Prevent default click behavior
+            const x = event.pageX - productSlideDiv.offsetLeft;
+            const walk = (x - startX) * 1; // Adjust scrolling speed
+
+            productSlideDiv.scrollLeft = scrollLeft - walk;
+        });
+    });
+}
+
 
 
 

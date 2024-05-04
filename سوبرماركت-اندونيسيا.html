@@ -158,6 +158,9 @@
 
 
 
+
+
+
 <body id="koktel_body">
     <!-- Header Section -->
     <header id="koktel_header">
@@ -227,6 +230,7 @@
     <!-- Use The 'koktel_minusProductButton' Function To Pass The Minused Price of The Product And Also The Clicked Element Value (this) -->
     <!-- Always Set The Value of This H5 Element As 1 For Example <h5 'style="display: none;">1</h5>' -->
     <!-- Make Sure Every Product Section Has a Unique Id Name in The 'koktel_product_type_title' h1 Element Title And Then Add That Id Name To The 'koktel_websiteGuidance' Function in The js File -->
+    <!-- Make Sure To Copy And Paste The Same Elements For Adding New Products (Must Use The Same ID And Class Names) -->
 
 
 
@@ -262,235 +266,245 @@
 
 
 
+            <div class="koktelindo_product_slide_div">
 
-            <div class="koktel_product_card">
 
-                <div class="koktel_product_card_info">
 
-                    <div class="koktel_product_card_img">
-                        <img src="سوبرماركت-اندونيسيا/زيت/1.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
-                            title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="سوبرماركت-اندونيسيا/زيت/1.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
+                                title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>زيت Sania الحجم الصغير</h1>
+                                    <h2>1 ليتر</h2>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 10,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>زيت Sania الحجم الصغير</h1>
-                                <h2>1 ليتر</h2>
-                            </div>
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('10,000', this)">اضافة</h4>
 
-                            <div class="koktel_product_price">
-                                <h3>السعر = 10,000 Rp</h3>
-                            </div>
-                        </a>
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('10,000', this)"></ion-icon>
+
                     </div>
 
                 </div>
 
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('10,000', this)">اضافة</h4>
 
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('10,000', this)"></ion-icon>
+
+
+
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="سوبرماركت-اندونيسيا/زيت/2.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
+                                title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>زيت Bimoil الحجم المتوسط</h1>
+                                    <h2>1 ليتر</h2>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 50,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('50,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('50,000', this)"></ion-icon>
+                    </div>
 
                 </div>
+
+
+
+
+
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="سوبرماركت-اندونيسيا/زيت/3.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
+                                title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>زيت SunCo الحجم الكبير</h1>
+                                    <h2>2 ليتر</h2>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 100,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('100,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('100,000', this)"></ion-icon>
+                    </div>
+
+                </div>
+
+
+
+
+
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="سوبرماركت-اندونيسيا/زيت/4.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
+                                title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>زيت FORTUNE الحجم الكبير</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 100,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('100,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('100,000', this)"></ion-icon>
+                    </div>
+
+                </div>
+
+
+
+
+
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="سوبرماركت-اندونيسيا/زيت/5.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
+                                title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>زيت FILMA الحجم الكبير</h1>
+                                    <h2>2 ليتر</h2>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 100,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('100,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('100,000', this)"></ion-icon>
+                    </div>
+
+                </div>
+
+
+
+
+
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="سوبرماركت-اندونيسيا/زيت/6.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
+                                title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>زيت TROPICAL الحجم المتوسط</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 100,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('100,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('100,000', this)"></ion-icon>
+                    </div>
+
+                </div>
+
 
             </div>
 
 
 
 
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="سوبرماركت-اندونيسيا/زيت/2.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
-                            title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>زيت Bimoil الحجم المتوسط</h1>
-                                <h2>1 ليتر</h2>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 50,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('50,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('50,000', this)"></ion-icon>
-                </div>
-
-            </div>
-
-
-
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="سوبرماركت-اندونيسيا/زيت/3.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
-                            title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>زيت SunCo الحجم الكبير</h1>
-                                <h2>2 ليتر</h2>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 100,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('100,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('100,000', this)"></ion-icon>
-                </div>
-
-            </div>
-
-
-
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="سوبرماركت-اندونيسيا/زيت/4.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
-                            title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>زيت FORTUNE الحجم الكبير</h1>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 100,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('100,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('100,000', this)"></ion-icon>
-                </div>
-
-            </div>
-
-
-
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="سوبرماركت-اندونيسيا/زيت/5.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
-                            title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>زيت FILMA الحجم الكبير</h1>
-                                <h2>2 ليتر</h2>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 100,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('100,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('100,000', this)"></ion-icon>
-                </div>
-
-            </div>
-
-
-
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="سوبرماركت-اندونيسيا/زيت/6.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
-                            title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>زيت TROPICAL الحجم المتوسط</h1>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 100,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('100,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('100,000', this)"></ion-icon>
-                </div>
-
-            </div>
 
 
 
@@ -498,148 +512,155 @@
 
 
             <h1 title="سوبرماركت اندونيسيا - كوكتيل" class="koktel_product_type_title"
-                id="kokteindo_indomie_product_section">اندومي<ion-icon name="arrow-down-circle-outline"></ion-icon></h1>
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="سوبرماركت-اندونيسيا/اندومي/1.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
-                            title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>اندومي بالبيض</h1>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
-                </div>
-
-            </div>
+                id="kokteindo_indomie_product_section">اندومي<ion-icon name="arrow-down-circle-outline"></ion-icon>
+            </h1>
 
 
 
+            <div class="koktelindo_product_slide_div">
 
-            <div class="koktel_product_card">
 
-                <div class="koktel_product_card_info">
+                <div class="koktel_product_card">
 
-                    <div class="koktel_product_card_img">
-                        <img src="سوبرماركت-اندونيسيا/اندومي/2.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
-                            title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
+                    <div class="koktel_product_card_info">
 
-                    <div>
-                        <div class="koktel_product_name">
-                            <h1>اندومي بالزنجبيل</h1>
+                        <div class="koktel_product_card_img">
+                            <img src="سوبرماركت-اندونيسيا/اندومي/1.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
+                                title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
                         </div>
 
-                        <div class="koktel_product_price">
-                            <h3>السعر = 3,000 Rp</h3>
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>اندومي بالبيض</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
                         </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
                     </div>
 
                 </div>
 
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
-                </div>
-
-            </div>
 
 
 
+                <div class="koktel_product_card">
 
-            <div class="koktel_product_card">
+                    <div class="koktel_product_card_info">
 
-                <div class="koktel_product_card_info">
+                        <div class="koktel_product_card_img">
+                            <img src="سوبرماركت-اندونيسيا/اندومي/2.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
+                                title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
 
-                    <div class="koktel_product_card_img">
-                        <img src="سوبرماركت-اندونيسيا/اندومي/3.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
-                            title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
+                        <div>
                             <div class="koktel_product_name">
-                                <h1>اندومي بالخضار</h1>
+                                <h1>اندومي بالزنجبيل</h1>
                             </div>
 
                             <div class="koktel_product_price">
                                 <h3>السعر = 3,000 Rp</h3>
                             </div>
-                        </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
                     </div>
 
                 </div>
 
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
-                </div>
-
-            </div>
 
 
 
+                <div class="koktel_product_card">
 
-            <div class="koktel_product_card">
+                    <div class="koktel_product_card_info">
 
-                <div class="koktel_product_card_info">
+                        <div class="koktel_product_card_img">
+                            <img src="سوبرماركت-اندونيسيا/اندومي/3.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
+                                title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
 
-                    <div class="koktel_product_card_img">
-                        <img src="سوبرماركت-اندونيسيا/اندومي/4.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
-                            title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>اندومي بالخضار</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>اندومي بالليمون</h1>
-                            </div>
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
 
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
                     </div>
 
                 </div>
 
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
 
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
+
+
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="سوبرماركت-اندونيسيا/اندومي/4.jpg" alt="سوبرماركت اندونيسيا - كوكتيل"
+                                title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>اندومي بالليمون</h1>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
+                    </div>
+
                 </div>
 
             </div>

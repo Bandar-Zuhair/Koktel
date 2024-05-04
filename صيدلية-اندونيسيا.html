@@ -229,6 +229,7 @@
     <!-- Use The 'koktel_minusProductButton' Function To Pass The Minused Price of The Product And Also The Clicked Element Value (this) -->
     <!-- Always Set The Value of This H5 Element As 1 For Example <h5 'style="display: none;">1</h5>' -->
     <!-- Make Sure Every Product Section Has a Unique Id Name in The 'koktel_product_type_title' h1 Element Title And Then Add That Id Name To The 'koktel_websiteGuidance' Function in The js File -->
+    <!-- Make Sure To Copy And Paste The Same Elements For Adding New Products (Must Use The Same ID And Class Names) -->
 
 
 
@@ -265,39 +266,41 @@
             </h1>
 
 
+            <div class="koktelindo_product_slide_div">
 
+                <div class="koktel_product_card">
 
-            <div class="koktel_product_card">
+                    <div class="koktel_product_card_info">
 
-                <div class="koktel_product_card_info">
+                        <div class="koktel_product_card_img">
+                            <img src="صيدلية-اندونيسيا/صداع-الرأس/1.jpg" alt="صيدلية اندونيسيا - كوكتيل"
+                                title="صيدلية اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
 
-                    <div class="koktel_product_card_img">
-                        <img src="صيدلية-اندونيسيا/صداع-الرأس/1.jpg" alt="صيدلية اندونيسيا - كوكتيل"
-                            title="صيدلية اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>بنادول Panadol Extra Paracetamol</h1>
+                                    <h2>Extra Paracetamol</h2>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 13,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>بنادول Panadol</h1>
-                                <h2>Extra Paracetamol</h2>
-                            </div>
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('13,000', this)">اضافة</h4>
 
-                            <div class="koktel_product_price">
-                                <h3>السعر = 13,000 Rp</h3>
-                            </div>
-                        </a>
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('13,000', this)"></ion-icon>
+
                     </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('13,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('13,000', this)"></ion-icon>
 
                 </div>
 
@@ -312,41 +315,47 @@
                     name="arrow-down-circle-outline"></ion-icon></h1>
 
 
-            <div class="koktel_product_card">
+            <div class="koktelindo_product_slide_div">
 
-                <div class="koktel_product_card_info">
+                <div class="koktel_product_card">
 
-                    <div class="koktel_product_card_img">
-                        <img src="صيدلية-اندونيسيا/ألم-البطن/1.jpg" alt="صيدلية اندونيسيا - كوكتيل"
-                            title="صيدلية اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="صيدلية-اندونيسيا/ألم-البطن/1.jpg" alt="صيدلية اندونيسيا - كوكتيل"
+                                title="صيدلية اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>TOLAK ANGIN 15 ml</h1>
+                                    <h2>دواء عشبي موحد يحتوي على مزيج من الاعشاب الطبيعية المختلفية التي يمكن استخدامها
+                                        للمساعدة في الحفاظ على جهاز المناعة في الجسم او الحفاظ عليه ونخفيف اعراض نزلات
+                                        البرد
+                                    </h2>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>فكس شراب</h1>
-                                <h2>TOLAK ANGIN 15 ml</h2>
-                            </div>
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
 
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
                     </div>
 
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
                 </div>
 
             </div>
-
 
 
 
@@ -358,41 +367,44 @@
             </h1>
 
 
-            <div class="koktel_product_card">
+            <div class="koktelindo_product_slide_div">
 
-                <div class="koktel_product_card_info">
+                <div class="koktel_product_card">
 
-                    <div class="koktel_product_card_img">
-                        <img src="صيدلية-اندونيسيا/ألم-الحلق/1.jpg" alt="صيدلية اندونيسيا - كوكتيل"
-                            title="صيدلية اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="صيدلية-اندونيسيا/ألم-الحلق/1.jpg" alt="صيدلية اندونيسيا - كوكتيل"
+                                title="صيدلية اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>اعشاب اندونيسية شراب</h1>
+                                    <h2>ENTROSTOP ANAK 10 ml</h2>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>اعشاب اندونيسية شراب</h1>
-                                <h2>ENTROSTOP ANAK 10 ml</h2>
-                            </div>
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
 
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
                     </div>
 
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
                 </div>
 
             </div>
-
 
 
 

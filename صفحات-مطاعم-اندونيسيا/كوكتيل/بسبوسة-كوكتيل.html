@@ -95,6 +95,8 @@
     <!-- required_div_ id Name is Only For Required Options -->
     <!-- required_div_ id is Palced At Elements With The 'koktel_meal_info_options_div' Class Name -->
     <!-- required_div_ id Names Must Start From 1 And Be in A Pattern 'required_div_1' , 'required_div_2' , 'required_div_3' And So On -->
+    <!-- Focus on The Input Id Name With It's Label For Value And Make Them Match Each Other 'check_box_id_1' , 'check_box_id_2' , 'check_box_id_3' And So On -->
+    <!-- koktel_uncheckOldBox And koktel_addMoreNumberToPrice Functions Must Have 2 Passed Values ( clickedBoxId, AnyNumber ) -->
     <!-- Use The Same Id And Class Names For Most Elements (CSS Purposes) -->
 
 
@@ -124,32 +126,30 @@
                 <h2>اختار عدد القطع <samp style="color: red;">مطلوب</samp></h2>
             </div>
 
-            
+
 
             <div class="koktel_meal_info_options_div" id="required_div_1">
 
                 <div class="koktel_meal_info_option">
-                    <input type="checkbox" id="drinkCheckbox1"
-                        onclick="koktel_uncheckOldBox(this.id, 40000); koktel_addMoreNumberToPrice(this, 40000)">
-                    <label for="drinkCheckbox1">4 قطع (+40,000 Rp)</label>
+                    <input type="checkbox" id="check_box_id_1"
+                        onclick="koktel_uncheckOldBox(this.id, 40000); koktel_resetPriceNumber()">
+                    <label for="check_box_id_1">4 قطع (+ 40,000 Rp)</label>
                 </div>
                 <div class="koktel_meal_info_option">
-                    <input type="checkbox" id="drinkCheckbox2"
-                        onclick="koktel_uncheckOldBox(this.id, 60000); koktel_addMoreNumberToPrice(this, 60000)">
-                    <label for="drinkCheckbox2">6 قطع (+60,000 Rp)</label>
+                    <input type="checkbox" id="check_box_id_2"
+                        onclick="koktel_uncheckOldBox(this.id, 60000); koktel_resetPriceNumber()">
+                    <label for="check_box_id_2">6 قطع (+ 60,000 Rp)</label>
                 </div>
                 <div class="koktel_meal_info_option">
-                    <input type="checkbox" id="drinkCheckbox3"
-                        onclick="koktel_uncheckOldBox(this.id, 70000); koktel_addMoreNumberToPrice(this, 70000)">
-                    <label for="drinkCheckbox3">10 قطع (+70,000 Rp)</label>
+                    <input type="checkbox" id="check_box_id_3"
+                        onclick="koktel_uncheckOldBox(this.id, 70000); koktel_resetPriceNumber()">
+                    <label for="check_box_id_3">10 قطع (+ 70,000 Rp)</label>
                 </div>
-                <div class="koktel_meal_info_option">
-                    <input type="checkbox" id="drinkCheckbox4" onclick="koktel_uncheckOldBox(this.id)">
-                    <label for="drinkCheckbox4">مويه</label>
-                </div>
-
 
             </div>
+            
+
+        </div>
 
 
 

@@ -44,7 +44,6 @@ function koktel_show_full_screen_image(src) {
         /* Append Video Element to FullScreenImgOverlay */
         FullScreenImgOverlay.appendChild(FullScreenVideo);
     } else {
-        console.error('Unsupported file format');
         return;
     }
 
@@ -526,7 +525,8 @@ if (document.getElementById("koktel_meal_info_section")) {
 
 
 
-    // Function to add or remove numbers
+
+    // Function To Add Or Remove Numbers From Not Only One Box Must Be Checked Div
     function koktel_addMoreNumberToPrice(clickedBox, addedNumber) {
         let mealAmountNumberElement = document.getElementById('koktel_amountNumberElement');
         let mealAmountNumber = parseInt(mealAmountNumberElement.innerText);
@@ -558,14 +558,61 @@ if (document.getElementById("koktel_meal_info_section")) {
     }
 
 
+
+
+
+    // Function To Add Or Remove Numbers From Only One Box Must Be Checked Div
+    function koktel_resetPriceNumber() {
+        let mealAmountNumberElement = document.getElementById('koktel_amountNumberElement');
+        let mealAmountNumber = parseInt(mealAmountNumberElement.innerText);
+
+        // Clear the currentMealPrices array
+        currentMealPrices = [];
+
+        // Iterate through the checked checkboxes and add their corresponding prices to currentMealPrices
+        addedNumbers.forEach(number => {
+            currentMealPrices.push(number * mealAmountNumber);
+        });
+
+        // Calculate total current meal price considering all added numbers
+        let totalCurrentMealPrice = originalMealPrice * mealAmountNumber;
+        currentMealPrices.forEach(price => {
+            totalCurrentMealPrice += price;
+        });
+
+        // Ensure total current meal price never goes below the original meal price
+        totalCurrentMealPrice = Math.max(totalCurrentMealPrice, originalMealPrice);
+
+        // Update the displayed total price
+        koktel_totalPriceDiv.innerHTML = `<h6 onclick="koktel_createOrderText()">إضافة الطلب = ${totalCurrentMealPrice.toLocaleString()} Rp (بدون سعر التوصيل)</h6>`;
+    }
+
+
+
+    /* Store The Passed minusedNumber Value From Only One Box Must Be Checked Div */
     let clickedMinusedNumber = 0;
 
     /* Make The Old Box Unchecked And Only The New Box Checked */
     koktel_uncheckOldBox = function (clickedBoxId, minusedNumber) {
+        // Subtract the stored clickedMinusedNumber value from currentMealPrices
+        let mealAmountNumberElement = document.getElementById('koktel_amountNumberElement');
+        let mealAmountNumber = parseInt(mealAmountNumberElement.innerText);
+        let index = addedNumbers.indexOf(clickedMinusedNumber);
+        if (index !== -1) {
+            currentMealPrices[index] -= clickedMinusedNumber * mealAmountNumber;
+            if (currentMealPrices[index] <= 0) {
+                currentMealPrices.splice(index, 1);
+                addedNumbers.splice(index, 1);
+            }
+        }
 
-        console.log(minusedNumber);
-
+        // Store the new minusedNumber value
         clickedMinusedNumber = minusedNumber;
+
+        // Add the new minusedNumber to addedNumbers and corresponding currentMealPrices
+        addedNumbers.push(minusedNumber);
+        currentMealPrices.push(minusedNumber * mealAmountNumber);
+
         // Get the parent div of the clicked checkbox
         let parentDiv = document.getElementById(clickedBoxId).closest('.koktel_meal_info_options_div');
 
@@ -579,6 +626,7 @@ if (document.getElementById("koktel_meal_info_section")) {
             }
         });
     }
+
 
 
 

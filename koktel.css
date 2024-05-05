@@ -2410,6 +2410,14 @@ footer img {
         font-size: 4vw;
     }
 
+    .koktel_meal_description_text2{
+        font-size: 3vw;
+    }
+    
+    .koktel_meal_description_text3{
+        font-size: 3.5vw;
+    }
+
     .koktel_store_meal_state_button {
         font-size: 4vw;
     }
@@ -3071,7 +3079,14 @@ footer img {
 
     .koktel_meal_description_text1 {
         font-size: 5vw;
-        margin: 10px 0;
+    }
+
+    .koktel_meal_description_text2{
+        font-size: 4vw;
+    }
+    
+    .koktel_meal_description_text3{
+        font-size: 4.5vw;
     }
 
     .koktel_store_meal_state_button {
@@ -3471,11 +3486,18 @@ footer img {
 
     .koktel_meal_description_text1 {
         font-size: 5.5vw;
-        margin: 5px 0;
+    }
+
+    .koktel_meal_description_text2{
+        font-size: 4.5vw;
+    }
+    
+    .koktel_meal_description_text3{
+        font-size: 5vw;
     }
 
     .koktel_store_meal_state_button {
-        font-size: 5.5vw;
+        font-size: 6w;
     }
 
     .koktel_filter_product_type_div_class {

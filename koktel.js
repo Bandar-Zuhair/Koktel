@@ -196,6 +196,9 @@ function koktel_websiteGuidance(buttonClicked) {
         webGuidanceText = `
             <a onclick="koktel_scrollToMealType('kokteindo_special_meal_type')">مميز</a>
             <a onclick="koktel_scrollToMealType('kokteindo_combo_meal_type')">وجبات</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_burger_meal_type')">برجر</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_sandwich_meal_type')">ساندويتشات</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_potatoes_meal_type')">بطاط مثلي</a>
             <a onclick="koktel_scrollToMealType('kokteindo_drinks_type')">مشروبات</a>
             <a onclick="koktel_scrollToMealType('kokteindo_kids_meal_type')">وجبات الاطفال</a>
             <a onclick="koktel_scrollToMealType('kokteindo_breakfast_meal_type')">فطور</a>
@@ -210,12 +213,7 @@ function koktel_websiteGuidance(buttonClicked) {
 
         webGuidanceText = `
             <a onclick="koktel_scrollToMealType('kokteindo_special_meal_type')">مميز</a>
-            <a onclick="koktel_scrollToMealType('kokteindo_combo_meal_type')">وجبات</a>
-            <a onclick="koktel_scrollToMealType('kokteindo_drinks_type')">مشروبات</a>
-            <a onclick="koktel_scrollToMealType('kokteindo_kids_meal_type')">وجبات الاطفال</a>
-            <a onclick="koktel_scrollToMealType('kokteindo_breakfast_meal_type')">فطور</a>
-            <a onclick="koktel_scrollToMealType('kokteindo_coffee_type')">قهوة</a>
-            <a onclick="koktel_scrollToMealType('kokteindo_sweet_meal_type')">حلى</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_pizza_heart_meal_type')">بيتزا القلب</a>
         `;
 
         /* Filter Supermarket Product Type */
@@ -224,12 +222,33 @@ function koktel_websiteGuidance(buttonClicked) {
         webGuidanceDiv.classList.add('kokteindo_filter_products_type_div');
 
         webGuidanceText = `
-            <a onclick="koktel_scrollToMealType('kokteindo_special_meal_type')">مميز</a>
-            <a onclick="koktel_scrollToMealType('kokteindo_main_meal_type')">وجبات عربية رئيسية</a>
-            <a onclick="koktel_scrollToMealType('kokteindo_drinks_type')">مشروبات</a>
-            <a onclick="koktel_scrollToMealType('kokteindo_kids_meal_type')">وجبات الاطفال</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_main_meal_type')">الأطباق الرئيسية</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_grilled_meal_type')">مشويات</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_local_meal_type')">مقبلات وشعبيات</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_legumes_meal_type')">بقوليات</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_salads_meal_type')">سلطات</a>
             <a onclick="koktel_scrollToMealType('kokteindo_breakfast_meal_type')">فطور</a>
-            <a onclick="koktel_scrollToMealType('kokteindo_coffee_type')">قهوة</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_soup_meal_type')">شوربة</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_bread_meal_type')">خبز</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_drinks_meal_type')">مشروبات</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_sweet_meal_type')">حلى</a>
+        `;
+
+        /* Filter Supermarket Product Type */
+    } else if (buttonClicked === 'show raidan meal type page') {
+
+        webGuidanceDiv.classList.add('kokteindo_filter_products_type_div');
+
+        webGuidanceText = `
+            <a onclick="koktel_scrollToMealType('kokteindo_main_meal_type')">الأطباق الرئيسية</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_grilled_meal_type')">مشويات</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_local_meal_type')">مقبلات وشعبيات</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_legumes_meal_type')">بقوليات</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_salads_meal_type')">سلطات</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_breakfast_meal_type')">فطور</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_soup_meal_type')">شوربة</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_bread_meal_type')">خبز</a>
+            <a onclick="koktel_scrollToMealType('kokteindo_drinks_meal_type')">مشروبات</a>
             <a onclick="koktel_scrollToMealType('kokteindo_sweet_meal_type')">حلى</a>
         `;
 
@@ -712,7 +731,7 @@ if (document.getElementById("koktel_meal_info_section")) {
                     allRequiredCheckboxesChecked = false; // Set the flag to false
 
                     // Show error message and fade out after 2 seconds
-                    // Create a box with the text "تمت اضافة الطلب"
+                    // Create a box with the text "تأكد من ملئ جميع الخيارات"
                     let successBox = document.createElement('div');
                     successBox.textContent = 'تأكد من ملئ جميع الخيارات';
                     successBox.style.color = 'red';
@@ -784,9 +803,20 @@ if (document.getElementById("koktel_meal_info_section")) {
 
         }
 
-        // Get the inner text of the meal name and details
+        // Get the inner text of the meal name
         let mealName = document.getElementById('koktel_meal_name').innerText;
-        let mealDetails = document.getElementById('koktel_meal_details').innerText;
+
+        // Check if the element with id 'koktel_meal_details' exists
+        let mealDetailsElement = document.getElementById('koktel_meal_details');
+        let mealDetails = mealDetailsElement ? mealDetailsElement.innerText : '';
+
+        // Check if the element with id 'koktel_indo_meal_details' exists
+        let mealIndoDetailsElement = document.getElementById('koktel_indo_meal_details');
+        let Indo_mealDetails = mealIndoDetailsElement ? mealIndoDetailsElement.innerText : '';
+
+        // Check if the element with id 'koktel_indo_meal_name' exists
+        let mealIndoNameElement = document.getElementById('koktel_indo_meal_name');
+        let indo_mealIndoName = mealIndoNameElement ? mealIndoNameElement.innerText : '';
 
         // Get all checked checkboxes
         let checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
@@ -796,6 +826,9 @@ if (document.getElementById("koktel_meal_info_section")) {
 
         // Concatenate all checked texts with line breaks
         let orderText = checkedTexts.join('\n');
+
+        // Get the order text from the data attribute of each checked checkbox
+        let indo_orderText = Array.from(checkedCheckboxes).map(checkbox => checkbox.dataset.orderText || '').join('\n');
 
         // Get the text inside the textarea
         let noteTextarea = document.querySelector('.koktel_meal_info_note_textarea');
@@ -814,14 +847,16 @@ if (document.getElementById("koktel_meal_info_section")) {
         // Create an object to represent the order
         let order = {
             mealName: mealName,
+            indo_mealIndoName: indo_mealIndoName,
             mealDetails: mealDetails,
+            Indo_mealDetails: Indo_mealDetails,
             orderText: orderText,
+            indo_orderText: indo_orderText,
             mealAmountNumber: mealAmountNumber,
             noteText: noteText,
             totalCurrentMealPrice: totalCurrentMealPrice,
             mealImgSrc: mealImgSrc // Save the exact image source
         };
-
 
         // Get existing restaurant orders from localStorage or initialize as an empty array if not present
         let existingOrders = JSON.parse(localStorage.getItem('restaurant_orders')) || [];
@@ -831,6 +866,9 @@ if (document.getElementById("koktel_meal_info_section")) {
 
         // Save the updated orders back to localStorage
         localStorage.setItem('restaurant_orders', JSON.stringify(existingOrders));
+
+
+
 
 
         // Create a box with the text "تمت اضافة الطلب"
@@ -1008,6 +1046,7 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
 
         // Hide These Elements if There is No Any Restaurant Orders
         koktel_delete_all_restaurant_orders_button.style.display = 'none';
+        document.getElementById('koktel_orders_static_price_h4_id').style.display = 'none';
         document.getElementById('koktel_order_check_out_div').innerHTML = '';
 
     }
@@ -1170,6 +1209,7 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
 
             // Hide These Elements if There is No Any Restaurant Orders
             koktel_delete_all_restaurant_orders_button.style.display = 'none';
+            document.getElementById('koktel_orders_static_price_h4_id').style.display = 'none';
             document.getElementById('koktel_order_check_out_div').innerHTML = '';
 
         }
@@ -1232,7 +1272,7 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
 
             })
 
-            
+
             /* Calculate total price and tax amount */
             let totalPriceSum = orders.reduce((acc, order) => acc + parseFloat(order.totalCurrentMealPrice.replace(/,/g, '')), 0);
             let taxAmount = totalPriceSum * 0.1;
@@ -1309,7 +1349,7 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
             </div>
             <div id="koktel_order_details_text_background" style="background: linear-gradient(to right, rgb(0, 123, 255), rgb(0, 79, 163));">
                 <h4 style="color: rgb(255, 166, 0);">الاسم: ${order.mealName}</h4>
-                <h4 style="color: rgb(255, 166, 0);">الوصف: ${order.mealDetails}</h4>
+                ${order.mealDetails ? `<h4 style="color: rgb(255, 166, 0);">الوصف: ${order.mealDetails}</h4>` : ''}
                 ${order.orderText ? '<h4>تفاصيل الطلب:</h4>' : ''}
                 ${order.orderText ? order.orderText.split('\n').map(line => `<h4>${line}</h4>`).join('') : ''}
                 ${order.noteText ? `<h4>الملاحظة: ${order.noteText}</h4>` : ''}
@@ -1449,15 +1489,39 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
             let totalWithDelivery = parseFloat(order.totalCurrentMealPrice.replace(',', ''));
             grandTotal += totalWithDelivery;
 
-            let orderInfo = `الطلب رقم ${index + 1}- ${order.mealName}\n`;
-            orderInfo += `- الوصف: ${order.mealDetails}\n`;
+            let orderInfo = `Permintaan NO. ${index + 1}- ${order.indo_mealIndoName}\n`;
 
             if (order.orderText) {
-                orderInfo += `- الوصف: ${order.mealDetails}\n\n`;
+                orderInfo += `- Deskripsi: ${order.Indo_mealDetails}\n`;
+            }
 
+            if (order.orderText) {
+                // Split order.orderText by newline character and prepend each line with its index number
+                let indo_orderText = order.indo_orderText.split('\n').map((line) => `${line}`).join('\n');
+                orderInfo += `@- Detail Permintaan:\n${indo_orderText}\n`;
+
+            }
+
+            orderInfo += `- Jumlah Permintaan: ${order.mealAmountNumber}\n`;
+
+            // Conditionally include the noteText if it exists
+            if (order.noteText) {
+                orderInfo += `- Catatan: ${order.noteText}\n`;
+            }
+
+            orderInfo += `- Harganya: ${totalWithDelivery.toLocaleString()} Rp\n\n\n`;
+
+
+            orderInfo += `الطلب رقم ${index + 1}- ${order.mealName}\n`;
+
+            if (order.orderText) {
+                orderInfo += `- الوصف: ${order.mealDetails}\n`;
+            }
+
+            if (order.orderText) {
                 // Split order.orderText by newline character and prepend each line with its index number
                 let orderedText = order.orderText.split('\n').map((line) => `${line}`).join('\n');
-                orderInfo += `- تفاصيل الطلب:\n${orderedText}\n`;
+                orderInfo += `@- تفاصيل الطلب:\n${orderedText}\n`;
 
             }
 
@@ -1468,12 +1532,14 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
                 orderInfo += `- الملاحظات: ${order.noteText}\n`;
             }
 
-            orderInfo += `- الإجمالي: ${totalWithDelivery.toLocaleString()} Rp\n`;
+            orderInfo += `- السعر: ${totalWithDelivery.toLocaleString()} Rp\n`;
             orderInfo += `___________________________________\n\n`;
 
             // Push the order information to the array
             orderDetails.push(orderInfo);
         });
+
+
 
         // Get today's date
         let today = new Date();
@@ -1499,15 +1565,31 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
         // Create the final message and join all order details
         let finalMessage = "طلبات جديدة من المطاعم:\n"; // Initial message
         finalMessage += `تاريخ إرسال الطلب: ${formattedDate}\n\n`; // Add today's date
+        finalMessage += `___________________________________\n\n`;
         finalMessage += orderDetails.join('');
 
         // Append the tax amount, delivery charge, and grand total to the final message
+        finalMessage += `- Pajak: ${taxAmount.toLocaleString()} Rp\n`;
+        finalMessage += `- Kiriman: ${deliveryCharge.toLocaleString()} Rp\n`;
+        finalMessage += `- Harga Akhir: ${grandTotal.toLocaleString()} Rp\n\n`;
+
         finalMessage += `- الضريبة: ${taxAmount.toLocaleString()} Rp\n`;
         finalMessage += `- التوصيل: ${deliveryCharge.toLocaleString()} Rp\n`;
         finalMessage += `- الإجمالي: ${grandTotal.toLocaleString()} Rp\n\n`;
+
+
+        finalMessage += `Harus Kirim Lokasinya Untuk Mulai Pemenuhan Pesanan..\n`;
         finalMessage += `يجب إرسال موقعك لبدأ تنفيذ الطلب..\n\n`;
-        finalMessage += `- جميع طرق الدفع متوفرة سواء اونلاين او كاش\n`;
+
+
+        finalMessage += `- Semua Metode Bayaran Tersedia, Baik Online Atau Tunai\n`;
+        finalMessage += `- جميع طرق الدفع متوفرة سواء اونلاين او كاش\n\n`;
+
+
+        finalMessage += `Silakan Gunakan Informasi Berikut Jika Bayar Melalui Transfer Bank\n`;
         finalMessage += `يرجى استخدام المعلومات التالية في حال كان الدفع بالتحويل البنكي\n`;
+
+
         finalMessage += `Bank Central Asia (BCA)\nName: samir\nNo Rekening: 1971025609\n\n`;
         finalMessage += `Dana: 087720208728`;
 

@@ -1103,6 +1103,7 @@ body.nav-open #koktel_nav_options * {
     background: rgb(255, 166, 0);
     position: fixed;
     bottom: 100px;
+    left: 0;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -2797,6 +2798,10 @@ footer img {
         font-size: 4vw;
     }
 
+    #koktel_order_page_icon_div {
+        bottom: 70px;
+    }
+
     #koktel_web_intro_1 {
         font-size: 8vw;
     }
@@ -3286,6 +3291,10 @@ footer img {
     .koktel_full_screen_overlay_exit_button {
         font-size: 5vw;
         padding: 6px;
+    }
+
+    #koktel_order_page_icon_div {
+        bottom: 50px;
     }
 
     .kokteindo_filter_products_type_div a {

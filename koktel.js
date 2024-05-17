@@ -1486,12 +1486,13 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
 
         // Loop through each order and extract relevant information
         orders.forEach((order, index) => {
-            let totalWithDelivery = parseFloat(order.totalCurrentMealPrice.replace(',', ''));
+            // Replace comma and parse to float
+            let totalWithDelivery = parseFloat(order.totalCurrentMealPrice.replace(/,/g, ''));
             grandTotal += totalWithDelivery;
 
             let orderInfo = `Permintaan NO. ${index + 1}- ${order.indo_mealIndoName}\n`;
 
-            if (order.orderText) {
+            if (order.Indo_mealDetails) {
                 orderInfo += `- Deskripsi: ${order.Indo_mealDetails}\n`;
             }
 
@@ -1499,7 +1500,6 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
                 // Split order.orderText by newline character and prepend each line with its index number
                 let indo_orderText = order.indo_orderText.split('\n').map((line) => `${line}`).join('\n');
                 orderInfo += `@- Detail Permintaan:\n${indo_orderText}\n`;
-
             }
 
             orderInfo += `- Jumlah Permintaan: ${order.mealAmountNumber}\n`;
@@ -1509,12 +1509,11 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
                 orderInfo += `- Catatan: ${order.noteText}\n`;
             }
 
-            orderInfo += `- Harganya: ${totalWithDelivery.toLocaleString()} Rp\n\n\n`;
-
+            orderInfo += `- Harganya: ${totalWithDelivery.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} Rp\n\n\n`;
 
             orderInfo += `الطلب رقم ${index + 1}- ${order.mealName}\n`;
 
-            if (order.orderText) {
+            if (order.mealDetails) {
                 orderInfo += `- الوصف: ${order.mealDetails}\n`;
             }
 
@@ -1522,7 +1521,6 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
                 // Split order.orderText by newline character and prepend each line with its index number
                 let orderedText = order.orderText.split('\n').map((line) => `${line}`).join('\n');
                 orderInfo += `@- تفاصيل الطلب:\n${orderedText}\n`;
-
             }
 
             orderInfo += `- عدد الطلب: ${order.mealAmountNumber}\n`;
@@ -1532,12 +1530,13 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
                 orderInfo += `- الملاحظات: ${order.noteText}\n`;
             }
 
-            orderInfo += `- السعر: ${totalWithDelivery.toLocaleString()} Rp\n`;
+            orderInfo += `- السعر: ${totalWithDelivery.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} Rp\n`;
             orderInfo += `___________________________________\n\n`;
 
             // Push the order information to the array
             orderDetails.push(orderInfo);
         });
+
 
 
 
@@ -1597,7 +1596,7 @@ if (document.getElementById("koktel_restaurant_order_details_body_id")) {
         let encodedMessage = encodeURIComponent(finalMessage);
 
         // Create the WhatsApp URL
-        let whatsappURL = `https://wa.me/6282246117155?text=${encodedMessage}`;
+        let whatsappURL = `https://wa.me/6282210081028?text=${encodedMessage}`;
 
         // Open WhatsApp in a new window
         window.open(whatsappURL, '_blank');
@@ -2364,7 +2363,7 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
         let encodedMessage = encodeURIComponent(finalMessage);
 
         // Create the WhatsApp URL
-        let whatsappURL = `https://wa.me/6282246117155?text=${encodedMessage}`;
+        let whatsappURL = `https://wa.me/6282210081028?text=${encodedMessage}`;
 
         // Open WhatsApp in a new window
         window.open(whatsappURL, '_blank');
@@ -3120,7 +3119,7 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
         let encodedMessage = encodeURIComponent(finalMessage);
 
         // Create the WhatsApp URL
-        let whatsappURL = `https://wa.me/6282246117155?text=${encodedMessage}`;
+        let whatsappURL = `https://wa.me/6282210081028?text=${encodedMessage}`;
 
         // Open WhatsApp in a new window
         window.open(whatsappURL, '_blank');
@@ -3173,7 +3172,7 @@ if (document.getElementById("koktel_choose_worker_type_section")) {
         let encodedMessage = encodeURIComponent(finalMessage);
 
         // Create the WhatsApp URL
-        let whatsappURL = `https://wa.me/6282246117155?text=${encodedMessage}`;
+        let whatsappURL = `https://wa.me/6282210081028?text=${encodedMessage}`;
 
         // Open WhatsApp in a new window
         window.open(whatsappURL, '_blank');
@@ -3241,7 +3240,7 @@ if (document.getElementById("koktel_choose_worker_type_section")) {
         let encodedMessage = encodeURIComponent(finalMessage);
 
         // Create the WhatsApp URL
-        let whatsappURL = `https://wa.me/6282246117155?text=${encodedMessage}`;
+        let whatsappURL = `https://wa.me/6282210081028?text=${encodedMessage}`;
 
         // Open WhatsApp in a new window
         window.open(whatsappURL, '_blank');
@@ -3296,7 +3295,7 @@ if (document.getElementById("koktel_choose_massage_person_section")) {
         let encodedMessage = encodeURIComponent(finalMessage);
 
         // Create the WhatsApp URL
-        let whatsappURL = `https://wa.me/6282246117155?text=${encodedMessage}`;
+        let whatsappURL = `https://wa.me/6282210081028?text=${encodedMessage}`;
 
         // Open WhatsApp in a new window
         window.open(whatsappURL, '_blank');
@@ -4061,7 +4060,7 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
         let encodedMessage = encodeURIComponent(finalMessage);
 
         // Create the WhatsApp URL
-        let whatsappURL = `https://wa.me/6282246117155?text=${encodedMessage}`;
+        let whatsappURL = `https://wa.me/6282210081028?text=${encodedMessage}`;
 
         // Open WhatsApp in a new window
         window.open(whatsappURL, '_blank');
@@ -4823,7 +4822,7 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
         let encodedMessage = encodeURIComponent(finalMessage);
 
         // Create the WhatsApp URL
-        let whatsappURL = `https://wa.me/6282246117155?text=${encodedMessage}`;
+        let whatsappURL = `https://wa.me/6282210081028?text=${encodedMessage}`;
 
         // Open WhatsApp in a new window
         window.open(whatsappURL, '_blank');

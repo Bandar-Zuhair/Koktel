@@ -188,12 +188,12 @@
 
             <div id="koktel_nav">
                 <h3>خيارات اكثر</h3>
-                <img src="koktel_logo/كوكتيل-اندونيسيا.svg" alt="مخبوزات اندونيسيا - كوكتيل"
+                <img src="كوكتيل-اندونيسيا/كوكتيل-اندونيسيا.svg" alt="مخبوزات اندونيسيا - كوكتيل"
                     title="مخبوزات اندونيسيا - كوكتيل" id="koktel_nav_icon" loading="lazy">
             </div>
 
             <div id="koktel_nav_options">
-                <img itemprop="image" src="koktel_logo/كوكتيل-اندونيسيا.svg" alt="مخبوزات اندونيسيا - كوكتيل"
+                <img itemprop="image" src="كوكتيل-اندونيسيا/كوكتيل-اندونيسيا.svg" alt="مخبوزات اندونيسيا - كوكتيل"
                     title="مخبوزات اندونيسيا - كوكتيل" id="koktel_nav_logo" loading="lazy" />
                 <a itemprop="url" href="https://bandar-zuhair.github.io/Koktel" title="خدمات اندونيسيا - كوكتيل">الصفحة
                     الرئيسية</a>
@@ -229,6 +229,7 @@
     <!-- Use The 'koktel_minusProductButton' Function To Pass The Minused Price of The Product And Also The Clicked Element Value (this) -->
     <!-- Always Set The Value of This H5 Element As 1 For Example <h5 'style="display: none;">1</h5>' -->
     <!-- Make Sure Every Product Section Has a Unique Id Name in The 'koktel_product_type_title' h1 Element Title And Then Add That Id Name To The 'koktel_websiteGuidance' Function in The js File -->
+    <!-- Make Sure To Copy And Paste The Same Elements For Adding New Products (Must Use The Same ID And Class Names) -->
 
 
 
@@ -264,191 +265,206 @@
 
 
             <h1 title="مخبوزات اندونيسيا - كوكتيل" class="koktel_product_type_title"
-                id="kokteindo_toast_product_section">تست<ion-icon name="arrow-down-circle-outline"></ion-icon>
+                id="kokteindo_toast_product_section">توست<ion-icon name="arrow-down-circle-outline"></ion-icon>
             </h1>
 
 
 
 
-            <div class="koktel_product_card">
+            <div class="koktelindo_product_slide_div">
 
-                <div class="koktel_product_card_info">
+                <div class="koktel_product_card">
 
-                    <div class="koktel_product_card_img">
-                        <img src="مخبوزات-اندونيسيا/تست/1.jpg" alt="مخبوزات اندونيسيا - كوكتيل" title="مخبوزات اندونيسيا - كوكتيل"
-                            onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="مخبوزات-اندونيسيا/توست/sari-roti-roti-tawar-370-g.jpg" alt="مخبوزات اندونيسيا - كوكتيل"
+                                title="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>توست تاور الصغير</h1>
+                                    <h2 style="display: none;">Sari Roti Roti Tawar 370 G</h2>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 13,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>تست تاور 370 جرام</h1>
-                            </div>
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('13,000', this)">اضافة</h4>
 
-                            <div class="koktel_product_price">
-                                <h3>السعر = 13,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('13,000', this)"></ion-icon>
 
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('13,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('13,000', this)"></ion-icon>
-
-                </div>
-
-            </div>
-
-
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="مخبوزات-اندونيسيا/تست/2.jpg" alt="مخبوزات اندونيسيا - كوكتيل" title="مخبوزات اندونيسيا - كوكتيل"
-                            onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>تست تاور 555 جرام</h1>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 13,000 Rp</h3>
-                            </div>
-                        </a>
                     </div>
 
                 </div>
 
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('13,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('13,000', this)"></ion-icon>
-
-                </div>
-
-            </div>
 
 
 
+                <div class="koktel_product_card">
 
-            <div class="koktel_product_card">
+                    <div class="koktel_product_card_info">
 
-                <div class="koktel_product_card_info">
+                        <div class="koktel_product_card_img">
+                            <img src="مخبوزات-اندونيسيا/توست/sari-roti-roti-tawar-jumbo-555-g.jpg" alt="مخبوزات اندونيسيا - كوكتيل"
+                                title="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
 
-                    <div class="koktel_product_card_img">
-                        <img src="مخبوزات-اندونيسيا/تست/3.jpg" alt="مخبوزات اندونيسيا - كوكتيل" title="مخبوزات اندونيسيا - كوكتيل"
-                            onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>توست تاور الكبير</h1>
+                                    <h2 style="display: none;">Sari Roti Roti Tawar Jumbo 555 G</h2>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 13,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>تست جاندوم 350 جرام</h1>
-                            </div>
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('13,000', this)">اضافة</h4>
 
-                            <div class="koktel_product_price">
-                                <h3>السعر = 13,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('13,000', this)"></ion-icon>
 
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('13,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('13,000', this)"></ion-icon>
-
-                </div>
-
-            </div>
-
-
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="مخبوزات-اندونيسيا/تست/4.jpg" alt="مخبوزات اندونيسيا - كوكتيل" title="مخبوزات اندونيسيا - كوكتيل"
-                            onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>تست تاور كوباس 250 جرام</h1>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 13,000 Rp</h3>
-                            </div>
-                        </a>
                     </div>
 
                 </div>
 
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('13,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('13,000', this)"></ion-icon>
-
-                </div>
-
-            </div>
 
 
 
+                <div class="koktel_product_card">
 
-            <div class="koktel_product_card">
+                    <div class="koktel_product_card_info">
 
-                <div class="koktel_product_card_info">
+                        <div class="koktel_product_card_img">
+                            <img src="مخبوزات-اندونيسيا/توست/sari-roti-roti-tawar-gandum-350-g.jpg" alt="مخبوزات اندونيسيا - كوكتيل"
+                                title="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
 
-                    <div class="koktel_product_card_img">
-                        <img src="مخبوزات-اندونيسيا/تست/5.jpg" alt="مخبوزات اندونيسيا - كوكتيل" title="مخبوزات اندونيسيا - كوكتيل"
-                            onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>توست جاندوم الصغير</h1>
+                                    <h2 style="display: none;">Sari Roti Roti Tawar Gandum 350 G</h2>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 13,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>تست يامازاكي 15 قطعة</h1>
-                            </div>
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('13,000', this)">اضافة</h4>
 
-                            <div class="koktel_product_price">
-                                <h3>السعر = 13,000 Rp</h3>
-                            </div>
-                        </a>
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('13,000', this)"></ion-icon>
+
                     </div>
 
                 </div>
 
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('13,000', this)">اضافة</h4>
 
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('13,000', this)"></ion-icon>
+
+
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="مخبوزات-اندونيسيا/توست/sari-roti-roti-tawar-kupas-200-g.jpg" alt="مخبوزات اندونيسيا - كوكتيل"
+                                title="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>توست تاور كوباس الصغير</h1>
+                                    <h2 style="display: none;">Sari Roti Roti Tawar Kupas 200 G</h2>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 13,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('13,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('13,000', this)"></ion-icon>
+
+                    </div>
 
                 </div>
+
+
+
+
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="مخبوزات-اندونيسيا/توست/myroti-roti-tawar-daily-bread-15-pcs.jpg" alt="مخبوزات اندونيسيا - كوكتيل"
+                                title="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>توست يامازاكي 15 قطعة</h1>
+                                    <h2 style="display: none;">Myroti Roti Tawar Daily Bread 15 Pcs</h2>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 13,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('13,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('13,000', this)"></ion-icon>
+
+                    </div>
+
+                </div>
+
 
             </div>
 
@@ -471,75 +487,85 @@
             </h1>
 
 
-            <div class="koktel_product_card">
 
-                <div class="koktel_product_card_info">
 
-                    <div class="koktel_product_card_img">
-                        <img src="مخبوزات-اندونيسيا/فطائر/1.jpg" alt="مخبوزات اندونيسيا - كوكتيل"
-                            title="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
+            <div class="koktelindo_product_slide_div">
+
+
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="مخبوزات-اندونيسيا/فطائر/sari-roti-roti-sobek-cokelat-214-g.jpg" alt="مخبوزات اندونيسيا - كوكتيل"
+                                title="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>فطيرة سوبيك شوكلات 214 جرام</h1>
+                                    <h2 style="display: none;">Sari Roti Roti Sobek Cokelat 214 G</h2>
+
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>فطيرة سوبيك شوكلات 214 جرام</h1>
-                            </div>
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
 
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
                     </div>
 
                 </div>
 
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
 
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
+                <div class="koktel_product_card">
+
+                    <div class="koktel_product_card_info">
+
+                        <div class="koktel_product_card_img">
+                            <img src="مخبوزات-اندونيسيا/فطائر/sari-roti-roti-sobek-duo-cokelat-114-g.jpg" alt="مخبوزات اندونيسيا - كوكتيل"
+                                title="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
+                                loading="lazy">
+                        </div>
+
+                        <div>
+                            <a>
+                                <div class="koktel_product_name">
+                                    <h1>فطيرة سوبيك شوكلات 114 جرام</h1>
+                                    <h2 style="display: none;">Sari Roti Roti Sobek Duo Cokelat 114 G</h2>
+                                </div>
+
+                                <div class="koktel_product_price">
+                                    <h3>السعر = 3,000 Rp</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="koktel_add_product_button">
+                        <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
+
+                        <h5 style="display: none;">1</h5>
+                        <ion-icon name="remove-outline" style="display: none;"
+                            onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
+                    </div>
+
                 </div>
+
 
             </div>
-
-
-            <div class="koktel_product_card">
-
-                <div class="koktel_product_card_info">
-
-                    <div class="koktel_product_card_img">
-                        <img src="مخبوزات-اندونيسيا/فطائر/2.jpg" alt="مخبوزات اندونيسيا - كوكتيل"
-                            title="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)"
-                            loading="lazy">
-                    </div>
-
-                    <div>
-                        <a>
-                            <div class="koktel_product_name">
-                                <h1>فطيرة سوبيك شوكلات 114 جرام</h1>
-                            </div>
-
-                            <div class="koktel_product_price">
-                                <h3>السعر = 3,000 Rp</h3>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="koktel_add_product_button">
-                    <h4 onclick="koktel_addProductButton('3,000', this)">اضافة</h4>
-
-                    <h5 style="display: none;">1</h5>
-                    <ion-icon name="remove-outline" style="display: none;"
-                        onclick="koktel_minusProductButton('3,000', this)"></ion-icon>
-                </div>
-
-            </div>
-
 
 
 
@@ -571,7 +597,7 @@
         </div>
 
         <div>
-            <img src="koktel_logo/كوكتيل-اندونيسيا.svg" alt="مخبوزات اندونيسيا - كوكتيل"
+            <img src="كوكتيل-اندونيسيا/كوكتيل-اندونيسيا.svg" alt="مخبوزات اندونيسيا - كوكتيل"
                 title="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_scrollUpIcon()" loading="lazy">
         </div>
 

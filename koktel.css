@@ -1648,7 +1648,7 @@ body.nav-open #koktel_nav_options * {
     line-height: 1.4;
 }
 
-.koktel_product_name h2 {
+.koktel_product_name h3 {
     font-size: 1.5vw;
     font-weight: 300;
     padding: 5px 0;
@@ -2571,7 +2571,7 @@ footer img {
         font-size: 2.9vw;
     }
 
-    .koktel_product_name h2 {
+    .koktel_product_name h3 {
         font-size: 2.4vw;
     }
 
@@ -2899,7 +2899,7 @@ footer img {
         font-size: 3.4vw;
     }
 
-    .koktel_product_name h2 {
+    .koktel_product_name h3 {
         font-size: 3.9vw;
         padding: 3px 0;
     }
@@ -3453,7 +3453,7 @@ footer img {
         font-size: 3.9vw;
     }
 
-    .koktel_product_name h2 {
+    .koktel_product_name h3 {
         font-size: 4.4vw;
         padding: 1px 0;
     }

@@ -4876,12 +4876,12 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
 let koktel_adsVideosArray = [
 
     {
-        videoSrc: "koktel_ads/video1.mp4",
-        videoThumbnailSrc: "koktel_ads/خدمات-اندونيسيا.png",
+        videoSrc: "خدمات-اندونيسيا/كوكتيل-اندونيسيا.mp4",
+        videoThumbnailSrc: "خدمات-اندونيسيا/خدمات-اندونيسيا.png",
     },
 
     {
-        imgSrc: "koktel_ads/خدمات-اندونيسيا.png",
+        imgSrc: "خدمات-اندونيسيا/خدمات-اندونيسيا.png",
     },
 
 ]

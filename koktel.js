@@ -1122,11 +1122,11 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, restaurantName, loc
                 <h5>إرسال الطلبات</h5>
             </div>
             <div id="koktel_order_check_out_bill_div">
-                <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
-                ${orders.map((order, index) => `<h6>الطلب رقم ${index + 1} : ${order.totalCurrentMealPrice}</h6>`).join('')}
-                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
-                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : ${deliveryFees} Rp</h6>
-                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
+                <h6 id="koktel_order_check_out_bill_title">الفاتورة</h6>
+                ${orders.map((order, index) => `<h6 id="koktel_order_check_out_bill_details_text">الطلب رقم ${index + 1} : ${order.totalCurrentMealPrice}</h6>`).join('')}
+                <h6 class="koktel_order_check_out_bill_total_price" style="border-top-right-radius: 7px; border-top-left-radius: 7px;">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
+                <h6 class="koktel_order_check_out_bill_total_price">التوصيل : ${deliveryFees} Rp</h6>
+                <h6 class="koktel_order_check_out_bill_total_price" style="border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
             </div>
         `;
 
@@ -2019,11 +2019,11 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
                     <h5>إرسال الطلبات</h5>
                 </div>
                 <div id="koktel_order_check_out_bill_div">
-                    <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
-                    ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
-                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
-                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : 20,000 Rp</h6>
-                    <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
+                    <h6 id="koktel_order_check_out_bill_title">الفاتورة</h6>
+                    ${orders.map((order, orderIndex) => `<h6 id="koktel_order_check_out_bill_details_text">المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
+                    <h6 class="koktel_order_check_out_bill_total_price" style="border-top-right-radius: 7px; border-top-left-radius: 7px;">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price">التوصيل : 20,000 Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price" style="border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
                 </div>
             `;
 
@@ -2686,11 +2686,11 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
                 <h5>إرسال الطلبات</h5>
             </div>
             <div id="koktel_order_check_out_bill_div">
-                <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
-                ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
-                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
-                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : 20,000 Rp</h6>
-                <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
+                <h6 id="koktel_order_check_out_bill_title">الفاتورة</h6>
+                ${orders.map((order, orderIndex) => `<h6 id="koktel_order_check_out_bill_details_text">المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
+                <h6 class="koktel_order_check_out_bill_total_price" style="border-top-right-radius: 7px; border-top-left-radius: 7px;">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
+                <h6 class="koktel_order_check_out_bill_total_price">التوصيل : 20,000 Rp</h6>
+                <h6 class="koktel_order_check_out_bill_total_price" style="border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
             </div>
         `;
 
@@ -2963,11 +2963,11 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
                     <h5>إرسال الطلبات</h5>
                 </div>
                 <div id="koktel_order_check_out_bill_div">
-                    <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
-                    ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
-                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
-                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : 20,000 Rp</h6>
-                    <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
+                    <h6 id="koktel_order_check_out_bill_title">الفاتورة</h6>
+                    ${orders.map((order, orderIndex) => `<h6 id="koktel_order_check_out_bill_details_text">المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
+                    <h6 class="koktel_order_check_out_bill_total_price" style="border-top-right-radius: 7px; border-top-left-radius: 7px;">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price">التوصيل : 20,000 Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price" style="border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
                 </div>
             `;
 
@@ -3666,11 +3666,11 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
                 <h5>إرسال الطلبات</h5>
             </div>
             <div id="koktel_order_check_out_bill_div">
-                <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
-                ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
-                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
-                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : 20,000 Rp</h6>
-                <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
+                <h6 id="koktel_order_check_out_bill_title">الفاتورة</h6>
+                ${orders.map((order, orderIndex) => `<h6 id="koktel_order_check_out_bill_details_text">المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
+                <h6 class="koktel_order_check_out_bill_total_price" style="border-top-right-radius: 7px; border-top-left-radius: 7px;">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
+                <h6 class="koktel_order_check_out_bill_total_price">التوصيل : 20,000 Rp</h6>
+                <h6 class="koktel_order_check_out_bill_total_price" style="border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
             </div>
         `;
 
@@ -3941,11 +3941,11 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
                     <h5>إرسال الطلبات</h5>
                 </div>
                 <div id="koktel_order_check_out_bill_div">
-                    <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
-                    ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
-                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
-                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : 20,000 Rp</h6>
-                    <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
+                    <h6 id="koktel_order_check_out_bill_title">الفاتورة</h6>
+                    ${orders.map((order, orderIndex) => `<h6 id="koktel_order_check_out_bill_details_text">المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
+                    <h6 class="koktel_order_check_out_bill_total_price" style="border-top-right-radius: 7px; border-top-left-radius: 7px;">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price">التوصيل : 20,000 Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price" style="border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
                 </div>
             `;
 
@@ -4456,11 +4456,11 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
                 <h5>إرسال الطلبات</h5>
             </div>
             <div id="koktel_order_check_out_bill_div">
-                <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
-                ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
-                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
-                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : 20,000 Rp</h6>
-                <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
+                <h6 id="koktel_order_check_out_bill_title">الفاتورة</h6>
+                ${orders.map((order, orderIndex) => `<h6 id="koktel_order_check_out_bill_details_text">المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
+                <h6 class="koktel_order_check_out_bill_total_price" style="border-top-right-radius: 7px; border-top-left-radius: 7px;">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
+                <h6 class="koktel_order_check_out_bill_total_price">التوصيل : 20,000 Rp</h6>
+                <h6 class="koktel_order_check_out_bill_total_price" style="border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
             </div>
         `;
 
@@ -4731,11 +4731,11 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
                     <h5>إرسال الطلبات</h5>
                 </div>
                 <div id="koktel_order_check_out_bill_div">
-                    <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
-                    ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
-                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
-                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : 20,000 Rp</h6>
-                    <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
+                    <h6 id="koktel_order_check_out_bill_title">الفاتورة</h6>
+                    ${orders.map((order, orderIndex) => `<h6 id="koktel_order_check_out_bill_details_text">المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
+                    <h6 class="koktel_order_check_out_bill_total_price" style="border-top-right-radius: 7px; border-top-left-radius: 7px;">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price">التوصيل : 20,000 Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price" style="border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
                 </div>
             `;
 

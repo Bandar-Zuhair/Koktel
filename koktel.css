@@ -150,15 +150,15 @@ body {
     background: black;
     color: white;
     z-index: 996;
-    font-size: 1.5vw;
+    font-size: 3vw;
+    padding: 2px;
     position: fixed;
     top: 5px;
-    right: 5px;
+    left: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: fit-content;
-    padding: 8px 16px;
     border-radius: 7px;
     cursor: pointer;
     border: 1px solid white;
@@ -166,6 +166,32 @@ body {
 }
 
 .koktel_go_back_products_page_button:hover {
+    background: white;
+    color: black;
+    transform: scale(1.015);
+}
+
+.koktel_share_page_url_button {
+    text-decoration: none;
+    background: black;
+    color: white;
+    z-index: 996;
+    font-size: 3vw;
+    padding: 2px;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    border-radius: 7px;
+    cursor: pointer;
+    border: 1px solid white;
+    transition: all 0.2s ease-in-out;
+}
+
+.koktel_share_page_url_button:hover {
     background: white;
     color: black;
     transform: scale(1.015);
@@ -305,6 +331,18 @@ header div {
 .koktel_section_intro_bigger_text {
     background: rgb(255, 166, 0);
     font-size: 4vw;
+    margin-top: 5px;
+    padding: 10px 20px;
+    width: fit-content;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 7px;
+    line-height: 1.4;
+}
+
+.koktel_restaurant_intro_text {
+    background: rgb(255, 166, 0);
+    font-size: 3vw;
     margin-top: 5px;
     padding: 10px 20px;
     width: fit-content;
@@ -1233,11 +1271,11 @@ body.nav-open #koktel_nav_options * {
 #koktel_there_is_no_orders_text {
     background: black;
     color: red;
+    width: 100%;
     padding: 10px 20px;
     font-size: 4vw;
     text-align: center;
     border-radius: 7px;
-    box-shadow: 0 0 3px 0.5px white;
 }
 
 #koktel_delete_all_restaurant_orders_button {
@@ -1256,17 +1294,6 @@ body.nav-open #koktel_nav_options * {
 
 #koktel_delete_all_restaurant_orders_button:hover {
     box-shadow: 0 0 15px 0.5px white;
-}
-
-.koktel_orders_static_price_h4 {
-    background: black;
-    color: rgb(0, 255, 0);
-    margin-bottom: 5px;
-    padding: 10px 16px;
-    font-size: 2.5vw;
-    text-align: center;
-    border-radius: 7px;
-    box-shadow: 0 0 3px 0.5px white;
 }
 
 #koktel_order_details_delivery_price_title {
@@ -1491,7 +1518,7 @@ body.nav-open #koktel_nav_options * {
     color: black;
     font-size: 1.5vw;
     margin: 10px 0;
-    padding: 10px 20px;
+    padding: 14px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1507,10 +1534,16 @@ body.nav-open #koktel_nav_options * {
     background: rgb(118, 205, 255);
 }
 
+
+.koktel_filter_product_type_div_class h1{
+    font-size: 3vw;
+    margin-left: 10px;
+    text-align: center;
+}
+
 .koktel_filter_product_type_div_class img {
     width: 6vw;
     height: fit-content;
-    margin-right: 10px;
     border-radius: 7px;
 }
 
@@ -1538,6 +1571,7 @@ body.nav-open #koktel_nav_options * {
     color: black;
     margin-left: 10px;
     font-size: 2vw;
+    text-align: center;
 }
 
 .koktel_product_type_nav_upper_bar_class img {
@@ -2296,7 +2330,11 @@ footer img {
     }
 
     .koktel_go_back_products_page_button {
-        font-size: 2.5vw;
+        font-size: 4vw;
+    }
+
+    .koktel_share_page_url_button {
+        font-size: 4vw;
     }
 
     #koktel_order_check_out_bill_div {
@@ -2338,6 +2376,11 @@ footer img {
 @media(max-width:950px) {
     .koktel_full_screen_overlay_exit_button {
         font-size: 3vw;
+        padding: 10px;
+    }
+
+    .web_guidance_div a {
+        font-size: 4vw;
         padding: 10px;
     }
 
@@ -2388,6 +2431,11 @@ footer img {
 
     .koktel_section_intro_bigger_text {
         font-size: 5.5vw;
+        padding: 8px 14px;
+    }
+
+    .koktel_restaurant_intro_text {
+        font-size: 4.5vw;
         padding: 8px 14px;
     }
 
@@ -2473,13 +2521,17 @@ footer img {
 
     .koktel_filter_product_type_div_class {
         font-size: 3vw;
-        padding: 8px 16;
+        padding: 8px 16px;
     }
 
     .koktel_filter_product_type_div_class img {
         width: 10vw;
     }
 
+    .koktel_filter_product_type_div_class h1{
+        font-size: 4.5vw;
+    }
+    
     .koktel_product_type_nav_upper_bar_class h3 {
         font-size: 3.5vw;
     }
@@ -2647,11 +2699,6 @@ footer img {
         font-size: 4.5vw;
     }
 
-    .koktel_orders_static_price_h4 {
-        font-size: 3.5vw;
-        padding: 8px;
-    }
-
     #koktel_order_details_text_background h4 {
         font-size: 4.5vw;
     }
@@ -2763,8 +2810,11 @@ footer img {
     }
 
     .koktel_go_back_products_page_button {
-        font-size: 3.5vw;
-        padding: 6px 14px;
+        font-size: 6vw;
+    }
+
+    .koktel_share_page_url_button {
+        font-size: 6vw;
     }
 
     .koktel_order_details_title {
@@ -2789,9 +2839,15 @@ footer img {
         padding: 8px;
     }
 
+    .web_guidance_div a {
+        font-size: 5vw;
+        padding: 8px;
+    }
+
     .kokteindo_filter_products_type_div a {
         font-size: 5.5vw;
         margin: 5px;
+        padding: 8px;
     }
 
     .koktel_success_box {
@@ -2840,6 +2896,11 @@ footer img {
         padding: 8px;
     }
 
+    .koktel_restaurant_intro_text {
+        font-size: 5.5vw;
+        padding: 8px;
+    }
+
 
 
 
@@ -2884,13 +2945,18 @@ footer img {
 
 
 
+    .koktel_filter_product_type_div_class h1{
+        font-size: 5.5vw;
+        margin-left: 5px;
+    }
+
     .koktel_product_type_nav_upper_bar_class h3 {
         font-size: 4.5vw;
         margin-left: 5px;
     }
 
     .koktel_product_type_nav_upper_bar_class img {
-        width: 11vw;
+        width: 15vw;
     }
 
     
@@ -3024,11 +3090,6 @@ footer img {
         font-size: 5.5vw;
         margin: 5px 0;
         padding: 8px 14px;
-    }
-
-    .koktel_orders_static_price_h4 {
-        font-size: 4.5vw;
-        padding: 6px;
     }
 
     #koktel_driver_type_box {
@@ -3174,7 +3235,6 @@ footer img {
 
     .koktel_filter_product_type_div_class {
         font-size: 4vw;
-        padding: 5px 10px;
     }
 
     .koktel_filter_product_type_div_class img {
@@ -3227,11 +3287,6 @@ footer img {
         font-size: 4vw;
     }
 
-    .web_guidance_div a {
-        font-size: 3vw;
-        padding: 8px 10px;
-    }
-
     .koktel_main_page_text {
         font-size: 4.5vw;
         padding: 10px 14px;
@@ -3277,8 +3332,11 @@ footer img {
     }
 
     .koktel_go_back_products_page_button {
-        font-size: 4.5vw;
-        padding: 5px 10px;
+        font-size: 8vw;
+    }
+
+    .koktel_share_page_url_button {
+        font-size: 8vw;
     }
 
     #koktel_companydescription {
@@ -3297,9 +3355,15 @@ footer img {
         bottom: 50px;
     }
 
+    .web_guidance_div a {
+        font-size: 6vw;
+        padding: 6px;
+    }
+    
     .kokteindo_filter_products_type_div a {
         font-size: 6.5vw;
         margin: 3px;
+        padding: 6px;
     }
 
     .koktel_success_box {
@@ -3347,6 +3411,10 @@ footer img {
     }
 
     .koktel_section_intro_bigger_text {
+        padding: 6px;
+    }
+
+    .koktel_restaurant_intro_text {
         padding: 6px;
     }
 
@@ -3426,13 +3494,16 @@ footer img {
 
 
 
-    .koktel_product_type_nav_upper_bar_class h3 {
+    .koktel_filter_product_type_div_class h1{
         font-size: 6vw;
-        margin-left: 3px;
+    }
+
+    .koktel_product_type_nav_upper_bar_class h3 {
+        font-size: 5vw;
     }
 
     .koktel_product_type_nav_upper_bar_class img {
-        width: 14vw;
+        width: 20vw;
     }
 
     .koktelindo_product_slide_div {
@@ -3621,10 +3692,6 @@ footer img {
         padding: 5px 10px;
     }
 
-    .koktel_orders_static_price_h4 {
-        font-size: 5.5vw;
-    }
-
     #koktel_order_check_out_whatsApp_div h5 {
         font-size: 6.5vw;
     }
@@ -3688,9 +3755,16 @@ footer img {
         height: 150px;
     }
 
+    .koktel_product_type_nav_upper_bar_class h3 {
+        font-size: 6vw;
+    }
+
     .koktel_go_back_products_page_button {
-        font-size: 5vw;
-        padding: 4px 8px;
+        font-size: 9vw;
+    }
+
+    .koktel_share_page_url_button {
+        font-size: 9vw;
     }
 
     .koktel_meal_info_note textarea {

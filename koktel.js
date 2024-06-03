@@ -983,12 +983,12 @@ if (document.getElementById("koktel_meal_info_section")) {
 }
 
 /* Function To Create Restaurant Order Page Content And Final WhatsApp Message */
-RestaurantOrderPageFunction = function (orderPageBodyIdName, restaurantName, localStorageName, deliveryFees) {
+RestaurantOrderPageFunction = function (orderPageBodyIdName, restaurantName, localStorageName, deliveryFees, restaurantPageLinkName) {
 
     /* Create Content For The Basic Orders Page */
     let all_order_page_content = `
         <div class="koktel_order_details_div" id="koktel_order_details_div_id" style="display: flex;">
-            <h1 class="koktel_order_details_title">طلباتك من ${restaurantName} جاهزة للإرسال</h1>
+            <h1 id="koktel_order_details_title_id" class="koktel_order_details_title">طلباتك من ${restaurantName}</h1>
 
 
             <div class='koktel_order_finished_card_area' id='koktel_order_finished_card_area_id'></div>
@@ -1002,7 +1002,10 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, restaurantName, loc
             <div id="koktel_order_check_out_div" style="display: none;"></div>
 
 
-            <a href="https://bandar-zuhair.github.io/Koktel/مطاعم-اندونيسيا.html" class="koktel_go_back_products_page_button"> <ion-icon name="arrow-forward-circle-outline"></ion-icon> .. قسم المطاعم</a>
+            <a itemprop="url" href="https://bandar-zuhair.github.io/Koktel/صفحات-مطاعم-اندونيسيا/${restaurantPageLinkName}/قائمة-طعام-${restaurantPageLinkName}.html"
+            class="koktel_go_back_products_page_button">
+            <ion-icon name="arrow-undo-circle-outline"></ion-icon></a>
+    
         </div>`;
 
     /* Set The Inner HTML Code of The 'all_order_page_content' Inside The ${orderPageBodyIdName} Element */
@@ -1012,21 +1015,53 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, restaurantName, loc
 
 
 
-    // Go Through ${localStorageName} from localStorage
-    if (localStorage.getItem(localStorageName)) {
 
+    // Function to render the orders
+    function renderOrders() {
+        // Get the container for displaying orders
+        koktel_order_finished_card_area_id.innerHTML = ''; // Clear the existing content
 
-        // Parse orders from localStorage
+        // Get The orders from localStorage
         let orders = JSON.parse(localStorage.getItem(localStorageName));
 
-        // Loop through each order data
-        orders.forEach((orderData, index) => {
+
+
+        // Check if orders is empty or null
+        if (!orders || orders.length === 0) {
+            // Remove the orders key from localStorage
+            localStorage.removeItem(localStorageName);
+
+
             // Create the element for each order
             let localStorageOrderCardFinished = document.createElement('div');
             localStorageOrderCardFinished.classList.add('koktel_order_finished_card');
+            koktel_order_finished_card_area_id.innerHTML = `
+            <h1 id='koktel_there_is_no_orders_text'>لاتوجد طلبات بعد..<ion-icon name="telescope-outline"></ion-icon></h1>
+        `;
 
-            // letruct the inner HTML content for the order
-            let localStorageOrderCardContent = `
+            koktel_order_details_title_id.innerText = `طلباتك من ${restaurantName}`;
+
+            // Hide These Elements if There is No Any Restaurant Orders
+            koktel_delete_all_restaurant_orders_button.style.display = 'none';
+            document.getElementById('koktel_order_check_out_div').innerHTML = '';
+
+        }
+
+
+        /* in Case if There is Data in The Orders Key */
+        if (localStorage.getItem(localStorageName)) {
+
+            // Parse orders from localStorage
+            let orders = JSON.parse(localStorage.getItem(localStorageName));
+
+            // Loop through each order data
+            orders.forEach((orderData, index) => {
+                // Create the element for each order
+                let localStorageOrderCardFinished = document.createElement('div');
+                localStorageOrderCardFinished.classList.add('koktel_order_finished_card');
+
+                // letruct the inner HTML content for the order
+                let localStorageOrderCardContent = `
                 <h2 style=" cursor: pointer;" onclick="koktel_show_order_details_page(${index})">طلب رقم ${index + 1}</h2>
                     <img src=${orderData.mealImgSrc} alt="مطاعم اندونيسيا - كوكتيل" title="مطاعم اندونيسيا - كوكتيل" onclick="koktel_show_order_details_page(${index})" loading="lazy">
                 <div>
@@ -1059,29 +1094,29 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, restaurantName, loc
                 </div>
                 `;
 
-            // Assign the HTML content to the created element
-            localStorageOrderCardFinished.innerHTML = localStorageOrderCardContent;
+                // Assign the HTML content to the created element
+                localStorageOrderCardFinished.innerHTML = localStorageOrderCardContent;
 
-            // Append the order element to the parent container
-            koktel_order_finished_card_area_id.appendChild(localStorageOrderCardFinished);
+                // Append the order element to the parent container
+                koktel_order_finished_card_area_id.appendChild(localStorageOrderCardFinished);
 
-            // Increment the index for the next iteration
-            index++;
+                // Increment the index for the next iteration
+                index++;
 
-        })
-
-
-        /* Calculate total price and tax amount */
-        let totalPriceSum = orders.reduce((acc, order) => acc + parseFloat(order.totalCurrentMealPrice.replace(/,/g, '')), 0);
-        let taxAmount = totalPriceSum * 0.1;
+            })
 
 
-        // Calculate the total including tax and delivery charge
-        let lastTotalPrice = totalPriceSum + taxAmount + deliveryFees;
+            /* Calculate total price and tax amount */
+            let totalPriceSum = orders.reduce((acc, order) => acc + parseFloat(order.totalCurrentMealPrice.replace(/,/g, '')), 0);
+            let taxAmount = totalPriceSum * 0.1;
 
 
-        /* Create The Bill Card Content */
-        let koktel_order_check_out_whatsApp_content = `
+            // Calculate the total including tax and delivery charge
+            let lastTotalPrice = totalPriceSum + taxAmount + deliveryFees;
+
+
+            /* Create The Bill Card Content */
+            let koktel_order_check_out_whatsApp_content = `
             <div id="koktel_order_check_out_whatsApp_div" onclick="koktel_createFinalWhatsAppMessage()">
                 <ion-icon name="logo-whatsapp"></ion-icon>
                 <h5>إرسال الطلبات</h5>
@@ -1096,25 +1131,20 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, restaurantName, loc
         `;
 
 
-        /* Show The Following Code if There is Any Data in The ${localStorageName} Key */
-        document.getElementById('koktel_order_check_out_div').innerHTML = koktel_order_check_out_whatsApp_content;
-        document.getElementById('koktel_order_check_out_div').style.display = 'flex';
-        document.getElementById('koktel_delete_all_restaurant_orders_button').style.display = 'block';
+            koktel_order_details_title_id.innerHTML = `طلباتك من ${restaurantName} <spam class="koktel_orders_ready_to_send_text">جاهزة للإرسال</spam>`;
 
-    } else {
-
-        // Create the element for each order
-        let localStorageOrderCardFinished = document.createElement('div');
-        localStorageOrderCardFinished.classList.add('koktel_order_finished_card');
-        koktel_order_finished_card_area_id.innerHTML = `
-            <h1 id='koktel_there_is_no_orders_text'>لاتوجد طلبات بعد..<ion-icon name="telescope-outline"></ion-icon></h1>
-        `;
-
-        // Hide These Elements if There is No Any Restaurant Orders
-        koktel_delete_all_restaurant_orders_button.style.display = 'none';
-        document.getElementById('koktel_order_check_out_div').innerHTML = '';
+            /* Show The Following Code if There is Any Data in The ${localStorageName} Key */
+            document.getElementById('koktel_order_check_out_div').innerHTML = koktel_order_check_out_whatsApp_content;
+            document.getElementById('koktel_order_check_out_div').style.display = 'flex';
+            document.getElementById('koktel_delete_all_restaurant_orders_button').style.display = 'block';
+        }
 
     }
+
+
+    // Call renderOrders function to initially render orders
+    renderOrders();
+
 
 
 
@@ -1158,7 +1188,7 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, restaurantName, loc
 
             // Create a box with the text "تم حذف جميع الطلبات"
             let successBox = document.createElement('div');
-            successBox.textContent = 'تم حذف جميع طلبات المطاعم';
+            successBox.textContent = `تم حذف جميع طلباتك من ${restaurantName}`;
             successBox.classList.add('koktel_success_box');
             document.body.appendChild(successBox);
 
@@ -1248,131 +1278,6 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, restaurantName, loc
 
 
 
-
-    // Function to render the orders
-    function renderOrders() {
-        // Get the container for displaying orders
-        koktel_order_finished_card_area_id.innerHTML = ''; // Clear the existing content
-
-        // Get The orders from localStorage
-        let orders = JSON.parse(localStorage.getItem(localStorageName));
-
-
-
-        // Check if orders is empty or null
-        if (!orders || orders.length === 0) {
-            // Remove the orders key from localStorage
-            localStorage.removeItem(localStorageName);
-
-
-            // Create the element for each order
-            let localStorageOrderCardFinished = document.createElement('div');
-            localStorageOrderCardFinished.classList.add('koktel_order_finished_card');
-            koktel_order_finished_card_area_id.innerHTML = `
-                <h1 id='koktel_there_is_no_orders_text'>لاتوجد طلبات بعد..<ion-icon name="telescope-outline"></ion-icon></h1>
-            `;
-
-            // Hide These Elements if There is No Any Restaurant Orders
-            koktel_delete_all_restaurant_orders_button.style.display = 'none';
-            document.getElementById('koktel_order_check_out_div').innerHTML = '';
-
-        }
-
-
-        /* in Case if There is Data in The Orders Key */
-        if (localStorage.getItem(localStorageName)) {
-
-            // Parse orders from localStorage
-            let orders = JSON.parse(localStorage.getItem(localStorageName));
-
-            // Loop through each order data
-            orders.forEach((orderData, index) => {
-                // Create the element for each order
-                let localStorageOrderCardFinished = document.createElement('div');
-                localStorageOrderCardFinished.classList.add('koktel_order_finished_card');
-
-                // letruct the inner HTML content for the order
-                let localStorageOrderCardContent = `
-                    <h2 style=" cursor: pointer;" onclick="koktel_show_order_details_page(${index})">طلب رقم ${index + 1}</h2>
-                        <img src=${orderData.mealImgSrc} alt="مطاعم اندونيسيا - كوكتيل" title="مطاعم اندونيسيا - كوكتيل" onclick="koktel_show_order_details_page(${index})" loading="lazy">
-                    <div>
-                        <h3 style="color: rgb(0, 255, 0);" onclick="koktel_show_order_details_page(${index})">الإجمالي = ${orderData.totalCurrentMealPrice.toLocaleString()}</h3>
-                    </div>
-                    <div class='koktel_orderFinished_info_and_delete'>
-                        <h3 id="koktel_order_details_h3" onclick="koktel_show_order_details_page(${index})">تفاصيل الطلب</h3>
-                        <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
-                    </div>
-                    
-                    
-                    <div id='koktel_ensure_delete_all_orders_overlay' class='koktel_ensure_delete_orders_overlay' style='display:none'>
-                        <div id='koktel_ensure_delete_all_orders_div'>
-                            <h6>متاكد من حذف جميع الطلبات؟</h6>
-                            <div id='koktel_ensure_delete_all_orders_answer_div'>
-                                <h6 onclick='koktel_delete_all_orders_function(this)'>عودة</h6>
-                                <h6 onclick='koktel_delete_all_orders_function(this)'>نعم</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id='koktel_ensure_delete_this_orders_overlay_${index}' class='koktel_ensure_delete_orders_overlay' style='display:none'>
-                        <div id='koktel_ensure_delete_all_orders_div'>
-                            <h6>متاكد من حذف هذا الطلب؟</h6>
-                            <div id='koktel_ensure_delete_all_orders_answer_div'>
-                                <h6 onclick='koktel_delete_this_orders_function(this, ${index})'>عودة</h6>
-                                <h6 onclick='koktel_delete_this_orders_function(this, ${index})'>نعم</h6>
-                            </div>
-                        </div>
-                    </div>
-                    `;
-
-                // Assign the HTML content to the created element
-                localStorageOrderCardFinished.innerHTML = localStorageOrderCardContent;
-
-                // Append the order element to the parent container
-                koktel_order_finished_card_area_id.appendChild(localStorageOrderCardFinished);
-
-                // Increment the index for the next iteration
-                index++;
-
-            })
-
-
-            /* Calculate total price and tax amount */
-            let totalPriceSum = orders.reduce((acc, order) => acc + parseFloat(order.totalCurrentMealPrice.replace(/,/g, '')), 0);
-            let taxAmount = totalPriceSum * 0.1;
-
-
-            // Calculate the total including tax and delivery charge
-            let lastTotalPrice = totalPriceSum + taxAmount + deliveryFees;
-
-
-            /* Create The Bill Card Content */
-            let koktel_order_check_out_whatsApp_content = `
-                <div id="koktel_order_check_out_whatsApp_div" onclick="koktel_createFinalWhatsAppMessage()">
-                    <ion-icon name="logo-whatsapp"></ion-icon>
-                    <h5>إرسال الطلبات</h5>
-                </div>
-                <div id="koktel_order_check_out_bill_div">
-                    <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
-                    ${orders.map((order, index) => `<h6>الطلب رقم ${index + 1} : ${order.totalCurrentMealPrice}</h6>`).join('')}
-                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
-                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : ${deliveryFees} Rp</h6>
-                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
-                </div>
-            `;
-
-
-            /* Show The Following Code if There is Any Data in The ${localStorageName} Key */
-            document.getElementById('koktel_order_check_out_div').innerHTML = koktel_order_check_out_whatsApp_content;
-            document.getElementById('koktel_order_check_out_div').style.display = 'flex';
-            document.getElementById('koktel_delete_all_restaurant_orders_button').style.display = 'block';
-        }
-
-    }
-
-
-    // Call renderOrders function to initially render orders
-    renderOrders();
 
 
 
@@ -1656,35 +1561,35 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, restaurantName, loc
 
 /* Send Data To The 'RestaurantOrderPageFunction' Function To Create Order Page Content */
 if (document.getElementById("koktel_kamannana_order_page_body")) {
-    RestaurantOrderPageFunction('koktel_kamannana_order_page_body', 'كامننا', 'Kamannana_LocalStorage', 30000);
+    RestaurantOrderPageFunction('koktel_kamannana_order_page_body', 'كامننا', 'Kamannana_LocalStorage', 30000, 'كامننا');
 }
 
 if (document.getElementById("koktel_raidan_order_page_body")) {
-    RestaurantOrderPageFunction('koktel_raidan_order_page_body', 'ريدان', 'Raidan_LocalStorage', 20000);
+    RestaurantOrderPageFunction('koktel_raidan_order_page_body', 'ريدان', 'Raidan_LocalStorage', 20000, 'ريدان');
 }
 
 if (document.getElementById("koktel_mamanoura_order_page_body")) {
-    RestaurantOrderPageFunction('koktel_mamanoura_order_page_body', 'ماما نورة', 'Mamanoura_LocalStorage', 20000);
+    RestaurantOrderPageFunction('koktel_mamanoura_order_page_body', 'ماما نورة', 'Mamanoura_LocalStorage', 20000, 'ماما-نورة');
 }
 
 if (document.getElementById("koktel_reem_albawadi_order_page_body")) {
-    RestaurantOrderPageFunction('koktel_reem_albawadi_order_page_body', 'ريم البوادي', 'Reem_Albawadi_LocalStorage', 20000);
+    RestaurantOrderPageFunction('koktel_reem_albawadi_order_page_body', 'ريم البوادي', 'Reem_Albawadi_LocalStorage', 20000, 'ريم-البوادي');
 }
 
 if (document.getElementById("koktel_koktel_order_page_body")) {
-    RestaurantOrderPageFunction('koktel_koktel_order_page_body', 'كوكتيل', 'Koktel_LocalStorage', 20000);
+    RestaurantOrderPageFunction('koktel_koktel_order_page_body', 'Koktel_LocalStorage', 20000, 'كوكتيل');
 }
 
 if (document.getElementById("koktel_alriyan_steak_house_order_page_body")) {
-    RestaurantOrderPageFunction('koktel_alriyan_steak_house_order_page_body', 'الريان ستيك هاوس', 'Alriyan_Steak_House_LocalStorage', 20000);
+    RestaurantOrderPageFunction('koktel_alriyan_steak_house_order_page_body', 'الريان ستيك هاوس', 'Alriyan_Steak_House_LocalStorage', 20000, 'الريان-ستيك-هاوس');
 }
 
 if (document.getElementById("koktel_pizza_hut_order_page_body")) {
-    RestaurantOrderPageFunction('koktel_pizza_hut_order_page_body', 'بيتزا هت', 'Pizza_Hut_LocalStorage', 20000);
+    RestaurantOrderPageFunction('koktel_pizza_hut_order_page_body', 'بيتزا هت', 'Pizza_Hut_LocalStorage', 20000, 'بيتزا-هت');
 }
 
 if (document.getElementById("koktel_kfc_order_page_body")) {
-    RestaurantOrderPageFunction('koktel_kfc_order_page_body', 'كنتاكي', 'KFC_LocalStorage', 20000);
+    RestaurantOrderPageFunction('koktel_kfc_order_page_body', 'كنتاكي', 'KFC_LocalStorage', 20000, 'كنتاكي');
 }
 
 
@@ -1992,7 +1897,10 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
 
             <div id="koktel_order_check_out_div" style="display: none;"></div>
 
-            <a href="https://bandar-zuhair.github.io/Koktel/سوبرماركت-اندونيسيا.html" class="koktel_go_back_products_page_button"> <ion-icon name="arrow-forward-circle-outline"></ion-icon> .. قسم السوبرماركت</a>
+            <a itemprop="url" href="https://bandar-zuhair.github.io/Koktel/سوبرماركت-اندونيسيا.html"
+            class="koktel_go_back_products_page_button">
+            <ion-icon name="arrow-undo-circle-outline"></ion-icon></a>
+
         </div>`;
 
 
@@ -2002,114 +1910,137 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
 
 
 
-    /* in Case if There Was Any Data in The supermarket_orders Key in The LocalStorage Then Do The Following Codes */
-    if (localStorage.getItem('supermarket_orders')) {
 
-        // Parse restaurant_orders from localStorage
+
+
+
+
+
+    // Function to render the orders
+    function renderOrders() {
+        // Get the container for displaying orders
+        koktel_order_finished_card_area_id.innerHTML = ''; // Clear the existing content
+
+        // Get The orders from localStorage
         let orders = JSON.parse(localStorage.getItem('supermarket_orders'));
 
+        // Check if orders is empty or null
+        if (!orders || orders.length === 0) {
+            // Remove the orders key from localStorage
+            localStorage.removeItem('supermarket_orders');
 
-        // Loop through each order data
-        orders.forEach((orderData, index) => {
 
-            // Increment index by 1
-            index += 1;
-
+            // Create the element for each order
             // Create the element for each order
             let localStorageOrderCardFinished = document.createElement('div');
             localStorageOrderCardFinished.classList.add('koktel_order_finished_card');
+            koktel_order_finished_card_area_id.innerHTML = `
+                <h1 id='koktel_there_is_no_orders_text'>لاتوجد طلبات بعد..<ion-icon name="telescope-outline"></ion-icon></h1>
+            `;
+
+            // Hide These Elements if There is No Any Restaurant Orders
+            koktel_delete_all_restaurant_orders_button.style.display = 'none';
+            document.getElementById('koktel_order_check_out_div').innerHTML = '';
 
 
-            // letruct the inner HTML content for the order
-            let localStorageOrderCardContent = `
-                    <h2 style="margin-bottom: 5px;">منتج رقم ${index + 1}</h2>
-                    <h2 style="color: aqua;">${orderData.productName}</h2>
-                    <img src="${orderData.productImgSrc}" alt="سوبرماركت اندونيسيا - كوكتيل" title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
-                    
-                    <div class='koktel_orderFinished_info_and_delete'>
-                        <h3 style="color: rgb(255, 166, 0); cursor: text;">العدد = ${orderData.productAmount}</h3>
-                        <h3 id="koktel_order_total_price_h3">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
-                        <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
-                    </div>
+        }
 
-                    
-                    <div id='koktel_ensure_delete_all_orders_overlay' class='koktel_ensure_delete_orders_overlay' style='display:none'>
-                        <div id='koktel_ensure_delete_all_orders_div'>
-                            <h6>متاكد من حذف جميع الطلبات؟</h6>
-                            <div id='koktel_ensure_delete_all_orders_answer_div'>
-                                <h6 onclick='koktel_delete_all_orders_function(this)'>نعم</h6>
-                                <h6 onclick='koktel_delete_all_orders_function(this)'>عودة</h6>
-                            </div>
+        /* in Case if There is Data in The Orders Key */
+        if (localStorage.getItem('supermarket_orders')) {
+            // Parse orders from localStorage
+            let orders = JSON.parse(localStorage.getItem('supermarket_orders'));
+
+            // Loop through each order data
+            orders.forEach((orderData, index) => {
+                // Create the element for each order
+                let localStorageOrderCardFinished = document.createElement('div');
+                localStorageOrderCardFinished.classList.add('koktel_order_finished_card');
+
+                // Construct the inner HTML content for the order
+                let localStorageOrderCardContent = `
+                <h2 style=cursor: text; cursor: text;">منتج رقم ${index + 1}</h2>
+                <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
+                <img src="${orderData.productImgSrc}" alt="سوبرماركت اندونيسيا - كوكتيل" title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
+
+                <div class='koktel_orderFinished_info_and_delete'>
+                    <h3 style="color: rgb(255, 166, 0); cursor: text;">العدد = ${orderData.productAmount}</h3>
+                    <h3 id="koktel_order_total_price_h3">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+                    <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
+                </div>
+
+                <div id='koktel_ensure_delete_all_orders_overlay' class='koktel_ensure_delete_orders_overlay' style='display:none'>
+                    <div id='koktel_ensure_delete_all_orders_div'>
+                        <h6>متاكد من حذف جميع الطلبات؟</h6>
+                        <div id='koktel_ensure_delete_all_orders_answer_div'>
+                            <h6 onclick='koktel_delete_all_orders_function(this)'>عودة</h6>
+                            <h6 onclick='koktel_delete_all_orders_function(this)'>نعم</h6>
                         </div>
                     </div>
+                </div>
 
-                    <div id='koktel_ensure_delete_this_orders_overlay_${index}' class='koktel_ensure_delete_orders_overlay' style='display:none'>
-                        <div id='koktel_ensure_delete_all_orders_div'>
-                            <h6>متاكد من حذف هذا الطلب؟</h6>
-                            <div id='koktel_ensure_delete_all_orders_answer_div'>
-                                <h6 onclick='koktel_delete_this_orders_function(this, ${index})'>عودة</h6>
-                                <h6 onclick='koktel_delete_this_orders_function(this, ${index})'>نعم</h6>
-                            </div>
+                <div id='koktel_ensure_delete_this_orders_overlay_${index}' class='koktel_ensure_delete_orders_overlay' style='display:none'>
+                    <div id='koktel_ensure_delete_all_orders_div'>
+                        <h6>متاكد من حذف هذا الطلب؟</h6>
+                        <div id='koktel_ensure_delete_all_orders_answer_div'>
+                            <h6 onclick='koktel_delete_this_orders_function(this, ${index})'>عودة</h6>
+                            <h6 onclick='koktel_delete_this_orders_function(this, ${index})'>نعم</h6>
                         </div>
                     </div>
-                
-                `;
+                </div>
+            `;
 
-            // Assign the HTML content to the created element
-            localStorageOrderCardFinished.innerHTML = localStorageOrderCardContent;
+                // Assign the HTML content to the created element
+                localStorageOrderCardFinished.innerHTML = localStorageOrderCardContent;
 
-            // Append the order element to the parent container
-            koktel_order_finished_card_area_id.appendChild(localStorageOrderCardFinished);
-
-
-        });
-
-        // Calculate total price sum of all products
-        let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0);
-
-        // Calculate tax amount based on the total price sum
-        let taxAmount = totalPriceSum * 0.1;
-
-        // Add tax amount to the total price sum
-        let totalPriceWithTax = totalPriceSum + taxAmount;
-
-        // Add delivery charge to the total price with tax
-        let lastTotalPrice = totalPriceWithTax + 20000;
-
-        let koktel_order_check_out_whatsApp_content = `
-            <div id="koktel_order_check_out_whatsApp_div" onclick="koktel_createFinalWhatsAppMessage()">
-                <ion-icon name="logo-whatsapp"></ion-icon>
-                <h5>إرسال الطلبات</h5>
-            </div>
-            <div id="koktel_order_check_out_bill_div">
-                <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
-                ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
-                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
-                <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : 20,000 Rp</h6>
-                <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
-            </div>
-        `;
+                // Append the order element to the parent container
+                koktel_order_finished_card_area_id.appendChild(localStorageOrderCardFinished);
+            });
 
 
-        /* Show The Following Code if There is Any Data in The restaurant_orders Key */
-        document.getElementById('koktel_order_check_out_div').innerHTML = koktel_order_check_out_whatsApp_content;
-        document.getElementById('koktel_order_check_out_div').style.display = 'flex';
-        document.getElementById('koktel_delete_all_restaurant_orders_button').style.display = 'block';
-        document.getElementById('koktel_meal_info_note_id').style.display = 'block';
-        document.getElementById('koktel_order_check_out_div').style.display = 'flex';
+            // Calculate total price sum of all products
+            let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0);
 
-    } else {
-        // Create the element for each order
-        let localStorageOrderCardFinished = document.createElement('div');
-        localStorageOrderCardFinished.classList.add('koktel_order_finished_card');
-        koktel_order_finished_card_area_id.innerHTML = `
-            <h1 id='koktel_there_is_no_orders_text'>لاتوجد طلبات بعد..<ion-icon name="telescope-outline"></ion-icon></h1>
-        `;
+            // Calculate tax amount based on the total price sum
+            let taxAmount = totalPriceSum * 0.1;
 
-        // Hide These Elements if There is No Any Restaurant Orders
-        koktel_delete_all_restaurant_orders_button.style.display = 'none';
-        document.getElementById('koktel_order_check_out_div').innerHTML = '';
+            // Add tax amount to the total price sum
+            let totalPriceWithTax = totalPriceSum + taxAmount;
+
+            // Add delivery charge to the total price with tax
+            let lastTotalPrice = totalPriceWithTax + 20000;
+
+            let koktel_order_check_out_whatsApp_content = `
+                <div id="koktel_order_check_out_whatsApp_div" onclick="koktel_createFinalWhatsAppMessage()">
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                    <h5>إرسال الطلبات</h5>
+                </div>
+                <div id="koktel_order_check_out_bill_div">
+                    <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
+                    ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
+                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
+                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : 20,000 Rp</h6>
+                    <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
+                </div>
+            `;
+
+
+            /* Show The Following Code if There is Any Data in The restaurant_orders Key */
+            document.getElementById('koktel_order_check_out_div').innerHTML = koktel_order_check_out_whatsApp_content;
+            document.getElementById('koktel_order_check_out_div').style.display = 'flex';
+            document.getElementById('koktel_delete_all_restaurant_orders_button').style.display = 'block';
+            document.getElementById('koktel_meal_info_note_id').style.display = 'block';
+            document.getElementById('koktel_order_check_out_div').style.display = 'flex';
+        }
     }
+
+
+
+    // Call renderOrders function to initially render orders
+    renderOrders();
+
+
+
+
 
 
 
@@ -2261,127 +2192,7 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
 
 
 
-    // Function to render the orders
-    function renderOrders() {
-        // Get the container for displaying orders
-        koktel_order_finished_card_area_id.innerHTML = ''; // Clear the existing content
 
-        // Get The orders from localStorage
-        let orders = JSON.parse(localStorage.getItem('supermarket_orders'));
-
-        // Check if orders is empty or null
-        if (!orders || orders.length === 0) {
-            // Remove the orders key from localStorage
-            localStorage.removeItem('supermarket_orders');
-
-
-            // Create the element for each order
-            // Create the element for each order
-            let localStorageOrderCardFinished = document.createElement('div');
-            localStorageOrderCardFinished.classList.add('koktel_order_finished_card');
-            koktel_order_finished_card_area_id.innerHTML = `
-                <h1 id='koktel_there_is_no_orders_text'>لاتوجد طلبات بعد..<ion-icon name="telescope-outline"></ion-icon></h1>
-            `;
-
-            // Hide These Elements if There is No Any Restaurant Orders
-            koktel_delete_all_restaurant_orders_button.style.display = 'none';
-            document.getElementById('koktel_order_check_out_div').innerHTML = '';
-
-
-        }
-
-        /* in Case if There is Data in The Orders Key */
-        if (localStorage.getItem('supermarket_orders')) {
-            // Parse orders from localStorage
-            let orders = JSON.parse(localStorage.getItem('supermarket_orders'));
-
-            // Loop through each order data
-            orders.forEach((orderData, index) => {
-                // Create the element for each order
-                let localStorageOrderCardFinished = document.createElement('div');
-                localStorageOrderCardFinished.classList.add('koktel_order_finished_card');
-
-                // Construct the inner HTML content for the order
-                let localStorageOrderCardContent = `
-                <h2 style=cursor: text; cursor: text;">منتج رقم ${index + 1}</h2>
-                <h2 style="color: aqua; cursor: text;">${orderData.productName}</h2>
-                <img src="${orderData.productImgSrc}" alt="سوبرماركت اندونيسيا - كوكتيل" title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
-
-                <div class='koktel_orderFinished_info_and_delete'>
-                    <h3 style="color: rgb(255, 166, 0); cursor: text;">العدد = ${orderData.productAmount}</h3>
-                    <h3 id="koktel_order_total_price_h3">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
-                    <h3 style="color: red;" onclick="koktel_ensure_delete_orders_box(this, ${index})">حذف الطلب</h3>
-                </div>
-
-                <div id='koktel_ensure_delete_all_orders_overlay' class='koktel_ensure_delete_orders_overlay' style='display:none'>
-                    <div id='koktel_ensure_delete_all_orders_div'>
-                        <h6>متاكد من حذف جميع الطلبات؟</h6>
-                        <div id='koktel_ensure_delete_all_orders_answer_div'>
-                            <h6 onclick='koktel_delete_all_orders_function(this)'>عودة</h6>
-                            <h6 onclick='koktel_delete_all_orders_function(this)'>نعم</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <div id='koktel_ensure_delete_this_orders_overlay_${index}' class='koktel_ensure_delete_orders_overlay' style='display:none'>
-                    <div id='koktel_ensure_delete_all_orders_div'>
-                        <h6>متاكد من حذف هذا الطلب؟</h6>
-                        <div id='koktel_ensure_delete_all_orders_answer_div'>
-                            <h6 onclick='koktel_delete_this_orders_function(this, ${index})'>عودة</h6>
-                            <h6 onclick='koktel_delete_this_orders_function(this, ${index})'>نعم</h6>
-                        </div>
-                    </div>
-                </div>
-            `;
-
-                // Assign the HTML content to the created element
-                localStorageOrderCardFinished.innerHTML = localStorageOrderCardContent;
-
-                // Append the order element to the parent container
-                koktel_order_finished_card_area_id.appendChild(localStorageOrderCardFinished);
-            });
-
-
-            // Calculate total price sum of all products
-            let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0);
-
-            // Calculate tax amount based on the total price sum
-            let taxAmount = totalPriceSum * 0.1;
-
-            // Add tax amount to the total price sum
-            let totalPriceWithTax = totalPriceSum + taxAmount;
-
-            // Add delivery charge to the total price with tax
-            let lastTotalPrice = totalPriceWithTax + 20000;
-
-            let koktel_order_check_out_whatsApp_content = `
-                <div id="koktel_order_check_out_whatsApp_div" onclick="koktel_createFinalWhatsAppMessage()">
-                    <ion-icon name="logo-whatsapp"></ion-icon>
-                    <h5>إرسال الطلبات</h5>
-                </div>
-                <div id="koktel_order_check_out_bill_div">
-                    <h6 id="koktel_order_check_out_bill_title" style="color: rgb(0, 255, 0)">الفاتورة</h6>
-                    ${orders.map((order, orderIndex) => `<h6>المنتج رقم ${orderIndex + 1} : ${order.totalPrice.toLocaleString()} Rp</h6>`).join('')}
-                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الضريبة : ${taxAmount.toLocaleString()} Rp</h6>
-                    <h6 class="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">التوصيل : 20,000 Rp</h6>
-                    <h6 id="koktel_order_check_out_bill_total_price" style="color: rgb(0, 255, 0)">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
-                </div>
-            `;
-
-
-            /* Show The Following Code if There is Any Data in The restaurant_orders Key */
-            document.getElementById('koktel_order_check_out_div').innerHTML = koktel_order_check_out_whatsApp_content;
-            document.getElementById('koktel_order_check_out_div').style.display = 'flex';
-            document.getElementById('koktel_delete_all_restaurant_orders_button').style.display = 'block';
-            document.getElementById('koktel_meal_info_note_id').style.display = 'block';
-            document.getElementById('koktel_order_check_out_div').style.display = 'flex';
-        }
-    }
-
-
-
-    // Call renderOrders function to initially render orders
-    renderOrders();
 
 
 
@@ -2783,7 +2594,10 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
 
             <div id="koktel_order_check_out_div" style="display: none;"></div>
 
-            <a href="https://bandar-zuhair.github.io/Koktel/مخبوزات-اندونيسيا.html" class="koktel_go_back_products_page_button"> <ion-icon name="arrow-forward-circle-outline"></ion-icon> .. قسم المعسلات</a>
+            <a itemprop="url" href="https://bandar-zuhair.github.io/Koktel/مخبوزات-اندونيسيا.html"
+            class="koktel_go_back_products_page_button">
+            <ion-icon name="arrow-undo-circle-outline"></ion-icon></a>
+
         </div>`;
 
 
@@ -3296,7 +3110,7 @@ if (document.getElementById("koktel_choose_worker_type_section")) {
 
         // Create the final message And join all order details
         let finalMessage = "طلب جديد حجز شغالة:\n";
-        finalMessage += "- لمدة 8 ساعات = 200,000 Rp\n";
+        finalMessage += "لمدة 8 ساعات = 200,000 Rp\n";
         finalMessage += `تاريخ إرسال الطلب: ${formattedDate}\n\n`; // Add today's date
 
         // Append the grand total to the final message
@@ -3350,7 +3164,15 @@ if (document.getElementById("koktel_choose_worker_type_section")) {
         if (driverType === 'car') {
             clickedDriverType = 'طلب جديد حجز سائق سيارة';
         } else if (driverType === 'motor') {
-            clickedDriverType = 'طلب جديد حجز سائق دباب';
+            /* clickedDriverType = 'طلب جديد حجز سائق دباب'; */
+
+            /* Delete The Following Code And UnComment The Upeer Code Once this Service is Avaliable */
+            // Re-enable scrolling
+            document.documentElement.style.overflow = 'auto';
+            document.getElementById('koktel_choose_worker_type_section').removeChild(document.getElementById('koktel_driver_type_box_overlay'));
+            alert('هذه الخدمة ليست متوفر بعد..');
+            return;
+
         } else {
             // Re-enable scrolling
             document.documentElement.style.overflow = 'auto';
@@ -3364,7 +3186,7 @@ if (document.getElementById("koktel_choose_worker_type_section")) {
 
         // Create the final message and join all order details
         let finalMessage = `${clickedDriverType}\n`; // Initial message
-        finalMessage += "- لمدة 8 ساعات = 500,000 Rp\n";
+        finalMessage += "لمدة 8 ساعات = 500,000 Rp\n";
         finalMessage += `تاريخ إرسال الطلب: ${formattedDate}\n\n`; // Add today's date
 
         // Append additional information to the final message
@@ -3752,7 +3574,10 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
 
             <div id="koktel_order_check_out_div" style="display: none;"></div>
 
-            <a href="https://bandar-zuhair.github.io/Koktel/صيدلية-اندونيسيا.html" class="koktel_go_back_products_page_button"> <ion-icon name="arrow-forward-circle-outline"></ion-icon> .. قسم الصيدلية</a>
+            <a itemprop="url" href="https://bandar-zuhair.github.io/Koktel/صيدلية-اندونيسيا.html"
+            class="koktel_go_back_products_page_button">
+            <ion-icon name="arrow-undo-circle-outline"></ion-icon></a>
+
         </div>`;
 
 
@@ -4539,7 +4364,10 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
 
             <div id="koktel_order_check_out_div" style="display: none;"></div>
 
-            <a href="https://bandar-zuhair.github.io/Koktel/معسلات-اندونيسيا.html" class="koktel_go_back_products_page_button"> <ion-icon name="arrow-forward-circle-outline"></ion-icon> .. قسم المعسلات</a>
+            <a itemprop="url" href="https://bandar-zuhair.github.io/Koktel/معسلات-اندونيسيا.html"
+            class="koktel_go_back_products_page_button">
+            <ion-icon name="arrow-undo-circle-outline"></ion-icon></a>
+
         </div>`;
 
 

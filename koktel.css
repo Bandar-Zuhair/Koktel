@@ -1315,8 +1315,10 @@ body.nav-open #koktel_nav_options * {
     position: fixed;
     top: 0;
     left: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
 
 #koktel_ensure_delete_all_orders_div {
     z-index: 997;

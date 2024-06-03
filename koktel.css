@@ -1421,7 +1421,6 @@ body.nav-open #koktel_nav_options * {
 #koktel_order_check_out_bill_div {
     background: rgb(96, 96, 96);
     width: 75%;
-    padding: 20px 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1432,17 +1431,26 @@ body.nav-open #koktel_nav_options * {
 
 #koktel_order_check_out_bill_div h6 {
     font-size: 2.5vw;
-    margin: 5px 0;
+    padding: 10px 0;
     text-align: center;
     line-height: 1.4;
 }
 
-.koktel_order_check_out_bill_title {
-    padding-bottom: 10px;
+#koktel_order_check_out_bill_title {
+    background: rgb(138, 138, 138);
+    width: 100%;
+    color: rgb(0, 255, 0);
+    border-radius: 7px;
 }
 
-#koktel_order_check_out_bill_total_price {
-    padding-top: 10px;
+#koktel_order_check_out_bill_details_text{
+    margin: 9px 0;
+}
+
+.koktel_order_check_out_bill_total_price {
+    color: rgb(0, 255, 0);
+    background: rgb(138, 138, 138);
+    width: 100%;
 }
 
 #koktel_order_details_text_div {
@@ -2343,10 +2351,6 @@ footer img {
         font-size: 4vw;
     }
 
-    #koktel_order_check_out_bill_div {
-        padding: 10px 5px;
-    }
-
     #koktel_order_check_out_bill_div h6 {
         font-size: 3.5vw;
     }
@@ -3132,15 +3136,11 @@ footer img {
 
     #koktel_order_check_out_bill_div h6 {
         font-size: 4.5vw;
-        margin: 3px 0;
+        padding: 5px 0;
     }
 
-    .koktel_order_check_out_bill_title {
-        padding-bottom: 5px;
-    }
-
-    #koktel_order_check_out_bill_total_price {
-        padding-top: 5px;
+    #koktel_order_check_out_bill_details_text{
+        margin: 7px 0;
     }
 
     #koktel_companydescription h2 {
@@ -3271,7 +3271,6 @@ footer img {
 
     #koktel_order_check_out_bill_div {
         width: 100%;
-        padding: 5px;
     }
 }
 
@@ -3704,14 +3703,11 @@ footer img {
 
     #koktel_order_check_out_bill_div h6 {
         font-size: 6.5vw;
+        padding: 3px 0;
     }
 
-    .koktel_order_check_out_bill_title {
-        padding-bottom: 0;
-    }
-
-    #koktel_order_check_out_bill_total_price {
-        padding-top: 0;
+    #koktel_order_check_out_bill_details_text{
+        margin: 5px 0;
     }
 
     #koktel_order_details_text_background h4 {

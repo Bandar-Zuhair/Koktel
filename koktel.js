@@ -1297,36 +1297,36 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, restaurantName, loc
 
         // Create order details HTML content
         let orderDetailsContent = `
-            <div id="koktel_order_details_text_img">
-                <img src=${order.mealImgSrc} alt="مطاعم اندونيسيا - كوكتيل" title="مطاعم اندونيسيا - كوكتيل" id="koktel_web_logo_no_moving" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
-            </div>
-            <div>
-                <h1 class="koktel_order_details_title">تفاصيل الطلب رقم ${orderIndexNumber + 1}</h1>
-            </div>
-            <div id="koktel_order_details_text_background" style="background: linear-gradient(to right, rgb(0, 123, 255), rgb(0, 79, 163));">
-                <h4 style="color: rgb(255, 166, 0);">الاسم: ${order.mealName}</h4>
-                ${order.mealDetails ? `<h4 style="color: rgb(255, 166, 0);">الوصف: ${order.mealDetails}</h4>` : ''}
-                ${order.orderText ? '<h4>تفاصيل الطلب:</h4>' : ''}
-                ${order.orderText ? order.orderText.split('\n').map(line => `<h4>${line}</h4>`).join('') : ''}
-                ${order.noteText ? `<h4>الملاحظة: ${order.noteText}</h4>` : ''}
-                <h4 style="color: rgb(255, 166, 0);">عدد الطلب: ${order.mealAmountNumber}</h4>
-                <h4 style="color: rgb(0, 255, 0);">سعر الطلب = ${order.totalCurrentMealPrice}</h4>
-            </div>
-            <div id="koktel_order_details_text_bottom_button_div" style="background: linear-gradient(to right, rgb(132, 0, 255), rgb(60, 0, 117));">
-                <h5 onclick="koktel_hide_order_details_page()">عودة</h5>
-                <h5 style="color: red;" onclick="koktel_ensure_delete_text_orders_box()">حذف الطلب</h5>
-            </div>
+        <div id="koktel_order_details_text_img">
+            <img src=${order.mealImgSrc} alt="مطاعم اندونيسيا - كوكتيل" title="مطاعم اندونيسيا - كوكتيل" id="koktel_web_logo_no_moving" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
+        </div>
+        <div>
+            <h1 class="koktel_order_details_title">تفاصيل الطلب رقم ${orderIndexNumber + 1}</h1>
+        </div>
+        <div id="koktel_order_details_text_background" style="background: linear-gradient(to right, rgb(0, 123, 255), rgb(0, 79, 163));">
+            <h4 style="color: rgb(255, 166, 0);">الاسم: ${order.mealName}</h4>
+            ${order.mealDetails ? `<h4 style="color: rgb(255, 166, 0);">الوصف: ${order.mealDetails}</h4>` : ''}
+            ${order.orderText ? '<h4>تفاصيل الطلب:</h4>' : ''}
+            ${order.orderText ? order.orderText.split('\n').map(line => `<h4>${line}</h4>`).join('') : ''}
+            ${order.noteText ? `<h4>الملاحظة: ${order.noteText}</h4>` : ''}
+            <h4 style="color: rgb(255, 166, 0);">عدد الطلب: ${order.mealAmountNumber}</h4>
+            <h4 style="color: rgb(0, 255, 0);">سعر الطلب = ${order.totalCurrentMealPrice}</h4>
+        </div>
+        <div id="koktel_order_details_text_bottom_button_div" style="background: linear-gradient(to right, rgb(132, 0, 255), rgb(60, 0, 117));">
+            <h5 onclick="koktel_hide_order_details_page()">عودة</h5>
+            <h5 style="color: red;" onclick="koktel_ensure_delete_text_orders_box()">حذف الطلب</h5>
+        </div>
 
-            <div id='koktel_ensure_delete_text_orders_overlay' class='koktel_ensure_delete_orders_overlay' style='display:none'>
-                <div id='koktel_ensure_delete_all_orders_div'>
-                    <h6>متاكد من حذف هذا الطلب؟</h6>
-                    <div id='koktel_ensure_delete_all_orders_answer_div'>
-                        <h6 onclick='koktel_delete_text_orders_function(this)'>عودة</h6>
-                        <h6 onclick='koktel_delete_text_orders_function(this, ${orderIndexNumber})'>نعم</h6>
-                    </div>
+        <div id='koktel_ensure_delete_text_orders_overlay' class='koktel_ensure_delete_orders_overlay' style='display:none'>
+            <div id='koktel_ensure_delete_all_orders_div'>
+                <h6>متاكد من حذف هذا الطلب؟</h6>
+                <div id='koktel_ensure_delete_all_orders_answer_div'>
+                    <h6 onclick='koktel_delete_text_orders_function(this)'>عودة</h6>
+                    <h6 onclick='koktel_delete_text_orders_function(this, ${orderIndexNumber})'>نعم</h6>
                 </div>
             </div>
-        `;
+        </div>
+    `;
 
         // Hide the order list container
         document.getElementById('koktel_order_details_div_id').style.display = 'none';
@@ -1334,7 +1334,11 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, restaurantName, loc
         // Append The Following Elements To Each Other
         orderDetailsContainer.innerHTML = orderDetailsContent;
         document.getElementById(orderPageBodyIdName).appendChild(orderDetailsContainer);
+
+        // Append the overlay to the body to ensure it covers the entire screen
+        document.body.appendChild(document.getElementById('koktel_ensure_delete_text_orders_overlay'));
     }
+
 
 
     // Function to hide order details

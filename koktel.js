@@ -1358,7 +1358,7 @@ if (document.getElementById("koktel_meal_info_section")) {
             // Create Button To Show Orders Page
             let koktel_mealOrderIconDiv = document.createElement('div');
             koktel_mealOrderIconDiv.id = 'koktel_order_page_icon_div';
-            let koktel_mealOrderIcon = `<a href='https://koktel-indo/صفحات-مطاعم-اندونيسيا/${ar_restaurantNameLink}/طلباتك-من-مطعم-${ar_restaurantNameLink}.html' id="koktel_order_page_icon"><ion-icon name="cart-outline"></ion-icon></a>`;
+            let koktel_mealOrderIcon = `<a href='https://koktel-indo.com/صفحات-مطاعم-اندونيسيا/${ar_restaurantNameLink}/طلباتك-من-مطعم-${ar_restaurantNameLink}' id="koktel_order_page_icon"><ion-icon name="cart-outline"></ion-icon></a>`;
             koktel_mealOrderIconDiv.innerHTML = koktel_mealOrderIcon;
             koktel_mealOrderIconDiv.style.opacity = '0';
             document.body.appendChild(koktel_mealOrderIconDiv);

@@ -88,6 +88,12 @@ setWebsiteLanguage = function () {
         });
 
 
+        /* Styling For Supermarket Cards Inner Pick Or Unpick Product */
+        document.querySelectorAll('.koktel_add_product_button_div').forEach(element => {
+            element.style.direction = 'rtl';
+        });
+
+
         /* Styling For Restaurant Cards Inner Info */
         document.querySelectorAll('.koktelindo_product_slide_div').forEach(element => {
             element.style.flexDirection = 'row';
@@ -136,6 +142,13 @@ setWebsiteLanguage = function () {
 
         /* Styling For Restaurant Cards Inner Info */
         document.querySelectorAll('.koktel_product_type_title').forEach(element => {
+            element.style.direction = 'ltr';
+        });
+
+
+
+        /* Styling For Supermarket Cards Inner Pick Or Unpick Product */
+        document.querySelectorAll('.koktel_add_product_button_div').forEach(element => {
             element.style.direction = 'ltr';
         });
 
@@ -412,13 +425,43 @@ function koktel_websiteGuidance(buttonClicked) {
             <a class="arLangText" onclick="koktel_scrollToMealType('kokteindo_special_meal_type')">مميز</a>
             <a class="indoLangText" onclick="koktel_scrollToMealType('kokteindo_special_meal_type')">Spesial</a>
 
+            <a class="arLangText" onclick="koktel_scrollToMealType('kokteindo_main_meal_type')">الأطباق الرئيسية</a>
+            <a class="indoLangText" onclick="koktel_scrollToMealType('kokteindo_main_meal_type')">Main Dishes</a>
 
             <a class="arLangText" onclick="koktel_scrollToMealType('kokteindo_grilled_meal_type')">مشويات</a>
-            <a class="indoLangText" onclick="koktel_scrollToMealType('kokteindo_grilled_meal_type')">Panggang</a>
+            <a class="indoLangText" onclick="koktel_scrollToMealType('kokteindo_grilled_meal_type')">Barbeque</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToMealType('kokteindo_local_meal_type')">أكلات شعبية</a>
+            <a class="indoLangText" onclick="koktel_scrollToMealType('kokteindo_local_meal_type')">Arabic Dishes</a>
+
+            
+            <a class="arLangText" onclick="koktel_scrollToMealType('kokteindo_side_meal_type')">أطباق جانبية</a>
+            <a class="indoLangText" onclick="koktel_scrollToMealType('kokteindo_side_meal_type')">Side Dishes</a>
+
+            
+            <a class="arLangText" onclick="koktel_scrollToMealType('kokteindo_seafood_type')">أكلات بحرية</a>
+            <a class="indoLangText" onclick="koktel_scrollToMealType('kokteindo_seafood_type')">Seafood</a>
+
+            
+            <a class="arLangText" onclick="koktel_scrollToMealType('kokteindo_sandwitch_type')">سندويتشات</a>
+            <a class="indoLangText" onclick="koktel_scrollToMealType('kokteindo_sandwitch_type')">Sandwitch</a>
+
+            
+            <a class="arLangText" onclick="koktel_scrollToMealType('kokteindo_salads_type')">سلطات</a>
+            <a class="indoLangText" onclick="koktel_scrollToMealType('kokteindo_salads_type')">Salads</a>
+
+            
+            <a class="arLangText" onclick="koktel_scrollToMealType('kokteindo_pastry_meal_type')">معجنات</a>
+            <a class="indoLangText" onclick="koktel_scrollToMealType('kokteindo_pastry_meal_type')">Pastry</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToMealType('kokteindo_breakfast_type')">فطور</a>
+            <a class="indoLangText" onclick="koktel_scrollToMealType('kokteindo_breakfast_type')">Beakfast</a>
 
 
             <a class="arLangText" onclick="koktel_scrollToMealType('kokteindo_sweet_meal_type')">حلى</a>
-            <a class="indoLangText" onclick="koktel_scrollToMealType('kokteindo_sweet_meal_type')">Mempermanis</a>
+            <a class="indoLangText" onclick="koktel_scrollToMealType('kokteindo_sweet_meal_type')">Dessert</a>
         `;
 
         /* Filter KFC Meal Type */
@@ -464,7 +507,7 @@ function koktel_websiteGuidance(buttonClicked) {
 
 
             <a class="arLangText" onclick="koktel_scrollToMealType('kokteindo_sweet_meal_type')">حلى</a>
-            <a class="indoLangText" onclick="koktel_scrollToMealType('kokteindo_sweet_meal_type')">Mempermanis</a>
+            <a class="indoLangText" onclick="koktel_scrollToMealType('kokteindo_sweet_meal_type')">Dessert</a>
         `;
 
         /* Filter Supermarket Product Type */
@@ -651,10 +694,6 @@ function koktel_websiteGuidance(buttonClicked) {
             <a class="indoLangText" onclick="koktel_scrollToMealType('kokteindo_fish_meal_type')">Fishes</a>
 
             
-            <a class="arLangText" onclick="koktel_scrollToMealType('kokteindo_legumes_meal_type')">بقوليات</a>
-            <a class="indoLangText" onclick="koktel_scrollToMealType('kokteindo_legumes_meal_type')">Kacang Kacangan</a>
-
-            
             <a class="arLangText" onclick="koktel_scrollToMealType('kokteindo_appetizer_meal_type')">مقبلات</a>
             <a class="indoLangText" onclick="koktel_scrollToMealType('kokteindo_appetizer_meal_type')">Appetizer</a>
             
@@ -777,6 +816,90 @@ function koktel_websiteGuidance(buttonClicked) {
 
             <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_indomie_product_section')">اندومي</a>
             <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_indomie_product_section')">Indomie</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_cheese_product_section')">أجبان</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_cheese_product_section')">Keju</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_ice_cream_product_section')">أيس كريم</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_ice_cream_product_section')">Es krim</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_biscuit_product_section')">بسكوت</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_biscuit_product_section')">Biskuit</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_crunchy_cereal_product_section')">حبوب مقرمشة</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_crunchy_cereal_product_section')">Sereal Renyah</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_diapers_product_section')">حفاضات</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_diapers_product_section')">Popok</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_sweet_product_section')">حلى</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_sweet_product_section')">Manis</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_soap_product_section')">صابون</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_soap_product_section')">Sabun</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_sauces_product_section')">صلصات</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_sauces_product_section')">Saus</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_shampoo_product_section')">شامبو</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_shampoo_product_section')">Makanan Beku</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_tea_product_section')">شاي</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_tea_product_section')">Teh</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_chips_product_section')">شبس</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_chips_product_section')">Keripik</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_chocolate_product_section')">شوكولاتة</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_chocolate_product_section')">Cokelat</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_frozen_food_product_section')">طعام مثلج</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_frozen_food_product_section')">Makanan Beku</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_drinks_product_section')">مشروبات</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_drinks_product_section')">Minuman</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_candy_product_section')">حلوى</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_candy_product_section')">Permen</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_teeth_product_section')">عناية اللأسنان</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_teeth_product_section')">Perawatan Gigi</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_men_care_product_section')">عناية الرجل</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_men_care_product_section')">Perawatan Pria</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_women_care_product_section')">عناية المرأة</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_women_care_product_section')">Perawatan Wanita</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_jam_product_section')">مربى</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_jam_product_section')">Selai</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_nuts_product_section')">مكسرات</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_nuts_product_section')">Kacang Campur</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('kokteindo_tissue_product_section')">مناديل</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('kokteindo_tissue_product_section')">Tisu</a>
         `;
 
         /* Filter Bread Products Type */
@@ -2146,7 +2269,7 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
 
     /* Function To Create The Final WhatsApp Message */
     koktel_createFinalWhatsAppMessage = function () {
-        // Retrieve orders from localStorage
+        // Get data orders from localStorage
         let orders = JSON.parse(localStorage.getItem(localStorageName));
 
         // Initialize variables
@@ -2164,8 +2287,19 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
             grandTotal += totalWithDelivery;
 
             // Create order information for Indonesian and Arabic
-            indoOrderInfo += `Pesanan Nomor ${index + 1}<br>`;
-            arOrderInfo += `الطلب رقم ${index + 1}<br>`;
+            indoOrderInfo += `
+                <div style="display: flex; align-items: center; justify-content: flex-start; flex-direction: row-reverse;">
+                    Pesanan Nomor ${index + 1}
+                    ${order.mealImgSrc ? `<img src="${order.mealImgSrc}" alt="Meal Image" style="width: 7vmax; margin-left: 1vmax; border-radius: 3px;">` : ''}
+                </div>
+            `;
+
+            arOrderInfo += `
+                <div style="display: flex; align-items: center;">
+                    الطلب رقم ${index + 1}
+                    ${order.mealImgSrc ? `<img src="${order.mealImgSrc}" alt="صورة الطلب" style="width: 7vmax; margin-right: 1vmax; border-radius: 3px;">` : ''}
+                </div>
+            `;
 
             // Indonesian Order Information
             if (order.indo_mealName) {
@@ -2202,7 +2336,6 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
             orderDetails.push(arOrderInfo);
         });
 
-
         // Get today's date
         let today = new Date();
         let formattedDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
@@ -2226,13 +2359,11 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
                 - Tax: ${taxAmount.toLocaleString()} Rp<br>
                 - Delivery: ${deliveryFees.toLocaleString()} Rp<br>
                 - Total: ${grandTotal.toLocaleString()} Rp<br><br>
-
+    
                 - Harus Kirim Lokasinya Untuk Mulai Pemenuhan Pesanan..<br>
                 - Semua Metode Bayaran Tersedia, Baik Online Atau Tunai<br>
             </div>
         `;
-
-
 
         let finalArOrderInfo = `
             ${arOrderInfo}
@@ -2242,8 +2373,6 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
             - يجب إرسال موقعك لبدأ تنفيذ الطلب..<br>
             - جميع طرق الدفع متوفرة سواء اونلاين او كاش<br>
         `;
-
-
 
         // Function to clean up order information
         function cleanOrderInfo(orderInfo) {
@@ -2270,20 +2399,15 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
 
         // Set the new content
         pdfContainerDiv.innerHTML = `
-            <img src="../../كوكتيل-اندونيسيا/كوكتيل.jpg" alt="كوكتيل اندونيسيا - كوكتيل"
-            title="كوكتيل اندونيسيا - كوكتيل">
-
-                
+            <img src="../../كوكتيل-اندونيسيا/كوكتيل.jpg" alt="كوكتيل اندونيسيا - كوكتيل" title="كوكتيل اندونيسيا - كوكتيل">
+    
             <h1 class="arabic_and_indo_order_upper_text_div_class">${mainFinalMessage}</h1>
-
-
+    
             <div class="arabic_and_indo_order_text_div">
-
                 <h1 style="padding-right: 2px; border-bottom: 0.5px solid black; border-top: 0.5px solid black;">${finalArOrderInfo}</h1>
                 <h1 style="text-align: left; padding-left: 2px; border-bottom: 0.5px solid black;">${finalIndoOrderInfo}</h1>
-
             </div>
-
+    
             <div class="arabic_and_indo_order_bottom_text_div_class">
                 <h1>Bank Central Asia (BCA)<br>Name: samir<br>No Rekening: 1971025609</h1>
                 <h1>Dana: 087720208728</h1>
@@ -2292,7 +2416,8 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
 
         /* Call a function to download the order pdf file */
         downloadPdfWithCustomName();
-    }
+    };
+
 
 
 }
@@ -2349,6 +2474,72 @@ if (document.getElementById("koktel_kfc_order_page_body")) {
 /* Down Supermarket Code Down */
 /* Function To Add Orders And Create supermarket_orders Key in the localStorage */
 if (document.getElementById("koktel_supermarket_section")) {
+
+    /* Function to create all supermarket  */
+    function createProductCards(products, containerId) {
+        let container = document.getElementById(containerId);
+    
+        products.forEach(product => {
+            let productCard = document.createElement('div');
+            productCard.classList.add('koktel_product_card');
+    
+            productCard.innerHTML = `
+                <div class="koktel_product_card_info">
+                    <div class="koktel_product_card_img">
+                        <img src="${product.imageSRC}.jpg" alt="سوبرماركت اندونيسيا - كوكتيل" title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image('${product.imageSRC}.jpg')" loading="lazy">
+                    </div>
+                    <div>
+                        <a>
+                            <div class="koktel_product_name_div">
+                                <h1 class="arLangText">${product.ar_name}</h1>
+                                <h2 class="indoLangText">${product.indo_name}</h2>
+                            </div>
+                            <div class="koktel_product_price">
+                                <h3>${product.price}</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="koktel_add_product_button_div">
+                    <h4 class="arLangText" onclick="koktel_addProductButton('${product.price}', this)">اضافة</h4>
+                    <h4 class="indoLangText" onclick="koktel_addProductButton('${product.price}', this)">Tambah</h4>
+                    <h5 style="display: none;">1</h5>
+                    <ion-icon name="remove-outline" style="display: none;" onclick="koktel_minusProductButton('${product.price}', this)"></ion-icon>
+                </div>
+            `;
+    
+            container.appendChild(productCard);
+        });
+    }
+
+    
+    
+    /* Call a function to craete all supermarket product */
+    createProductCards(oilProducts, 'all_oil_products_slide_div_id');
+    createProductCards(indomieProducts, 'all_indomie_products_slide_div_id');
+    createProductCards(cheeseProducts, 'all_cheese_products_slide_div_id');
+    createProductCards(iceCreamProducts, 'all_ice_cream_products_slide_div_id');
+    createProductCards(biscuitProducts, 'all_biscuit_products_slide_div_id');
+    createProductCards(crunchyCerealProducts, 'all_crunchy_cereal_products_slide_div_id');
+    createProductCards(diapersProducts, 'all_diapers_products_slide_div_id');
+    createProductCards(sweetProducts, 'all_sweet_products_slide_div_id');
+    createProductCards(soapProducts, 'all_soap_products_slide_div_id');
+    createProductCards(saucesProducts, 'all_sauces_products_slide_div_id');
+    createProductCards(shampooProducts, 'all_shampoo_products_slide_div_id');
+    createProductCards(teaProducts, 'all_tea_products_slide_div_id');
+    createProductCards(chipsProducts, 'all_chips_products_slide_div_id');
+    createProductCards(chocolateProducts, 'all_chocolate_products_slide_div_id');
+    createProductCards(frozenFoodProducts, 'all_frozen_food_products_slide_div_id');
+    createProductCards(drinksProducts, 'all_drinks_products_slide_div_id');
+    createProductCards(candyProducts, 'all_candy_products_slide_div_id');
+    createProductCards(teethProducts, 'all_teeth_products_slide_div_id');
+    createProductCards(menCareProducts, 'all_men_care_products_slide_div_id');
+    createProductCards(womenCareProducts, 'all_women_care_products_slide_div_id');
+    createProductCards(jamProducts, 'all_jam_products_slide_div_id');
+    createProductCards(nutsProducts, 'all_nuts_products_slide_div_id');
+    createProductCards(tissueProducts, 'all_tissue_products_slide_div_id');
+
+
 
     /* Show or Hide The 'upperBar' Element Based on The 'koktel_filter_product_type_div_id' element postion */
     window.addEventListener('scroll', function () {
@@ -2425,18 +2616,10 @@ if (document.getElementById("koktel_supermarket_section")) {
             supermarkerBottomCounterDiv = document.createElement('div');
             supermarkerBottomCounterDiv.id = 'koktel_product_bottom_counter_div';
 
-            // Apply flexbox to center the h6 element
-            supermarkerBottomCounterDiv.style.display = 'flex';
-            supermarkerBottomCounterDiv.style.justifyContent = 'center';
-            supermarkerBottomCounterDiv.style.alignItems = 'center';
 
             // Create The Text To Display The Total Price
-            let supermarkerBottomCountertext = document.createElement('h6');
-            supermarkerBottomCountertext.id = 'koktel_supermarket_total_price';
-            supermarkerBottomCountertext.innerText = `إضافة الطلب = ${addedNumber.toLocaleString()} Rp`;
+            supermarkerBottomCounterDiv.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${addedNumber.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${addedNumber.toLocaleString()} Rp</h6>`;
 
-            // Append The Text Created To The Container Div
-            supermarkerBottomCounterDiv.appendChild(supermarkerBottomCountertext);
 
             // Append The Container Div To The Body of The Document
             document.body.appendChild(supermarkerBottomCounterDiv);
@@ -2526,14 +2709,14 @@ if (document.getElementById("koktel_supermarket_section")) {
             // If The Container Already Exists, Update The Total Price
 
             // Get The Current Total Price From The Displayed Text
-            let totalPriceElement = document.getElementById('koktel_supermarket_total_price');
+            let totalPriceElement = document.getElementById('koktel_product_bottom_counter_div');
             let currentTotal = parseFloat(totalPriceElement.innerText.split('=')[1].trim().replace(/[^\d.]/g, ''));
 
             // Calculate The New Total Price By Adding The Added Number To The Current Total
             let newTotal = currentTotal + parseFloat(addedNumber.replace(/[^\d.]/g, ''));
 
             // Update The Text Content of The Total Price Display To Display The New Total
-            totalPriceElement.innerText = `إضافة الطلب = ${newTotal.toLocaleString()} Rp`;
+            totalPriceElement.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
             // Ensure supermarkerBottomCounterDiv is visible
             supermarkerBottomCounterDiv.style.display = 'flex';
@@ -2570,20 +2753,25 @@ if (document.getElementById("koktel_supermarket_section")) {
         let currentCount = parseInt(parentDiv.querySelector('h5').innerText.trim()) || 0;
         let totalValue = parseFloat(addedNumber.replace(/[^\d.]/g, '')) * currentCount;
         clickedProducts[productName] = { productName, indo_productName, currentCount, totalValue, imgSrc };
+
+
+
+        /* Call a function to show the correct website language */
+        setWebsiteLanguage();
     }
 
 
     // Function To Handle The Click Event On Ion-Icon (Minus) Element
     koktel_minusProductButton = function (subtractedNumber, clickedElement) {
         // Get The Current Total Price From The Displayed Text
-        let totalPriceElement = document.getElementById('koktel_supermarket_total_price');
+        let totalPriceElement = document.getElementById('koktel_product_bottom_counter_div');
         let currentTotal = parseFloat(totalPriceElement.innerText.split('=')[1].trim().replace(/[^\d.]/g, ''));
 
         // Calculate The New Total Price By Subtracting The Subtracted Number From The Current Total
         let newTotal = currentTotal - parseFloat(subtractedNumber.replace(/[^\d.]/g, ''));
 
         // Update The Text Content of The Total Price Display To Display The New Total
-        totalPriceElement.innerText = `إضافة الطلب = ${newTotal.toLocaleString()} Rp`;
+        totalPriceElement.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
         // Get The Parent Div of The Clicked ion-icon
         let parentDiv = clickedElement.parentElement;
@@ -2611,6 +2799,11 @@ if (document.getElementById("koktel_supermarket_section")) {
                 supermarkerBottomCounterDiv.style.display = 'none';
             }
         }
+
+
+
+        /* Call a function to show the correct website language */
+        setWebsiteLanguage();
     }
 }
 
@@ -2627,8 +2820,8 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
             <div class='koktel_order_finished_card_area' id='koktel_order_finished_card_area_id'></div>
 
             <div>
-                <h4 class='koktel_delete_all_orders_button_class arLangText' onclick='koktel_ensure_delete_orders_box(this)'>حذف جميع الطلبات</h4>
-                <h4 class='koktel_delete_all_orders_button_class indoLangText' onclick='koktel_ensure_delete_orders_box(this)'>Hapus semua pesanan</h4>
+                <h4 id='koktel_delete_all_restaurant_orders_button' class='koktel_delete_all_orders_button_class arLangText' onclick='koktel_ensure_delete_orders_box(this)'>حذف جميع الطلبات</h4>
+                <h4 id='koktel_delete_all_restaurant_orders_button' class='koktel_delete_all_orders_button_class indoLangText' onclick='koktel_ensure_delete_orders_box(this)'>Hapus semua pesanan</h4>
             </div>
 
             <div class="koktel_meal_info_note" id="koktel_meal_info_note_id" style="margin-top: 5px; display: none;">
@@ -2742,8 +2935,8 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
                     <h3 id="koktel_order_total_price_h3" class="indoLangText">Total = ${orderData.totalPrice.toLocaleString()} Rp</h3>
 
 
-                    <h3 class="arLangText" onclick="koktel_ensure_delete_orders_box(this, ${index})" style="color: red;">حذف الطلب</h3>
-                    <h3 class="indoLangText" onclick="koktel_ensure_delete_orders_box(this, ${index})" style="color: red;">Hapus pesanan</h3>
+                    <h3 class="arLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">حذف الطلب</h3>
+                    <h3 class="indoLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">Hapus</h3>
 
                 </div>
 
@@ -2849,7 +3042,7 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
         if (document.getElementById('koktel_ensure_delete_all_orders_overlay')) {
 
 
-            if (clickedDeleteButton.innerText === 'حذف الطلب') {
+            if (clickedDeleteButton === 'حذف الطلب') {
                 // letruct the ID of the corresponding overlay element
                 let overlayId = `koktel_ensure_delete_this_orders_overlay_${index}`;
 
@@ -2974,7 +3167,7 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
                 `;
 
                 // Hide These Elements if There is No Any Restaurant Orders
-                koktel_delete_all_restaurant_orders_button.style.display = 'none';
+                document.getElementById('koktel_delete_all_restaurant_orders_button').display = 'none';
                 document.getElementById('koktel_order_check_out_div').innerHTML = '';
             }
 
@@ -3009,6 +3202,8 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
             }, 700); // Wait for 3 seconds before triggering fade-out
 
 
+            /* Can a function to show the correct website language */
+            setWebsiteLanguage();
         }
 
         // Re-enable scrolling
@@ -3023,97 +3218,147 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
 
     /* Function To Create The Final WhatsApp Message */
     koktel_createFinalWhatsAppMessage = function () {
-        // Retrieve orders from localStorage
+        // Get data orders from localStorage
         let orders = JSON.parse(localStorage.getItem('supermarket_orders'));
 
-        // Initialize variables for total price and order details
-        let totalPrice = 0;
+        // Initialize variables
         let orderDetails = [];
+        let grandTotal = 0;
 
-        // Get the text inside the textarea
+        // Create order information for Indonesian and Arabic
+        let indoOrderInfo = '';
+        let arOrderInfo = '';
+
+        // Get the text inside the textarea (noteText)
         let noteTextarea = document.querySelector('.koktel_meal_info_note_textarea');
         let noteText = noteTextarea ? noteTextarea.value.trim() : ''; // Check if textarea exists
 
         // Loop through each order and extract relevant information
         orders.forEach((order, index) => {
-            // Add each order's total price to the total
-            totalPrice += order.totalPrice;
+            // Add each order's total price to the grand total
+            grandTotal += order.totalPrice;
 
-            // Create the order information in Indonesian
-            let orderInfo = `Produk Nomor ${index + 1}- ${order.indo_productName}\n`;
-            orderInfo += `- Jumlah Produk: ${order.productAmount}\n`;
-            orderInfo += `- Harganya: ${order.totalPrice.toLocaleString()} Rp\n\n`;
+            // Get the product image source
+            let productImgSrc = order.productImgSrc || ''; // Ensure the image source is not undefined
 
-            // Append the order information in Arabic
-            orderInfo += `المنتج رقم ${index + 1}- ${order.productName}\n`;
-            orderInfo += `- العدد: ${order.productAmount}\n`;
-            orderInfo += `- الإجمالي: ${order.totalPrice.toLocaleString()} Rp\n`;
-            orderInfo += `___________________________________\n\n`;
+            indoOrderInfo += `
+                <div style="display: flex; align-items: center; justify-content: flex-start; flex-direction: row-reverse;">
+                    Produk Nomor ${index + 1}
+                    <img src="${productImgSrc}" alt="Product Image" style="width: 10vmax; margin-left: 1vmax; border-radius: 3px;">
+                </div><br>
+            `;
+            arOrderInfo += `
+                <div style="display: flex; align-items: center;">
+                    المنتج رقم ${index + 1}
+                    <img src="${productImgSrc}" alt="صورة المنتج" style="width: 10vmax; margin-right: 1vmax; border-radius: 3px;">
+                </div>
+            `;
+
+
+            // Indonesian Order Information
+            if (order.indo_productName) {
+                indoOrderInfo += `@ ${order.indo_productName}<br>`;
+            }
+            indoOrderInfo += `- Jumlah Produk: ${order.productAmount}<br>`;
+            indoOrderInfo += `- Harganya: ${order.totalPrice.toLocaleString()} Rp<br><br>`;
+
+            // Arabic Order Information
+            if (order.productName) {
+                arOrderInfo += `@ ${order.productName}<br>`;
+            }
+            arOrderInfo += `- العدد: ${order.productAmount}<br>`;
+            arOrderInfo += `- الإجمالي: ${order.totalPrice.toLocaleString()} Rp<br><br>`;
 
             // Push the order information to the array
-            orderDetails.push(orderInfo);
+            orderDetails.push(indoOrderInfo);
+            orderDetails.push(arOrderInfo);
         });
 
         // Get today's date
         let today = new Date();
         let formattedDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
 
-        // Calculate total price sum of all products
-        let totalPriceSum = orders.reduce((total, order) => total + order.totalPrice, 0);
-
-        // Calculate tax amount based on the total price sum
+        // Calculate total price sum and tax amount
+        let totalPriceSum = orders.reduce((acc, order) => acc + order.totalPrice, 0);
         let taxAmount = totalPriceSum * 0.1;
 
-        // Calculate the total price with delivery
-        let lastTotalPrice = totalPrice + taxAmount + 20000;
+        // Calculate the grand total including delivery fee
+        let deliveryFees = 20000; // Fixed delivery fee
+        let lastTotalPrice = grandTotal + taxAmount + deliveryFees;
 
-        // Create the final message and join all order details
-        let finalMessage = "طلبات جديدة من السوبرماركت:\n"; // Initial message
-        finalMessage += `تاريخ إرسال الطلب: ${formattedDate}\n`; // Add today's date
-        finalMessage += `___________________________________\n\n`;
-        finalMessage += orderDetails.join(''); // Join order details
+        // Create the final message structure
+        let mainFinalMessage = `
+            طلبات جديدة من السوبرماركت:<br>
+            تاريخ إرسال الطلب: ${formattedDate}<br><br>
+        `;
 
-        // Check if noteText is not empty, then add it to the finalMessage
+        let finalIndoOrderInfo = `
+            <div style="text-align: left; direction: ltr;">
+                ${indoOrderInfo}
+                - Pajak: ${taxAmount.toLocaleString()} Rp<br>
+                - Kiriman: ${deliveryFees.toLocaleString()} Rp<br>
+                - Harga Akhir: ${lastTotalPrice.toLocaleString()} Rp<br><br>
+
+                Harus Kirim Lokasinya Untuk Mulai Pemenuhan Pesanan..<br>
+                Semua Metode Bayaran Tersedia, Baik Online Atau Tunai<br>
+            </div>
+        `;
+
+        let finalArOrderInfo = `
+        ${arOrderInfo}
+            - الضريبة: ${taxAmount.toLocaleString()} Rp<br>
+            - التوصيل: ${deliveryFees.toLocaleString()} Rp<br>
+            - الإجمالي: ${lastTotalPrice.toLocaleString()} Rp<br><br>
+
+            يجب إرسال موقعك لبدأ تنفيذ الطلب..<br>
+            جميع طرق الدفع متوفرة سواء اونلاين او كاش<br>
+        `;
+
+        // If there is a noteText, include it in both messages
         if (noteText !== '') {
-            finalMessage += `الملاحظات: ${noteText}\n`;
-            finalMessage += `___________________________________\n\n`;
+            finalIndoOrderInfo += `<br>Catatan: ${noteText}<br>`;
+            finalArOrderInfo += `<br>الملاحظات: ${noteText}<br>`;
         }
 
-        finalMessage += `- Pajak: ${taxAmount.toLocaleString()} Rp\n`;
-        finalMessage += `- Kiriman: 20,000 Rp\n`;
-        finalMessage += `- Harga Akhir: ${lastTotalPrice.toLocaleString()} Rp\n\n`;
+        // Function to clean up order information
+        function cleanOrderInfo(orderInfo) {
+            let lines = orderInfo.split('<br>');
+            lines = lines.filter(line => {
+                return !line.trim().startsWith('@') || line.trim().replace('@', '').trim().length > 0;
+            });
+            return lines.join('<br>');
+        }
 
+        // Clean up both finalIndoOrderInfo and finalArOrderInfo
+        finalIndoOrderInfo = cleanOrderInfo(finalIndoOrderInfo);
+        finalArOrderInfo = cleanOrderInfo(finalArOrderInfo);
 
-        finalMessage += `- الضريبة: ${taxAmount.toLocaleString()} Rp\n`;
-        finalMessage += `- التوصيل: 20,000 Rp\n`;
-        finalMessage += `- الإجمالي: ${lastTotalPrice.toLocaleString()} Rp\n\n`;
+        // Get the div with the id 'final_order_pdf_content_container_div'
+        let pdfContainerDiv = document.getElementById('final_order_pdf_content_container_div');
+        // Clear existing content
+        pdfContainerDiv.innerHTML = '';
 
+        // Set the new content
+        pdfContainerDiv.innerHTML = `
+            <img src="كوكتيل-اندونيسيا/كوكتيل.jpg" alt="كوكتيل اندونيسيا - كوكتيل"
+                title="كوكتيل اندونيسيا - كوكتيل">
 
-        finalMessage += `Harus Kirim Lokasinya Untuk Mulai Pemenuhan Pesanan..\n`;
-        finalMessage += `يجب إرسال موقعك لبدأ تنفيذ الطلب..\n\n`;
+            <h1 class="arabic_and_indo_order_upper_text_div_class">${mainFinalMessage}</h1>
 
+            <div class="arabic_and_indo_order_text_div">
+                <h1 style="padding-right: 2px; border-bottom: 0.5px solid black; border-top: 0.5px solid black;">${finalArOrderInfo}</h1>
+                <h1 style="text-align: left; padding-left: 2px; border-bottom: 0.5px solid black;">${finalIndoOrderInfo}</h1>
+            </div>
 
-        finalMessage += `- Semua Metode Bayaran Tersedia, Baik Online Atau Tunai\n`;
-        finalMessage += `- جميع طرق الدفع متوفرة سواء اونلاين او كاش\n\n`;
+            <div class="arabic_and_indo_order_bottom_text_div_class">
+                <h1>Bank Central Asia (BCA)<br>Name: samir<br>No Rekening: 1971025609</h1>
+                <h1>Dana: 087720208728</h1>
+            </div>
+        `;
 
-
-        finalMessage += `Silakan Gunakan Informasi Berikut Jika Bayar Melalui Transfer Bank\n`;
-        finalMessage += `يرجى استخدام المعلومات التالية في حال كان الدفع بالتحويل البنكي\n`;
-
-
-        finalMessage += `Bank Central Asia (BCA)\nName: samir\nNo Rekening: 1971025609\n\n`;
-        finalMessage += `Dana: 087720208728`;
-
-        // Encode the message using encodeURIComponent
-        let encodedMessage = encodeURIComponent(finalMessage);
-
-        // Create the WhatsApp URL
-        let whatsappURL = `https://wa.me/6282210081028?text=${encodedMessage}`;
-
-        // Open WhatsApp in a new window
-        window.open(whatsappURL, '_blank');
+        // Call a function to download the order pdf file
+        downloadPdfWithCustomName();
     }
-
 
 }
 /* Up Supermarket Code Up */
@@ -3208,18 +3453,9 @@ if (document.getElementById("koktel_bread_section")) {
             supermarkerBottomCounterDiv = document.createElement('div');
             supermarkerBottomCounterDiv.id = 'koktel_product_bottom_counter_div';
 
-            // Apply flexbox to center the h6 element
-            supermarkerBottomCounterDiv.style.display = 'flex';
-            supermarkerBottomCounterDiv.style.justifyContent = 'center';
-            supermarkerBottomCounterDiv.style.alignItems = 'center';
 
-            // Create The Text To Display The Total Price
-            let supermarkerBottomCountertext = document.createElement('h6');
-            supermarkerBottomCountertext.id = 'koktel_supermarket_total_price';
-            supermarkerBottomCountertext.innerText = `إضافة الطلب = ${addedNumber.toLocaleString()} Rp`;
+            supermarkerBottomCounterDiv.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${addedNumber.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${addedNumber.toLocaleString()} Rp</h6>`;
 
-            // Append The Text Created To The Container Div
-            supermarkerBottomCounterDiv.appendChild(supermarkerBottomCountertext);
 
             // Append The Container Div To The Body of The Document
             document.body.appendChild(supermarkerBottomCounterDiv);
@@ -3309,14 +3545,14 @@ if (document.getElementById("koktel_bread_section")) {
             // If The Container Already Exists, Update The Total Price
 
             // Get The Current Total Price From The Displayed Text
-            let totalPriceElement = document.getElementById('koktel_supermarket_total_price');
+            let totalPriceElement = document.getElementById('koktel_product_bottom_counter_div');
             let currentTotal = parseFloat(totalPriceElement.innerText.split('=')[1].trim().replace(/[^\d.]/g, ''));
 
             // Calculate The New Total Price By Adding The Added Number To The Current Total
             let newTotal = currentTotal + parseFloat(addedNumber.replace(/[^\d.]/g, ''));
 
             // Update The Text Content of The Total Price Display To Display The New Total
-            totalPriceElement.innerText = `إضافة الطلب = ${newTotal.toLocaleString()} Rp`;
+            totalPriceElement.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
             // Ensure supermarkerBottomCounterDiv is visible
             supermarkerBottomCounterDiv.style.display = 'flex';
@@ -3359,14 +3595,14 @@ if (document.getElementById("koktel_bread_section")) {
     // Function To Handle The Click Event On Ion-Icon (Minus) Element
     koktel_minusProductButton = function (subtractedNumber, clickedElement) {
         // Get The Current Total Price From The Displayed Text
-        let totalPriceElement = document.getElementById('koktel_supermarket_total_price');
+        let totalPriceElement = document.getElementById('koktel_product_bottom_counter_div');
         let currentTotal = parseFloat(totalPriceElement.innerText.split('=')[1].trim().replace(/[^\d.]/g, ''));
 
         // Calculate The New Total Price By Subtracting The Subtracted Number From The Current Total
         let newTotal = currentTotal - parseFloat(subtractedNumber.replace(/[^\d.]/g, ''));
 
         // Update The Text Content of The Total Price Display To Display The New Total
-        totalPriceElement.innerText = `إضافة الطلب = ${newTotal.toLocaleString()} Rp`;
+        totalPriceElement.innerText = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
         // Get The Parent Div of The Clicked ion-icon
         let parentDiv = clickedElement.parentElement;
@@ -4096,15 +4332,9 @@ if (document.getElementById("koktel_pharmacy_section")) {
             supermarkerBottomCounterDiv = document.createElement('div');
             supermarkerBottomCounterDiv.id = 'koktel_product_bottom_counter_div';
 
-            // Apply flexbox to center the h6 element
-            supermarkerBottomCounterDiv.style.display = 'flex';
-            supermarkerBottomCounterDiv.style.justifyContent = 'center';
-            supermarkerBottomCounterDiv.style.alignItems = 'center';
 
-            // Create The Text To Display The Total Price
-            let supermarkerBottomCountertext = document.createElement('h6');
-            supermarkerBottomCountertext.id = 'koktel_supermarket_total_price';
-            supermarkerBottomCountertext.innerText = `إضافة الطلب = ${addedNumber.toLocaleString()} Rp`;
+            supermarkerBottomCounterDiv.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${addedNumber.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${addedNumber.toLocaleString()} Rp</h6>`;
+
 
             // Append The Text Created To The Container Div
             supermarkerBottomCounterDiv.appendChild(supermarkerBottomCountertext);
@@ -4197,14 +4427,14 @@ if (document.getElementById("koktel_pharmacy_section")) {
             // If The Container Already Exists, Update The Total Price
 
             // Get The Current Total Price From The Displayed Text
-            let totalPriceElement = document.getElementById('koktel_supermarket_total_price');
+            let totalPriceElement = document.getElementById('koktel_product_bottom_counter_div');
             let currentTotal = parseFloat(totalPriceElement.innerText.split('=')[1].trim().replace(/[^\d.]/g, ''));
 
             // Calculate The New Total Price By Adding The Added Number To The Current Total
             let newTotal = currentTotal + parseFloat(addedNumber.replace(/[^\d.]/g, ''));
 
             // Update The Text Content of The Total Price Display To Display The New Total
-            totalPriceElement.innerText = `إضافة الطلب = ${newTotal.toLocaleString()} Rp`;
+            totalPriceElement.innerText = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
             // Ensure supermarkerBottomCounterDiv is visible
             supermarkerBottomCounterDiv.style.display = 'flex';
@@ -4247,14 +4477,14 @@ if (document.getElementById("koktel_pharmacy_section")) {
     // Function To Handle The Click Event On Ion-Icon (Minus) Element
     koktel_minusProductButton = function (subtractedNumber, clickedElement) {
         // Get The Current Total Price From The Displayed Text
-        let totalPriceElement = document.getElementById('koktel_supermarket_total_price');
+        let totalPriceElement = document.getElementById('koktel_product_bottom_counter_div');
         let currentTotal = parseFloat(totalPriceElement.innerText.split('=')[1].trim().replace(/[^\d.]/g, ''));
 
         // Calculate The New Total Price By Subtracting The Subtracted Number From The Current Total
         let newTotal = currentTotal - parseFloat(subtractedNumber.replace(/[^\d.]/g, ''));
 
         // Update The Text Content of The Total Price Display To Display The New Total
-        totalPriceElement.innerText = `إضافة الطلب = ${newTotal.toLocaleString()} Rp`;
+        totalPriceElement.innerText = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
         // Get The Parent Div of The Clicked ion-icon
         let parentDiv = clickedElement.parentElement;
@@ -4797,15 +5027,9 @@ if (document.getElementById("koktel_shisha_section")) {
             supermarkerBottomCounterDiv = document.createElement('div');
             supermarkerBottomCounterDiv.id = 'koktel_product_bottom_counter_div';
 
-            // Apply flexbox to center the h6 element
-            supermarkerBottomCounterDiv.style.display = 'flex';
-            supermarkerBottomCounterDiv.style.justifyContent = 'center';
-            supermarkerBottomCounterDiv.style.alignItems = 'center';
 
-            // Create The Text To Display The Total Price
-            let supermarkerBottomCountertext = document.createElement('h6');
-            supermarkerBottomCountertext.id = 'koktel_supermarket_total_price';
-            supermarkerBottomCountertext.innerText = `إضافة الطلب = ${addedNumber.toLocaleString()} Rp`;
+            supermarkerBottomCounterDiv.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${addedNumber.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${addedNumber.toLocaleString()} Rp</h6>`;
+
 
             // Append The Text Created To The Container Div
             supermarkerBottomCounterDiv.appendChild(supermarkerBottomCountertext);
@@ -4898,14 +5122,14 @@ if (document.getElementById("koktel_shisha_section")) {
             // If The Container Already Exists, Update The Total Price
 
             // Get The Current Total Price From The Displayed Text
-            let totalPriceElement = document.getElementById('koktel_supermarket_total_price');
+            let totalPriceElement = document.getElementById('koktel_product_bottom_counter_div');
             let currentTotal = parseFloat(totalPriceElement.innerText.split('=')[1].trim().replace(/[^\d.]/g, ''));
 
             // Calculate The New Total Price By Adding The Added Number To The Current Total
             let newTotal = currentTotal + parseFloat(addedNumber.replace(/[^\d.]/g, ''));
 
             // Update The Text Content of The Total Price Display To Display The New Total
-            totalPriceElement.innerText = `إضافة الطلب = ${newTotal.toLocaleString()} Rp`;
+            totalPriceElement.innerText = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
             // Ensure supermarkerBottomCounterDiv is visible
             supermarkerBottomCounterDiv.style.display = 'flex';
@@ -4948,14 +5172,14 @@ if (document.getElementById("koktel_shisha_section")) {
     // Function To Handle The Click Event On Ion-Icon (Minus) Element
     koktel_minusProductButton = function (subtractedNumber, clickedElement) {
         // Get The Current Total Price From The Displayed Text
-        let totalPriceElement = document.getElementById('koktel_supermarket_total_price');
+        let totalPriceElement = document.getElementById('koktel_product_bottom_counter_div');
         let currentTotal = parseFloat(totalPriceElement.innerText.split('=')[1].trim().replace(/[^\d.]/g, ''));
 
         // Calculate The New Total Price By Subtracting The Subtracted Number From The Current Total
         let newTotal = currentTotal - parseFloat(subtractedNumber.replace(/[^\d.]/g, ''));
 
         // Update The Text Content of The Total Price Display To Display The New Total
-        totalPriceElement.innerText = `إضافة الطلب = ${newTotal.toLocaleString()} Rp`;
+        totalPriceElement.innerText = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
         // Get The Parent Div of The Clicked ion-icon
         let parentDiv = clickedElement.parentElement;

@@ -48,7 +48,7 @@ body {
     background: black;
     font-size: 20px;
     padding: 10px 20px;
-    border-radius: 7px;
+    border-radius: 3px;
     margin-bottom: 5px;
 }
 
@@ -56,7 +56,7 @@ body {
 .koktel_full_screen_overlay img {
     margin: 10px 0;
     width: 400px;
-    border-radius: 7px;
+    border-radius: 3px;
     box-shadow: 0 0 10px 1px black;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
@@ -81,7 +81,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     border: 1px solid white;
     transition: all 0.1s ease-in-out;
@@ -158,7 +158,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: fit-content;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     border: 1px solid white;
     transition: all 0.1s ease-in-out;
@@ -184,7 +184,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: fit-content;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     border: 1px solid white;
     transition: all 0.1s ease-in-out;
@@ -208,7 +208,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, 100%);
-    border-radius: 7px;
+    border-radius: 3px;
     box-shadow: 0 0 5px 0.5px black;
     transition: transform 1.2s, opacity 0.5s;
 }
@@ -313,7 +313,7 @@ header div {
     text-align: center;
     padding: 0 5px;
     border: 1px solid white;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     transition: all 0.1s ease;
 }
@@ -332,7 +332,7 @@ header div {
     width: fit-content;
     text-align: center;
     border: 1px solid white;
-    border-radius: 7px;
+    border-radius: 3px;
     line-height: 1.4;
 }
 
@@ -344,7 +344,7 @@ header div {
     width: fit-content;
     text-align: center;
     border: 1px solid white;
-    border-radius: 7px;
+    border-radius: 3px;
     line-height: 1.4;
 }
 
@@ -357,7 +357,7 @@ header div {
     text-align: center;
     padding: 0 5px;
     border: 1px solid white;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     transition: all 0.1s ease;
 }
@@ -375,7 +375,7 @@ header div {
     padding: 0 5px;
     text-align: center;
     border: 1px solid white;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
 }
@@ -403,7 +403,7 @@ header div {
     padding: 0 5px;
     text-align: center;
     border: 1px solid white;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
 }
@@ -422,7 +422,7 @@ header div {
     padding: 10px 18px;
     color: white;
     border: 1px solid white;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
 }
@@ -446,7 +446,7 @@ header div {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    border-radius: 7px;
+    border-radius: 3px;
     box-shadow: 0 0 3px 0.5px white;
 }
 
@@ -461,7 +461,7 @@ header div {
     margin: 5px 0;
     padding: 8px 12px;
     border: 1px solid white;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
 }
@@ -483,7 +483,7 @@ nav {
     justify-content: start;
     width: fit-content;
     border: 1px solid white;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
 }
@@ -538,7 +538,7 @@ body.nav-open #koktel_nav_options * {
     font-size: 3.5vmin;
     margin: 5px 0;
     border: 1px solid white;
-    border-radius: 7px;
+    border-radius: 3px;
     text-align: center;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
@@ -622,7 +622,7 @@ body.nav-open #koktel_nav_options * {
     text-decoration: none;
     width: 45.9vmin;
     min-height: 40vmin;
-    border-radius: 7px;
+    border-radius: 3px;
     overflow: hidden;
     margin: 5px;
     cursor: pointer;
@@ -690,8 +690,12 @@ body.nav-open #koktel_nav_options * {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    border-radius: 7px;
+    border-radius: 3px;
     box-shadow: 0 0 3px 0.5px white;
+    
+    /* Scroll behavior */
+    max-height: 80vh;  /* Adjust height as needed */
+    overflow-y: auto;  /* Enable vertical scrolling */
 }
 
 .kokteindo_filter_products_type_div a {
@@ -704,7 +708,7 @@ body.nav-open #koktel_nav_options * {
     margin: 10px;
     padding: 8px 12px;
     border: 1px solid white;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
 }
@@ -713,6 +717,7 @@ body.nav-open #koktel_nav_options * {
     background: rgb(166, 166, 166);
     color: black;
 }
+
 
 
 
@@ -730,7 +735,7 @@ body.nav-open #koktel_nav_options * {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border-radius: 7px;
+    border-radius: 3px;
     box-shadow: 0 0 5px 0.5px black;
     transition: all 0.1s ease-in-out;
     overflow: hidden;
@@ -884,7 +889,7 @@ body.nav-open #koktel_nav_options * {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 3px 0.5px black;
     transition: all 0.1s ease-in-out;
@@ -1053,7 +1058,7 @@ body.nav-open #koktel_nav_options * {
     outline: none;
     resize: none;
     border-color: rgb(255, 136, 0);
-    border-radius: 7px;
+    border-radius: 3px;
 }
 
 .koktel_meal_info_note textarea::-webkit-scrollbar {
@@ -1079,7 +1084,7 @@ body.nav-open #koktel_nav_options * {
     background: white;
     font-size: 5vmax;
     margin-bottom: 10vmax;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 3px 0.5px black;
 }
@@ -1102,7 +1107,7 @@ body.nav-open #koktel_nav_options * {
     padding: 10px;
     font-size: 2vw;
     text-align: center;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 5px 0.5px black;
     transition: all 0.1s ease-in-out;
@@ -1121,7 +1126,7 @@ body.nav-open #koktel_nav_options * {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 3px 0.5px black;
     animation: floatAnimation 4s ease-in-out infinite;
@@ -1140,7 +1145,7 @@ body.nav-open #koktel_nav_options * {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 7px;
+    border-radius: 3px;
     box-shadow: 0 0 3px 0.5px black;
 }
 
@@ -1195,7 +1200,7 @@ body.nav-open #koktel_nav_options * {
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-    border-radius: 7px;
+    border-radius: 3px;
     box-shadow: 0 0 3px 0.5px black;
 }
 
@@ -1208,7 +1213,7 @@ body.nav-open #koktel_nav_options * {
     width: 30vmin;
     margin: 10px 0;
     align-self: center;
-    border-radius: 7px;
+    border-radius: 3px;
     box-shadow: 0 0 3px 0.5px black;
     cursor: pointer;
 }
@@ -1248,7 +1253,6 @@ body.nav-open #koktel_nav_options * {
     width: 100%;
     font-size: 6vmin;
     text-align: center;
-    border-radius: 7px;
 }
 
 .koktel_delete_all_orders_button_class {
@@ -1260,7 +1264,7 @@ body.nav-open #koktel_nav_options * {
     margin-bottom: 10px;
     padding: 0 5px;
     text-align: center;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 0.5px 0.5px white;
     transition: all 0.1s ease-in-out;
@@ -1298,7 +1302,7 @@ body.nav-open #koktel_nav_options * {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 7px;
+    border-radius: 3px;
     box-shadow: 0 0 3px 0.5px black;
     position: fixed;
     top: 50%;
@@ -1328,7 +1332,7 @@ body.nav-open #koktel_nav_options * {
     font-size: 3.5vw;
     margin: 20px 50px;
     padding: 8px 14px;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 3px 0.5px black;
     transition: all 0.1s ease-in-out;
@@ -1345,7 +1349,7 @@ body.nav-open #koktel_nav_options * {
     padding: 10px 18px;
     font-size: 3vw;
     text-align: center;
-    border-radius: 7px;
+    border-radius: 3px;
     box-shadow: 0 0 3px 0.5px white;
 }
 
@@ -1369,7 +1373,7 @@ body.nav-open #koktel_nav_options * {
     justify-content: center;
     align-self: flex-end;
     align-items: center;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     border: 0.5px solid black;
     transition: all 0.1s ease-in-out;
@@ -1395,7 +1399,7 @@ body.nav-open #koktel_nav_options * {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 7px;
+    border-radius: 3px;
     border: 0.5px solid black;
 }
 
@@ -1410,7 +1414,7 @@ body.nav-open #koktel_nav_options * {
     background: rgb(138, 138, 138);
     width: 100%;
     color: rgb(0, 255, 0);
-    border-radius: 7px;
+    border-radius: 3px;
 }
 
 #koktel_order_check_out_bill_details_text {
@@ -1476,7 +1480,7 @@ body.nav-open #koktel_nav_options * {
     margin: 0 15px;
     padding: 0 5px;
     text-align: center;
-    border-radius: 7px;
+    border-radius: 3px;
     border: 0.5px solid black;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
@@ -1575,7 +1579,7 @@ body.nav-open #koktel_nav_options * {
     align-items: center;
     width: fit-content;
     border: 1px solid white;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 3px 0.5px black;
     transition: all 0.1s ease-in-out;
@@ -1595,7 +1599,7 @@ body.nav-open #koktel_nav_options * {
     align-items: center;
     width: fit-content;
     border: 1px solid white;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 3px 0.5px black;
     transition: all 0.1s ease-in-out;
@@ -1615,7 +1619,7 @@ body.nav-open #koktel_nav_options * {
 .koktel_filter_product_type_div_class img {
     width: 7vmax;
     height: fit-content;
-    border-radius: 7px;
+    border-radius: 3px;
 }
 
 .koktel_product_type_nav_upper_bar_class {
@@ -1645,7 +1649,7 @@ body.nav-open #koktel_nav_options * {
 
 .koktel_product_type_nav_upper_bar_class img {
     width: 8vmax;
-    border-radius: 7px;
+    border-radius: 3px;
 }
 
 
@@ -1683,15 +1687,14 @@ body.nav-open #koktel_nav_options * {
 .koktel_product_card {
     user-select: none;
     background: linear-gradient(to right, rgb(22, 18, 93), rgb(9, 0, 179));
-    min-width: 50vmin;
-    width: 25vw;
-    min-height: fit-content;
+    min-width: 25vmax;
+    width: 25vmax;
     margin: 0 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border-radius: 7px;
+    border-radius: 3px;
     box-shadow: 0 0 5px 0.5px black;
     transition: all 0.1s ease-in-out;
     overflow: hidden;
@@ -1768,6 +1771,8 @@ body.nav-open #koktel_nav_options * {
 
 .koktel_product_name_div {
     background: linear-gradient(to right, rgb(22, 18, 93), rgb(9, 0, 179));
+    min-height: 9vmax;
+    max-height: fit-content;
     padding: 5px 0;
     display: flex;
     flex-wrap: wrap;
@@ -1812,7 +1817,7 @@ body.nav-open #koktel_nav_options * {
     font-size: 2vmax;
     padding: 2px;
     text-align: center;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 3px 0.5px black;
     user-select: none;
@@ -1833,7 +1838,7 @@ body.nav-open #koktel_nav_options * {
     background: red;
     font-size: 4vmax;
     padding: 2px;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     user-select: none;
     transition: all 0.1s ease-in-out;
@@ -1864,7 +1869,7 @@ body.nav-open #koktel_nav_options * {
     padding: 0 5px;
     text-align: center;
     line-height: 1.4;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 5px 0.5px black;
     transition: all 0.1s ease-in-out;
@@ -1914,7 +1919,7 @@ body.nav-open #koktel_nav_options * {
     align-items: center;
     overflow: hidden;
     cursor: pointer;
-    border-radius: 7px;
+    border-radius: 3px;
     box-shadow: 0 0 5px 1px black;
     transition: all 0.1s ease-in-out;
 }
@@ -1974,7 +1979,7 @@ body.nav-open #koktel_nav_options * {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 7px;
+    border-radius: 3px;
     box-shadow: 0 0 3px 0.5px black;
     position: fixed;
     top: 50%;
@@ -2007,7 +2012,7 @@ body.nav-open #koktel_nav_options * {
     padding: 5px 10px;
     text-align: center;
     cursor: pointer;
-    border-radius: 7px;
+    border-radius: 3px;
     box-shadow: 0 0 3px 0.5px black;
     transition: all 0.1s ease-in-out;
 }
@@ -2046,7 +2051,7 @@ body.nav-open #koktel_nav_options * {
     padding: 4px 5px;
     width: fit-content;
     text-align: center;
-    border-radius: 7px;
+    border-radius: 3px;
     border: 1px solid white;
     box-shadow: 0 0 1px 0.5px black;
 }
@@ -2058,7 +2063,7 @@ body.nav-open #koktel_nav_options * {
     padding: 0 5px;
     width: fit-content;
     text-align: center;
-    border-radius: 7px;
+    border-radius: 3px;
     border: 1px solid white;
 }
 
@@ -2067,7 +2072,7 @@ body.nav-open #koktel_nav_options * {
     width: 100%;
     height: fit-content;
     margin-bottom: 30px;
-    border-radius: 7px;
+    border-radius: 3px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -2079,7 +2084,7 @@ body.nav-open #koktel_nav_options * {
 #koktel_our_features_area h2 {
     font-size: 4vmin;
     padding: 5px;
-    border-radius: 7px;
+    border-radius: 3px;
     margin: 3px 0;
 }
 
@@ -2102,7 +2107,7 @@ body.nav-open #koktel_nav_options * {
     width: 100%;
     height: fit-content;
     margin-bottom: 30px;
-    border-radius: 7px;
+    border-radius: 3px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2133,7 +2138,7 @@ body.nav-open #koktel_nav_options * {
     flex-direction: column;
     align-items: center;
     padding: 5px;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 5px 0.5px black;
     animation: floatAnimation 4s ease-in-out infinite;
@@ -2150,7 +2155,7 @@ body.nav-open #koktel_nav_options * {
     text-align: center;
     margin: 10px 0;
     padding: 10px;
-    border-radius: 7px;
+    border-radius: 3px;
     box-shadow: 0 0 5px 0.5px black;
 }
 
@@ -2180,7 +2185,7 @@ body.nav-open #koktel_nav_options * {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 7px;
+    border-radius: 3px;
     box-shadow: 0 0 3px 0.5px white;
 }
 
@@ -2191,7 +2196,7 @@ body.nav-open #koktel_nav_options * {
     padding: 5px;
     cursor: pointer;
     margin-bottom: 15px;
-    border-radius: 7px;
+    border-radius: 3px;
 }
 
 #koktel_companydescription img {
@@ -2239,7 +2244,7 @@ body.nav-open #koktel_nav_options * {
     text-align: center;
     padding: 8px 16px;
     border: 1px solid white;
-    border-radius: 7px;
+    border-radius: 3px;
     margin-bottom: 20px;
 }
 
@@ -2253,7 +2258,7 @@ body.nav-open #koktel_nav_options * {
     text-decoration: none;
     text-align: center;
     border: 1px solid white;
-    border-radius: 7px;
+    border-radius: 3px;
     transition: all 0.1s ease-in-out;
     animation: floatAnimation 4s ease-in-out infinite;
 }
@@ -2347,7 +2352,7 @@ footer div {
 footer h1,
 footer h2 {
     font-size: 5vmin;
-    border-radius: 7px;
+    border-radius: 3px;
     cursor: pointer;
     text-align: center;
 }

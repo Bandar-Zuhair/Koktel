@@ -70,15 +70,45 @@ let indomieProducts = [
         price: "10,000 Rp",
     },
     {
+        imageSRC: "سوبرماركت-اندونيسيا/اندومي/indomie-mi-instan-kari-ayam-70-g",
+        ar_name: "اندومي بالدجاج 70 جم",
+        indo_name: "Indomie Mi Instan Kari Ayam 70 G",
+        price: "10,000 Rp",
+    },
+    {
         imageSRC: "سوبرماركت-اندونيسيا/اندومي/indomie-mi-instan-soto-mie-70-g",
         ar_name: "اندومي بالخضار 70 جم",
         indo_name: "Indomie Mi Instan Soto Mie 70 G",
         price: "10,000 Rp",
     },
     {
-        imageSRC: "سوبرماركت-اندونيسيا/اندومي/indomie-mi-instan-kari-ayam-70-g",
-        ar_name: "اندومي بالدجاج 70 جم",
-        indo_name: "Indomie Mi Instan Kari Ayam 70 G",
+        imageSRC: "سوبرماركت-اندونيسيا/اندومي/pop-mie-mi-instan-cup-ayam-75-g",
+        ar_name: "كوب نودلز بوب بالدجاج سريعة التحضير 70 جم",
+        indo_name: "Pop Mie Mi Instan Cup Ayam 75 G",
+        price: "10,000 Rp",
+    },
+    {
+        imageSRC: "سوبرماركت-اندونيسيا/اندومي/sedaap-mi-instan-ayam-nampool-cup-75-g",
+        ar_name: "كوب نودلز نامبول بالدجاج سريعة التحضير 70 جم",
+        indo_name: "Sedaap Mi Instan Ayam Nampool Cup 75 G",
+        price: "10,000 Rp",
+    },
+    {
+        imageSRC: "سوبرماركت-اندونيسيا/اندومي/sedaap-mi-instan-goreng-ayam-bakar-limau-89-g",
+        ar_name: "كوب نودلز بالدجاج المقلي والليمون المشوي سريعة التحضير 89 جم",
+        indo_name: "Sedaap Mi Instan Goreng Ayam Bakar Limau 89 G",
+        price: "10,000 Rp",
+    },
+    {
+        imageSRC: "سوبرماركت-اندونيسيا/اندومي/sedaap-mi-instan-goreng-ayam-bakar-limau-89-g",
+        ar_name: "اندومي بالدجاج المقلي والليمون المشوي 89 جم",
+        indo_name: "Sedaap Mi Instan Goreng Ayam Bakar Limau 89 G",
+        price: "10,000 Rp",
+    },
+    {
+        imageSRC: "سوبرماركت-اندونيسيا/اندومي/super-bubur-instan-ayam-45-g",
+        ar_name: "عصيدة سوبر الدجاج سريعة التحضير 45 جم",
+        indo_name: "Super Bubur Instan Ayam 45 G",
         price: "10,000 Rp",
     },
 ];

@@ -677,13 +677,13 @@ body.nav-open #koktel_nav_options * {
     justify-content: center;
 }
 
-.kokteindo_filter_products_type_div {
+.koktel_filter_products_type_div {
     background: rgb(78, 78, 78);
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 95%;
+    width: 100%;
     padding: 50px 5px;
     display: flex;
     flex-direction: row;
@@ -698,7 +698,7 @@ body.nav-open #koktel_nav_options * {
     overflow-y: auto;  /* Enable vertical scrolling */
 }
 
-.kokteindo_filter_products_type_div a {
+.koktel_filter_products_type_div a {
     text-decoration: none;
     background: black;
     color: white;
@@ -713,7 +713,7 @@ body.nav-open #koktel_nav_options * {
     transition: all 0.1s ease-in-out;
 }
 
-.kokteindo_filter_products_type_div a:hover {
+.koktel_filter_products_type_div a:hover {
     background: rgb(166, 166, 166);
     color: black;
 }
@@ -2416,7 +2416,7 @@ footer img {
         padding: 10px;
     }
 
-    .kokteindo_filter_products_type_div a {
+    .koktel_filter_products_type_div a {
         font-size: 4.5vw;
         margin: 7px;
         padding: 10px;
@@ -2549,7 +2549,7 @@ footer img {
         padding: 8px;
     }
 
-    .kokteindo_filter_products_type_div a {
+    .koktel_filter_products_type_div a {
         font-size: 5.5vw;
         margin: 5px;
         padding: 8px;
@@ -2713,7 +2713,7 @@ footer img {
         padding: 6px;
     }
 
-    .kokteindo_filter_products_type_div a {
+    .koktel_filter_products_type_div a {
         font-size: 6.5vw;
         margin: 3px;
         padding: 6px;

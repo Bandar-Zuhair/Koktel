@@ -389,7 +389,7 @@ header div {
 #koktel_our_pages_links_div {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end; /* Align all items to the right initially */
     align-items: center;
     width: 100%;
 }
@@ -412,6 +412,29 @@ header div {
     background: rgb(0, 19, 40);
     transform: scale(1.015);
 }
+
+#koktel_our_pages_links_div p {
+    text-decoration: none;
+    background: rgb(132, 0, 0);
+    color: white;
+    font-size: 4vmin;
+    margin: 0 5px;
+    padding: 0 5px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+
+    margin-right: auto; /* Pushes the <p> element to the left */
+}
+
+#koktel_our_pages_links_div p:hover {
+    background: rgb(0, 19, 40);
+    transform: scale(1.015);
+}
+
+
 
 #koktel_error_page_go_back_button {
     background: rgb(255, 89, 89);
@@ -508,7 +531,7 @@ body.nav-open #koktel_nav_options * {
 }
 
 #koktel_nav_options {
-    background: rgb(99, 99, 99);
+    background: linear-gradient(to right, rgb(81, 0, 203), rgb(0, 48, 77));
     padding: 10px;
     z-index: 999;
     position: fixed;
@@ -533,20 +556,21 @@ body.nav-open #koktel_nav_options * {
 
 #koktel_nav_options a {
     text-decoration: none;
+    background: linear-gradient(to left, rgb(0, 145, 121), rgb(0, 77, 64));
     color: white;
     width: 100%;
-    font-size: 3.5vmin;
+    font-size: 1.7vmax;
     margin: 5px 0;
     border: 1px solid white;
     border-radius: 3px;
     text-align: center;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 #koktel_nav_options a:hover {
-    background: rgb(152, 152, 152);
     color: rgb(0, 255, 0);
+    letter-spacing: 1px;
 }
 
 #koktel_close_nav {
@@ -557,7 +581,7 @@ body.nav-open #koktel_nav_options * {
 }
 
 #koktel_close_nav:hover {
-    background: linear-gradient(to right, rgb(209, 0, 181), rgb(9, 0, 185)) !important;
+    color: red !important;
 }
 
 #koktel_nav_options ion-icon {
@@ -617,7 +641,7 @@ body.nav-open #koktel_nav_options * {
 }
 
 #koktel_choose_service_area a {
-    background: rgb(255, 136, 0);
+    background: linear-gradient(to left, rgb(224, 0, 0), rgb(112, 0, 0));
     color: white;
     text-decoration: none;
     width: 45.9vmin;
@@ -644,7 +668,6 @@ body.nav-open #koktel_nav_options * {
 }
 
 .koktel_choose_service_title {
-    background: rgb(255, 136, 0);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -1365,7 +1388,7 @@ body.nav-open #koktel_nav_options * {
     margin: 0 10px;
 }
 
-#koktel_order_check_out_whatsApp_div {
+.koktel_download_order_pdf_div_class {
     background: green;
     width: 50vmin;
     display: flex;
@@ -1376,18 +1399,18 @@ body.nav-open #koktel_nav_options * {
     border-radius: 3px;
     cursor: pointer;
     border: 0.5px solid black;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
-#koktel_order_check_out_whatsApp_div:hover {
+.koktel_download_order_pdf_div_class:hover {
     background: rgb(0, 173, 0);
 }
 
-#koktel_order_check_out_whatsApp_div ion-icon {
+.koktel_download_order_pdf_div_class ion-icon {
     font-size: 20vmin;
 }
 
-#koktel_order_check_out_whatsApp_div h5 {
+.koktel_download_order_pdf_div_class h5 {
     font-size: 5vmin;
     text-align: center;
 }
@@ -2044,7 +2067,7 @@ body.nav-open #koktel_nav_options * {
 }
 
 .koktel_main_page_text {
-    background: rgb(255, 136, 0);
+    background: linear-gradient(to top, rgb(255, 136, 0), rgb(156, 83, 0));
     font-size: 5vmin;
     line-height: 1.4;
     margin: 5px 0;
@@ -2057,7 +2080,7 @@ body.nav-open #koktel_nav_options * {
 }
 
 .koktel_main_page_text_2 {
-    background: rgb(255, 166, 0);
+    background: linear-gradient(to top, rgb(255, 136, 0), rgb(156, 83, 0));
     font-size: 5vmin;
     margin: 5px 0;
     padding: 0 5px;
@@ -2333,7 +2356,7 @@ body.nav-open #koktel_nav_options * {
 
 /* Footer Section */
 footer {
-    background: linear-gradient(to right, rgb(0, 54, 179), rgb(0, 19, 63));
+    background: linear-gradient(to left, rgb(0, 54, 179), rgb(0, 19, 63));
     display: flex;
     justify-content: space-between;
     align-items: center;

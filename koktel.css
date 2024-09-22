@@ -747,7 +747,7 @@ body.nav-open #koktel_nav_options * {
 
 .koktel_restaurant_card {
     user-select: none;
-    background: rgb(110, 110, 110);
+    background: linear-gradient(to right, rgb(0, 54, 179), rgb(0, 19, 63));
     min-width: 70vmin;
     width: 25vw;
     height: fit-content;
@@ -777,7 +777,7 @@ body.nav-open #koktel_nav_options * {
 }
 
 .koktel_restaurant_card_name_and_rate {
-    background: rgb(110, 110, 110);
+    background: linear-gradient(to right, rgb(0, 54, 179), rgb(0, 19, 63));
     width: 100%;
     padding: 0 2px;
     display: flex;
@@ -813,7 +813,7 @@ body.nav-open #koktel_nav_options * {
 }
 
 .koktel_restaurant_card_info {
-    background: linear-gradient(to right, rgb(0, 54, 179), rgb(0, 19, 63));
+    background: linear-gradient(to left, rgb(0, 54, 179), rgb(0, 19, 63));
     width: 100%;
     padding: 0 5px;
     display: flex;

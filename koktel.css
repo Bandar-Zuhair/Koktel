@@ -337,7 +337,7 @@ header div {
 }
 
 .koktel_restaurant_intro_text {
-    background: rgb(255, 166, 0);
+    background: linear-gradient(to top, rgb(234, 152, 0), rgb(156, 101, 0));
     font-size: 5vmin;
     margin-top: 5px;
     padding: 0 5px;
@@ -2260,10 +2260,10 @@ body.nav-open #koktel_nav_options * {
 }
 
 #koktel_accounts_section h1 {
-    background: black;
-    font-size: 3vw;
+    background: linear-gradient(to top, rgb(234, 152, 0), rgb(156, 101, 0));
+    font-size: 3vmax;
     text-align: center;
-    padding: 8px 16px;
+    padding: 0 5px;
     border: 1px solid white;
     border-radius: 3px;
     margin-bottom: 20px;
@@ -2512,10 +2512,6 @@ footer img {
 
 /* 850px */
 @media(max-width:850px) {
-    #koktel_accounts_section h1 {
-        font-size: 3.5vw;
-    }
-
     #koktel_accounts_section a {
         width: 25vw;
         font-size: 4vw;
@@ -2662,10 +2658,6 @@ footer img {
 
 /* 580px */
 @media(max-width:580px) {
-    #koktel_accounts_section h1 {
-        font-size: 4vw;
-    }
-
     .koktel_ads_only_videos_div {
         width: 90vw;
         height: 300px;
@@ -2680,11 +2672,6 @@ footer img {
 @media(max-width:500px) {
     #koktel_web_logo_no_moving {
         width: 50Vw;
-    }
-
-    #koktel_accounts_section h1 {
-        font-size: 5vw;
-        margin-bottom: 10px;
     }
 
     #koktel_accounts_section a {

@@ -575,6 +575,7 @@ body.nav-open #koktel_nav_options * {
 
 #koktel_close_nav {
     background: linear-gradient(to right, rgb(255, 0, 221), rgb(13, 0, 255));
+    padding: 0.5vmax 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -585,7 +586,7 @@ body.nav-open #koktel_nav_options * {
 }
 
 #koktel_nav_options ion-icon {
-    font-size: 6vmin;
+    font-size: 3vmax;
 }
 
 

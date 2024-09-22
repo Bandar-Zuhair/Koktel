@@ -174,8 +174,13 @@ setWebsiteLanguage = function () {
             document.getElementById("koktel_order_page_icon_div").style.left = '';
             document.getElementById("koktel_order_page_icon_div").style.right = '0';
         }
-
     }
+
+
+    /* Show all the website body smoothly */
+    setTimeout(function () {
+        document.body.style.opacity = "1";
+    }, 100);
 }
 
 
@@ -6518,13 +6523,6 @@ function koktel_location() {
 
     // Open the Google Maps link in a new tab/window
     window.open(mapsUrl, "_blank");
-}
-
-/* Page Load Header Fade Animation */
-if (document.getElementById("koktel_header")) {
-    setTimeout(function () {
-        koktel_header.style.opacity = "1";
-    }, 100);
 }
 
 

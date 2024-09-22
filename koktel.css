@@ -27,6 +27,8 @@
 body {
     background: linear-gradient(to right, rgb(0, 54, 179), rgb(0, 19, 63));
     color: white;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
 
@@ -241,7 +243,6 @@ body {
 header {
     width: 100%;
     padding: 10px;
-    opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
 

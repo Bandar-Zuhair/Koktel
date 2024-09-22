@@ -430,7 +430,7 @@ function koktel_websiteGuidance(buttonClicked) {
             <a class="indoLangText" onclick="koktel_scrollToRestaurantTypeId('koktel_fast_food_restaurant_type')">Makanan Cepat Saji</a>
 
 
-            <a class="arLangText" onclick="koktel_scrollToRestaurantTypeId('koktel_arabic_restaurant_type')">اكلات عربية</a>
+            <a class="arLangText" onclick="koktel_scrollToRestaurantTypeId('koktel_arabic_restaurant_type')">أكلات عربية</a>
             <a class="indoLangText" onclick="koktel_scrollToRestaurantTypeId('koktel_arabic_restaurant_type')">Makanan Arab</a>
 
 

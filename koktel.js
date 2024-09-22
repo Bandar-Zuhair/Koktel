@@ -434,7 +434,7 @@ function koktel_websiteGuidance(buttonClicked) {
             <a class="indoLangText" onclick="koktel_scrollToRestaurantTypeId('koktel_arabic_restaurant_type')">Makanan Arab</a>
 
 
-            <a class="arLangText" onclick="koktel_scrollToRestaurantTypeId('koktel_sea_food_restaurant_type')">اكلات بحرية</a>
+            <a class="arLangText" onclick="koktel_scrollToRestaurantTypeId('koktel_sea_food_restaurant_type')">أكلات بحرية</a>
             <a class="indoLangText" onclick="koktel_scrollToRestaurantTypeId('koktel_sea_food_restaurant_type')">Hidangan Laut</a>
 
         `;

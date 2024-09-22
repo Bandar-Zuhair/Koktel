@@ -3253,7 +3253,7 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
             </div>
 
                 
-            <a itemprop="url" href="https://koktel-indo.com/%D9%85%D8%AE%D8%A8%D9%88%D8%B2%D8%A7%D8%AA-%D8%A7%D9%86%D8%AF%D9%88%D9%86%D9%8A%D8%B3%D9%8A%D8%A7"
+            <a itemprop="url" href="https://koktel-indo.com/%D8%B3%D9%88%D8%A8%D8%B1%D9%85%D8%A7%D8%B1%D9%83%D8%AA-%D8%A7%D9%86%D8%AF%D9%88%D9%86%D9%8A%D8%B3%D9%8A%D8%A7"
             class="koktel_go_back_products_page_button">
             <ion-icon name="arrow-undo-circle-outline"></ion-icon></a>
 
@@ -6525,6 +6525,20 @@ function koktel_location() {
     window.open(mapsUrl, "_blank");
 }
 
+// This function will be called when a right-click event is detected
+function disableRightClick(event) {
+    event.preventDefault();
+}
+
+// Add an event listener for the contextmenu event (right-click)
+document.addEventListener('contextmenu', disableRightClick);
+
+/* Prevent the shortcut control + U to open page inspect */
+document.addEventListener('keydown', function (event) {
+    if (event.ctrlKey && (event.key === 'u' || event.key === 'U' || event.key === 's' || event.key === 'S')) {
+        event.preventDefault();
+    }
+});
 
 
 

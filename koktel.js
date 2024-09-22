@@ -202,7 +202,11 @@ function changeWebsiteLanguageFunction(clikcedLanguage) {
 
 
     // Re-enable scrolling
-    document.documentElement.style.overflow = 'auto';
+    document.body.style.position = '';
+    document.body.style.overflow = '';
+    window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+    document.body.style.top = '';
+
 
     // Hide And Reset All Data Stored inside The 'FullScreenGuidanceOverlay' Element
     let FullScreenGuidanceOverlay = document.getElementById('koktel_full_screen_guidance_overlay');
@@ -217,7 +221,12 @@ function changeWebsiteLanguageFunction(clikcedLanguage) {
 function koktel_show_full_screen_image(src) {
 
     // Disable scrolling
-    document.documentElement.style.overflow = 'hidden';
+    const scrollY = window.scrollY;
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+
 
     /* Create A Div To Contain The Big Image or Video */
     let FullScreenImgOverlay = document.createElement('div');
@@ -269,7 +278,11 @@ function koktel_show_full_screen_image(src) {
     fullScreenOverlayExitButton.onclick = function () {
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
+
 
         /* Hide The Full Screen Img Overlay */
         FullScreenImgOverlay.style.display = 'none';
@@ -283,13 +296,11 @@ function koktel_show_full_screen_image(src) {
 function koktel_websiteGuidance(buttonClicked) {
 
     // Disable scrolling
+    const scrollY = window.scrollY;
     document.body.style.overflow = 'hidden';
-    document.body.style.height = '100%';
-
-    // Prevent scrolling with mouse wheel or touch events
-    window.addEventListener('scroll', preventScroll);
-    window.addEventListener('wheel', preventScroll, { passive: false });
-    window.addEventListener('touchmove', preventScroll, { passive: false });
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
 
 
 
@@ -993,7 +1004,11 @@ function koktel_websiteGuidance(buttonClicked) {
     fullScreenOverlayExitButton.onclick = function () {
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
+
 
         // Hide And Reset All Data Stored inside The 'FullScreenGuidanceOverlay' Element
         let FullScreenGuidanceOverlay = document.getElementById('koktel_full_screen_guidance_overlay');
@@ -1330,7 +1345,10 @@ if (document.getElementById("koktel_restaurant_section")) {
     koktel_scrollToRestaurantTypeId = function (RestaurantElementIdName) {
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
 
         // Hide And Reset All Data Stored inside The 'FullScreenGuidanceOverlay' Element
         let FullScreenGuidanceOverlay = document.getElementById('koktel_full_screen_guidance_overlay');
@@ -1379,7 +1397,10 @@ if (document.getElementById("koktel_restaurant_menu_section")) {
     koktel_scrollToMealType = function (mealTypeName) {
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
 
         // Hide And Reset All Data Stored inside The 'FullScreenGuidanceOverlay' Element
         let FullScreenGuidanceOverlay = document.getElementById('koktel_full_screen_guidance_overlay');
@@ -2186,8 +2207,12 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
             document.getElementById('koktel_ensure_delete_all_orders_overlay').style.display = 'block';
         }
 
-        // Disable Scrolling
-        document.documentElement.style.overflow = 'hidden';
+        // Disable scrolling
+        const scrollY = window.scrollY;
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%';
     }
 
 
@@ -2256,7 +2281,10 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
         }
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
     }
 
 
@@ -2336,7 +2364,10 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
         }
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
     }
 
 
@@ -2469,8 +2500,12 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
     koktel_ensure_delete_text_orders_box = function () {
         document.getElementById('koktel_ensure_delete_text_orders_overlay').style.display = 'block';
 
-        // Disable Scrolling
-        document.documentElement.style.overflow = 'hidden';
+        // Disable scrolling
+        const scrollY = window.scrollY;
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%';
 
     }
 
@@ -2559,7 +2594,10 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
         }
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
     };
 
 
@@ -2906,7 +2944,11 @@ if (document.getElementById("koktel_supermarket_section")) {
     koktel_scrollToProductType = function (RestaurantElementIdName) {
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
+
 
         // Hide And Reset All Data Stored inside The 'FullScreenGuidanceOverlay' Element
         let FullScreenGuidanceOverlay = document.getElementById('koktel_full_screen_guidance_overlay');
@@ -3403,8 +3445,13 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
             }
 
         }
-        // Disable Scrolling
-        document.documentElement.style.overflow = 'hidden';
+
+        // Disable scrolling
+        const scrollY = window.scrollY;
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%';
     }
 
 
@@ -3478,7 +3525,10 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
         }
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
     }
 
 
@@ -3571,7 +3621,10 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
         }
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
     }
 }
 /* Up Supermarket Code Up */
@@ -3666,7 +3719,10 @@ if (document.getElementById("koktel_bread_section")) {
     koktel_scrollToProductType = function (RestaurantElementIdName) {
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
 
         // Hide And Reset All Data Stored inside The 'FullScreenGuidanceOverlay' Element
         let FullScreenGuidanceOverlay = document.getElementById('koktel_full_screen_guidance_overlay');
@@ -4164,8 +4220,13 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
             }
 
         }
-        // Disable Scrolling
-        document.documentElement.style.overflow = 'hidden';
+
+        // Disable scrolling
+        const scrollY = window.scrollY;
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%';
     }
 
 
@@ -4238,7 +4299,10 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
         }
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
     }
 
 
@@ -4332,7 +4396,10 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
         }
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
     }
 }
 /* Up Bread Up */
@@ -4398,8 +4465,13 @@ if (document.getElementById("koktel_choose_worker_type_section")) {
     /* Choose Driver Type Car Or Motor */
     document.getElementById("koktel_whatsApp_driver_message").onclick = function () {
 
-        // Disable Scrolling
-        document.documentElement.style.overflow = 'hidden';
+        // Disable scrolling
+        const scrollY = window.scrollY;
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%';
+
 
         let driverTypeBox = document.createElement("div");
         driverTypeBox.id = 'koktel_driver_type_box_overlay';
@@ -4446,15 +4518,24 @@ if (document.getElementById("koktel_choose_worker_type_section")) {
             /* clickedDriverType = 'طلب جديد حجز سائق دباب'; */
 
             /* Delete The Following Code And UnComment The Upeer Code Once this Service is Avaliable */
+
             // Re-enable scrolling
-            document.documentElement.style.overflow = 'auto';
+            document.body.style.position = '';
+            document.body.style.overflow = '';
+            window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+            document.body.style.top = '';
+
             document.getElementById('koktel_choose_worker_type_section').removeChild(document.getElementById('koktel_driver_type_box_overlay'));
             alert('هذه الخدمة ليست متوفر بعد..');
             return;
 
         } else {
             // Re-enable scrolling
-            document.documentElement.style.overflow = 'auto';
+            document.body.style.position = '';
+            document.body.style.overflow = '';
+            window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+            document.body.style.top = '';
+
             document.getElementById('koktel_choose_worker_type_section').removeChild(document.getElementById('koktel_driver_type_box_overlay'));
             return;
         }
@@ -4655,7 +4736,11 @@ if (document.getElementById("koktel_pharmacy_section")) {
     koktel_scrollToProductType = function (RestaurantElementIdName) {
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
+
 
         // Hide And Reset All Data Stored inside The 'FullScreenGuidanceOverlay' Element
         let FullScreenGuidanceOverlay = document.getElementById('koktel_full_screen_guidance_overlay');
@@ -5160,8 +5245,13 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
             }
 
         }
-        // Disable Scrolling
-        document.documentElement.style.overflow = 'hidden';
+
+        // Disable scrolling
+        const scrollY = window.scrollY;
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%';
     }
 
 
@@ -5235,7 +5325,10 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
         }
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
     }
 
 
@@ -5328,7 +5421,10 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
         }
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
     }
 }
 /* Up Pharmacy Up */
@@ -5431,7 +5527,11 @@ if (document.getElementById("koktel_shisha_section")) {
     koktel_scrollToProductType = function (RestaurantElementIdName) {
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
+
 
         // Hide And Reset All Data Stored inside The 'FullScreenGuidanceOverlay' Element
         let FullScreenGuidanceOverlay = document.getElementById('koktel_full_screen_guidance_overlay');
@@ -5932,8 +6032,13 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
             }
 
         }
-        // Disable Scrolling
-        document.documentElement.style.overflow = 'hidden';
+
+        // Disable scrolling
+        const scrollY = window.scrollY;
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%';
     }
 
 
@@ -6007,7 +6112,10 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
         }
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
     }
 
 
@@ -6100,7 +6208,10 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
         }
 
         // Re-enable scrolling
-        document.documentElement.style.overflow = 'auto';
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
     }
 }
 /* Up Shisha Up */
@@ -6424,7 +6535,7 @@ if (document.getElementById("koktel_header")) {
 
 
 
-// Function to download the PDF file with the given name
+// Function to download the PDF file with the given name and redirect to WhatsApp
 let downloadPdfWithCustomName = async function (pdfName) {
     let { jsPDF } = window.jspdf;
 
@@ -6525,13 +6636,24 @@ let downloadPdfWithCustomName = async function (pdfName) {
         pdf.save(pdfName);
     }
 
-
-
     // Get the div with the id 'final_order_pdf_content_container_div'
     let pdfContainerDiv = document.getElementById('final_order_pdf_content_container_div');
     // Clear existing content
     pdfContainerDiv.innerHTML = '';
+
+    // Redirect to WhatsApp after the PDF download
+    let whatsappNumber = "+6282210081028"; // Replace with the target WhatsApp number
+    let whatsappMessage = "يرجى إرسال طلبك عن طريق ملف بي دي اف\nSilakan Kirimkan Permintaan Anda Melalui File PDF"; // Optional predefined message
+
+    // WhatsApp URL to send the message to the number
+    let whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    // Redirect to WhatsApp after a slight delay to ensure PDF download completes
+    setTimeout(() => {
+        window.location.href = whatsappUrl;
+    }, 1500); // Delay of 1.5 seconds to ensure the download is initiated
 };
+
 
 
 

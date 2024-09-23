@@ -541,6 +541,14 @@ function koktel_websiteGuidance(buttonClicked) {
         webGuidanceText = `
             <a class="arLangText" onclick="koktel_scrollToMealType('koktel_special_meal_type')">مميز</a>
             <a class="indoLangText" onclick="koktel_scrollToMealType('koktel_special_meal_type')">Spesial</a>
+
+            
+            <a class="arLangText" onclick="koktel_scrollToMealType('koktel_pizza_meal_type')">بيتزا</a>
+            <a class="indoLangText" onclick="koktel_scrollToMealType('koktel_pizza_meal_type')">Pizza</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToMealType('koktel_pasta_meal_type')">باستا</a>
+            <a class="indoLangText" onclick="koktel_scrollToMealType('koktel_pasta_meal_type')">Pasta</a>
         `;
 
         /* Filter Supermarket Product Type */
@@ -1088,27 +1096,26 @@ function processSheetData(targetColumnNumber, data) {
 
     if (targetColumnNumber === 1 /* Restaurant */) {
         restaurant_mostTopEmptyCellRowNumberValue = firstEmptyRow - 1;
-        console.log(restaurant_mostTopEmptyCellRowNumberValue);
 
     } else if (targetColumnNumber === 2 /* Supermarket */) {
         supermarket_mostTopEmptyCellRowNumberValue = firstEmptyRow - 1;
 
-        koktel_createFinalWhatsAppMessage('supermarket_orders', 'السوبرماركت', `su_${lastTwoNumbersOfTheCurrentYear}_${supermarket_mostTopEmptyCellRowNumberValue}`)
+        koktel_createFinalWhatsAppMessage('supermarket_orders', 'السوبرماركت', `su_${lastTwoNumbersOfTheCurrentYear}_${supermarket_mostTopEmptyCellRowNumberValue}`, 2)
 
     } else if (targetColumnNumber === 3 /* Bread */) {
         bread_mostTopEmptyCellRowNumberValue = firstEmptyRow - 1;
 
-        koktel_createFinalWhatsAppMessage('bread_orders', 'المخبوزات', `br_${lastTwoNumbersOfTheCurrentYear}_${bread_mostTopEmptyCellRowNumberValue}`)
+        koktel_createFinalWhatsAppMessage('bread_orders', 'المخبوزات', `br_${lastTwoNumbersOfTheCurrentYear}_${bread_mostTopEmptyCellRowNumberValue}`, 3)
 
     } else if (targetColumnNumber === 4 /* Pharmacy */) {
         pharmacy_mostTopEmptyCellRowNumberValue = firstEmptyRow - 1;
 
-        koktel_createFinalWhatsAppMessage('shisha_orders', 'الصيدلية', `ph_${lastTwoNumbersOfTheCurrentYear}_${shisha_mostTopEmptyCellRowNumberValue}`)
+        koktel_createFinalWhatsAppMessage('shisha_orders', 'الصيدلية', `ph_${lastTwoNumbersOfTheCurrentYear}_${pharmacy_mostTopEmptyCellRowNumberValue}`, 4)
 
     } else if (targetColumnNumber === 5 /* Shisha */) {
         shisha_mostTopEmptyCellRowNumberValue = firstEmptyRow - 1;
 
-        koktel_createFinalWhatsAppMessage('shisha_orders', 'المعسلات', `sh_${lastTwoNumbersOfTheCurrentYear}_${shisha_mostTopEmptyCellRowNumberValue}`)
+        koktel_createFinalWhatsAppMessage('shisha_orders', 'المعسلات', `sh_${lastTwoNumbersOfTheCurrentYear}_${shisha_mostTopEmptyCellRowNumberValue}`, 5)
     }
 
     // Target all elements with the class name 'koktel_download_order_pdf_div_class'
@@ -1147,7 +1154,7 @@ async function insertDoneInColumn(targetColumnNumber) {
 
 
 /* Function To Create The Final WhatsApp Message */
-koktel_createFinalWhatsAppMessage = function (localStorageName, storeName, orderIdName) {
+koktel_createFinalWhatsAppMessage = function (localStorageName, storeName, orderIdName, googleSheetStoreTypeColumn) {
 
     // Get data orders from localStorage
     let orders = JSON.parse(localStorage.getItem(localStorageName));
@@ -1296,7 +1303,7 @@ koktel_createFinalWhatsAppMessage = function (localStorageName, storeName, order
     /* in case the value of the 'existingDataStatus' is 'newData' then insert a new 'Done' text in the google sheet */
     if (existingDataStatus === 'newData') {
         /* Call a function to insert "Done" text in the google sheet */
-        insertDoneInColumn(5);
+        insertDoneInColumn(googleSheetStoreTypeColumn);
     }
 
     /* Make sure to set 'existingData' for not inserting any new download for the same pdf file more than one time */
@@ -6530,8 +6537,7 @@ function disableRightClick(event) {
     event.preventDefault();
 }
 
-// Add an event listener for the contextmenu event (right-click)
-document.addEventListener('contextmenu', disableRightClick);
+/* document.addEventListener('contextmenu', disableRightClick); */
 
 /* Prevent the shortcut control + U to open page inspect */
 document.addEventListener('keydown', function (event) {

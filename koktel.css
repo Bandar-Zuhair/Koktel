@@ -736,8 +736,8 @@ body.nav-open #koktel_nav_options * {
 }
 
 .koktel_filter_products_type_div a:hover {
-    background: rgb(166, 166, 166);
-    color: black;
+    letter-spacing: 1px;
+    color: rgb(0, 255, 0);
 }
 
 

@@ -308,9 +308,6 @@ function koktel_websiteGuidance(buttonClicked) {
     document.body.style.width = '100%';
 
 
-
-    console.log("Done")
-
     // Create A Div To Contain The Big Image
     let FullScreenGuidanceOverlay = document.createElement('div');
     FullScreenGuidanceOverlay.id = "koktel_full_screen_guidance_overlay";
@@ -1077,8 +1074,6 @@ async function fetchDataFromGoogleSheet(targetColumnNumber) {
         // Process the fetched data
         processSheetData(targetColumnNumber, data);
 
-        console.log("Done");
-
     } catch (error) {
         console.error('Error fetching data:', error);
     }
@@ -1114,7 +1109,7 @@ function processSheetData(targetColumnNumber, data) {
     } else if (targetColumnNumber === 4 /* Pharmacy */) {
         pharmacy_mostTopEmptyCellRowNumberValue = firstEmptyRow - 1;
 
-        koktel_createFinalWhatsAppMessage('shisha_orders', 'الصيدلية', `ph_${lastTwoNumbersOfTheCurrentYear}_${pharmacy_mostTopEmptyCellRowNumberValue}`, 4)
+        koktel_createFinalWhatsAppMessage('pharmacy_orders', 'الصيدلية', `ph_${lastTwoNumbersOfTheCurrentYear}_${pharmacy_mostTopEmptyCellRowNumberValue}`, 4)
 
     } else if (targetColumnNumber === 5 /* Shisha */) {
         shisha_mostTopEmptyCellRowNumberValue = firstEmptyRow - 1;
@@ -1148,10 +1143,7 @@ async function insertDoneInColumn(targetColumnNumber) {
             })
         });
 
-        console.log(`Request to insert "Done" in column ${targetColumnNumber} has been sent.`);
-
     } catch (error) {
-        console.error('Error inserting "Done" into the Google Sheet:', error);
     }
 }
 
@@ -2155,13 +2147,6 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
 
             /* Create The Bill Card Content */
             let koktel_order_check_out_whatsApp_content = `
-                <div class="koktel_download_order_pdf_div_class" onclick="koktel_createFinalWhatsAppMessage()">
-                    <ion-icon name="logo-whatsapp"></ion-icon>
-
-                    <h5 class="arLangText">إرسال الطلبات</h5>
-                    <h5 class="indoLangText">Kirim Permintaan</h5>
-
-                </div>
                 <div id="koktel_order_check_out_bill_div">
 
                     <h6 id="koktel_order_check_out_bill_title" class="arLangText">الفاتورة</h6>
@@ -2182,6 +2167,22 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
             
                     <h6 class="koktel_order_check_out_bill_total_price arLangText" style="border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
                     <h6 class="koktel_order_check_out_bill_total_price indoLangText" style="border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">Total : ${lastTotalPrice.toLocaleString()} Rp</h6>
+
+                </div>
+
+                <div class="koktel_download_order_pdf_and_whatsapp_number_div_class">
+                
+                    <div class="koktel_download_order_pdf_div_1_class" onclick="koktel_whatsApp()">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                        <h5 class="arLangText">إرسال الطلبات</h5>
+                        <h5 class="indoLangText">Send Orders</h5>
+                    </div>
+                    <div class="koktel_download_order_pdf_div_2_class" onclick="koktel_createFinalWhatsAppMessage()">
+                        <ion-icon name="document-outline"></ion-icon>
+                        <h5 class="arLangText">تحميل الطلبات</h5>
+                        <h5 class="indoLangText">Download Orders</h5>
+                    </div>
+
                 </div>
             `;
 
@@ -3390,13 +3391,6 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
             let lastTotalPrice = totalPriceWithTax + 20000;
 
             let koktel_order_check_out_whatsApp_content = `
-                <div class="koktel_download_order_pdf_div_class" onclick="fetchDataFromGoogleSheet(2)">
-                    <ion-icon name="logo-whatsapp"></ion-icon>
-
-                    <h5 class="arLangText">إرسال الطلبات</h5>
-                    <h5 class="indoLangText">Kirim Permintaan</h5>
-
-                </div>
                 <div id="koktel_order_check_out_bill_div">
 
                     <h6 id="koktel_order_check_out_bill_title" class="arLangText">الفاتورة</h6>
@@ -3416,6 +3410,21 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
             
                     <h6 class="koktel_order_check_out_bill_total_price arLangText" style="border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
                     <h6 class="koktel_order_check_out_bill_total_price indoLangText" style="border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">Total : ${lastTotalPrice.toLocaleString()} Rp</h6>
+
+                </div>
+
+                <div class="koktel_download_order_pdf_and_whatsapp_number_div_class">
+                
+                    <div class="koktel_download_order_pdf_div_1_class" onclick="koktel_whatsApp()">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                        <h5 class="arLangText">إرسال الطلبات</h5>
+                        <h5 class="indoLangText">Send Orders</h5>
+                    </div>
+                    <div class="koktel_download_order_pdf_div_2_class" onclick="fetchDataFromGoogleSheet(2)">
+                        <ion-icon name="document-outline"></ion-icon>
+                        <h5 class="arLangText">تحميل الطلبات</h5>
+                        <h5 class="indoLangText">Download Orders</h5>
+                    </div>
 
                 </div>
             `;
@@ -4166,13 +4175,6 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
             let lastTotalPrice = totalPriceWithTax + 20000;
 
             let koktel_order_check_out_whatsApp_content = `
-                <div class="koktel_download_order_pdf_div_class" onclick="fetchDataFromGoogleSheet(3)">
-                    <ion-icon name="logo-whatsapp"></ion-icon>
-
-                    <h5 class="arLangText">إرسال الطلبات</h5>
-                    <h5 class="indoLangText">Kirim Permintaan</h5>
-
-                </div>
                 <div id="koktel_order_check_out_bill_div">
 
                     <h6 id="koktel_order_check_out_bill_title" class="arLangText">الفاتورة</h6>
@@ -4192,6 +4194,21 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
             
                     <h6 class="koktel_order_check_out_bill_total_price arLangText" style="border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
                     <h6 class="koktel_order_check_out_bill_total_price indoLangText" style="border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">Total : ${lastTotalPrice.toLocaleString()} Rp</h6>
+
+                </div>
+                
+                <div class="koktel_download_order_pdf_and_whatsapp_number_div_class">
+                
+                    <div class="koktel_download_order_pdf_div_1_class" onclick="koktel_whatsApp()">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                        <h5 class="arLangText">إرسال الطلبات</h5>
+                        <h5 class="indoLangText">Send Orders</h5>
+                    </div>
+                    <div class="koktel_download_order_pdf_div_2_class" onclick="fetchDataFromGoogleSheet(3)">
+                        <ion-icon name="document-outline"></ion-icon>
+                        <h5 class="arLangText">تحميل الطلبات</h5>
+                        <h5 class="indoLangText">Download Orders</h5>
+                    </div>
 
                 </div>
             `;
@@ -5189,13 +5206,6 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
             let lastTotalPrice = totalPriceWithTax + 20000;
 
             let koktel_order_check_out_whatsApp_content = `
-                <div class="koktel_download_order_pdf_div_class" onclick="fetchDataFromGoogleSheet(4)">
-                    <ion-icon name="logo-whatsapp"></ion-icon>
-
-                    <h5 class="arLangText">إرسال الطلبات</h5>
-                    <h5 class="indoLangText">Kirim Permintaan</h5>
-
-                </div>
                 <div id="koktel_order_check_out_bill_div">
 
                     <h6 id="koktel_order_check_out_bill_title" class="arLangText">الفاتورة</h6>
@@ -5215,6 +5225,21 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
             
                     <h6 class="koktel_order_check_out_bill_total_price arLangText" style="border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
                     <h6 class="koktel_order_check_out_bill_total_price indoLangText" style="border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">Total : ${lastTotalPrice.toLocaleString()} Rp</h6>
+
+                </div>
+
+                <div class="koktel_download_order_pdf_and_whatsapp_number_div_class">
+                
+                    <div class="koktel_download_order_pdf_div_1_class" onclick="koktel_whatsApp()">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                        <h5 class="arLangText">إرسال الطلبات</h5>
+                        <h5 class="indoLangText">Send Orders</h5>
+                    </div>
+                    <div class="koktel_download_order_pdf_div_2_class" onclick="fetchDataFromGoogleSheet(4)">
+                        <ion-icon name="document-outline"></ion-icon>
+                        <h5 class="arLangText">تحميل الطلبات</h5>
+                        <h5 class="indoLangText">Download Orders</h5>
+                    </div>
 
                 </div>
             `;
@@ -5977,13 +6002,6 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
             let lastTotalPrice = totalPriceWithTax + 20000;
 
             let koktel_order_check_out_whatsApp_content = `
-                <div class="koktel_download_order_pdf_div_class" onclick="fetchDataFromGoogleSheet(5)">
-                    <ion-icon name="logo-whatsapp"></ion-icon>
-
-                    <h5 class="arLangText">إرسال الطلبات</h5>
-                    <h5 class="indoLangText">Kirim Permintaan</h5>
-
-                </div>
                 <div id="koktel_order_check_out_bill_div">
 
                     <h6 id="koktel_order_check_out_bill_title" class="arLangText">الفاتورة</h6>
@@ -6003,6 +6021,21 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
             
                     <h6 class="koktel_order_check_out_bill_total_price arLangText" style="border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">الإجمالي : ${lastTotalPrice.toLocaleString()} Rp</h6>
                     <h6 class="koktel_order_check_out_bill_total_price indoLangText" style="border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;">Total : ${lastTotalPrice.toLocaleString()} Rp</h6>
+
+                </div>
+
+                <div class="koktel_download_order_pdf_and_whatsapp_number_div_class">
+                
+                    <div class="koktel_download_order_pdf_div_1_class" onclick="koktel_whatsApp()">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                        <h5 class="arLangText">إرسال الطلبات</h5>
+                        <h5 class="indoLangText">Send Orders</h5>
+                    </div>
+                    <div class="koktel_download_order_pdf_div_2_class" onclick="fetchDataFromGoogleSheet(5)">
+                        <ion-icon name="document-outline"></ion-icon>
+                        <h5 class="arLangText">تحميل الطلبات</h5>
+                        <h5 class="indoLangText">Download Orders</h5>
+                    </div>
 
                 </div>
             `;
@@ -6662,18 +6695,6 @@ let downloadPdfWithCustomName = async function (pdfName) {
     let pdfContainerDiv = document.getElementById('final_order_pdf_content_container_div');
     // Clear existing content
     pdfContainerDiv.innerHTML = '';
-
-    // Redirect to WhatsApp after the PDF download
-    let whatsappNumber = "+6282210081028"; // Replace with the target WhatsApp number
-    let whatsappMessage = "يرجى إرسال طلبك عن طريق ملف بي دي اف\nSilakan Kirimkan Permintaan Anda Melalui File PDF"; // Optional predefined message
-
-    // WhatsApp URL to send the message to the number
-    let whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-
-    // Redirect to WhatsApp after a slight delay to ensure PDF download completes
-    setTimeout(() => {
-        window.location.href = whatsappUrl;
-    }, 1500); // Delay of 1.5 seconds to ensure the download is initiated
 };
 
 

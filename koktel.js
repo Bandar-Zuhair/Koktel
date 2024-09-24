@@ -2434,8 +2434,8 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
             </div>
 
             <div>
-                <h1 class="koktel_order_details_title arLangText">تفاصيل الطلب رقم ${orderIndexNumber + 1}</h1>
-                <h1 class="koktel_order_details_title indoLangText">Detail Pesanan No ${orderIndexNumber + 1}</h1>
+                <h1 class="koktel_order_details_page_text_title arLangText">تفاصيل الطلب رقم ${orderIndexNumber + 1}</h1>
+                <h1 class="koktel_order_details_page_text_title indoLangText">Detail Pesanan No ${orderIndexNumber + 1}</h1>
             </div>
 
             <div id="koktel_order_details_text_background">

@@ -1207,7 +1207,6 @@ body.nav-open #koktel_nav_options * {
     background: linear-gradient(to right, rgb(0, 54, 179), rgb(0, 19, 63));
     width: 100%;
     margin-bottom: 30px;
-    padding: 10px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1216,8 +1215,8 @@ body.nav-open #koktel_nav_options * {
 
 .koktel_order_finished_card {
     background: rgb(56, 56, 56);
-    width: 60vmin;
-    margin: 5px;
+    width: 100%;
+    margin-top: 3vmax;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1231,9 +1230,15 @@ body.nav-open #koktel_nav_options * {
     text-align: center;
 }
 
+.finished_product_card_image_and_controllers_div{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
 .koktel_order_finished_card img {
     width: 30vmin;
-    margin: 10px 0;
     align-self: center;
     border-radius: 3px;
     box-shadow: 0 0 3px 0.5px black;
@@ -1253,7 +1258,6 @@ body.nav-open #koktel_nav_options * {
 }
 
 .koktel_order_finished_card h3 {
-    background: purple;
     width: 100%;
     font-size: 5vmin;
     text-align: center;
@@ -1442,7 +1446,7 @@ body.nav-open #koktel_nav_options * {
 }
 
 #koktel_order_check_out_bill_div {
-    background: rgb(96, 96, 96);
+    background: rgb(56, 56, 56);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1460,7 +1464,6 @@ body.nav-open #koktel_nav_options * {
 }
 
 #koktel_order_check_out_bill_title {
-    background: rgb(138, 138, 138);
     width: 100%;
     color: rgb(0, 255, 0);
     border-radius: 3px;
@@ -1472,7 +1475,6 @@ body.nav-open #koktel_nav_options * {
 
 .koktel_order_check_out_bill_total_price {
     color: rgb(0, 255, 0);
-    background: rgb(138, 138, 138);
     width: 100%;
 }
 

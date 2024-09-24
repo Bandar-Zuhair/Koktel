@@ -1479,7 +1479,7 @@ body.nav-open #koktel_nav_options * {
 }
 
 #koktel_order_details_text_div {
-    background: linear-gradient(to right, rgb(132, 0, 255), rgb(60, 0, 117));
+    background: linear-gradient(to right, rgb(0, 54, 179), rgb(0, 19, 63));
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1491,9 +1491,16 @@ body.nav-open #koktel_nav_options * {
     margin: 20px 0;
 }
 
+.koktel_order_details_page_text_title{
+    background: linear-gradient(to left, rgb(0, 54, 179), rgb(0, 19, 63));
+    width: 100vw;
+    padding: 0 5px;
+    font-size: 2.5vmax;
+    text-align: center;
+}
+
 
 #koktel_order_details_text_background {
-    background: linear-gradient(to right, rgb(0, 98, 190), rgb(0, 21, 41));
     width: 100%;
 }
 
@@ -1518,7 +1525,6 @@ body.nav-open #koktel_nav_options * {
 }
 
 #koktel_order_details_text_bottom_button_div {
-    background: linear-gradient(to right, rgb(132, 0, 255), rgb(60, 0, 117));
     width: 100%;
     display: flex;
     justify-content: center;
@@ -1526,7 +1532,7 @@ body.nav-open #koktel_nav_options * {
 }
 
 #koktel_order_details_text_bottom_button_div h5 {
-    background: purple;
+    background: linear-gradient(to left, rgb(0, 54, 179), rgb(0, 19, 63));
     font-size: 2.5vmax;
     margin: 0 15px;
     padding: 0 5px;

@@ -549,6 +549,10 @@ function koktel_websiteGuidance(buttonClicked) {
 
             <a class="arLangText" onclick="koktel_scrollToMealType('koktel_pasta_meal_type')">باستا</a>
             <a class="indoLangText" onclick="koktel_scrollToMealType('koktel_pasta_meal_type')">Pasta</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToMealType('koktel_appetizer_meal_type')">مقبلات</a>
+            <a class="indoLangText" onclick="koktel_scrollToMealType('koktel_appetizer_meal_type')">Apperaizer</a>
         `;
 
         /* Filter Supermarket Product Type */

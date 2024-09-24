@@ -100,10 +100,15 @@ setWebsiteLanguage = function () {
         });
 
 
-
         /* Styling For Restaurant Meal Details */
         document.querySelectorAll('.koktel_orignal_price_div').forEach(element => {
             element.style.justifyContent = 'flex-start';
+        });
+
+
+        /* Styling For Restaurant Meal Details */
+        document.querySelectorAll('.finished_product_card_image_and_controllers_div').forEach(element => {
+            element.style.flexDirection = 'row-reverse';
         });
 
 
@@ -139,12 +144,10 @@ setWebsiteLanguage = function () {
         });
 
 
-
         /* Styling For Restaurant Cards Inner Info */
         document.querySelectorAll('.koktel_product_type_title').forEach(element => {
             element.style.direction = 'ltr';
         });
-
 
 
         /* Styling For Supermarket Cards Inner Pick Or Unpick Product */
@@ -153,17 +156,21 @@ setWebsiteLanguage = function () {
         });
 
 
-
         /* Styling For Restaurant Cards Inner Info */
         document.querySelectorAll('.koktelindo_product_slide_div').forEach(element => {
             element.style.flexDirection = 'row-reverse';
         });
 
 
-
         /* Styling For Restaurant Meal Details */
         document.querySelectorAll('.koktel_orignal_price_div').forEach(element => {
             element.style.justifyContent = 'flex-end';
+        });
+
+
+        /* Styling For Restaurant Meal Details */
+        document.querySelectorAll('.finished_product_card_image_and_controllers_div').forEach(element => {
+            element.style.flexDirection = 'row';
         });
 
 
@@ -1234,6 +1241,7 @@ koktel_createFinalWhatsAppMessage = function (localStorageName, storeName, order
     let finalIndoOrderInfo = `
         <div style="text-align: left; direction: ltr;">
             ${indoOrderInfo}
+            ${noteText !== '' ? `<span style="color: red; direction: ltr;">[ Catatan: ${noteText} ]</span><br><br>` : ''}
             - Pajak: ${taxAmount.toLocaleString()} Rp<br>
             - Kiriman: ${deliveryFees.toLocaleString()} Rp<br>
             - Harga Akhir: ${lastTotalPrice.toLocaleString()} Rp<br><br>
@@ -1244,7 +1252,8 @@ koktel_createFinalWhatsAppMessage = function (localStorageName, storeName, order
     `;
 
     let finalArOrderInfo = `
-    ${arOrderInfo}
+        ${arOrderInfo}
+        ${noteText !== '' ? `<span style="color: red;">[ الملاحظات: ${noteText} ]</span><br><br>` : ''}
         - الضريبة: ${taxAmount.toLocaleString()} Rp<br>
         - التوصيل: ${deliveryFees.toLocaleString()} Rp<br>
         - الإجمالي: ${lastTotalPrice.toLocaleString()} Rp<br><br>
@@ -1253,11 +1262,8 @@ koktel_createFinalWhatsAppMessage = function (localStorageName, storeName, order
         جميع طرق الدفع متوفرة سواء اونلاين او كاش<br>
     `;
 
-    // If there is a noteText, include it in both messages
-    if (noteText !== '') {
-        finalIndoOrderInfo += `<br>Catatan: ${noteText}<br>`;
-        finalArOrderInfo += `<br>الملاحظات: ${noteText}<br>`;
-    }
+
+
 
     // Function to clean up order information
     function cleanOrderInfo(orderInfo) {
@@ -2079,49 +2085,51 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
 
                 // letruct the inner HTML content for the order
                 let localStorageOrderCardContent = `
-                <h2 class="arLangText" onclick="koktel_show_order_details_page(${index})" style=" cursor: pointer;">طلب رقم ${index + 1}</h2>
-                <h2 class="indoLangText" onclick="koktel_show_order_details_page(${index})" style=" cursor: pointer;">Pesanan Nomor ${index + 1}</h2>
+                    <h2 class="arLangText" onclick="koktel_show_order_details_page(${index})" style=" cursor: pointer;">طلب رقم ${index + 1}</h2>
+                    <h2 class="indoLangText" onclick="koktel_show_order_details_page(${index})" style=" cursor: pointer;">Pesanan Nomor ${index + 1}</h2>
 
 
-                    <img src=${orderData.mealImgSrc} alt="مطاعم اندونيسيا - كوكتيل" title="مطاعم اندونيسيا - كوكتيل" onclick="koktel_show_order_details_page(${index})" loading="lazy">
+                    <div class="finished_product_card_image_and_controllers_div">
 
-                <div>
+                        <img src=${orderData.mealImgSrc} alt="مطاعم اندونيسيا - كوكتيل" title="مطاعم اندونيسيا - كوكتيل" onclick="koktel_show_order_details_page(${index})" loading="lazy">
 
-                    <h3 class="arLangText" onclick="koktel_show_order_details_page(${index})" style="color: rgb(0, 255, 0);">الإجمالي = ${orderData.totalCurrentMealPrice.toLocaleString()}</h3>
-                    <h3 class="indoLangText" onclick="koktel_show_order_details_page(${index})" style="color: rgb(0, 255, 0);">Total = ${orderData.totalCurrentMealPrice.toLocaleString()}</h3>
-
-                </div>
-                <div class='koktel_orderFinished_info_and_delete'>
-
-                    <h3 class="arLangText" id="koktel_order_details_h3" onclick="koktel_show_order_details_page(${index})">تفاصيل الطلب</h3>
-                    <h3 class="indoLangText" id="koktel_order_details_h3" onclick="koktel_show_order_details_page(${index})">Detail Pesanan</h3>
+                        <div class='koktel_orderFinished_info_and_delete'>
+                        
+                            <h3 class="arLangText" onclick="koktel_show_order_details_page(${index})" style="color: rgb(0, 255, 0);">الإجمالي = ${orderData.totalCurrentMealPrice.toLocaleString()}</h3>
+                            <h3 class="indoLangText" onclick="koktel_show_order_details_page(${index})" style="color: rgb(0, 255, 0);">Total = ${orderData.totalCurrentMealPrice.toLocaleString()}</h3>
 
 
-                    <h3 class="arLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">حذف الطلب</h3>
-                    <h3 class="indoLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">Hapus</h3>
-
-                </div>
-                
-                
-                <div id='koktel_ensure_delete_this_orders_overlay_${index}' class='koktel_ensure_delete_orders_overlay' style='display:none'>
-                    <div class='koktel_ensure_delete_all_orders_div'>
-
-                        <h6 class="arLangText">متاكد من حذف هذا الطلب؟</h6>
-                        <h6 class="indoLangText">Apakah Anda yakin ingin menghapus permintaan ini?</h6>
+                            <h3 class="arLangText" id="koktel_order_details_h3" onclick="koktel_show_order_details_page(${index})">تفاصيل الطلب</h3>
+                            <h3 class="indoLangText" id="koktel_order_details_h3" onclick="koktel_show_order_details_page(${index})">Detail Pesanan</h3>
 
 
-                        <div id='koktel_ensure_delete_all_orders_answer_div'>
-
-                            <h6 class="arLangText" onclick='koktel_delete_this_orders_function("عودة", ${index})'>عودة</h6>
-                            <h6 class="indoLangText" onclick='koktel_delete_this_orders_function("عودة", ${index})'>Kembali</h6>
-
-
-                            <h6 class="arLangText" onclick='koktel_delete_this_orders_function("نعم", ${index})'>نعم</h6>
-                            <h6 class="indoLangText" onclick='koktel_delete_this_orders_function("نعم", ${index})'>Ya</h6>
+                            <h3 class="arLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">حذف الطلب</h3>
+                            <h3 class="indoLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">Hapus</h3>
 
                         </div>
+                    
                     </div>
-                </div>
+
+                    
+                    <div id='koktel_ensure_delete_this_orders_overlay_${index}' class='koktel_ensure_delete_orders_overlay' style='display:none'>
+                        <div class='koktel_ensure_delete_all_orders_div'>
+
+                            <h6 class="arLangText">متاكد من حذف هذا الطلب؟</h6>
+                            <h6 class="indoLangText">Apakah Anda yakin ingin menghapus permintaan ini?</h6>
+
+
+                            <div id='koktel_ensure_delete_all_orders_answer_div'>
+
+                                <h6 class="arLangText" onclick='koktel_delete_this_orders_function("عودة", ${index})'>عودة</h6>
+                                <h6 class="indoLangText" onclick='koktel_delete_this_orders_function("عودة", ${index})'>Kembali</h6>
+
+
+                                <h6 class="arLangText" onclick='koktel_delete_this_orders_function("نعم", ${index})'>نعم</h6>
+                                <h6 class="indoLangText" onclick='koktel_delete_this_orders_function("نعم", ${index})'>Ya</h6>
+
+                            </div>
+                        </div>
+                    </div>
                 `;
 
                 // Assign the HTML content to the created element
@@ -3331,23 +3339,28 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
                     <h2 class="indoLangText" style="color: aqua; cursor: text;">${orderData.indo_productName}</h2>
 
 
-                    <img src="${orderData.productImgSrc}" alt="سوبرماركت اندونيسيا - كوكتيل" title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
+                    <div class="finished_product_card_image_and_controllers_div">
+
+                        <img src="${orderData.productImgSrc}" alt="سوبرماركت اندونيسيا - كوكتيل" title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
 
 
-                    <div class='koktel_orderFinished_info_and_delete'>
+                        <div class='koktel_orderFinished_info_and_delete'>
 
-                        <h3 class="arLangText" style="color: rgb(255, 166, 0); cursor: text;">العدد = ${orderData.productAmount}</h3>
-                        <h3 class="indoLangText" style="color: rgb(255, 166, 0); cursor: text;">Kuantitas = ${orderData.productAmount}</h3>
-
-
-                        <h3 id="koktel_order_total_price_h3" class="arLangText">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
-                        <h3 id="koktel_order_total_price_h3" class="indoLangText">Total = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+                            <h3 class="arLangText" style="color: rgb(255, 166, 0); cursor: text;">العدد = ${orderData.productAmount}</h3>
+                            <h3 class="indoLangText" style="color: rgb(255, 166, 0); cursor: text;">Kuantitas = ${orderData.productAmount}</h3>
 
 
-                        <h3 class="arLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">حذف الطلب</h3>
-                        <h3 class="indoLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">Hapus</h3>
+                            <h3 id="koktel_order_total_price_h3" class="arLangText">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+                            <h3 id="koktel_order_total_price_h3" class="indoLangText">Total = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+
+
+                            <h3 class="arLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">حذف الطلب</h3>
+                            <h3 class="indoLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">Hapus</h3>
+
+                        </div>
 
                     </div>
+
 
                     <div id='koktel_ensure_delete_this_orders_overlay_${index}' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                         <div class='koktel_ensure_delete_all_orders_div'>
@@ -4115,23 +4128,28 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
                     <h2 class="indoLangText" style="color: aqua; cursor: text;">${orderData.indo_productName}</h2>
 
 
-                    <img src="${orderData.productImgSrc}" alt="سوبرماركت اندونيسيا - كوكتيل" title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
+                    <div class="finished_product_card_image_and_controllers_div">
+
+                        <img src="${orderData.productImgSrc}" alt="سوبرماركت اندونيسيا - كوكتيل" title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
 
 
-                    <div class='koktel_orderFinished_info_and_delete'>
+                        <div class='koktel_orderFinished_info_and_delete'>
 
-                        <h3 class="arLangText" style="color: rgb(255, 166, 0); cursor: text;">العدد = ${orderData.productAmount}</h3>
-                        <h3 class="indoLangText" style="color: rgb(255, 166, 0); cursor: text;">Kuantitas = ${orderData.productAmount}</h3>
-
-
-                        <h3 id="koktel_order_total_price_h3" class="arLangText">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
-                        <h3 id="koktel_order_total_price_h3" class="indoLangText">Total = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+                            <h3 class="arLangText" style="color: rgb(255, 166, 0); cursor: text;">العدد = ${orderData.productAmount}</h3>
+                            <h3 class="indoLangText" style="color: rgb(255, 166, 0); cursor: text;">Kuantitas = ${orderData.productAmount}</h3>
 
 
-                        <h3 class="arLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">حذف الطلب</h3>
-                        <h3 class="indoLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">Hapus</h3>
+                            <h3 id="koktel_order_total_price_h3" class="arLangText">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+                            <h3 id="koktel_order_total_price_h3" class="indoLangText">Total = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+
+
+                            <h3 class="arLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">حذف الطلب</h3>
+                            <h3 class="indoLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">Hapus</h3>
+
+                        </div>
 
                     </div>
+
 
                     <div id='koktel_ensure_delete_this_orders_overlay_${index}' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                         <div class='koktel_ensure_delete_all_orders_div'>
@@ -5146,21 +5164,25 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
                     <h2 class="indoLangText" style="color: aqua; cursor: text;">${orderData.indo_productName}</h2>
 
 
-                    <img src="${orderData.productImgSrc}" alt="صيدلية اندونيسيا - كوكتيل" title="صيدلية اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
+                    <div class="finished_product_card_image_and_controllers_div">
+
+                        <img src="${orderData.productImgSrc}" alt="صيدلية اندونيسيا - كوكتيل" title="صيدلية اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
 
 
-                    <div class='koktel_orderFinished_info_and_delete'>
+                        <div class='koktel_orderFinished_info_and_delete'>
 
-                        <h3 class="arLangText" style="color: rgb(255, 166, 0); cursor: text;">العدد = ${orderData.productAmount}</h3>
-                        <h3 class="indoLangText" style="color: rgb(255, 166, 0); cursor: text;">Kuantitas = ${orderData.productAmount}</h3>
-
-
-                        <h3 id="koktel_order_total_price_h3" class="arLangText">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
-                        <h3 id="koktel_order_total_price_h3" class="indoLangText">Total = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+                            <h3 class="arLangText" style="color: rgb(255, 166, 0); cursor: text;">العدد = ${orderData.productAmount}</h3>
+                            <h3 class="indoLangText" style="color: rgb(255, 166, 0); cursor: text;">Kuantitas = ${orderData.productAmount}</h3>
 
 
-                        <h3 class="arLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">حذف الطلب</h3>
-                        <h3 class="indoLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">Hapus</h3>
+                            <h3 id="koktel_order_total_price_h3" class="arLangText">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+                            <h3 id="koktel_order_total_price_h3" class="indoLangText">Total = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+
+
+                            <h3 class="arLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">حذف الطلب</h3>
+                            <h3 class="indoLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">Hapus</h3>
+
+                        </div>
 
                     </div>
 
@@ -5942,23 +5964,28 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
                     <h2 class="indoLangText" style="color: aqua; cursor: text;">${orderData.indo_productName}</h2>
 
 
-                    <img src="${orderData.productImgSrc}" alt="معسلات اندونيسيا - كوكتيل" title="معسلات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
+                    <div class="finished_product_card_image_and_controllers_div">
+
+                        <img src="${orderData.productImgSrc}" alt="معسلات اندونيسيا - كوكتيل" title="معسلات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image(this.src)" loading="lazy">
 
 
-                    <div class='koktel_orderFinished_info_and_delete'>
+                        <div class='koktel_orderFinished_info_and_delete'>
 
-                        <h3 class="arLangText" style="color: rgb(255, 166, 0); cursor: text;">العدد = ${orderData.productAmount}</h3>
-                        <h3 class="indoLangText" style="color: rgb(255, 166, 0); cursor: text;">Kuantitas = ${orderData.productAmount}</h3>
-
-
-                        <h3 id="koktel_order_total_price_h3" class="arLangText">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
-                        <h3 id="koktel_order_total_price_h3" class="indoLangText">Total = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+                            <h3 class="arLangText" style="color: rgb(255, 166, 0); cursor: text;">العدد = ${orderData.productAmount}</h3>
+                            <h3 class="indoLangText" style="color: rgb(255, 166, 0); cursor: text;">Kuantitas = ${orderData.productAmount}</h3>
 
 
-                        <h3 class="arLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">حذف الطلب</h3>
-                        <h3 class="indoLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">Hapus</h3>
+                            <h3 id="koktel_order_total_price_h3" class="arLangText">الإجمالي = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+                            <h3 id="koktel_order_total_price_h3" class="indoLangText">Total = ${orderData.totalPrice.toLocaleString()} Rp</h3>
+
+
+                            <h3 class="arLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">حذف الطلب</h3>
+                            <h3 class="indoLangText" onclick="koktel_ensure_delete_orders_box('حذف الطلب', ${index})" style="color: red;">Hapus</h3>
+
+                        </div>
 
                     </div>
+
 
                     <div id='koktel_ensure_delete_this_orders_overlay_${index}' class='koktel_ensure_delete_orders_overlay' style='display:none'>
                         <div class='koktel_ensure_delete_all_orders_div'>

@@ -490,8 +490,8 @@ header div {
 }
 
 .web_guidance_div a:hover {
-    background: rgb(166, 166, 166);
-    color: black;
+    color: rgb(0, 255, 0);
+    letter-spacing: 1px;
 }
 
 nav {
@@ -1376,40 +1376,67 @@ body.nav-open #koktel_nav_options * {
 }
 
 #koktel_order_check_out_div {
-    width: 95%;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-}
-
-#koktel_order_check_out_div div {
-    margin: 0 10px;
-}
-
-.koktel_download_order_pdf_div_class {
-    background: green;
-    width: 50vmin;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-self: flex-end;
     align-items: center;
-    border-radius: 3px;
+}
+
+.koktel_download_order_pdf_and_whatsapp_number_div_class{
+    background: red;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.koktel_download_order_pdf_and_whatsapp_number_div_class div{
+    width: 100%;
+}
+
+.koktel_download_order_pdf_div_1_class {
+    background: green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    border: 0.5px solid black;
     transition: all 0.2s ease-in-out;
 }
 
-.koktel_download_order_pdf_div_class:hover {
+.koktel_download_order_pdf_div_1_class:hover {
     background: rgb(0, 173, 0);
 }
 
-.koktel_download_order_pdf_div_class ion-icon {
+.koktel_download_order_pdf_div_1_class ion-icon {
     font-size: 20vmin;
 }
 
-.koktel_download_order_pdf_div_class h5 {
+.koktel_download_order_pdf_div_1_class h5 {
+    font-size: 5vmin;
+    text-align: center;
+}
+
+.koktel_download_order_pdf_div_2_class {
+    background: darkorange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.koktel_download_order_pdf_div_2_class:hover {
+    background: rgb(0, 173, 0);
+}
+
+.koktel_download_order_pdf_div_2_class ion-icon {
+    font-size: 20vmin;
+}
+
+.koktel_download_order_pdf_div_2_class h5 {
     font-size: 5vmin;
     text-align: center;
 }

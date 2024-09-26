@@ -1,3 +1,13 @@
+let headacheProducts = [
+    {
+        imageSRC: "صيدلية-اندونيسيا/الم-الراس/panadol-extra-obat-sakit-kepala-10-kaplet",
+        ar_name: "بندول إكسترا للصداع 10 حبات",
+        indo_name: "Panadol Extra Obat Sakit Kepala 10 Kaplet",
+        price: "10,000 Rp",
+    },
+];
+
+
 let heartburnProducts = [
     {
         imageSRC: "صيدلية-اندونيسيا/الحموضة-والحرقان/mylanta-obat-maag-cair-50-ml",

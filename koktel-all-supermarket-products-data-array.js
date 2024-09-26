@@ -1,3 +1,13 @@
+let arabicFoodProducts = [
+    {
+        imageSRC: "سوبرماركت-اندونيسيا/زيت/bimoli-minyak-goreng-pouch-1-l",
+        ar_name: "زيت طبخ بيمولي 1 لتر",
+        indo_name: "Bimoli Minyak Goreng Pouch 1 L",
+        price: "10,000 Rp",
+    },
+];
+
+
 let oilProducts = [
     {
         imageSRC: "سوبرماركت-اندونيسيا/زيت/bimoli-minyak-goreng-pouch-1-l",

@@ -961,6 +961,10 @@ function koktel_websiteGuidance(buttonClicked) {
         webGuidanceDiv.classList.add('koktel_filter_products_type_div');
 
         webGuidanceText = `
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_headache_product_section')">ألم الرأس</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_headache_product_section')">Sakit Kepala</a>
+
+
             <a class="arLangText" onclick="koktel_scrollToProductType('koktel_heartburn_product_section')">الحموضة / الحرقان</a>
             <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_heartburn_product_section')">Keasaman / Rasa Terbakar</a>
 

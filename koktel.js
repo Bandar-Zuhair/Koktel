@@ -849,6 +849,10 @@ function koktel_websiteGuidance(buttonClicked) {
         webGuidanceDiv.classList.add('koktel_filter_products_type_div');
 
         webGuidanceText = `
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_arabic_food_product_section')">المواد الغذائية العربية</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_arabic_food_product_section')">Makanan Arab</a>
+
+
             <a class="arLangText" onclick="koktel_scrollToProductType('koktel_oil_product_section')">زيت</a>
             <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_oil_product_section')">minyak</a>
 
@@ -2917,6 +2921,7 @@ if (document.getElementById("koktel_supermarket_section")) {
 
 
     /* Call a function to craete all supermarket product */
+    createProductCards(arabicFoodProducts, 'all_arabic_food_products_slide_div_id');
     createProductCards(oilProducts, 'all_oil_products_slide_div_id');
     createProductCards(indomieProducts, 'all_indomie_products_slide_div_id');
     createProductCards(cheeseProducts, 'all_cheese_products_slide_div_id');

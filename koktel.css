@@ -1757,9 +1757,13 @@ body.nav-open #koktel_nav_options * {
     overflow: hidden;
 }
 
+
+#all_arabic_food_products_slide_div_id .koktel_product_card {
+    background: linear-gradient(to right, rgb(0, 149, 99), rgb(0, 61, 41));
+}
+
 /* Ensure the anchor takes full height and uses flexbox */
 .koktel_product_card>a {
-    background: linear-gradient(to bottom, rgb(23, 0, 56), rgb(68, 0, 171));
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1837,6 +1841,10 @@ body.nav-open #koktel_nav_options * {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+#all_arabic_food_products_slide_div_id .koktel_product_name_div {
+    background: linear-gradient(to right, rgb(0, 149, 99), rgb(0, 61, 41));
 }
 
 .koktel_product_name_div * {

@@ -4750,6 +4750,7 @@ if (document.getElementById("koktel_pharmacy_section")) {
 
 
     /* Call a function to craete all supermarket product */
+    createProductCards(headacheProducts, 'all_headache_products_slide_div_id');
     createProductCards(heartburnProducts, 'all_heartburn_products_slide_div_id');
     createProductCards(jointsAndBruisesProducts, 'all_joints_and_bruises_products_slide_div_id');
     createProductCards(babyPowderProducts, 'all_baby_powder_products_slide_div_id');

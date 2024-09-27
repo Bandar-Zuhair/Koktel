@@ -158,18 +158,6 @@ let mazayaProducts = [
         price: "10,000 Rp",
     },
     {
-        imageSRC: "معسلات-اندونيسيا/مزايا/مزايا-نعناع-بالعلكة",
-        ar_name: "مزايا نعناع بالعلكة 250 جم",
-        indo_name: "Mazaya Mint Dengan Permen Karet 250 G",
-        price: "10,000 Rp",
-    },
-    {
-        imageSRC: "معسلات-اندونيسيا/مزايا/مزايا-فواكه-الجنة",
-        ar_name: "مزايا فواكه الجنة 250 جم",
-        indo_name: "Mazaya Buah Surga 250 G",
-        price: "10,000 Rp",
-    },
-    {
         imageSRC: "معسلات-اندونيسيا/مزايا/مزايا-فواكه-الجنة",
         ar_name: "مزايا فواكه الجنة 250 جم",
         indo_name: "Mazaya Buah Surga 250 G",

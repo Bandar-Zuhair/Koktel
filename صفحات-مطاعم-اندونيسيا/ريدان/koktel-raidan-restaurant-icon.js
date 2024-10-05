@@ -94,10 +94,11 @@ if (document.getElementById("koktel_meal_info_section")) {
 
 
     /* Create a go back icon for each  */
-    let goBackButton = document.createElement('a');
-    goBackButton.setAttribute('itemprop', 'url');
-    goBackButton.setAttribute('href', 'https://koktel-indo.com/%D8%B5%D9%81%D8%AD%D8%A7%D8%AA-%D9%85%D8%B7%D8%A7%D8%B9%D9%85-%D8%A7%D9%86%D8%AF%D9%88%D9%86%D9%8A%D8%B3%D9%8A%D8%A7/%D8%B1%D9%8A%D8%AF%D8%A7%D9%86/%D9%82%D8%A7%D8%A6%D9%85%D8%A9-%D8%B7%D8%B9%D8%A7%D9%85-%D8%B1%D9%8A%D8%AF%D8%A7%D9%86');
+    let goBackButton = document.createElement('button');
     goBackButton.classList.add('koktel_go_back_products_page_button');
+    goBackButton.addEventListener('click', function () {
+        history.back(); // Goes back to the previous page in history
+    });
 
     // Create and append the ion-icon to the first <a> element
     let goBackIcon = document.createElement('ion-icon');

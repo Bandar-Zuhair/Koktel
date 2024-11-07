@@ -4515,7 +4515,7 @@ if (document.getElementById("koktel_choose_worker_type_section")) {
         let encodedMessage = encodeURIComponent(finalMessage);
 
         // Create the WhatsApp URL
-        let whatsappURL = `https://wa.me/6282210081028?text=${encodedMessage}`;
+        let whatsappURL = `https://wa.me/6287720208728?text=${encodedMessage}`;
 
         // Open WhatsApp in a new window
         window.open(whatsappURL, '_blank');
@@ -4623,7 +4623,7 @@ if (document.getElementById("koktel_choose_worker_type_section")) {
         let encodedMessage = encodeURIComponent(finalMessage);
 
         // Create the WhatsApp URL
-        let whatsappURL = `https://wa.me/6282210081028?text=${encodedMessage}`;
+        let whatsappURL = `https://wa.me/6287720208728?text=${encodedMessage}`;
 
         // Open WhatsApp in a new window
         window.open(whatsappURL, '_blank');
@@ -4686,7 +4686,7 @@ if (document.getElementById("koktel_choose_massage_person_section")) {
         let encodedMessage = encodeURIComponent(finalMessage);
 
         // Create the WhatsApp URL
-        let whatsappURL = `https://wa.me/6282210081028?text=${encodedMessage}`;
+        let whatsappURL = `https://wa.me/6287720208728?text=${encodedMessage}`;
 
         // Open WhatsApp in a new window
         window.open(whatsappURL, '_blank');
@@ -6573,7 +6573,7 @@ if (document.getElementById("koktel_meal_info_section")) {
 /* Open WhatsApp Chat */
 function koktel_whatsApp() {
     // Create the WhatsApp URL with the phone number.
-    let whatsappURL = 'https://wa.me/+966509465975';
+    let whatsappURL = 'https://wa.me/6287720208728';
 
     // Open the WhatsApp chat window in a new tab.
     window.open(whatsappURL, '_blank');

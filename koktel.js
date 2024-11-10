@@ -7453,19 +7453,11 @@ document.addEventListener('keydown', function (event) {
 
 
 
-// JavaScript to add the "animate-target" class to all elements except divs and footer
 document.addEventListener("DOMContentLoaded", () => {
-    const allElements = document.querySelectorAll("body *");
+    // Select all elements with the class "koktel_animation" for animation
+    const elementsToAnimate = document.querySelectorAll(".koktel_animation");
 
-    allElements.forEach(element => {
-        if (element.tagName.toLowerCase() !== "div" && element.tagName.toLowerCase() !== "footer") {
-            element.classList.add("animate-target");
-        }
-    });
-
-    // Now select all elements with the "animate-target" class for animation
-    const targetElements = document.querySelectorAll(".animate-target");
-
+    // Set up IntersectionObserver for scroll animations
     const observerOptions = {
         root: null,
         rootMargin: "0px",
@@ -7475,25 +7467,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const observerCallback = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add("intro-animation");
-                entry.target.classList.remove("outro-animation");
+                // Add intro animation class and remove outro class
+                entry.target.classList.add("intro_animation");
+                entry.target.classList.remove("outro_animation");
 
-                // Unobserve the element after the animation applies once
+                // Unobserve the element after the first animation
                 observer.unobserve(entry.target);
-            } else {
-                entry.target.classList.remove("intro-animation");
-                entry.target.classList.add("outro-animation");
             }
         });
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    // Observe each target element for scroll animations
-    targetElements.forEach(element => {
+    // Observe each element for scroll animations
+    elementsToAnimate.forEach(element => {
         observer.observe(element);
     });
 });
+
+
+
+
 
 
 

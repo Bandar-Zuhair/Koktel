@@ -23,6 +23,26 @@
     direction: rtl;
 }
 
+
+/* Initial state for animation, applied to all animate-target elements */
+.animate-target {
+    transform: translateY(0px);
+    transition: all 0.5s ease !important;
+}
+
+/* Intro Animation */
+.intro-animation {
+    transform: translateY(0);
+}
+
+/* Outro Animation */
+.outro-animation {
+    transform: translateY(100px);
+}
+
+
+
+
 /* Body */
 body {
     background: linear-gradient(to right, rgb(0, 54, 179), rgb(0, 19, 63));
@@ -543,8 +563,9 @@ body.nav-open #koktel_nav_options * {
     flex-direction: column;
     justify-content: flex-start;
     opacity: 0;
-    height: 0;
-    overflow: hidden;
+    height: 80vh; /* Set height relative to the viewport to allow scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Disable horizontal scrolling */
     transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out, right 0.3s ease-in-out;
 }
 
@@ -572,6 +593,7 @@ body.nav-open #koktel_nav_options * {
     color: rgb(0, 255, 0);
     letter-spacing: 1px;
 }
+
 
 #koktel_close_nav {
     background: linear-gradient(to right, rgb(255, 0, 221), rgb(13, 0, 255));
@@ -1432,10 +1454,6 @@ body.nav-open #koktel_nav_options * {
     transition: all 0.2s ease-in-out;
 }
 
-.koktel_download_order_pdf_div_2_class:hover {
-    background: rgb(0, 173, 0);
-}
-
 .koktel_download_order_pdf_div_2_class ion-icon {
     font-size: 20vmin;
 }
@@ -1754,11 +1772,10 @@ body.nav-open #koktel_nav_options * {
     border-radius: 3px;
     box-shadow: 0 0 5px 0.5px black;
     transition: all 0.1s ease-in-out;
-    overflow: hidden;
 }
 
 
-#all_arabic_food_products_slide_div_id .koktel_product_card {
+.special_products_slide_div_class .koktel_product_card {
     background: linear-gradient(to right, rgb(0, 149, 99), rgb(0, 61, 41));
 }
 
@@ -2206,7 +2223,6 @@ body.nav-open #koktel_nav_options * {
     border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 5px 0.5px black;
-    animation: floatAnimation 4s ease-in-out infinite;
     transition: all 0.1s ease-in-out;
 }
 
@@ -2325,7 +2341,6 @@ body.nav-open #koktel_nav_options * {
     border: 1px solid white;
     border-radius: 3px;
     transition: all 0.1s ease-in-out;
-    animation: floatAnimation 4s ease-in-out infinite;
 }
 
 #koktel_accounts_section ion-icon {

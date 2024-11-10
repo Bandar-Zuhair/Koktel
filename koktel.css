@@ -24,21 +24,23 @@
 }
 
 
-/* Initial state for animation, applied to all animate-target elements */
-.animate-target {
-    transform: translateY(0px);
+/* Initial state for animation, applied to all elements with koktel_animation */
+.koktel_animation {
+    transform: translateY(100px);
     transition: all 0.5s ease !important;
 }
 
-/* Intro Animation */
-.intro-animation {
+/* Intro Animation (fade in) */
+.intro_animation {
     transform: translateY(0);
 }
 
-/* Outro Animation */
-.outro-animation {
+/* Outro Animation (fade out) */
+.outro_animation {
     transform: translateY(100px);
 }
+
+
 
 
 
@@ -669,7 +671,6 @@ body.nav-open #koktel_nav_options * {
     text-decoration: none;
     width: 45.9vmin;
     border-radius: 3px;
-    overflow: hidden;
     margin: 5px;
     cursor: pointer;
     box-shadow: 0 0 5px 0.5px black;
@@ -682,7 +683,6 @@ body.nav-open #koktel_nav_options * {
 
 .koktel_choose_service_img {
     width: 100%;
-    overflow: hidden;
 }
 
 .koktel_choose_service_img img {

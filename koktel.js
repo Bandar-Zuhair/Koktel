@@ -2906,10 +2906,11 @@ if (document.getElementById("koktel_supermarket_section")) {
         products.forEach(product => {
             let productCard = document.createElement('div');
             productCard.classList.add('koktel_product_card');
+            productCard.classList.add('koktel_animation');
 
             productCard.innerHTML = `
                 <div class="koktel_product_card_info">
-                    <div class="koktel_product_card_img">
+                    <div class="koktel_product_card_img koktel_animation">
                         <img src="${product.imageSRC}.jpg" alt="سوبرماركت اندونيسيا - كوكتيل" title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image('${product.imageSRC}.jpg')" loading="lazy">
                     </div>
                     <div>
@@ -3715,10 +3716,11 @@ if (document.getElementById("koktel_bread_section")) {
         products.forEach(product => {
             let productCard = document.createElement('div');
             productCard.classList.add('koktel_product_card');
+            productCard.classList.add('koktel_animation');
 
             productCard.innerHTML = `
                 <div class="koktel_product_card_info">
-                    <div class="koktel_product_card_img">
+                    <div class="koktel_product_card_img koktel_animation">
                         <img src="${product.imageSRC}.jpg" alt="مخبوزات اندونيسيا - كوكتيل" title="مخبوزات اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image('${product.imageSRC}.jpg')" loading="lazy">
                     </div>
                     <div>
@@ -4744,10 +4746,11 @@ if (document.getElementById("koktel_pharmacy_section")) {
         products.forEach(product => {
             let productCard = document.createElement('div');
             productCard.classList.add('koktel_product_card');
+            productCard.classList.add('koktel_animation');
 
             productCard.innerHTML = `
                 <div class="koktel_product_card_info">
-                    <div class="koktel_product_card_img">
+                    <div class="koktel_product_card_img koktel_animation">
                         <img src="${product.imageSRC}.jpg" alt="صيدلية اندونيسيا - كوكتيل" title="صيدلية اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image('${product.imageSRC}.jpg')" loading="lazy">
                     </div>
                     <div>
@@ -5549,10 +5552,11 @@ if (document.getElementById("koktel_shisha_section")) {
         products.forEach(product => {
             let productCard = document.createElement('div');
             productCard.classList.add('koktel_product_card');
+            productCard.classList.add('koktel_animation');
 
             productCard.innerHTML = `
                 <div class="koktel_product_card_info">
-                    <div class="koktel_product_card_img">
+                    <div class="koktel_product_card_img koktel_animation">
                         <img src="${product.imageSRC}.jpg" alt="سوبرماركت اندونيسيا - كوكتيل" title="سوبرماركت اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image('${product.imageSRC}.jpg')" loading="lazy">
                     </div>
                     <div>
@@ -6339,10 +6343,11 @@ if (document.getElementById("koktel_helth_and_beauty_section")) {
         products.forEach(product => {
             let productCard = document.createElement('div');
             productCard.classList.add('koktel_product_card');
+            productCard.classList.add('koktel_animation');
 
             productCard.innerHTML = `
                 <div class="koktel_product_card_info">
-                    <div class="koktel_product_card_img">
+                    <div class="koktel_product_card_img koktel_animation">
                         <img src="${product.imageSRC}.jpg" alt="الصحة والجمال اندونيسيا - كوكتيل" title="الصحة والجمال اندونيسيا - كوكتيل" onclick="koktel_show_full_screen_image('${product.imageSRC}.jpg')" loading="lazy">
                     </div>
                     <div>

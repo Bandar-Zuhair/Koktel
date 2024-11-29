@@ -1071,7 +1071,6 @@ function koktel_websiteGuidance(buttonClicked) {
 
 
 
-let existingDataStatus = 'newData'; // Variable to identify if the data will be saved as a new data in the google sheet or as an existing data
 
 // Variable to store the most top empty cell row number
 let restaurant_mostTopEmptyCellRowNumberValue;
@@ -1081,10 +1080,12 @@ let pharmacy_mostTopEmptyCellRowNumberValue;
 let shisha_mostTopEmptyCellRowNumberValue;
 
 // Declare the Google Apps Script Web App URL globally
-let googleSheetWebAppURL = 'https://script.google.com/macros/s/AKfycbxIwqzMFZWpPNVz2rVgKGS9Gi-CMRZymiCj9mYuhIiCIyZMrG3vx88dTbTF0P1t1rhG/exec';
+let googleSheetWebAppURL = 'https://script.google.com/macros/s/AKfycbwIboZDiAmYDAmMUkx9eIo7Obtbbb_8YHYx-5PaRgAq7UIcO-Tuk9B0gsQAAHLCOysv/exec';
 
 // Function to fetch data from the Google Sheets with target column number
 async function fetchDataFromGoogleSheet(targetColumnNumber) {
+
+    console.log('fetchDataFromGoogleSheet');
 
     // Target all elements with the class name 'koktel_download_order_pdf_div_class'
     let allDownloadButtons = document.querySelectorAll('.koktel_download_order_pdf_div_class');
@@ -1114,6 +1115,9 @@ async function fetchDataFromGoogleSheet(targetColumnNumber) {
 
 // Function to process the fetched data and find the most top empty cell row number
 function processSheetData(targetColumnNumber, data) {
+
+    console.log(`insert Done Text is Done ${targetColumnNumber} and ${data}`);
+
     // Get the first empty row number from the data
     let firstEmptyRow = data.firstEmptyRow;
 
@@ -1132,22 +1136,22 @@ function processSheetData(targetColumnNumber, data) {
     } else if (targetColumnNumber === 2 /* Supermarket */) {
         supermarket_mostTopEmptyCellRowNumberValue = firstEmptyRow - 1;
 
-        koktel_createFinalWhatsAppMessage('supermarket_orders', 'السوبرماركت', `su_${lastTwoNumbersOfTheCurrentYear}_${supermarket_mostTopEmptyCellRowNumberValue}`, 2)
+        koktel_createFinalWhatsApp_Products_Message('supermarket_orders', 'السوبرماركت', `su_${lastTwoNumbersOfTheCurrentYear}_${supermarket_mostTopEmptyCellRowNumberValue}`, 2)
 
     } else if (targetColumnNumber === 3 /* Bread */) {
         bread_mostTopEmptyCellRowNumberValue = firstEmptyRow - 1;
 
-        koktel_createFinalWhatsAppMessage('bread_orders', 'المخبوزات', `br_${lastTwoNumbersOfTheCurrentYear}_${bread_mostTopEmptyCellRowNumberValue}`, 3)
+        koktel_createFinalWhatsApp_Products_Message('bread_orders', 'المخبوزات', `br_${lastTwoNumbersOfTheCurrentYear}_${bread_mostTopEmptyCellRowNumberValue}`, 3)
 
     } else if (targetColumnNumber === 4 /* Pharmacy */) {
         pharmacy_mostTopEmptyCellRowNumberValue = firstEmptyRow - 1;
 
-        koktel_createFinalWhatsAppMessage('pharmacy_orders', 'الصيدلية', `ph_${lastTwoNumbersOfTheCurrentYear}_${pharmacy_mostTopEmptyCellRowNumberValue}`, 4)
+        koktel_createFinalWhatsApp_Products_Message('pharmacy_orders', 'الصيدلية', `ph_${lastTwoNumbersOfTheCurrentYear}_${pharmacy_mostTopEmptyCellRowNumberValue}`, 4)
 
     } else if (targetColumnNumber === 5 /* Shisha */) {
         shisha_mostTopEmptyCellRowNumberValue = firstEmptyRow - 1;
 
-        koktel_createFinalWhatsAppMessage('shisha_orders', 'المعسلات', `sh_${lastTwoNumbersOfTheCurrentYear}_${shisha_mostTopEmptyCellRowNumberValue}`, 5)
+        koktel_createFinalWhatsApp_Products_Message('shisha_orders', 'المعسلات', `sh_${lastTwoNumbersOfTheCurrentYear}_${shisha_mostTopEmptyCellRowNumberValue}`, 5)
     }
 
     // Target all elements with the class name 'koktel_download_order_pdf_div_class'
@@ -1163,6 +1167,9 @@ function processSheetData(targetColumnNumber, data) {
 
 // Function to insert "Done" text in the passed column number
 async function insertDoneInColumn(targetColumnNumber) {
+
+    console.log('insert Done Text is Done');
+
     try {
         await fetch(googleSheetWebAppURL, {
             method: 'POST',
@@ -1183,7 +1190,7 @@ async function insertDoneInColumn(targetColumnNumber) {
 
 
 /* Function To Create The Final WhatsApp Message */
-koktel_createFinalWhatsAppMessage = function (localStorageName, storeName, orderIdName, googleSheetStoreTypeColumn) {
+koktel_createFinalWhatsApp_Products_Message = function (localStorageName, storeName, orderIdName, googleSheetStoreTypeColumn) {
 
     // Get data orders from localStorage
     let orders = JSON.parse(localStorage.getItem(localStorageName));
@@ -1328,14 +1335,8 @@ koktel_createFinalWhatsAppMessage = function (localStorageName, storeName, order
     `;
 
 
-    /* in case the value of the 'existingDataStatus' is 'newData' then insert a new 'Done' text in the google sheet */
-    if (existingDataStatus === 'newData') {
-        /* Call a function to insert "Done" text in the google sheet */
-        insertDoneInColumn('koktel-indo.com');
-    }
 
-    /* Make sure to set 'existingData' for not inserting any new download for the same pdf file more than one time */
-    existingDataStatus = 'existingData';
+    insertDoneInColumn(targetColumnNumber);
 
 
     /* Call a function to download the pdf file with the passed name value */
@@ -2211,7 +2212,7 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
                         <h5 class="arLangText">إرسال الطلبات</h5>
                         <h5 class="indoLangText">Send Orders</h5>
                     </div>
-                    <div class="koktel_download_order_pdf_div_2_class" onclick="koktel_createFinalWhatsAppMessage()">
+                    <div class="koktel_download_order_pdf_div_2_class" onclick="koktel_createFinalWhatsApp_Resaurant_Message()">
                         <ion-icon name="document-outline"></ion-icon>
                         <h5 class="arLangText">تحميل الطلبات</h5>
                         <h5 class="indoLangText">Download Orders</h5>
@@ -2655,7 +2656,7 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
 
 
     /* Function To Create The Final WhatsApp Message */
-    koktel_createFinalWhatsAppMessage = async function () {
+    koktel_createFinalWhatsApp_Resaurant_Message = async function () {
 
         // Wait for the fetchDataFromGoogleSheet to complete before proceeding
         await fetchDataFromGoogleSheet(1);
@@ -2815,14 +2816,9 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
         `;
 
 
-        /* in case the value of the 'existingDataStatus' is 'newData' then insert a new 'Done' text in the google sheet */
-        if (existingDataStatus === 'newData') {
-            /* Call a function to insert "Done" text in the google sheet */
-            insertDoneInColumn('jojtel-indo.com');
-        }
 
-        /* Make sure to set 'existingData' for not inserting any new download for the same pdf file more than one time */
-        existingDataStatus = 'existingData';
+        /* Call a function to insert "Done" text in the google sheet */
+        insertDoneInColumn(1);
 
 
         /* Call a function to download the order pdf file */
@@ -7502,6 +7498,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+/* Good */
 
 // Function to download the PDF file with the given name and redirect to WhatsApp
 let downloadPdfWithCustomName = async function (pdfName) {
@@ -7604,10 +7601,6 @@ let downloadPdfWithCustomName = async function (pdfName) {
         pdf.save(pdfName);
     }
 
-    // Get the div with the id 'final_order_pdf_content_container_div'
-    let pdfContainerDiv = document.getElementById('final_order_pdf_content_container_div');
-    // Clear existing content
-    pdfContainerDiv.innerHTML = '';
 };
 
 

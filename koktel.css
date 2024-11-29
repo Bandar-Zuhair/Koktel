@@ -1601,7 +1601,8 @@ body.nav-open #koktel_nav_options * {
 }
 
 .arabic_and_indo_order_text_div {
-    width: 100%;
+    width: 55vmax;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

@@ -7373,14 +7373,34 @@ if (document.getElementById("koktel_meal_info_section")) {
     })
 }
 
+
+
+
+/* Insert new click data in the google sheet */
+function insertNewClick(columnName) {
+    const scriptURL = "https://script.google.com/macros/s/AKfycbyU-p7z3tHF0I1K0GCmjcRG3CaG0NPkGyMPTvhlGPISxwIYrt6ueD7O2iHSza9SPOP3/exec";
+
+    // Trim the column name before passing it
+    fetch(`${scriptURL}?columnName=${encodeURIComponent(columnName.trim())}`)
+        .then(response => response.text())
+        .then(data => console.log("Response:", data))
+        .catch(error => console.error("Error:", error));
+}
+
 /* Open WhatsApp Chat */
 function koktel_whatsApp() {
+
+    insertNewClick('koktel-indo.com');
+
     // Create the WhatsApp URL with the phone number.
     let whatsappURL = 'https://wa.me/+6287720208728';
 
     // Open the WhatsApp chat window in a new tab.
     window.open(whatsappURL, '_blank');
 }
+
+
+
 
 /* Open WhatsApp Chat */
 function koktel_book_doctor_meeting_whatsApp() {

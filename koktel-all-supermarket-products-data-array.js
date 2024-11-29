@@ -1,9 +1,57 @@
 let arabicFoodProducts = [
     {
-        imageSRC: "سوبرماركت-اندونيسيا/زيت/bimoli-minyak-goreng-pouch-1-l",
-        ar_name: "زيت طبخ بيمولي 1 لتر",
-        indo_name: "Bimoli Minyak Goreng Pouch 1 L",
-        price: "10,000 Rp",
+        imageSRC: "سوبرماركت-اندونيسيا/مواد-غذائية-عربية/برطمان-طحينة-فاخر-الجميل",
+        ar_name: "برطمان طحينة فاخر الجميل",
+        indo_name: "toples Tahini Aljameel",
+        price: "100,000 Rp",
+    },
+    {
+        imageSRC: "سوبرماركت-اندونيسيا/مواد-غذائية-عربية/جبنة-بوك-سائلة",
+        ar_name: "جبنة بوك سائلة",
+        indo_name: "Keju Cair Puck",
+        price: "100,000 Rp",
+    },
+    {
+        imageSRC: "سوبرماركت-اندونيسيا/مواد-غذائية-عربية/رز-ابو-كاس-مزة",
+        ar_name: "رز ابو كاس مزة 5 كيلو",
+        indo_name: "Beras Abu Kas Mazza 5kg",
+        price: "100,000 Rp",
+    },
+    {
+        imageSRC: "سوبرماركت-اندونيسيا/مواد-غذائية-عربية/شطة-رنا-474-مل",
+        ar_name: "شطة رنا 474 مل",
+        indo_name: "Saus Pedas Rana 474 Ml",
+        price: "100,000 Rp",
+    },
+    {
+        imageSRC: "سوبرماركت-اندونيسيا/مواد-غذائية-عربية/فول-مدمس-كاليفورنيا-غاردن-27-جم",
+        ar_name: "فول مدمس كاليفورنيا غاردن 27 جم",
+        indo_name: "Kacang Fava California Garden 27 G",
+        price: "100,000 Rp",
+    },
+    {
+        imageSRC: "سوبرماركت-اندونيسيا/مواد-غذائية-عربية/قشطة-التاج",
+        ar_name: "قشطة التاج",
+        indo_name: "Krim Altaaj",
+        price: "100,000 Rp",
+    },
+    {
+        imageSRC: "سوبرماركت-اندونيسيا/مواد-غذائية-عربية/قشطة-المراعي-كاملة-الدسم",
+        ar_name: "قشطة المراعي كاملة الدسم",
+        indo_name: "Krim Almarai Penuh Lemak",
+        price: "100,000 Rp",
+    },
+    {
+        imageSRC: "سوبرماركت-اندونيسيا/مواد-غذائية-عربية/جبنة-كيري-مثلثات",
+        ar_name: "جبنة كيري مثلثات",
+        indo_name: "Segitiga Keju Kiri",
+        price: "100,000 Rp",
+    },
+    {
+        imageSRC: "سوبرماركت-اندونيسيا/مواد-غذائية-عربية/معجون-طماطم-السعودية",
+        ar_name: "معجون طماطم السعودية",
+        indo_name: "Pasta Tomat Saudi",
+        price: "100,000 Rp",
     },
 ];
 

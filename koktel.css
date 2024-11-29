@@ -1708,7 +1708,7 @@ body.nav-open #koktel_nav_options * {
     align-items: center;
     cursor: pointer;
     box-shadow: 0 0 3px 0.5px black;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .koktel_product_type_nav_upper_bar_class:hover {

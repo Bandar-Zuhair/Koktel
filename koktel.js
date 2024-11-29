@@ -2866,7 +2866,7 @@ if (document.getElementById("koktel_reem_albawadi_order_page_body")) {
 }
 
 if (document.getElementById("koktel_koktel_order_page_body")) {
-    RestaurantOrderPageFunction('koktel_koktel_order_page_body', 'Koktel', 'Koktel_LocalStorage', 20000, 'كوكتيل');
+    RestaurantOrderPageFunction('koktel_koktel_order_page_body', 'Koktel', 'كوكتيل', 'Koktel_LocalStorage', 20000, 'كوكتيل');
 }
 
 if (document.getElementById("koktel_alriyan_steak_house_order_page_body")) {

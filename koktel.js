@@ -1331,7 +1331,7 @@ koktel_createFinalWhatsAppMessage = function (localStorageName, storeName, order
     /* in case the value of the 'existingDataStatus' is 'newData' then insert a new 'Done' text in the google sheet */
     if (existingDataStatus === 'newData') {
         /* Call a function to insert "Done" text in the google sheet */
-        insertDoneInColumn(googleSheetStoreTypeColumn);
+        insertDoneInColumn('koktel-indo.com');
     }
 
     /* Make sure to set 'existingData' for not inserting any new download for the same pdf file more than one time */
@@ -2818,7 +2818,7 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
         /* in case the value of the 'existingDataStatus' is 'newData' then insert a new 'Done' text in the google sheet */
         if (existingDataStatus === 'newData') {
             /* Call a function to insert "Done" text in the google sheet */
-            insertDoneInColumn(1);
+            insertDoneInColumn('jojtel-indo.com');
         }
 
         /* Make sure to set 'existingData' for not inserting any new download for the same pdf file more than one time */

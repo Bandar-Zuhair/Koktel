@@ -7498,7 +7498,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-/* Good */
 
 // Function to download the PDF file with the given name and redirect to WhatsApp
 let downloadPdfWithCustomName = async function (pdfName) {
@@ -7601,6 +7600,10 @@ let downloadPdfWithCustomName = async function (pdfName) {
         pdf.save(pdfName);
     }
 
+    // Get the div with the id 'final_order_pdf_content_container_div'
+    let pdfContainerDiv = document.getElementById('final_order_pdf_content_container_div');
+    // Clear existing content
+    pdfContainerDiv.innerHTML = '';
 };
 
 

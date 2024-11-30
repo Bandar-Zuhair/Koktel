@@ -1410,11 +1410,11 @@ body.nav-open #koktel_nav_options * {
 }
 
 .koktel_download_order_pdf_and_whatsapp_number_div_class{
-    background: red;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 10px;
 }
 
 .koktel_download_order_pdf_and_whatsapp_number_div_class div{
@@ -1440,25 +1440,6 @@ body.nav-open #koktel_nav_options * {
 }
 
 .koktel_download_order_pdf_div_1_class h5 {
-    font-size: 5vmin;
-    text-align: center;
-}
-
-.koktel_download_order_pdf_div_2_class {
-    background: darkorange;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-.koktel_download_order_pdf_div_2_class ion-icon {
-    font-size: 20vmin;
-}
-
-.koktel_download_order_pdf_div_2_class h5 {
     font-size: 5vmin;
     text-align: center;
 }

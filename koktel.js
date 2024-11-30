@@ -2207,15 +2207,10 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
 
                 <div class="koktel_download_order_pdf_and_whatsapp_number_div_class">
                 
-                    <div class="koktel_download_order_pdf_div_1_class" onclick="koktel_whatsApp()">
+                    <div class="koktel_download_order_pdf_div_1_class" onclick="koktel_createFinalWhatsApp_Resaurant_Message()">
                         <ion-icon name="logo-whatsapp"></ion-icon>
                         <h5 class="arLangText">إرسال الطلبات</h5>
-                        <h5 class="indoLangText">Send Orders</h5>
-                    </div>
-                    <div class="koktel_download_order_pdf_div_2_class" onclick="koktel_createFinalWhatsApp_Resaurant_Message()">
-                        <ion-icon name="document-outline"></ion-icon>
-                        <h5 class="arLangText">تحميل الطلبات</h5>
-                        <h5 class="indoLangText">Download Orders</h5>
+                        <h5 class="indoLangText">Kirim Orders</h5>
                     </div>
 
                 </div>
@@ -3452,15 +3447,10 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
 
                 <div class="koktel_download_order_pdf_and_whatsapp_number_div_class">
                 
-                    <div class="koktel_download_order_pdf_div_1_class" onclick="koktel_whatsApp()">
+                    <div class="koktel_download_order_pdf_div_1_class" onclick="fetchDataFromGoogleSheet(2)">
                         <ion-icon name="logo-whatsapp"></ion-icon>
                         <h5 class="arLangText">إرسال الطلبات</h5>
-                        <h5 class="indoLangText">Send Orders</h5>
-                    </div>
-                    <div class="koktel_download_order_pdf_div_2_class" onclick="fetchDataFromGoogleSheet(2)">
-                        <ion-icon name="document-outline"></ion-icon>
-                        <h5 class="arLangText">تحميل الطلبات</h5>
-                        <h5 class="indoLangText">Download Orders</h5>
+                        <h5 class="indoLangText">Kirim Orders</h5>
                     </div>
 
                 </div>
@@ -4242,15 +4232,10 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
                 
                 <div class="koktel_download_order_pdf_and_whatsapp_number_div_class">
                 
-                    <div class="koktel_download_order_pdf_div_1_class" onclick="koktel_whatsApp()">
+                    <div class="koktel_download_order_pdf_div_1_class" onclick="fetchDataFromGoogleSheet(3)">
                         <ion-icon name="logo-whatsapp"></ion-icon>
                         <h5 class="arLangText">إرسال الطلبات</h5>
-                        <h5 class="indoLangText">Send Orders</h5>
-                    </div>
-                    <div class="koktel_download_order_pdf_div_2_class" onclick="fetchDataFromGoogleSheet(3)">
-                        <ion-icon name="document-outline"></ion-icon>
-                        <h5 class="arLangText">تحميل الطلبات</h5>
-                        <h5 class="indoLangText">Download Orders</h5>
+                        <h5 class="indoLangText">Kirim Orders</h5>
                     </div>
 
                 </div>
@@ -5279,15 +5264,10 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
 
                 <div class="koktel_download_order_pdf_and_whatsapp_number_div_class">
                 
-                    <div class="koktel_download_order_pdf_div_1_class" onclick="koktel_whatsApp()">
+                    <div class="koktel_download_order_pdf_div_1_class" onclick="fetchDataFromGoogleSheet(4)">
                         <ion-icon name="logo-whatsapp"></ion-icon>
                         <h5 class="arLangText">إرسال الطلبات</h5>
-                        <h5 class="indoLangText">Send Orders</h5>
-                    </div>
-                    <div class="koktel_download_order_pdf_div_2_class" onclick="fetchDataFromGoogleSheet(4)">
-                        <ion-icon name="document-outline"></ion-icon>
-                        <h5 class="arLangText">تحميل الطلبات</h5>
-                        <h5 class="indoLangText">Download Orders</h5>
+                        <h5 class="indoLangText">Kirim Orders</h5>
                     </div>
 
                 </div>
@@ -6081,15 +6061,10 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
 
                 <div class="koktel_download_order_pdf_and_whatsapp_number_div_class">
                 
-                    <div class="koktel_download_order_pdf_div_1_class" onclick="koktel_whatsApp()">
+                    <div class="koktel_download_order_pdf_div_1_class" onclick="fetchDataFromGoogleSheet(5)">
                         <ion-icon name="logo-whatsapp"></ion-icon>
                         <h5 class="arLangText">إرسال الطلبات</h5>
-                        <h5 class="indoLangText">Send Orders</h5>
-                    </div>
-                    <div class="koktel_download_order_pdf_div_2_class" onclick="fetchDataFromGoogleSheet(5)">
-                        <ion-icon name="document-outline"></ion-icon>
-                        <h5 class="arLangText">تحميل الطلبات</h5>
-                        <h5 class="indoLangText">Download Orders</h5>
+                        <h5 class="indoLangText">Kirim Orders</h5>
                     </div>
 
                 </div>
@@ -6866,15 +6841,10 @@ if (document.getElementById("koktel_helth_and_beauty_order_details_body_id")) {
 
                 <div class="koktel_download_order_pdf_and_whatsapp_number_div_class">
                 
-                    <div class="koktel_download_order_pdf_div_1_class" onclick="koktel_whatsApp()">
+                    <div class="koktel_download_order_pdf_div_1_class" onclick="fetchDataFromGoogleSheet(2)">
                         <ion-icon name="logo-whatsapp"></ion-icon>
                         <h5 class="arLangText">إرسال الطلبات</h5>
-                        <h5 class="indoLangText">Send Orders</h5>
-                    </div>
-                    <div class="koktel_download_order_pdf_div_2_class" onclick="fetchDataFromGoogleSheet(2)">
-                        <ion-icon name="document-outline"></ion-icon>
-                        <h5 class="arLangText">تحميل الطلبات</h5>
-                        <h5 class="indoLangText">Download Orders</h5>
+                        <h5 class="indoLangText">Kirim Orders</h5>
                     </div>
 
                 </div>
@@ -7520,111 +7490,81 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Function to download the PDF file with the given name and redirect to WhatsApp
-let downloadPdfWithCustomName = async function (pdfName) {
+async function downloadPdfWithCustomName(pdfName) {
     let { jsPDF } = window.jspdf;
 
-    // Function to capture a canvas of a given section
-    let captureCanvas = async function (section, scale) {
+    // Function to capture content with a white background
+    async function captureCanvas(section) {
         try {
-            // Ensure resources are loaded and elements are visible before capturing
-            await new Promise(resolve => setTimeout(resolve, 1000)); // Increase the wait to 1000ms
-
+            section.style.backgroundColor = "white"; // Ensure white background
             let canvas = await html2canvas(section, {
-                scale: scale,
-                backgroundColor: null,
-                scrollY: 0,
-                useCORS: true, // Ensure cross-origin images are loaded correctly
+                scale: 2,
+                backgroundColor: "white",
+                useCORS: true,
             });
             return canvas;
         } catch (error) {
-            console.error('Error capturing canvas:', error);
+            console.error("Error capturing canvas:", error);
             return null;
         }
-    };
-
-    // Function to combine multiple canvases into one
-    let combineCanvases = function (canvases) {
-        if (canvases.length === 0) {
-            return null;
-        }
-
-        let totalHeight = canvases.reduce((sum, canvas) => sum + canvas.height, 0);
-        let combinedCanvas = document.createElement('canvas');
-        combinedCanvas.width = canvases[0].width;
-        combinedCanvas.height = totalHeight;
-        let context = combinedCanvas.getContext('2d');
-
-        context.fillStyle = '#ffffff';
-        context.fillRect(0, 0, combinedCanvas.width, combinedCanvas.height);
-
-        let yOffset = 0;
-        canvases.forEach(canvas => {
-            context.drawImage(canvas, 0, yOffset);
-            yOffset += canvas.height;
-        });
-
-        return combinedCanvas;
-    };
-
-    // Function to process sections and generate the PDF
-    let processSections = async function (sections, scale) {
-        let canvases = [];
-
-        for (let sectionId of sections) {
-            let section = document.getElementById(sectionId);
-            if (section) {
-                let canvas = await captureCanvas(section, scale);
-                if (canvas) {
-                    canvases.push(canvas);
-                }
-            }
-        }
-
-        return canvases.length > 0 ? combineCanvases(canvases) : null;
-    };
-
-    let sections = ['final_order_pdf_content_container_div'];
-    let scale = /Mobi|Android|iPhone/i.test(navigator.userAgent) ? 5 : 3;
-
-    // Process sections to generate combined canvas
-    let combinedCanvas = await processSections(sections, scale);
-
-    if (combinedCanvas) {
-        // Calculate dynamic PDF dimensions based on the canvas dimensions
-        let pdfWidth = 210; // A4 width in mm
-        let pdfHeight = (combinedCanvas.height * pdfWidth) / combinedCanvas.width; // Scale the height proportionally to fit the content
-
-        // Create a new jsPDF instance with the dynamic height
-        let pdf = new jsPDF('p', 'mm', [pdfWidth, pdfHeight]);
-
-        // Calculate the vertical offset to center the content on the page
-        let pageHeight = pdf.internal.pageSize.getHeight();
-        let verticalOffset = (pageHeight - pdfHeight) / 2; // Centering calculation
-
-        // Ensure the vertical offset is at least zero to avoid content overflow
-        let adjustedVerticalOffset = Math.max(0, verticalOffset);
-
-        // Add the canvas as an image to the PDF
-        pdf.addImage(
-            combinedCanvas.toDataURL('image/jpeg', 0.7),
-            'JPEG',
-            0,
-            adjustedVerticalOffset, // Use adjusted vertical offset
-            pdfWidth,
-            pdfHeight,
-            '',
-            'FAST'
-        );
-
-        // Save the PDF
-        pdf.save(pdfName);
     }
 
-    // Get the div with the id 'final_order_pdf_content_container_div'
-    let pdfContainerDiv = document.getElementById('final_order_pdf_content_container_div');
-    // Clear existing content
-    pdfContainerDiv.innerHTML = '';
-};
+    let section = document.getElementById("final_order_pdf_content_container_div");
+    let canvas = await captureCanvas(section);
+
+    if (!canvas) {
+        alert("Failed to capture content for PDF.");
+        return;
+    }
+
+    // Generate the PDF with a white background
+    let pdf = new jsPDF();
+    pdf.setFillColor(255, 255, 255); // White color
+    pdf.rect(0, 0, pdf.internal.pageSize.width, pdf.internal.pageSize.height, "F");
+    pdf.addImage(
+        canvas.toDataURL("image/jpeg"),
+        "JPEG",
+        10,
+        10,
+        190,
+        (canvas.height * 190) / canvas.width
+    );
+
+    // Convert the PDF to a Blob for uploading
+    let pdfBlob = new Blob([pdf.output("blob")], { type: "application/pdf" });
+
+    // Upload the file to File.io
+    try {
+        let uploadResponse = await uploadToFileIo(pdfBlob, `${pdfName}.pdf`);
+
+        // Redirect to WhatsApp with the generated link
+        let fileLink = uploadResponse.link;
+        let whatsappMessage = `طلب جديد:\n${fileLink}`;
+        let whatsappUrl = `https://wa.me/+6287720208728?text=${encodeURIComponent(whatsappMessage)}`;
+        window.location.href = whatsappUrl;
+    } catch (error) {
+        console.error("Error uploading PDF to File.io:", error);
+        alert("Failed to upload the PDF.");
+    }
+}
+
+// Function to upload a file to File.io
+async function uploadToFileIo(fileBlob, fileName) {
+    let formData = new FormData();
+    formData.append("file", fileBlob, fileName); // Ensure the correct file name
+
+    let response = await fetch("https://file.io", {
+        method: "POST",
+        body: formData,
+    });
+
+    if (!response.ok) {
+        throw new Error("Failed to upload file to File.io.");
+    }
+
+    return await response.json(); // File.io returns JSON with the download link
+}
+
 
 
 

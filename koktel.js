@@ -841,89 +841,85 @@ function koktel_websiteGuidance(buttonClicked) {
             <a class="arLangText" onclick="koktel_scrollToProductType('koktel_arabic_food_product_section')">المواد الغذائية العربية</a>
             <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_arabic_food_product_section')">Makanan Arab</a>
 
-
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_oil_product_section')">زيت</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_oil_product_section')">minyak</a>
-
-
+            
             <a class="arLangText" onclick="koktel_scrollToProductType('koktel_indomie_product_section')">اندومي</a>
             <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_indomie_product_section')">Indomie</a>
-
-
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_cheese_product_section')">أجبان</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_cheese_product_section')">Keju</a>
-
-
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_ice_cream_product_section')">أيس كريم</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_ice_cream_product_section')">Es krim</a>
-
-
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_biscuit_product_section')">بسكوت</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_biscuit_product_section')">Biskuit</a>
-
-
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_crunchy_cereal_product_section')">حبوب مقرمشة</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_crunchy_cereal_product_section')">Sereal Renyah</a>
-
-
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_sweet_product_section')">حليب مكثف</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_sweet_product_section')">Susu Kental</a>
-
-
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_soap_product_section')">صابون</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_soap_product_section')">Sabun</a>
-
-
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_sauces_product_section')">صلصات</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_sauces_product_section')">Saus</a>
-
-
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_shampoo_product_section')">شامبو</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_shampoo_product_section')">Makanan Beku</a>
-
-
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_tea_product_section')">شاي</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_tea_product_section')">Teh</a>
-
-
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_chips_product_section')">شبس</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_chips_product_section')">Keripik</a>
-
-
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_chocolate_product_section')">شوكولاتة</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_chocolate_product_section')">Cokelat</a>
-
-
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_frozen_food_product_section')">طعام مثلج</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_frozen_food_product_section')">Makanan Beku</a>
 
 
             <a class="arLangText" onclick="koktel_scrollToProductType('koktel_drinks_product_section')">مشروبات</a>
             <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_drinks_product_section')">Minuman</a>
 
 
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_candy_product_section')">حلوى</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_candy_product_section')">Permen</a>
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_chocolate_product_section')">شوكولاتة</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_chocolate_product_section')">Cokelat</a>
 
 
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_teeth_product_section')">عناية اللأسنان</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_teeth_product_section')">Perawatan Gigi</a>
-
-
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_men_care_product_section')">عناية شخصية</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_men_care_product_section')">Perawatan Pribadi</a>
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_cheese_product_section')">أجبان</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_cheese_product_section')">Keju</a>
 
 
             <a class="arLangText" onclick="koktel_scrollToProductType('koktel_jam_product_section')">مربى</a>
             <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_jam_product_section')">Selai</a>
 
 
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_nuts_product_section')">مكسرات</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_nuts_product_section')">Kacang Campur</a>
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_chips_product_section')">شبس</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_chips_product_section')">Keripik</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_sauces_product_section')">صلصات</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_sauces_product_section')">Saus</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_oil_product_section')">زيت</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_oil_product_section')">minyak</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_sweet_product_section')">حليب مكثف</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_sweet_product_section')">Susu Kental</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_biscuit_product_section')">بسكوت</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_biscuit_product_section')">Biskuit</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_candy_product_section')">حلوى</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_candy_product_section')">Permen</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_ice_cream_product_section')">أيس كريم</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_ice_cream_product_section')">Es krim</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_crunchy_cereal_product_section')">رقائق الذرة + مكسرات</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_crunchy_cereal_product_section')">Jagung + Kacang Kacangan</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_tea_product_section')">شاي</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_tea_product_section')">Teh</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_frozen_food_product_section')">طعام مثلج</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_frozen_food_product_section')">Makanan Beku</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_teeth_product_section')">عناية اللأسنان</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_teeth_product_section')">Perawatan Gigi</a>
 
 
             <a class="arLangText" onclick="koktel_scrollToProductType('koktel_tissue_product_section')">مناديل</a>
             <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_tissue_product_section')">Tisu</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_soap_product_section')">صابون</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_soap_product_section')">Sabun</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_shampoo_product_section')">شامبو</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_shampoo_product_section')">Makanan Beku</a>
+
+
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_skin_care_product_section')">عناية البشرة</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_skin_care_product_section')">Perawatan Kulit</a>
         `;
 
         /* Filter Bread Products Type */
@@ -2917,26 +2913,25 @@ if (document.getElementById("koktel_supermarket_section")) {
 
     /* Call a function to craete all supermarket product */
     createProductCards(arabicFoodProducts, 'all_arabic_food_products_slide_div_id');
-    createProductCards(oilProducts, 'all_oil_products_slide_div_id');
     createProductCards(indomieProducts, 'all_indomie_products_slide_div_id');
+    createProductCards(drinksProducts, 'all_drinks_products_slide_div_id');
+    createProductCards(chocolateProducts, 'all_chocolate_products_slide_div_id');
     createProductCards(cheeseProducts, 'all_cheese_products_slide_div_id');
-    createProductCards(iceCreamProducts, 'all_ice_cream_products_slide_div_id');
-    createProductCards(biscuitProducts, 'all_biscuit_products_slide_div_id');
-    createProductCards(crunchyCerealProducts, 'all_crunchy_cereal_products_slide_div_id');
-    createProductCards(sweetProducts, 'all_sweet_products_slide_div_id');
-    createProductCards(soapProducts, 'all_soap_products_slide_div_id');
+    createProductCards(jamProducts, 'all_jam_products_slide_div_id');
+    createProductCards(chipsProducts, 'all_chips_products_slide_div_id');
     createProductCards(saucesProducts, 'all_sauces_products_slide_div_id');
+    createProductCards(oilProducts, 'all_oil_products_slide_div_id');
+    createProductCards(sweetProducts, 'all_sweet_products_slide_div_id');
+    createProductCards(biscuitProducts, 'all_biscuit_products_slide_div_id');
+    createProductCards(candyProducts, 'all_candy_products_slide_div_id');
+    createProductCards(iceCreamProducts, 'all_ice_cream_products_slide_div_id');
+    createProductCards(crunchyCerealProducts, 'all_crunchy_cereal_products_slide_div_id');
+    createProductCards(soapProducts, 'all_soap_products_slide_div_id');
     createProductCards(shampooProducts, 'all_shampoo_products_slide_div_id');
     createProductCards(teaProducts, 'all_tea_products_slide_div_id');
-    createProductCards(chipsProducts, 'all_chips_products_slide_div_id');
-    createProductCards(chocolateProducts, 'all_chocolate_products_slide_div_id');
     createProductCards(frozenFoodProducts, 'all_frozen_food_products_slide_div_id');
-    createProductCards(drinksProducts, 'all_drinks_products_slide_div_id');
-    createProductCards(candyProducts, 'all_candy_products_slide_div_id');
     createProductCards(teethProducts, 'all_teeth_products_slide_div_id');
-    createProductCards(menCareProducts, 'all_men_care_products_slide_div_id');
-    createProductCards(jamProducts, 'all_jam_products_slide_div_id');
-    createProductCards(nutsProducts, 'all_nuts_products_slide_div_id');
+    createProductCards(skinCareProducts, 'all_skin_care_products_slide_div_id');
     createProductCards(tissueProducts, 'all_tissue_products_slide_div_id');
 
 

@@ -244,12 +244,20 @@ function koktel_show_full_screen_image(src) {
     let FullScreenImgOverlay = document.createElement('div');
     FullScreenImgOverlay.classList.add("koktel_full_screen_img_overlay");
 
+    /* onclick to close the full screen image mood */
+    FullScreenImgOverlay.onclick = function () {
 
-    /* Create A Button To Exit The Big Image or Video Page */
-    let fullScreenOverlayExitButton = document.createElement('ion-icon');
-    fullScreenOverlayExitButton.name = 'arrow-undo-circle-outline';
-    fullScreenOverlayExitButton.className = 'koktel_full_screen_overlay_exit_button';
-    fullScreenOverlayExitButton.style.zIndex = '1000'; // Ensure the exit button is above the overlay
+        // Re-enable scrolling
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
+
+        FullScreenImgOverlay.style.display = 'none';
+
+        /* Reset All Data Stored Inside The Full Screen Overlay Element */
+        FullScreenImgOverlay.innerHTML = '';
+    }
 
 
     // Check if the source is an image or a video
@@ -280,28 +288,9 @@ function koktel_show_full_screen_image(src) {
         return;
     }
 
-    /* Append Exit Button to FullScreenImgOverlay */
-    FullScreenImgOverlay.appendChild(fullScreenOverlayExitButton);
-
     /* Append FullScreenImgOverlay to the body */
     document.body.appendChild(FullScreenImgOverlay);
 
-    /* Function To Exit The Big Image or Video Page */
-    fullScreenOverlayExitButton.onclick = function () {
-
-        // Re-enable scrolling
-        document.body.style.position = '';
-        document.body.style.overflow = '';
-        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
-        document.body.style.top = '';
-
-
-        /* Hide The Full Screen Img Overlay */
-        FullScreenImgOverlay.style.display = 'none';
-
-        /* Reset All Data Stored Inside The Full Screen Overlay Element */
-        FullScreenImgOverlay.innerHTML = '';
-    }
 }
 
 /* Open Website Guidance */
@@ -877,12 +866,8 @@ function koktel_websiteGuidance(buttonClicked) {
             <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_crunchy_cereal_product_section')">Sereal Renyah</a>
 
 
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_diapers_product_section')">حفاضات</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_diapers_product_section')">Popok</a>
-
-
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_sweet_product_section')">حلى</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_sweet_product_section')">Manis</a>
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_sweet_product_section')">حليب مكثف</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_sweet_product_section')">Susu Kental</a>
 
 
             <a class="arLangText" onclick="koktel_scrollToProductType('koktel_soap_product_section')">صابون</a>
@@ -925,12 +910,8 @@ function koktel_websiteGuidance(buttonClicked) {
             <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_teeth_product_section')">Perawatan Gigi</a>
 
 
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_men_care_product_section')">عناية الرجل</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_men_care_product_section')">Perawatan Pria</a>
-
-
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_women_care_product_section')">عناية المرأة</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_women_care_product_section')">Perawatan Wanita</a>
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_men_care_product_section')">عناية شخصية</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_men_care_product_section')">Perawatan Pribadi</a>
 
 
             <a class="arLangText" onclick="koktel_scrollToProductType('koktel_jam_product_section')">مربى</a>
@@ -959,8 +940,8 @@ function koktel_websiteGuidance(buttonClicked) {
             <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_pies_product_section')">Pai</a>
         `;
 
-        /* Filter Medicine Product Type */
-    } else if (buttonClicked === 'show medicine type page') {
+        /* Filter Pharmacy Product Type */
+    } else if (buttonClicked === 'show pharmacy type page') {
 
         webGuidanceDiv.classList.add('koktel_filter_products_type_div');
 
@@ -977,8 +958,12 @@ function koktel_websiteGuidance(buttonClicked) {
             <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_joints_and_bruises_product_section')">Sendi / Memar</a>
 
 
-            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_baby_powder_product_section')">بودرة أطفال</a>
-            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_baby_powder_product_section')">Bedak Bayi</a>
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_women_care_product_section')">عناية المرأة</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_women_care_product_section')">Perawatan Wanita</a>
+
+            
+            <a class="arLangText" onclick="koktel_scrollToProductType('koktel_baby_care_product_section')">العناية بالأطفال</a>
+            <a class="indoLangText" onclick="koktel_scrollToProductType('koktel_baby_care_product_section')">Penitipan Anak</a>
 
 
             <a class="arLangText" onclick="koktel_scrollToProductType('koktel_honey_product_section')">عسل</a>
@@ -2938,7 +2923,6 @@ if (document.getElementById("koktel_supermarket_section")) {
     createProductCards(iceCreamProducts, 'all_ice_cream_products_slide_div_id');
     createProductCards(biscuitProducts, 'all_biscuit_products_slide_div_id');
     createProductCards(crunchyCerealProducts, 'all_crunchy_cereal_products_slide_div_id');
-    createProductCards(diapersProducts, 'all_diapers_products_slide_div_id');
     createProductCards(sweetProducts, 'all_sweet_products_slide_div_id');
     createProductCards(soapProducts, 'all_soap_products_slide_div_id');
     createProductCards(saucesProducts, 'all_sauces_products_slide_div_id');
@@ -2951,7 +2935,6 @@ if (document.getElementById("koktel_supermarket_section")) {
     createProductCards(candyProducts, 'all_candy_products_slide_div_id');
     createProductCards(teethProducts, 'all_teeth_products_slide_div_id');
     createProductCards(menCareProducts, 'all_men_care_products_slide_div_id');
-    createProductCards(womenCareProducts, 'all_women_care_products_slide_div_id');
     createProductCards(jamProducts, 'all_jam_products_slide_div_id');
     createProductCards(nutsProducts, 'all_nuts_products_slide_div_id');
     createProductCards(tissueProducts, 'all_tissue_products_slide_div_id');
@@ -2972,17 +2955,6 @@ if (document.getElementById("koktel_supermarket_section")) {
         }
     });
 
-    /* Upper Bar Scroll To filter Retaurant Type Button */
-    koktel_scrollToFilterProductType = function (MenuElementIdName) {
-
-        let thisElement = document.getElementById(MenuElementIdName);
-
-        thisElement.scrollIntoView({
-            block: 'center',
-            inline: 'center',
-            behavior: 'smooth',
-        });
-    }
 
     /* Scroll To Clicked Product type */
     koktel_scrollToProductType = function (RestaurantElementIdName) {
@@ -3755,18 +3727,6 @@ if (document.getElementById("koktel_bread_section")) {
             supermarketUpperBar.style.top = '-100%'; // Slide up upperBar
         }
     });
-
-    /* Upper Bar Scroll To filter Retaurant Type Button */
-    koktel_scrollToFilterProductType = function (MenuElementIdName) {
-
-        let thisElement = document.getElementById(MenuElementIdName);
-
-        thisElement.scrollIntoView({
-            block: 'center',
-            inline: 'center',
-            behavior: 'smooth',
-        });
-    }
 
     /* Scroll To Clicked Product type */
     koktel_scrollToProductType = function (RestaurantElementIdName) {
@@ -4764,10 +4724,10 @@ if (document.getElementById("koktel_pharmacy_section")) {
     createProductCards(headacheProducts, 'all_headache_products_slide_div_id');
     createProductCards(heartburnProducts, 'all_heartburn_products_slide_div_id');
     createProductCards(jointsAndBruisesProducts, 'all_joints_and_bruises_products_slide_div_id');
-    createProductCards(babyPowderProducts, 'all_baby_powder_products_slide_div_id');
+    createProductCards(womenCareProducts, 'all_women_care_products_slide_div_id');
+    createProductCards(babyCareProducts, 'all_baby_care_products_slide_div_id');
     createProductCards(honeyProducts, 'all_honey_products_slide_div_id');
     createProductCards(vicksProducts, 'all_vicks_products_slide_div_id');
-
 
 
     window.addEventListener('scroll', function () {
@@ -4782,18 +4742,6 @@ if (document.getElementById("koktel_pharmacy_section")) {
             supermarketUpperBar.style.top = '-100%'; // Slide up upperBar
         }
     });
-
-    /* Upper Bar Scroll To filter Retaurant Type Button */
-    koktel_scrollToFilterProductType = function (MenuElementIdName) {
-
-        let thisElement = document.getElementById(MenuElementIdName);
-
-        thisElement.scrollIntoView({
-            block: 'center',
-            inline: 'center',
-            behavior: 'smooth',
-        });
-    }
 
     /* Scroll To Clicked Product type */
     koktel_scrollToProductType = function (RestaurantElementIdName) {
@@ -5582,18 +5530,6 @@ if (document.getElementById("koktel_shisha_section")) {
         }
     });
 
-    /* Upper Bar Scroll To filter Retaurant Type Button */
-    koktel_scrollToFilterProductType = function (MenuElementIdName) {
-
-        let thisElement = document.getElementById(MenuElementIdName);
-
-        thisElement.scrollIntoView({
-            block: 'center',
-            inline: 'center',
-            behavior: 'smooth',
-        });
-    }
-
     /* Scroll To Clicked Product type */
     koktel_scrollToProductType = function (RestaurantElementIdName) {
 
@@ -6365,18 +6301,6 @@ if (document.getElementById("koktel_helth_and_beauty_section")) {
             supermarketUpperBar.style.top = '-100%'; // Slide up upperBar
         }
     });
-
-    /* Upper Bar Scroll To filter Retaurant Type Button */
-    koktel_scrollToFilterProductType = function (MenuElementIdName) {
-
-        let thisElement = document.getElementById(MenuElementIdName);
-
-        thisElement.scrollIntoView({
-            block: 'center',
-            inline: 'center',
-            behavior: 'smooth',
-        });
-    }
 
     /* Scroll To Clicked Product type */
     koktel_scrollToProductType = function (RestaurantElementIdName) {
@@ -7489,7 +7413,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// Function to download the PDF file with the given name and redirect to WhatsApp
+// Function to download the PDF file with the given name and send the link via Tawk.to chat
 async function downloadPdfWithCustomName(pdfName) {
     let { jsPDF } = window.jspdf;
 
@@ -7536,12 +7460,18 @@ async function downloadPdfWithCustomName(pdfName) {
     // Upload the file to File.io
     try {
         let uploadResponse = await uploadToFileIo(pdfBlob, `${pdfName}.pdf`);
-
-        // Redirect to WhatsApp with the generated link
         let fileLink = uploadResponse.link;
-        let whatsappMessage = `طلب جديد:\n${fileLink}`;
-        let whatsappUrl = `https://wa.me/+6287720208728?text=${encodeURIComponent(whatsappMessage)}`;
-        window.location.href = whatsappUrl;
+
+        // Send the file link to the Tawk.to chat widget
+        if (typeof Tawk_API !== "undefined") {
+            Tawk_API.addEvent("new_pdf_generated", {
+                message: `طلب جديد: ${pdfName}`,
+                link: fileLink,
+            });
+            alert("The PDF link has been sent to the Tawk.to chat!");
+        } else {
+            alert("Tawk.to is not available. Please try again later.");
+        }
     } catch (error) {
         console.error("Error uploading PDF to File.io:", error);
         alert("Failed to upload the PDF.");
@@ -7564,6 +7494,7 @@ async function uploadToFileIo(fileBlob, fileName) {
 
     return await response.json(); // File.io returns JSON with the download link
 }
+
 
 
 

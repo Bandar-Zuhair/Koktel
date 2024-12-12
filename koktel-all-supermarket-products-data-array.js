@@ -278,22 +278,6 @@ let crunchyCerealProducts = [
 ];
 
 
-let diapersProducts = [
-    {
-        imageSRC: "سوبرماركت-اندونيسيا/حفاضات/mamypoko-x-tra-kering-popok-celana-bayi-m-32-pcs",
-        ar_name: "حفاضات مامي بوكو M 23 قطعة",
-        indo_name: "Mamypoko X Tra Kering Popok Celana Bayi M 32 Pcs",
-        price: "10,000 Rp",
-    },
-    {
-        imageSRC: "سوبرماركت-اندونيسيا/حفاضات/merries-good-skin-popok-celana-bayi-xl-16-pcs",
-        ar_name: "حفاضات ماريز XL 16 قطعة",
-        indo_name: "Merries Good Skin Popok Celana Bayi Xl 16 Pcs",
-        price: "10,000 Rp",
-    },
-];
-
-
 let sweetProducts = [
     {
         imageSRC: "سوبرماركت-اندونيسيا/حلى/bear-brand-susu-steril-189-ml",
@@ -372,12 +356,6 @@ let soapProducts = [
         price: "10,000 Rp",
     },
     {
-        imageSRC: "سوبرماركت-اندونيسيا/صابون/royale-by-so-klin-pelembut-&-pewangi-pakaian-konsentrat-hot-summer-refill-650-ml",
-        ar_name: "مسحوق ملابس رويال سو كلين 650 مل",
-        indo_name: "Royale By So Klin Pelembut Pewangi Pakaian Konsentrat Hot Summer Refill 650 Ml",
-        price: "10,000 Rp",
-    },
-    {
         imageSRC: "سوبرماركت-اندونيسيا/صابون/so-klin-deterjen-cair-scarlett-blossom-refill-720-ml",
         ar_name: "مسحوق ملابس سو كلين بزهرة سكارليت 720 مل",
         indo_name: "So Klin Deterjen Cair Scarlett Blossom Refill 720 Ml",
@@ -387,6 +365,12 @@ let soapProducts = [
         imageSRC: "سوبرماركت-اندونيسيا/صابون/so-klin-softergent-deterjen-bubuk-+-pelembut-pakaian-magnolia-&-berries-720-g",
         ar_name: "مسحوق ملابس سو كلين بتوت ماجنوليا 720 جم",
         indo_name: "So Klin Softergent Deterjen Bubuk Pelembut Pakaian Magnolia Berries 720 G",
+        price: "10,000 Rp",
+    },
+    {
+        imageSRC: "سوبرماركت-اندونيسيا/صابون/royale-by-so-klin-pelembut-&-pewangi-pakaian-konsentrat-hot-summer-refill-650-ml",
+        ar_name: "معطر ملابس رويال سو كلين 650 مل",
+        indo_name: "Royale By So Klin Pelembut Pewangi Pakaian Konsentrat Hot Summer Refill 650 Ml",
         price: "10,000 Rp",
     },
     {
@@ -895,22 +879,6 @@ let menCareProducts = [
         imageSRC: "سوبرماركت-اندونيسيا/عناية-الرجل/rexona-deodoran-roll-on-pria-ultra-recharge-45-ml",
         ar_name: "مزيل عرق الرجال ريكسونا الترا ريتشارج 45 مل",
         indo_name: "Rexona Deodoran Roll On Pria Ultra Recharge 45 Ml",
-        price: "10,000 Rp",
-    },
-];
-
-
-let womenCareProducts = [
-    {
-        imageSRC: "سوبرماركت-اندونيسيا/عناية-المراة/charm-safe-night-pembalut-wanita-wing-malam-42-cm-7-pcs",
-        ar_name: "فوط نسائية من شارم 7 قطع",
-        indo_name: "Charm Safe Night Pembalut Wanita Wing Malam 42 Cm 7 Pcs",
-        price: "10,000 Rp",
-    },
-    {
-        imageSRC: "سوبرماركت-اندونيسيا/عناية-المراة/laurier-relax-night-pembalut-wanita-wing-malam-35-cm-12-pcs",
-        ar_name: "فوط نسائية من لورييه ريلاكس 12 قطعة",
-        indo_name: "Laurier Relax Night Pembalut Wanita Wing Malam 35 Cm 12 Pcs",
         price: "10,000 Rp",
     },
 ];

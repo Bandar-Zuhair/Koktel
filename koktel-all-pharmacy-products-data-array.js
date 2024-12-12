@@ -34,9 +34,37 @@ let jointsAndBruisesProducts = [
 ];
 
 
-let babyPowderProducts = [
+let womenCareProducts = [
     {
-        imageSRC: "صيدلية-اندونيسيا/بودرة-اطفال/my-baby-bedak-bayi-anak-sweet-floral-235-g",
+        imageSRC: "سوبرماركت-اندونيسيا/عناية-المراة/charm-safe-night-pembalut-wanita-wing-malam-42-cm-7-pcs",
+        ar_name: "فوط نسائية من شارم 7 قطع",
+        indo_name: "Charm Safe Night Pembalut Wanita Wing Malam 42 Cm 7 Pcs",
+        price: "10,000 Rp",
+    },
+    {
+        imageSRC: "سوبرماركت-اندونيسيا/عناية-المراة/laurier-relax-night-pembalut-wanita-wing-malam-35-cm-12-pcs",
+        ar_name: "فوط نسائية من لورييه ريلاكس 12 قطعة",
+        indo_name: "Laurier Relax Night Pembalut Wanita Wing Malam 35 Cm 12 Pcs",
+        price: "10,000 Rp",
+    },
+];
+
+
+let babyCareProducts = [
+    {
+        imageSRC: "صيدلية-اندونيسيا/العناية-بالاطفال/mamypoko-x-tra-kering-popok-celana-bayi-m-32-pcs",
+        ar_name: "حفاضات مامي بوكو M 23 قطعة",
+        indo_name: "Mamypoko X Tra Kering Popok Celana Bayi M 32 Pcs",
+        price: "10,000 Rp",
+    },
+    {
+        imageSRC: "صيدلية-اندونيسيا/العناية-بالاطفال/merries-good-skin-popok-celana-bayi-xl-16-pcs",
+        ar_name: "حفاضات ماريز XL 16 قطعة",
+        indo_name: "Merries Good Skin Popok Celana Bayi Xl 16 Pcs",
+        price: "10,000 Rp",
+    },
+    {
+        imageSRC: "صيدلية-اندونيسيا/العناية-بالاطفال/my-baby-bedak-bayi-anak-sweet-floral-235-g",
         ar_name: "بودرة أطفال ماي بيبي سويت فلورال 235 جم",
         indo_name: "My Baby Bedak Bayi Anak Sweet Floral 235 G",
         price: "10,000 Rp",

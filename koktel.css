@@ -83,7 +83,7 @@ body {
     border-radius: 3px;
     box-shadow: 0 0 10px 1px black;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 
@@ -108,7 +108,7 @@ body {
     border-radius: 3px;
     cursor: pointer;
     border: 1px solid white;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .koktel_full_screen_overlay_exit_button:hover {
@@ -123,24 +123,21 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(to right, rgb(75, 75, 75), rgb(0, 0, 0));
+    background: rgb(0, 0, 0, 0.7);
     width: 100%;
     height: 100%;
-    padding: 20px 0;
+    padding: 5px 0;
     z-index: 999;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: all 0.2s ease;
 }
 
 .koktel_big_img {
-    width: 100%;
-    /* Set width to 100% */
-    height: 100%;
-    /* Set height to 100% */
-    object-fit: contain;
-    /* Maintain aspect ratio */
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .koktel_big_video {
@@ -185,7 +182,7 @@ body {
     border-radius: 3px;
     cursor: pointer;
     border: 1px solid white;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .koktel_go_back_products_page_button:hover {
@@ -211,7 +208,7 @@ body {
     border-radius: 3px;
     cursor: pointer;
     border: 1px solid white;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .koktel_share_page_url_button:hover {
@@ -338,7 +335,7 @@ header div {
     border: 1px solid white;
     border-radius: 3px;
     cursor: pointer;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
 }
 
 .koktel_web_intro_contact_us:hover {
@@ -382,7 +379,7 @@ header div {
     border: 1px solid white;
     border-radius: 3px;
     cursor: pointer;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
 }
 
 .koktel_go_to_products_page_button:hover {
@@ -400,7 +397,7 @@ header div {
     border: 1px solid white;
     border-radius: 3px;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 #koktel_website_guidance_text:hover {
@@ -428,7 +425,7 @@ header div {
     border: 1px solid white;
     border-radius: 3px;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 #koktel_our_pages_links_div a:hover {
@@ -447,7 +444,7 @@ header div {
     border: 1px solid white;
     border-radius: 3px;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 
     margin-right: auto; /* Pushes the <p> element to the left */
 }
@@ -470,7 +467,7 @@ header div {
     border: 1px solid white;
     border-radius: 3px;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 #koktel_error_page_go_back_button:hover {
@@ -508,7 +505,7 @@ header div {
     border: 1px solid white;
     border-radius: 3px;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .web_guidance_div a:hover {
@@ -530,7 +527,7 @@ nav {
     border: 1px solid white;
     border-radius: 3px;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 #koktel_nav:hover {
@@ -616,23 +613,6 @@ body.nav-open #koktel_nav_options * {
 
 
 
-#koktel_go_up_arrow {
-    z-index: 998;
-    background: orange;
-    color: black;
-    font-size: 5.5vmax;
-    position: fixed;
-    bottom: 80px;
-    right: 5px;
-    cursor: pointer;
-    border-radius: 50%;
-    animation: floatAnimation 4s ease-in-out infinite;
-    transition: all 0.1s ease-in-out;
-}
-
-#koktel_go_up_arrow:hover {
-    background: rgb(0, 162, 255);
-}
 
 
 
@@ -674,7 +654,7 @@ body.nav-open #koktel_nav_options * {
     margin: 5px;
     cursor: pointer;
     box-shadow: 0 0 5px 0.5px black;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 #koktel_choose_service_area a:hover {
@@ -754,11 +734,11 @@ body.nav-open #koktel_nav_options * {
     border: 1px solid white;
     border-radius: 3px;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .koktel_filter_products_type_div a:hover {
-    letter-spacing: 1px;
+    transform: scale(1.015);
     color: rgb(0, 255, 0);
 }
 
@@ -781,7 +761,7 @@ body.nav-open #koktel_nav_options * {
     text-align: center;
     border-radius: 3px;
     box-shadow: 0 0 5px 0.5px black;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
     overflow: hidden;
 }
 
@@ -936,7 +916,7 @@ body.nav-open #koktel_nav_options * {
     border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 3px 0.5px black;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 #koktel_restaurant_type_nav_upper_bar h3 {
@@ -1154,7 +1134,7 @@ body.nav-open #koktel_nav_options * {
     border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 5px 0.5px black;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .koktel_total_price_div h3:hover {
@@ -1174,7 +1154,7 @@ body.nav-open #koktel_nav_options * {
     cursor: pointer;
     box-shadow: 0 0 3px 0.5px black;
     animation: floatAnimation 4s ease-in-out infinite;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 #koktel_order_page_icon_div:hover {
@@ -1315,7 +1295,7 @@ body.nav-open #koktel_nav_options * {
     border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 0.5px 0.5px white;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .koktel_delete_all_orders_button_class:hover {
@@ -1383,7 +1363,7 @@ body.nav-open #koktel_nav_options * {
     border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 3px 0.5px black;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 #koktel_ensure_delete_all_orders_answer_div h6:hover {
@@ -1539,7 +1519,7 @@ body.nav-open #koktel_nav_options * {
     border-radius: 3px;
     border: 0.5px solid black;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 #koktel_order_details_text_bottom_button_div h5:hover {
@@ -1639,7 +1619,7 @@ body.nav-open #koktel_nav_options * {
     border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 3px 0.5px black;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .your_orders_link_p_class:hover {
@@ -1753,7 +1733,7 @@ body.nav-open #koktel_nav_options * {
     text-align: center;
     border-radius: 3px;
     box-shadow: 0 0 5px 0.5px black;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 
@@ -1885,7 +1865,7 @@ body.nav-open #koktel_nav_options * {
     cursor: pointer;
     box-shadow: 0 0 3px 0.5px black;
     user-select: none;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .koktel_add_product_button_div h4:hover {
@@ -1905,7 +1885,7 @@ body.nav-open #koktel_nav_options * {
     border-radius: 3px;
     cursor: pointer;
     user-select: none;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .koktel_add_product_button_div ion-icon:hover {
@@ -1936,7 +1916,7 @@ body.nav-open #koktel_nav_options * {
     border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 5px 0.5px black;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 
@@ -1985,7 +1965,7 @@ body.nav-open #koktel_nav_options * {
     cursor: pointer;
     border-radius: 3px;
     box-shadow: 0 0 5px 1px black;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .koktel_worker_type_card:hover {
@@ -2078,7 +2058,7 @@ body.nav-open #koktel_nav_options * {
     cursor: pointer;
     border-radius: 3px;
     box-shadow: 0 0 3px 0.5px black;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 #koktel_driver_type_box_options h4:hover {
@@ -2205,7 +2185,7 @@ body.nav-open #koktel_nav_options * {
     border-radius: 3px;
     cursor: pointer;
     box-shadow: 0 0 5px 0.5px black;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 #koktel_our_contact_info div:hover {
@@ -2322,7 +2302,7 @@ body.nav-open #koktel_nav_options * {
     text-align: center;
     border: 1px solid white;
     border-radius: 3px;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 #koktel_accounts_section ion-icon {

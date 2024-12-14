@@ -7408,8 +7408,100 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// Function to download the PDF file with the given name and send the link via Tawk.to chat
 async function downloadPdfWithCustomName(pdfName) {
+    let { jsPDF } = window.jspdf;
+
+    async function captureCanvas(section) {
+        try {
+            section.style.backgroundColor = "white"; // Ensure white background
+            let canvas = await html2canvas(section, {
+                scale: 2,
+                backgroundColor: "white",
+                useCORS: true,
+            });
+            return canvas;
+        } catch (error) {
+            console.error("Error capturing canvas:", error);
+            return null;
+        }
+    }
+
+    let section = document.getElementById("final_order_pdf_content_container_div");
+    let canvas = await captureCanvas(section);
+
+    if (!canvas) {
+        alert("Failed to capture content for PDF.");
+        return;
+    }
+
+    // Generate the PDF
+    let pdf = new jsPDF();
+    pdf.setFillColor(255, 255, 255); // White background
+    pdf.rect(0, 0, pdf.internal.pageSize.width, pdf.internal.pageSize.height, "F");
+    pdf.addImage(
+        canvas.toDataURL("image/jpeg"),
+        "JPEG",
+        10,
+        10,
+        190,
+        (canvas.height * 190) / canvas.width
+    );
+
+    // Convert PDF to Blob
+    let pdfBlob = pdf.output("blob");
+
+    // Use Tawk.to API to send the file
+    if (typeof Tawk_API !== "undefined" && Tawk_API.addFile) {
+        const file = new File([pdfBlob], `${pdfName}.pdf`, { type: "application/pdf" });
+        Tawk_API.addFile(file);
+        alert("PDF sent to the chat!");
+    } else {
+        alert("Tawk.to chat is not initialized or doesn't support file sharing.");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Function to download the PDF file with the given name and send the link via Tawk.to chat
+/* async function downloadPdfWithCustomName(pdfName) {
     let { jsPDF } = window.jspdf;
 
     // Function to capture content with a white background
@@ -7471,10 +7563,10 @@ async function downloadPdfWithCustomName(pdfName) {
         console.error("Error uploading PDF to File.io:", error);
         alert("Failed to upload the PDF.");
     }
-}
+} */
 
 // Function to upload a file to File.io
-async function uploadToFileIo(fileBlob, fileName) {
+/* async function uploadToFileIo(fileBlob, fileName) {
     let formData = new FormData();
     formData.append("file", fileBlob, fileName); // Ensure the correct file name
 
@@ -7488,7 +7580,7 @@ async function uploadToFileIo(fileBlob, fileName) {
     }
 
     return await response.json(); // File.io returns JSON with the download link
-}
+} */
 
 
 

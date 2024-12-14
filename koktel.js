@@ -2901,6 +2901,15 @@ if (document.getElementById("koktel_supermarket_section")) {
             // Attach a click event listener to the 'supermarkerBottomCounterDiv' element
             supermarkerBottomCounterDiv.addEventListener('click', function () {
 
+
+                supermarkerBottomCounterDiv.style.pointerEvents = 'none';
+                supermarkerBottomCounterDiv.innerHTML = `<h6 class="arLangText" style="background: darkgray;">تمت إضافة<br>الطلب بنجاح</h6><h6 class="indoLangText" style="background: darkgray;">Permintaan Telah<br>Berhasil Ditambahkan</h6>`;
+
+                /* Call a function to show the correct website language */
+                setWebsiteLanguage();
+
+
+
                 // Check if 'supermarket_orders' key exists in localStorage
                 if (localStorage.getItem('supermarket_orders')) {
                     // Get the existing data from localStorage
@@ -2937,7 +2946,7 @@ if (document.getElementById("koktel_supermarket_section")) {
                 }
 
 
-                // Create a box with the text "تم حذف جميع الطلبات"
+                // Create a box with the text "تمت اضافة الطلب"
                 let successBox = document.createElement('div');
 
 
@@ -2994,6 +3003,7 @@ if (document.getElementById("koktel_supermarket_section")) {
                     }, 1);
                 }
             });
+
         } else {
             // If The Container Already Exists, Update The Total Price
 
@@ -3671,6 +3681,15 @@ if (document.getElementById("koktel_bread_section")) {
             // Attach a click event listener to the 'breadBottomCounterDiv' element
             breadBottomCounterDiv.addEventListener('click', function () {
 
+
+                breadBottomCounterDiv.style.pointerEvents = 'none';
+                breadBottomCounterDiv.innerHTML = `<h6 class="arLangText" style="background: darkgray;">تمت إضافة<br>الطلب بنجاح</h6><h6 class="indoLangText" style="background: darkgray;">Permintaan Telah<br>Berhasil Ditambahkan</h6>`;
+
+                /* Call a function to show the correct website language */
+                setWebsiteLanguage();
+
+                
+
                 // Check if 'bread_orders' key exists in localStorage
                 if (localStorage.getItem('bread_orders')) {
                     // Get the existing data from localStorage
@@ -4327,33 +4346,33 @@ if (document.getElementById("koktel_choose_worker_type_section")) {
         // Get today's date
         let today = new Date();
         let formattedDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
-    
+
         // Create the final message with Arabic and Indonesian translations
         let finalMessage = "✨ طلب جديد حجز شغالة ✨\n"; // Arabic
         finalMessage += "🕒 لمدة 8 ساعات\n"; // Arabic
         finalMessage += `📅 تاريخ إرسال الطلب: ${formattedDate}\n\n`; // Arabic
         finalMessage += "📍 يجب إرسال موقعك + رقم هاتفك لبدء تنفيذ الطلب..\n"; // Arabic
         finalMessage += "💳 جميع طرق الدفع متوفرة سواء أونلاين أو كاش\n\n"; // Arabic
-        
-        
+
+
         finalMessage += "✨ Permintaan Baru Pemesanan Pekerja Rumah Tangga ✨\n"; // Indonesian
         finalMessage += "🕒 Untuk 8 Jam\n\n"; // Indonesian
         finalMessage += `📅 Tanggal Permintaan Dikirim: ${formattedDate}\n`; // Indonesian
         finalMessage += "📍 Harap Kirim Lokasi + Nomor Telepon Anda Untuk Memulai Pesanan..\n"; // Indonesian
         finalMessage += "💳 Semua Metode Pembayaran Tersedia, Baik Online Maupun Tunai\n\n"; // Indonesian
-    
-    
-    
+
+
+
         finalMessage += "🏦 Bank Central Asia (BCA)\n";
         finalMessage += "🔹 Name: Samir\n";
         finalMessage += "🔹 No Rekening: 1971025609\n\n";
-    
+
         finalMessage += "💰 Dana: 087720208728";
-    
+
         // Send the message to the live chat widget
         sendTheFinalOrderThroughLiveChatWidget(finalMessage);
     };
-    
+
 
 
 
@@ -4363,14 +4382,14 @@ if (document.getElementById("koktel_choose_worker_type_section")) {
     /* Create Home Driver WhatsApp Message */
     koktel_driverTypeWhatsAppMessage = function (driverType) {
         let clickedDriverType;
-    
+
         if (driverType === 'car') {
             clickedDriverType = "🚗 طلب جديد حجز سائق سيارة"; // Arabic
             clickedDriverType += "\n🚗 Permintaan Baru Pemesanan Sopir Mobil"; // Indonesian
         } else if (driverType === 'motor') {
             // Notify that the service isn't available and close the overlay
             alert("❌ هذه الخدمة ليست متوفرة بعد..\n❌ Layanan Ini Belum Tersedia..");
-    
+
             // Restore scrolling and close the overlay
             document.body.style.position = '';
             document.body.style.overflow = '';
@@ -4387,35 +4406,35 @@ if (document.getElementById("koktel_choose_worker_type_section")) {
             document.getElementById('koktel_choose_worker_type_section').removeChild(document.getElementById('koktel_driver_type_box_overlay'));
             return;
         }
-    
+
         // Get today's date
         let today = new Date();
         let formattedDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
-    
+
         // Create the message with translations
         let finalMessage = `${clickedDriverType}\n\n`;
-    
+
         finalMessage += "🕒 لمدة 8 ساعات\n"; // Arabic
         finalMessage += `📅 تاريخ إرسال الطلب: ${formattedDate}\n`; // Arabic
         finalMessage += "📍 يجب إرسال موقعك + رقم هاتفك لبدء تنفيذ الطلب..\n"; // Arabic
         finalMessage += "💳 جميع طرق الدفع متوفرة سواء أونلاين أو كاش\n\n"; // Arabic
-        
+
 
         finalMessage += "🕒 Untuk 8 Jam\n"; // Indonesian
         finalMessage += `📅 Tanggal Permintaan Dikirim: ${formattedDate}\n`; // Indonesian
         finalMessage += "📍 Harap Kirim Lokasi + Nomor Telepon Anda Untuk Memulai Pesanan..\n"; // Indonesian
         finalMessage += "💳 Semua Metode Pembayaran Tersedia, Baik Online Maupun Tunai\n\n"; // Indonesian
-    
-    
+
+
         finalMessage += "🏦 Bank Central Asia (BCA)\n";
         finalMessage += "🔹 Name: Samir\n";
         finalMessage += "🔹 No Rekening: 1971025609\n\n";
-    
+
         finalMessage += "💰 Dana: 087720208728";
-    
+
         // Send the message to the live chat widget
         sendTheFinalOrderThroughLiveChatWidget(finalMessage);
-    
+
         // Close the overlay and restore scrolling
         document.body.style.position = '';
         document.body.style.overflow = '';
@@ -4423,7 +4442,7 @@ if (document.getElementById("koktel_choose_worker_type_section")) {
         document.body.style.top = '';
         document.getElementById('koktel_choose_worker_type_section').removeChild(document.getElementById('koktel_driver_type_box_overlay'));
     };
-    
+
 
 
 
@@ -4699,6 +4718,15 @@ if (document.getElementById("koktel_pharmacy_section")) {
 
             // Attach a click event listener to the 'pharmacyBottomCounterDiv' element
             pharmacyBottomCounterDiv.addEventListener('click', function () {
+
+
+                pharmacyBottomCounterDiv.style.pointerEvents = 'none';
+                pharmacyBottomCounterDiv.innerHTML = `<h6 class="arLangText" style="background: darkgray;">تمت إضافة<br>الطلب بنجاح</h6><h6 class="indoLangText" style="background: darkgray;">Permintaan Telah<br>Berhasil Ditambahkan</h6>`;
+
+                /* Call a function to show the correct website language */
+                setWebsiteLanguage();
+
+
 
                 // Check if 'pharmacy_orders' key exists in localStorage
                 if (localStorage.getItem('pharmacy_orders')) {
@@ -5449,7 +5477,7 @@ if (document.getElementById("koktel_shisha_section")) {
 
     koktel_addProductButton = function (addedNumber, clickedElement) {
         // Get The Container For The Bottom Counter Total Price Display
-        let supermarkerBottomCounterDiv = document.getElementById('koktel_product_bottom_counter_div');
+        let shishaBottomCounterDiv = document.getElementById('koktel_product_bottom_counter_div');
 
         // Get the parent card element of the clicked h4 element
         let parentCard = clickedElement.closest('.koktel_product_card');
@@ -5465,21 +5493,29 @@ if (document.getElementById("koktel_shisha_section")) {
 
 
         // Check if The Container Div Exists
-        if (!supermarkerBottomCounterDiv) {
+        if (!shishaBottomCounterDiv) {
             // If The Container Doesn't Exist, Then Create New One
-            supermarkerBottomCounterDiv = document.createElement('div');
-            supermarkerBottomCounterDiv.id = 'koktel_product_bottom_counter_div';
+            shishaBottomCounterDiv = document.createElement('div');
+            shishaBottomCounterDiv.id = 'koktel_product_bottom_counter_div';
 
 
             // Create The Text To Display The Total Price
-            supermarkerBottomCounterDiv.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${addedNumber.toLocaleString()}</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${addedNumber.toLocaleString()}</h6>`;
+            shishaBottomCounterDiv.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${addedNumber.toLocaleString()}</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${addedNumber.toLocaleString()}</h6>`;
 
 
             // Append The Container Div To The Body of The Document
-            document.body.appendChild(supermarkerBottomCounterDiv);
+            document.body.appendChild(shishaBottomCounterDiv);
 
-            // Attach a click event listener to the 'supermarkerBottomCounterDiv' element
-            supermarkerBottomCounterDiv.addEventListener('click', function () {
+            // Attach a click event listener to the 'shishaBottomCounterDiv' element
+            shishaBottomCounterDiv.addEventListener('click', function () {
+
+
+                shishaBottomCounterDiv.style.pointerEvents = 'none';
+                shishaBottomCounterDiv.innerHTML = `<h6 class="arLangText" style="background: darkgray;">تمت إضافة<br>الطلب بنجاح</h6><h6 class="indoLangText" style="background: darkgray;">Permintaan Telah<br>Berhasil Ditambahkan</h6>`;
+
+                /* Call a function to show the correct website language */
+                setWebsiteLanguage();
+
 
                 // Check if 'shisha_orders' key exists in localStorage
                 if (localStorage.getItem('shisha_orders')) {
@@ -5587,8 +5623,8 @@ if (document.getElementById("koktel_shisha_section")) {
             // Update The Text Content of The Total Price Display To Display The New Total
             totalPriceElement.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
-            // Ensure 'supermarkerBottomCounterDiv' is visible
-            supermarkerBottomCounterDiv.style.display = 'flex';
+            // Ensure 'shishaBottomCounterDiv' is visible
+            shishaBottomCounterDiv.style.display = 'flex';
         }
 
         // Toggle Display of Hidden Elements Within The Same Parent Div 'koktel_product_card'
@@ -5661,12 +5697,12 @@ if (document.getElementById("koktel_shisha_section")) {
             clickedElement.style.display = 'none';
             counterElement.style.display = 'none';
 
-            // Get the 'supermarkerBottomCounterDiv' element
-            let supermarkerBottomCounterDiv = document.getElementById('koktel_product_bottom_counter_div');
+            // Get the 'shishaBottomCounterDiv' element
+            let shishaBottomCounterDiv = document.getElementById('koktel_product_bottom_counter_div');
 
             // Check if NewTotal is 0 And Hide The 'upermarkerBottomCounterDiv' Element
             if (newTotal === 0) {
-                supermarkerBottomCounterDiv.style.display = 'none';
+                shishaBottomCounterDiv.style.display = 'none';
             }
         }
 
@@ -6217,7 +6253,7 @@ if (document.getElementById("koktel_helth_and_beauty_section")) {
 
     koktel_addProductButton = function (addedNumber, clickedElement) {
         // Get The Container For The Bottom Counter Total Price Display
-        let supermarkerBottomCounterDiv = document.getElementById('koktel_product_bottom_counter_div');
+        let helthAndBeautyBottomCounterDiv = document.getElementById('koktel_product_bottom_counter_div');
 
         // Get the parent card element of the clicked h4 element
         let parentCard = clickedElement.closest('.koktel_product_card');
@@ -6233,22 +6269,31 @@ if (document.getElementById("koktel_helth_and_beauty_section")) {
 
 
         // Check if The Container Div Exists
-        if (!supermarkerBottomCounterDiv) {
+        if (!helthAndBeautyBottomCounterDiv) {
             // If The Container Doesn't Exist, Then Create New One
-            supermarkerBottomCounterDiv = document.createElement('div');
-            supermarkerBottomCounterDiv.id = 'koktel_product_bottom_counter_div';
+            helthAndBeautyBottomCounterDiv = document.createElement('div');
+            helthAndBeautyBottomCounterDiv.id = 'koktel_product_bottom_counter_div';
 
 
             // Create The Text To Display The Total Price
-            supermarkerBottomCounterDiv.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${addedNumber.toLocaleString()}</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${addedNumber.toLocaleString()}</h6>`;
+            helthAndBeautyBottomCounterDiv.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${addedNumber.toLocaleString()}</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${addedNumber.toLocaleString()}</h6>`;
 
 
             // Append The Container Div To The Body of The Document
-            document.body.appendChild(supermarkerBottomCounterDiv);
+            document.body.appendChild(helthAndBeautyBottomCounterDiv);
 
-            // Attach a click event listener to the 'supermarkerBottomCounterDiv' element
-            supermarkerBottomCounterDiv.addEventListener('click', function () {
+            // Attach a click event listener to the 'helthAndBeautyBottomCounterDiv' element
+            helthAndBeautyBottomCounterDiv.addEventListener('click', function () {
 
+
+                helthAndBeautyBottomCounterDiv.style.pointerEvents = 'none';
+                helthAndBeautyBottomCounterDiv.innerHTML = `<h6 class="arLangText" style="background: darkgray;">تمت إضافة<br>الطلب بنجاح</h6><h6 class="indoLangText" style="background: darkgray;">Permintaan Telah<br>Berhasil Ditambahkan</h6>`;
+
+                /* Call a function to show the correct website language */
+                setWebsiteLanguage();
+
+
+                
                 // Check if 'health_and_beauty_orders' key exists in localStorage
                 if (localStorage.getItem('health_and_beauty_orders')) {
                     // Get the existing data from localStorage
@@ -6355,8 +6400,8 @@ if (document.getElementById("koktel_helth_and_beauty_section")) {
             // Update The Text Content of The Total Price Display To Display The New Total
             totalPriceElement.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
-            // Ensure 'supermarkerBottomCounterDiv' is visible
-            supermarkerBottomCounterDiv.style.display = 'flex';
+            // Ensure 'helthAndBeautyBottomCounterDiv' is visible
+            helthAndBeautyBottomCounterDiv.style.display = 'flex';
         }
 
         // Toggle Display of Hidden Elements Within The Same Parent Div 'koktel_product_card'
@@ -6428,12 +6473,12 @@ if (document.getElementById("koktel_helth_and_beauty_section")) {
             clickedElement.style.display = 'none';
             counterElement.style.display = 'none';
 
-            // Get the 'supermarkerBottomCounterDiv' element
-            let supermarkerBottomCounterDiv = document.getElementById('koktel_product_bottom_counter_div');
+            // Get the 'helthAndBeautyBottomCounterDiv' element
+            let helthAndBeautyBottomCounterDiv = document.getElementById('koktel_product_bottom_counter_div');
 
             // Check if NewTotal is 0 And Hide The 'upermarkerBottomCounterDiv' Element
             if (newTotal === 0) {
-                supermarkerBottomCounterDiv.style.display = 'none';
+                helthAndBeautyBottomCounterDiv.style.display = 'none';
             }
         }
 

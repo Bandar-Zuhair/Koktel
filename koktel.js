@@ -2130,13 +2130,11 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
 
                 </div>
 
-                <div class="koktel_download_order_pdf_and_whatsapp_number_div_class">
+                <div class="koktel_download_order_pdf_and_whatsapp_number_div_class" onclick="koktel_createFinalWhatsApp_Resaurant_Message()">
                 
-                    <div class="koktel_download_order_pdf_div_1_class" onclick="koktel_createFinalWhatsApp_Resaurant_Message()">
-                        <ion-icon name="logo-whatsapp"></ion-icon>
-                        <h5 class="arLangText">إرسال الطلبات</h5>
-                        <h5 class="indoLangText">Kirim Orders</h5>
-                    </div>
+                    <ion-icon name="cloud-upload-outline"></ion-icon>
+                    <h5 class="arLangText">إرسال الطلبات</h5>
+                    <h5 class="indoLangText">Kirim Orders</h5>
 
                 </div>
             `;
@@ -3300,13 +3298,11 @@ if (document.getElementById("koktel_supermarket_order_details_body_id")) {
 
                 </div>
 
-                <div class="koktel_download_order_pdf_and_whatsapp_number_div_class">
+                <div class="koktel_download_order_pdf_and_whatsapp_number_div_class" onclick="fetchDataFromGoogleSheet(2)">
                 
-                    <div class="koktel_download_order_pdf_div_1_class" onclick="fetchDataFromGoogleSheet(2)">
-                        <ion-icon name="logo-whatsapp"></ion-icon>
-                        <h5 class="arLangText">إرسال الطلبات</h5>
-                        <h5 class="indoLangText">Kirim Orders</h5>
-                    </div>
+                    <ion-icon name="cloud-upload-outline"></ion-icon>
+                    <h5 class="arLangText">إرسال الطلبات</h5>
+                    <h5 class="indoLangText">Kirim Orders</h5>
 
                 </div>
             `;
@@ -4073,13 +4069,11 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
 
                 </div>
                 
-                <div class="koktel_download_order_pdf_and_whatsapp_number_div_class">
+                <div class="koktel_download_order_pdf_and_whatsapp_number_div_class" onclick="fetchDataFromGoogleSheet(3)">
                 
-                    <div class="koktel_download_order_pdf_div_1_class" onclick="fetchDataFromGoogleSheet(3)">
-                        <ion-icon name="logo-whatsapp"></ion-icon>
-                        <h5 class="arLangText">إرسال الطلبات</h5>
-                        <h5 class="indoLangText">Kirim Orders</h5>
-                    </div>
+                    <ion-icon name="cloud-upload-outline"></ion-icon>
+                    <h5 class="arLangText">إرسال الطلبات</h5>
+                    <h5 class="indoLangText">Kirim Orders</h5>
 
                 </div>
             `;
@@ -5103,13 +5097,11 @@ if (document.getElementById("koktel_pharmacy_order_details_body_id")) {
 
                 </div>
 
-                <div class="koktel_download_order_pdf_and_whatsapp_number_div_class">
+                <div class="koktel_download_order_pdf_and_whatsapp_number_div_class" onclick="fetchDataFromGoogleSheet(4)">
                 
-                    <div class="koktel_download_order_pdf_div_1_class" onclick="fetchDataFromGoogleSheet(4)">
-                        <ion-icon name="logo-whatsapp"></ion-icon>
-                        <h5 class="arLangText">إرسال الطلبات</h5>
-                        <h5 class="indoLangText">Kirim Orders</h5>
-                    </div>
+                    <ion-icon name="cloud-upload-outline"></ion-icon>
+                    <h5 class="arLangText">إرسال الطلبات</h5>
+                    <h5 class="indoLangText">Kirim Orders</h5>
 
                 </div>
             `;
@@ -5888,13 +5880,11 @@ if (document.getElementById("koktel_shisha_order_details_body_id")) {
 
                 </div>
 
-                <div class="koktel_download_order_pdf_and_whatsapp_number_div_class">
+                <div class="koktel_download_order_pdf_and_whatsapp_number_div_class" onclick="fetchDataFromGoogleSheet(5)">
                 
-                    <div class="koktel_download_order_pdf_div_1_class" onclick="fetchDataFromGoogleSheet(5)">
-                        <ion-icon name="logo-whatsapp"></ion-icon>
-                        <h5 class="arLangText">إرسال الطلبات</h5>
-                        <h5 class="indoLangText">Kirim Orders</h5>
-                    </div>
+                    <ion-icon name="cloud-upload-outline"></ion-icon>
+                    <h5 class="arLangText">إرسال الطلبات</h5>
+                    <h5 class="indoLangText">Kirim Orders</h5>
 
                 </div>
             `;
@@ -6656,13 +6646,11 @@ if (document.getElementById("koktel_helth_and_beauty_order_details_body_id")) {
 
                 </div>
 
-                <div class="koktel_download_order_pdf_and_whatsapp_number_div_class">
+                <div class="koktel_download_order_pdf_and_whatsapp_number_div_class" onclick="fetchDataFromGoogleSheet(2)">
                 
-                    <div class="koktel_download_order_pdf_div_1_class" onclick="fetchDataFromGoogleSheet(2)">
-                        <ion-icon name="logo-whatsapp"></ion-icon>
-                        <h5 class="arLangText">إرسال الطلبات</h5>
-                        <h5 class="indoLangText">Kirim Orders</h5>
-                    </div>
+                    <ion-icon name="cloud-upload-outline"></ion-icon>
+                    <h5 class="arLangText">إرسال الطلبات</h5>
+                    <h5 class="indoLangText">Kirim Orders</h5>
 
                 </div>
             `;

@@ -510,7 +510,7 @@ header div {
 
 .web_guidance_div a:hover {
     color: rgb(0, 255, 0);
-    letter-spacing: 1px;
+    transform: scale(1.015);
 }
 
 nav {
@@ -590,7 +590,7 @@ body.nav-open #koktel_nav_options * {
 
 #koktel_nav_options a:hover {
     color: rgb(0, 255, 0);
-    letter-spacing: 1px;
+    transform: scale(1.015);
 }
 
 
@@ -1216,7 +1216,7 @@ body.nav-open #koktel_nav_options * {
 }
 
 .koktel_order_finished_card {
-    background: rgb(56, 56, 56);
+    background: rgb(56, 56, 56, 0.4);
     width: 100%;
     margin-top: 3vmax;
     display: flex;
@@ -1256,7 +1256,7 @@ body.nav-open #koktel_nav_options * {
 }
 
 .koktel_orderFinished_info_and_delete h3:hover {
-    letter-spacing: 2px;
+    transform: scale(1.015);
 }
 
 .koktel_order_finished_card h3 {
@@ -1386,23 +1386,13 @@ body.nav-open #koktel_nav_options * {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: end;
 }
 
 .koktel_download_order_pdf_and_whatsapp_number_div_class{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 50%;
     padding-top: 10px;
-}
-
-.koktel_download_order_pdf_and_whatsapp_number_div_class div{
-    width: 100%;
-}
-
-.koktel_download_order_pdf_div_1_class {
-    background: green;
+    background: rgb(0, 153, 146);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1411,21 +1401,25 @@ body.nav-open #koktel_nav_options * {
     transition: all 0.2s ease-in-out;
 }
 
-.koktel_download_order_pdf_div_1_class:hover {
-    background: rgb(0, 173, 0);
+.koktel_download_order_pdf_and_whatsapp_number_div_class div{
+    width: 100%;
 }
 
-.koktel_download_order_pdf_div_1_class ion-icon {
+.koktel_download_order_pdf_and_whatsapp_number_div_class:hover {
+    background: rgb(0, 177, 168);
+}
+
+.koktel_download_order_pdf_and_whatsapp_number_div_class ion-icon {
     font-size: 20vmin;
 }
 
-.koktel_download_order_pdf_div_1_class h5 {
+.koktel_download_order_pdf_and_whatsapp_number_div_class h5 {
     font-size: 5vmin;
     text-align: center;
 }
 
 #koktel_order_check_out_bill_div {
-    background: rgb(56, 56, 56);
+    background: rgb(51, 0, 113);
     width: 100%;
     display: flex;
     flex-direction: column;

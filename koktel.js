@@ -2698,27 +2698,27 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
 
         📅 تاريخ إرسال الطلب: ${formattedDate}
 
-        🔹 *الطلب (بالعربي)*:
+        🔹 الطلب (بالعربي):
         ${arOrderInfo}
         -----------------------------
         - الضريبة: ${taxAmount.toLocaleString()} Rp
         - التوصيل: ${deliveryFees.toLocaleString()} Rp
         - الإجمالي: ${grandTotal.toLocaleString()} Rp
 
-        📍 *يرجى إرسال موقعك لبدء تنفيذ الطلب.*
-        *جميع طرق الدفع متوفرة سواءً أونلاين أو كاش.*
+        📍 يرجى إرسال موقعك لبدء تنفيذ الطلب.
+        جميع طرق الدفع متوفرة سواءً أونلاين أو كاش.
 
 
 
-        🔹 *Pesanan (Indonesian)*:
+        🔹 Pesanan (Indonesian):
         ${indoOrderInfo}
         -----------------------------
         - Tax: ${taxAmount.toLocaleString()} Rp
         - Delivery: ${deliveryFees.toLocaleString()} Rp
         - Total: ${grandTotal.toLocaleString()} Rp
 
-        📍 *Harus Kirim Lokasi Untuk Mulai Pemenuhan Pesanan..*
-        *Semua Metode Bayaran Tersedia, Baik Online Atau Tunai*
+        📍 Harus Kirim Lokasi Untuk Mulai Pemenuhan Pesanan..
+        Semua Metode Bayaran Tersedia, Baik Online Atau Tunai
     `;
 
         // Send the main message through Tidio chat widget

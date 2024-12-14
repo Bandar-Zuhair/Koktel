@@ -2647,8 +2647,9 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
         // Loop through each order and extract relevant information
         orders.forEach((order, index) => {
             // Replace comma and parse to float
-            let totalWithDelivery = parseFloat(order.totalCurrentMealPrice.replace(/,/g, ''));
+            let totalWithDelivery = parseFloat(order.totalCurrentMealPrice.replace(/[,Rp\s]/g, ''));
             grandTotal += totalWithDelivery;
+
 
             // Add a clear separator for each order
             indoOrderInfo += `-----------------------------\n`;
@@ -2684,7 +2685,14 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
             arOrderInfo += `عدد الطلب: ${order.mealAmountNumber}\n`;
             if (order.noteText) arOrderInfo += `الملاحظات: ${order.noteText}\n`;
             arOrderInfo += `السعر: ${totalWithDelivery.toLocaleString()} Rp\n`;
+
+
+            console.log(totalWithDelivery);
+            console.log(totalWithDelivery.toLocaleString());
+            console.log(order.totalCurrentMealPrice);
+            console.log(parseFloat(order.totalCurrentMealPrice));
         });
+
 
         // Get today's date
         let today = new Date();
@@ -2692,11 +2700,21 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
         let taxAmount = grandTotal * 0.1;
         grandTotal += taxAmount + deliveryFees;
 
+
+
+        // Get the current year as a four-digit number
+        let currentYear = new Date().getFullYear();
+        // Extract the last two digits of the year
+        let lastTwoNumbersOfTheCurrentYear = currentYear % 100;
+
+
+
         // Create the main message
         let mainMessage = `
-        ===== طلب جديد من مطعم ${ar_restaurantName} =====
+        === طلب جديد من مطعم ${ar_restaurantName} ===
 
         📅 تاريخ إرسال الطلب: ${formattedDate}
+        🏷️ re_${lastTwoNumbersOfTheCurrentYear}_${restaurant_mostTopEmptyCellRowNumberValue}
 
         🔹 الطلب (بالعربي):
         ${arOrderInfo}
@@ -2705,7 +2723,7 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
         - التوصيل: ${deliveryFees.toLocaleString()} Rp
         - الإجمالي: ${grandTotal.toLocaleString()} Rp
 
-        📍 يرجى إرسال موقعك لبدء تنفيذ الطلب.
+        📍 يرجى إرسال موقعك + رقم هاتفك لبدء تنفيذ الطلب.
         جميع طرق الدفع متوفرة سواءً أونلاين أو كاش.
 
 
@@ -2717,7 +2735,7 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
         - Delivery: ${deliveryFees.toLocaleString()} Rp
         - Total: ${grandTotal.toLocaleString()} Rp
 
-        📍 Harus Kirim Lokasi Untuk Mulai Pemenuhan Pesanan..
+        📍 Harus Kirim Lokasi + Nomor Telepon Untuk Mulai Pemenuhan Pesanan..
         Semua Metode Bayaran Tersedia, Baik Online Atau Tunai
     `;
 

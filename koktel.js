@@ -48,7 +48,7 @@ window.onload = function () {
 
 
 /* Function to adjust the website language based on the value in the CurrentWebsiteLanguage localstorage key */
-setWebsiteLanguage = function () {
+function setWebsiteLanguage() {
     // Check if the key "CurrentWebsiteLanguage" exists in localStorage
     if (!localStorage.getItem("CurrentWebsiteLanguage")) {
         // If it doesn't exist, create the key with the value "ar"
@@ -1746,6 +1746,14 @@ if (document.getElementById("koktel_meal_info_section")) {
         }
 
 
+
+        koktel_totalPriceDiv.style.pointerEvents = 'none';
+        koktel_totalPriceDiv.innerHTML = `<h6 class="arLangText" style="background: darkgray;">تمت إضافة<br>الطلب بنجاح</h6><h6 class="indoLangText" style="background: darkgray;">Permintaan Telah<br>Berhasil Ditambahkan</h6>`;
+
+        /* Call a function to show the correct website language */
+        setWebsiteLanguage();
+
+
         /* Play a sound effect */
         playSoundEffect('success');
 
@@ -1911,6 +1919,11 @@ if (document.getElementById("koktel_meal_info_section")) {
             setTimeout(() => {
                 successBox.remove();
             }, 2000); // Wait for the fade-out transition to complete (1.5s)
+
+            // Refresh The Page After Adding The Selected Orders
+            setTimeout(() => {
+                location.reload();
+            }, 500);
         }, 700); // Wait for 3 seconds before triggering fade-out
 
 
@@ -2892,17 +2905,16 @@ if (document.getElementById("koktel_supermarket_section")) {
 
 
             // Create The Text To Display The Total Price
-            supermarkerBottomCounterDiv.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${addedNumber.toLocaleString()}</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${addedNumber.toLocaleString()}</h6>`;
+            supermarkerBottomCounterDiv.innerHTML = `<h6 class="arLangText" onclick="koktel_createOrderText()">إضافة الطلب<br> = ${addedNumber.toLocaleString()}</h6><h6 class="indoLangText" onclick="koktel_createOrderText()">Tambah Permintaan<br> = ${addedNumber.toLocaleString()}</h6>`;
 
 
             // Append The Container Div To The Body of The Document
             document.body.appendChild(supermarkerBottomCounterDiv);
 
             // Attach a click event listener to the 'supermarkerBottomCounterDiv' element
-            supermarkerBottomCounterDiv.addEventListener('click', function () {
+            koktel_createOrderText = function () {
 
 
-                supermarkerBottomCounterDiv.style.pointerEvents = 'none';
                 supermarkerBottomCounterDiv.innerHTML = `<h6 class="arLangText" style="background: darkgray;">تمت إضافة<br>الطلب بنجاح</h6><h6 class="indoLangText" style="background: darkgray;">Permintaan Telah<br>Berhasil Ditambahkan</h6>`;
 
                 /* Call a function to show the correct website language */
@@ -3002,7 +3014,7 @@ if (document.getElementById("koktel_supermarket_section")) {
                         koktel_mealOrderIconDiv.style.opacity = '1';
                     }, 1);
                 }
-            });
+            };
 
         } else {
             // If The Container Already Exists, Update The Total Price
@@ -3015,7 +3027,7 @@ if (document.getElementById("koktel_supermarket_section")) {
             let newTotal = currentTotal + parseFloat(addedNumber.replace(/[^\d.]/g, ''));
 
             // Update The Text Content of The Total Price Display To Display The New Total
-            totalPriceElement.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
+            totalPriceElement.innerHTML = `<h6 class="arLangText" onclick="koktel_createOrderText()">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText" onclick="koktel_createOrderText()">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
             // Ensure 'supermarkerBottomCounterDiv' is visible
             supermarkerBottomCounterDiv.style.display = 'flex';
@@ -3070,7 +3082,7 @@ if (document.getElementById("koktel_supermarket_section")) {
         let newTotal = currentTotal - parseFloat(subtractedNumber.replace(/[^\d.]/g, ''));
 
         // Update The Text Content of The Total Price Display To Display The New Total
-        totalPriceElement.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
+        totalPriceElement.innerHTML = `<h6 class="arLangText" onclick="koktel_createOrderText()">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText" onclick="koktel_createOrderText()">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
         // Get The Parent Div of The Clicked ion-icon
         let parentDiv = clickedElement.parentElement;
@@ -3672,23 +3684,22 @@ if (document.getElementById("koktel_bread_section")) {
             breadBottomCounterDiv.id = 'koktel_product_bottom_counter_div';
 
 
-            breadBottomCounterDiv.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${addedNumber.toLocaleString()}</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${addedNumber.toLocaleString()}</h6>`;
+            breadBottomCounterDiv.innerHTML = `<h6 class="arLangText" onclick="koktel_createOrderText()">إضافة الطلب<br> = ${addedNumber.toLocaleString()}</h6><h6 class="indoLangText" onclick="koktel_createOrderText()">Tambah Permintaan<br> = ${addedNumber.toLocaleString()}</h6>`;
 
 
             // Append The Container Div To The Body of The Document
             document.body.appendChild(breadBottomCounterDiv);
 
             // Attach a click event listener to the 'breadBottomCounterDiv' element
-            breadBottomCounterDiv.addEventListener('click', function () {
+            koktel_createOrderText = function () {
 
 
-                breadBottomCounterDiv.style.pointerEvents = 'none';
                 breadBottomCounterDiv.innerHTML = `<h6 class="arLangText" style="background: darkgray;">تمت إضافة<br>الطلب بنجاح</h6><h6 class="indoLangText" style="background: darkgray;">Permintaan Telah<br>Berhasil Ditambahkan</h6>`;
 
                 /* Call a function to show the correct website language */
                 setWebsiteLanguage();
 
-                
+
 
                 // Check if 'bread_orders' key exists in localStorage
                 if (localStorage.getItem('bread_orders')) {
@@ -3782,7 +3793,8 @@ if (document.getElementById("koktel_bread_section")) {
                         koktel_mealOrderIconDiv.style.opacity = '1';
                     }, 1);
                 }
-            });
+            };
+
         } else {
             // If The Container Already Exists, Update The Total Price
 
@@ -3794,7 +3806,7 @@ if (document.getElementById("koktel_bread_section")) {
             let newTotal = currentTotal + parseFloat(addedNumber.replace(/[^\d.]/g, ''));
 
             // Update The Text Content of The Total Price Display To Display The New Total
-            totalPriceElement.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
+            totalPriceElement.innerHTML = `<h6 class="arLangText" onclick="koktel_createOrderText()">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText" onclick="koktel_createOrderText()">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
             // Ensure 'breadBottomCounterDiv' is visible
             breadBottomCounterDiv.style.display = 'flex';
@@ -3848,7 +3860,7 @@ if (document.getElementById("koktel_bread_section")) {
         let newTotal = currentTotal - parseFloat(subtractedNumber.replace(/[^\d.]/g, ''));
 
         // Update The Text Content of The Total Price Display To Display The New Total
-        totalPriceElement.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
+        totalPriceElement.innerHTML = `<h6 class="arLangText" onclick="koktel_createOrderText()">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText" onclick="koktel_createOrderText()">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
         // Get The Parent Div of The Clicked ion-icon
         let parentDiv = clickedElement.parentElement;
@@ -4710,17 +4722,16 @@ if (document.getElementById("koktel_pharmacy_section")) {
             pharmacyBottomCounterDiv.id = 'koktel_product_bottom_counter_div';
 
 
-            pharmacyBottomCounterDiv.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${addedNumber.toLocaleString()}</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${addedNumber.toLocaleString()}</h6>`;
+            pharmacyBottomCounterDiv.innerHTML = `<h6 class="arLangText" onclick="koktel_createOrderText()">إضافة الطلب<br> = ${addedNumber.toLocaleString()}</h6><h6 class="indoLangText" onclick="koktel_createOrderText()">Tambah Permintaan<br> = ${addedNumber.toLocaleString()}</h6>`;
 
 
             // Append The Container Div To The Body of The Document
             document.body.appendChild(pharmacyBottomCounterDiv);
 
             // Attach a click event listener to the 'pharmacyBottomCounterDiv' element
-            pharmacyBottomCounterDiv.addEventListener('click', function () {
+            koktel_createOrderText = function () {
 
 
-                pharmacyBottomCounterDiv.style.pointerEvents = 'none';
                 pharmacyBottomCounterDiv.innerHTML = `<h6 class="arLangText" style="background: darkgray;">تمت إضافة<br>الطلب بنجاح</h6><h6 class="indoLangText" style="background: darkgray;">Permintaan Telah<br>Berhasil Ditambahkan</h6>`;
 
                 /* Call a function to show the correct website language */
@@ -4820,7 +4831,8 @@ if (document.getElementById("koktel_pharmacy_section")) {
                         koktel_mealOrderIconDiv.style.opacity = '1';
                     }, 1);
                 }
-            });
+            };
+
         } else {
             // If The Container Already Exists, Update The Total Price
 
@@ -4832,7 +4844,7 @@ if (document.getElementById("koktel_pharmacy_section")) {
             let newTotal = currentTotal + parseFloat(addedNumber.replace(/[^\d.]/g, ''));
 
             // Update The Text Content of The Total Price Display To Display The New Total
-            totalPriceElement.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
+            totalPriceElement.innerHTML = `<h6 class="arLangText" onclick="koktel_createOrderText()">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText" onclick="koktel_createOrderText()">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
             // Ensure 'pharmacyBottomCounterDiv' is visible
             pharmacyBottomCounterDiv.style.display = 'flex';
@@ -4888,7 +4900,7 @@ if (document.getElementById("koktel_pharmacy_section")) {
         let newTotal = currentTotal - parseFloat(subtractedNumber.replace(/[^\d.]/g, ''));
 
         // Update The Text Content of The Total Price Display To Display The New Total
-        totalPriceElement.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
+        totalPriceElement.innerHTML = `<h6 class="arLangText" onclick="koktel_createOrderText()">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText" onclick="koktel_createOrderText()">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
         // Get The Parent Div of The Clicked ion-icon
         let parentDiv = clickedElement.parentElement;
@@ -5500,17 +5512,16 @@ if (document.getElementById("koktel_shisha_section")) {
 
 
             // Create The Text To Display The Total Price
-            shishaBottomCounterDiv.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${addedNumber.toLocaleString()}</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${addedNumber.toLocaleString()}</h6>`;
+            shishaBottomCounterDiv.innerHTML = `<h6 class="arLangText" onclick="koktel_createOrderText()">إضافة الطلب<br> = ${addedNumber.toLocaleString()}</h6><h6 class="indoLangText" onclick="koktel_createOrderText()">Tambah Permintaan<br> = ${addedNumber.toLocaleString()}</h6>`;
 
 
             // Append The Container Div To The Body of The Document
             document.body.appendChild(shishaBottomCounterDiv);
 
             // Attach a click event listener to the 'shishaBottomCounterDiv' element
-            shishaBottomCounterDiv.addEventListener('click', function () {
+            koktel_createOrderText = function () {
 
 
-                shishaBottomCounterDiv.style.pointerEvents = 'none';
                 shishaBottomCounterDiv.innerHTML = `<h6 class="arLangText" style="background: darkgray;">تمت إضافة<br>الطلب بنجاح</h6><h6 class="indoLangText" style="background: darkgray;">Permintaan Telah<br>Berhasil Ditambahkan</h6>`;
 
                 /* Call a function to show the correct website language */
@@ -5609,7 +5620,8 @@ if (document.getElementById("koktel_shisha_section")) {
                         koktel_mealOrderIconDiv.style.opacity = '1';
                     }, 1);
                 }
-            });
+            };
+
         } else {
             // If The Container Already Exists, Update The Total Price
 
@@ -5621,7 +5633,7 @@ if (document.getElementById("koktel_shisha_section")) {
             let newTotal = currentTotal + parseFloat(addedNumber.replace(/[^\d.]/g, ''));
 
             // Update The Text Content of The Total Price Display To Display The New Total
-            totalPriceElement.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
+            totalPriceElement.innerHTML = `<h6 class="arLangText" onclick="koktel_createOrderText()">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText" onclick="koktel_createOrderText()">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
             // Ensure 'shishaBottomCounterDiv' is visible
             shishaBottomCounterDiv.style.display = 'flex';
@@ -5677,7 +5689,7 @@ if (document.getElementById("koktel_shisha_section")) {
         let newTotal = currentTotal - parseFloat(subtractedNumber.replace(/[^\d.]/g, ''));
 
         // Update The Text Content of The Total Price Display To Display The New Total
-        totalPriceElement.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
+        totalPriceElement.innerHTML = `<h6 class="arLangText" onclick="koktel_createOrderText()">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText" onclick="koktel_createOrderText()">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
         // Get The Parent Div of The Clicked ion-icon
         let parentDiv = clickedElement.parentElement;
@@ -6276,24 +6288,23 @@ if (document.getElementById("koktel_helth_and_beauty_section")) {
 
 
             // Create The Text To Display The Total Price
-            helthAndBeautyBottomCounterDiv.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${addedNumber.toLocaleString()}</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${addedNumber.toLocaleString()}</h6>`;
+            helthAndBeautyBottomCounterDiv.innerHTML = `<h6 class="arLangText" onclick="koktel_createOrderText()">إضافة الطلب<br> = ${addedNumber.toLocaleString()}</h6><h6 class="indoLangText" onclick="koktel_createOrderText()">Tambah Permintaan<br> = ${addedNumber.toLocaleString()}</h6>`;
 
 
             // Append The Container Div To The Body of The Document
             document.body.appendChild(helthAndBeautyBottomCounterDiv);
 
             // Attach a click event listener to the 'helthAndBeautyBottomCounterDiv' element
-            helthAndBeautyBottomCounterDiv.addEventListener('click', function () {
+            koktel_createOrderText = function () {
 
 
-                helthAndBeautyBottomCounterDiv.style.pointerEvents = 'none';
                 helthAndBeautyBottomCounterDiv.innerHTML = `<h6 class="arLangText" style="background: darkgray;">تمت إضافة<br>الطلب بنجاح</h6><h6 class="indoLangText" style="background: darkgray;">Permintaan Telah<br>Berhasil Ditambahkan</h6>`;
 
                 /* Call a function to show the correct website language */
                 setWebsiteLanguage();
 
 
-                
+
                 // Check if 'health_and_beauty_orders' key exists in localStorage
                 if (localStorage.getItem('health_and_beauty_orders')) {
                     // Get the existing data from localStorage
@@ -6386,7 +6397,8 @@ if (document.getElementById("koktel_helth_and_beauty_section")) {
                         koktel_mealOrderIconDiv.style.opacity = '1';
                     }, 1);
                 }
-            });
+            };
+
         } else {
             // If The Container Already Exists, Update The Total Price
 
@@ -6398,7 +6410,7 @@ if (document.getElementById("koktel_helth_and_beauty_section")) {
             let newTotal = currentTotal + parseFloat(addedNumber.replace(/[^\d.]/g, ''));
 
             // Update The Text Content of The Total Price Display To Display The New Total
-            totalPriceElement.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
+            totalPriceElement.innerHTML = `<h6 class="arLangText" onclick="koktel_createOrderText()">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText" onclick="koktel_createOrderText()">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
             // Ensure 'helthAndBeautyBottomCounterDiv' is visible
             helthAndBeautyBottomCounterDiv.style.display = 'flex';
@@ -6453,7 +6465,7 @@ if (document.getElementById("koktel_helth_and_beauty_section")) {
         let newTotal = currentTotal - parseFloat(subtractedNumber.replace(/[^\d.]/g, ''));
 
         // Update The Text Content of The Total Price Display To Display The New Total
-        totalPriceElement.innerHTML = `<h6 class="arLangText">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
+        totalPriceElement.innerHTML = `<h6 class="arLangText" onclick="koktel_createOrderText()">إضافة الطلب<br> = ${newTotal.toLocaleString()} Rp</h6><h6 class="indoLangText" onclick="koktel_createOrderText()">Tambah Permintaan<br> = ${newTotal.toLocaleString()} Rp</h6>`;
 
         // Get The Parent Div of The Clicked ion-icon
         let parentDiv = clickedElement.parentElement;

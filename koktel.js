@@ -1177,12 +1177,9 @@ koktel_createFinalWhatsApp_Products_Message = function (localStorageName, storeN
     let orders = JSON.parse(localStorage.getItem(localStorageName));
 
     // Initialize variables
-    let orderDetails = [];
-    let grandTotal = 0;
-
-    // Create order information for Indonesian and Arabic
     let indoOrderInfo = '';
     let arOrderInfo = '';
+    let grandTotal = 0;
 
     // Get the text inside the textarea (noteText)
     let noteTextarea = document.querySelector('.koktel_meal_info_note_textarea');
@@ -1193,136 +1190,83 @@ koktel_createFinalWhatsApp_Products_Message = function (localStorageName, storeN
         // Add each order's total price to the grand total
         grandTotal += order.totalPrice;
 
-        // Get the product image source
-        let productImgSrc = order.productImgSrc || ''; // Ensure the image source is not undefined
+        // Add separators and order numbers
+        indoOrderInfo += `-----------------------------\n`;
+        indoOrderInfo += `Produk Nomor ${index + 1}:\n`;
 
-        indoOrderInfo += `
-            <div style="display: flex; align-items: center; justify-content: flex-start; flex-direction: row-reverse;">
-                Produk Nomor ${index + 1}
-                <img src="${productImgSrc}" alt="Product Image" style="width: 10vmax; margin-left: 1vmax; border-radius: 3px;">
-            </div><br>
-        `;
-        arOrderInfo += `
-            <div style="display: flex; align-items: center;">
-                المنتج رقم ${index + 1}
-                <img src="${productImgSrc}" alt="صورة المنتج" style="width: 10vmax; margin-right: 1vmax; border-radius: 3px;">
-            </div>
-        `;
+        arOrderInfo += `-----------------------------\n`;
+        arOrderInfo += `المنتج رقم ${index + 1}:\n`;
 
-
-        // Indonesian Order Information
+        // Add product details
         if (order.indo_productName) {
-            indoOrderInfo += `@ ${order.indo_productName}<br>`;
+            indoOrderInfo += `Nama: ${order.indo_productName}\n`;
         }
-        indoOrderInfo += `- Jumlah Produk: ${order.productAmount}<br>`;
-        indoOrderInfo += `- Harganya: ${order.totalPrice.toLocaleString()} Rp<br><br>`;
+        indoOrderInfo += `Jumlah: ${order.productAmount}\n`;
+        indoOrderInfo += `Harga: ${order.totalPrice.toLocaleString()} Rp\n`;
 
-        // Arabic Order Information
         if (order.productName) {
-            arOrderInfo += `@ ${order.productName}<br>`;
+            arOrderInfo += `الإسم: ${order.productName}\n`;
         }
-        arOrderInfo += `- العدد: ${order.productAmount}<br>`;
-        arOrderInfo += `- الإجمالي: ${order.totalPrice.toLocaleString()} Rp<br><br>`;
+        arOrderInfo += `العدد: ${order.productAmount}\n`;
+        arOrderInfo += `الإجمالي: ${order.totalPrice.toLocaleString()} Rp\n`;
 
-        // Push the order information to the array
-        orderDetails.push(indoOrderInfo);
-        orderDetails.push(arOrderInfo);
+        // Add notes if available
+        if (noteText) {
+            indoOrderInfo += `Catatan: ${noteText}\n`;
+            arOrderInfo += `الملاحظات: ${noteText}\n`;
+        }
     });
+
+    // Add final totals
+    let taxAmount = grandTotal * 0.1;
+    let deliveryFees = 20000; // Fixed delivery fee
+    let lastTotalPrice = grandTotal + taxAmount + deliveryFees;
+
 
     // Get today's date
     let today = new Date();
     let formattedDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
 
-    // Calculate total price sum and tax amount
-    let totalPriceSum = orders.reduce((acc, order) => acc + order.totalPrice, 0);
-    let taxAmount = totalPriceSum * 0.1;
 
-    // Calculate the grand total including delivery fee
-    let deliveryFees = 20000; // Fixed delivery fee
-    let lastTotalPrice = grandTotal + taxAmount + deliveryFees;
+    indoOrderInfo += `-----------------------------\n`;
+    indoOrderInfo += `Pajak: ${taxAmount.toLocaleString()} Rp\n`;
+    indoOrderInfo += `Kiriman: ${deliveryFees.toLocaleString()} Rp\n`;
+    indoOrderInfo += `Harga Akhir: ${lastTotalPrice.toLocaleString()} Rp\n`;
 
+    arOrderInfo += `-----------------------------\n`;
+    arOrderInfo += `الضريبة: ${taxAmount.toLocaleString()} Rp\n`;
+    arOrderInfo += `التوصيل: ${deliveryFees.toLocaleString()} Rp\n`;
+    arOrderInfo += `الإجمالي: ${lastTotalPrice.toLocaleString()} Rp\n`;
 
-
-
-
-    // Create the final message structure
+    // Combine the final message
     let mainFinalMessage = `
-        طلبات جديدة من ${storeName}:<br>
-        تاريخ إرسال الطلب: ${formattedDate}<br>
-        ${orderIdName}<br><br>
-    `;
+        === طلب جديد من ${storeName} ===
+        📅 تاريخ إرسال الطلب: ${formattedDate}
+        🏷️ ${orderIdName}
 
-    let finalIndoOrderInfo = `
-        <div style="text-align: left; direction: ltr;">
-            ${indoOrderInfo}
-            ${noteText !== '' ? `<span style="color: red; direction: ltr;">[ Catatan: ${noteText} ]</span><br><br>` : ''}
-            - Pajak: ${taxAmount.toLocaleString()} Rp<br>
-            - Kiriman: ${deliveryFees.toLocaleString()} Rp<br>
-            - Harga Akhir: ${lastTotalPrice.toLocaleString()} Rp<br><br>
 
-            Harus Kirim Lokasinya Untuk Mulai Pemenuhan Pesanan..<br>
-            Semua Metode Bayaran Tersedia, Baik Online Atau Tunai<br>
-        </div>
-    `;
-
-    let finalArOrderInfo = `
+        🔹 الطلب (بالعربي):
         ${arOrderInfo}
-        ${noteText !== '' ? `<span style="color: red;">[ الملاحظات: ${noteText} ]</span><br><br>` : ''}
-        - الضريبة: ${taxAmount.toLocaleString()} Rp<br>
-        - التوصيل: ${deliveryFees.toLocaleString()} Rp<br>
-        - الإجمالي: ${lastTotalPrice.toLocaleString()} Rp<br><br>
 
-        يجب إرسال موقعك لبدأ تنفيذ الطلب..<br>
-        جميع طرق الدفع متوفرة سواء اونلاين او كاش<br>
+        📍 يرجى إرسال موقعك + رقم هاتفك لبدء تنفيذ الطلب.
+        جميع طرق الدفع متوفرة سواءً أونلاين أو كاش.
+
+
+
+        🔹 Pesanan (Indonesian):
+        ${indoOrderInfo}
+
+        📍 Harus Kirim Lokasi + Nomor Telepon Untuk Mulai Pemenuhan Pesanan..
+        Semua Metode Bayaran Tersedia, Baik Online Atau Tunai
     `;
 
-
-
-
-    // Function to clean up order information
-    function cleanOrderInfo(orderInfo) {
-        let lines = orderInfo.split('<br>');
-        lines = lines.filter(line => {
-            return !line.trim().startsWith('@') || line.trim().replace('@', '').trim().length > 0;
-        });
-        return lines.join('<br>');
-    }
-
-    // Clean up both finalIndoOrderInfo and finalArOrderInfo
-    finalIndoOrderInfo = cleanOrderInfo(finalIndoOrderInfo);
-    finalArOrderInfo = cleanOrderInfo(finalArOrderInfo);
-
-    // Get the div with the id 'final_order_pdf_content_container_div'
-    let pdfContainerDiv = document.getElementById('final_order_pdf_content_container_div');
-    // Clear existing content
-    pdfContainerDiv.innerHTML = '';
-
-    // Set the new content
-    pdfContainerDiv.innerHTML = `
-        <img src="كوكتيل-اندونيسيا/كوكتيل.jpg" alt="كوكتيل اندونيسيا - كوكتيل"
-            title="كوكتيل اندونيسيا - كوكتيل">
-
-        <h1 class="arabic_and_indo_order_upper_text_div_class">${mainFinalMessage}</h1>
-
-        <div class="arabic_and_indo_order_text_div">
-            <h1 style="padding-right: 2px; border-bottom: 0.5px solid black; border-top: 0.5px solid black;">${finalArOrderInfo}</h1>
-            <h1 style="text-align: left; padding-left: 2px; border-bottom: 0.5px solid black;">${finalIndoOrderInfo}</h1>
-        </div>
-
-        <div class="arabic_and_indo_order_bottom_text_div_class">
-            <h1>Bank Central Asia (BCA)<br>Name: samir<br>No Rekening: 1971025609</h1>
-            <h1>Dana: 087720208728</h1>
-        </div>
-    `;
-
-
-
+    // Call a function to insert a "Done" mark in the Google Sheet
     insertDoneInColumn(targetColumnNumber);
 
+    // Send the final WhatsApp message
+    sendTheFinalOrderThroughLiveChatWidget(mainFinalMessage);
+};
 
-    /* Call a function to download the pdf file with the passed name value */
-    downloadPdfWithCustomName(orderIdName);
-}
 
 
 
@@ -2711,33 +2655,33 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
 
         // Create the main message
         let mainMessage = `
-        === طلب جديد من مطعم ${ar_restaurantName} ===
+            === طلب جديد من مطعم ${ar_restaurantName} ===
 
-        📅 تاريخ إرسال الطلب: ${formattedDate}
-        🏷️ re_${lastTwoNumbersOfTheCurrentYear}_${restaurant_mostTopEmptyCellRowNumberValue}
+            📅 تاريخ إرسال الطلب: ${formattedDate}
+            🏷️ re_${lastTwoNumbersOfTheCurrentYear}_${restaurant_mostTopEmptyCellRowNumberValue}
 
-        🔹 الطلب (بالعربي):
-        ${arOrderInfo}
-        -----------------------------
-        - الضريبة: ${taxAmount.toLocaleString()} Rp
-        - التوصيل: ${deliveryFees.toLocaleString()} Rp
-        - الإجمالي: ${grandTotal.toLocaleString()} Rp
+            🔹 الطلب (بالعربي):
+            ${arOrderInfo}
+            -----------------------------
+            - الضريبة: ${taxAmount.toLocaleString()} Rp
+            - التوصيل: ${deliveryFees.toLocaleString()} Rp
+            - الإجمالي: ${grandTotal.toLocaleString()} Rp
 
-        📍 يرجى إرسال موقعك + رقم هاتفك لبدء تنفيذ الطلب.
-        جميع طرق الدفع متوفرة سواءً أونلاين أو كاش.
+            📍 يرجى إرسال موقعك + رقم هاتفك لبدء تنفيذ الطلب.
+            جميع طرق الدفع متوفرة سواءً أونلاين أو كاش.
 
 
 
-        🔹 Pesanan (Indonesian):
-        ${indoOrderInfo}
-        -----------------------------
-        - Tax: ${taxAmount.toLocaleString()} Rp
-        - Delivery: ${deliveryFees.toLocaleString()} Rp
-        - Total: ${grandTotal.toLocaleString()} Rp
+            🔹 Pesanan (Indonesian):
+            ${indoOrderInfo}
+            -----------------------------
+            - Pajak: ${taxAmount.toLocaleString()} Rp
+            - Kiriman: ${deliveryFees.toLocaleString()} Rp
+            - Harga Akhir: ${grandTotal.toLocaleString()} Rp
 
-        📍 Harus Kirim Lokasi + Nomor Telepon Untuk Mulai Pemenuhan Pesanan..
-        Semua Metode Bayaran Tersedia, Baik Online Atau Tunai
-    `;
+            📍 Harus Kirim Lokasi + Nomor Telepon Untuk Mulai Pemenuhan Pesanan..
+            Semua Metode Bayaran Tersedia, Baik Online Atau Tunai
+        `;
 
         // Send the main message through Tidio chat widget
         sendTheFinalOrderThroughLiveChatWidget(mainMessage);
@@ -7356,9 +7300,14 @@ async function sendTheFinalOrderThroughLiveChatWidget(orderMessage) {
     if (window.tidioChatApi) {
         tidioChatApi.messageFromVisitor(orderMessage);
     } else {
-        console.error("Tidio Chat API is not available.");
+        
+        // Retry the function after a short delay
+        setTimeout(() => {
+            sendTheFinalOrderThroughLiveChatWidget(orderMessage);
+        }, 1000); // Retry after 1 second
     }
 }
+
 
 
 

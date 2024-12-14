@@ -1171,7 +1171,7 @@ async function insertDoneInColumn(targetColumnNumber) {
 
 
 /* Function To Create The Final WhatsApp Message */
-koktel_createFinalWhatsApp_Products_Message = function (localStorageName, storeName, orderIdName, googleSheetStoreTypeColumn) {
+koktel_createFinalWhatsApp_Products_Message = function (localStorageName, storeName, orderIdName, targetColumnNumber) {
 
     // Get data orders from localStorage
     let orders = JSON.parse(localStorage.getItem(localStorageName));
@@ -2633,21 +2633,16 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
 
     /* Function To Create The Final WhatsApp Message */
     koktel_createFinalWhatsApp_Resaurant_Message = async function () {
-
         // Wait for the fetchDataFromGoogleSheet to complete before proceeding
         await fetchDataFromGoogleSheet(1);
-
 
         // Get data orders from localStorage
         let orders = JSON.parse(localStorage.getItem(localStorageName));
 
         // Initialize variables
-        let orderDetails = [];
-        let grandTotal = 0;
-
-        // Create order information for Indonesian and Arabic
         let indoOrderInfo = '';
         let arOrderInfo = '';
+        let grandTotal = 0;
 
         // Loop through each order and extract relevant information
         orders.forEach((order, index) => {
@@ -2655,151 +2650,82 @@ RestaurantOrderPageFunction = function (orderPageBodyIdName, indo_restaurantName
             let totalWithDelivery = parseFloat(order.totalCurrentMealPrice.replace(/,/g, ''));
             grandTotal += totalWithDelivery;
 
-            // Create order information for Indonesian and Arabic
-            indoOrderInfo += `
-                <div style="display: flex; align-items: center; justify-content: flex-start; flex-direction: row-reverse;">
-                    Pesanan Nomor ${index + 1}
-                    ${order.mealImgSrc ? `<img src="${order.mealImgSrc}" alt="Meal Image" style="width: 7vmax; margin-left: 1vmax; border-radius: 3px;">` : ''}
-                </div>
-            `;
+            // Add a clear separator for each order
+            indoOrderInfo += `-----------------------------\n`;
+            indoOrderInfo += `Pesanan Nomor ${index + 1}:\n`;
 
-            arOrderInfo += `
-                <div style="display: flex; align-items: center;">
-                    الطلب رقم ${index + 1}
-                    ${order.mealImgSrc ? `<img src="${order.mealImgSrc}" alt="صورة الطلب" style="width: 7vmax; margin-right: 1vmax; border-radius: 3px;">` : ''}
-                </div>
-            `;
+            arOrderInfo += `-----------------------------\n`;
+            arOrderInfo += `الطلب رقم ${index + 1}:\n`;
 
             // Indonesian Order Information
             if (order.indo_mealName) {
-                indoOrderInfo += `@ ${order.indo_mealName}`;
+                indoOrderInfo += `Nama Makanan: ${order.indo_mealName}\n`;
                 if (order.indo_specialOrderRequestText) {
-                    indoOrderInfo += ` (${order.indo_specialOrderRequestText})`;
+                    indoOrderInfo += `Permintaan Khusus: ${order.indo_specialOrderRequestText}\n`;
                 }
-                indoOrderInfo += `<br>`;
             }
             if (order.indo_orderText) {
-                indoOrderInfo += `@ ${order.indo_orderText.split('\n').map(line => `${line}`).join('<br>@ ')}<br>`;
+                indoOrderInfo += `Detail Pesanan:\n${order.indo_orderText.split('\n').join('\n')}\n`;
             }
-            indoOrderInfo += `- Jumlah Pesanan: ${order.mealAmountNumber}<br>`;
-            if (order.noteText) indoOrderInfo += `- Catatan: ${order.noteText}<br>`;
-            indoOrderInfo += `- Harganya: ${totalWithDelivery.toLocaleString()} Rp<br><br>`;
+            indoOrderInfo += `Jumlah Pesanan: ${order.mealAmountNumber}\n`;
+            if (order.noteText) indoOrderInfo += `Catatan: ${order.noteText}\n`;
+            indoOrderInfo += `Harga: ${totalWithDelivery.toLocaleString()} Rp\n`;
 
             // Arabic Order Information
             if (order.ar_mealName) {
-                arOrderInfo += `@ ${order.ar_mealName}`;
+                arOrderInfo += `اسم الطعام: ${order.ar_mealName}\n`;
                 if (order.ar_specialOrderRequestText) {
-                    arOrderInfo += ` (${order.ar_specialOrderRequestText})`;
+                    arOrderInfo += `طلب خاص: ${order.ar_specialOrderRequestText}\n`;
                 }
-                arOrderInfo += `<br>`;
             }
             if (order.ar_orderText) {
-                arOrderInfo += `@ ${order.ar_orderText.split('\n').map(line => `${line}`).join('<br>@ ')}<br>`;
+                arOrderInfo += `تفاصيل الطلب:\n${order.ar_orderText.split('\n').join('\n')}\n`;
             }
-            arOrderInfo += `- عدد الطلب: ${order.mealAmountNumber}<br>`;
-            if (order.noteText) arOrderInfo += `- الملاحظات: ${order.noteText}<br>`;
-            arOrderInfo += `- السعر: ${totalWithDelivery.toLocaleString()} Rp<br><br>`;
-
-            // Push the order information to the array
-            orderDetails.push(indoOrderInfo);
-            orderDetails.push(arOrderInfo);
+            arOrderInfo += `عدد الطلب: ${order.mealAmountNumber}\n`;
+            if (order.noteText) arOrderInfo += `الملاحظات: ${order.noteText}\n`;
+            arOrderInfo += `السعر: ${totalWithDelivery.toLocaleString()} Rp\n`;
         });
 
         // Get today's date
         let today = new Date();
         let formattedDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
-
-        // Calculate total price sum and tax amount
-        let totalPriceSum = orders.reduce((acc, order) => acc + parseFloat(order.totalCurrentMealPrice.replace(',', '')), 0);
-        let taxAmount = totalPriceSum * 0.1;
-
-        // Calculate the grand total
+        let taxAmount = grandTotal * 0.1;
         grandTotal += taxAmount + deliveryFees;
 
+        // Create the main message
+        let mainMessage = `
+        ===== طلب جديد من مطعم ${ar_restaurantName} =====
 
-        // Get the current year as a four-digit number
-        let currentYear = new Date().getFullYear();
-        // Extract the last two digits of the year
-        let lastTwoNumbersOfTheCurrentYear = currentYear % 100;
+        📅 تاريخ إرسال الطلب: ${formattedDate}
 
+        🔹 *الطلب (بالعربي)*:
+        ${arOrderInfo}
+        -----------------------------
+        - الضريبة: ${taxAmount.toLocaleString()} Rp
+        - التوصيل: ${deliveryFees.toLocaleString()} Rp
+        - الإجمالي: ${grandTotal.toLocaleString()} Rp
 
-        // Create the main final message
-        let mainFinalMessage = `
-            طلبات جديدة من مطعم ${ar_restaurantName}<br>
-            تاريخ إرسال الطلب: ${formattedDate}<br>
-            re_${lastTwoNumbersOfTheCurrentYear}_${restaurant_mostTopEmptyCellRowNumberValue}<br><br>
-        `;
-
-        let finalIndoOrderInfo = `
-            <div style="text-align: left; direction: ltr;">
-                ${indoOrderInfo}
-                - Tax: ${taxAmount.toLocaleString()} Rp<br>
-                - Delivery: ${deliveryFees.toLocaleString()} Rp<br>
-                - Total: ${grandTotal.toLocaleString()} Rp<br><br>
-    
-                - Harus Kirim Lokasinya Untuk Mulai Pemenuhan Pesanan..<br>
-                - Semua Metode Bayaran Tersedia, Baik Online Atau Tunai<br>
-            </div>
-        `;
-
-        let finalArOrderInfo = `
-            ${arOrderInfo}
-            - الضريبة: ${taxAmount.toLocaleString()} Rp<br>
-            - التوصيل: ${deliveryFees.toLocaleString()} Rp<br>
-            - الإجمالي: ${grandTotal.toLocaleString()} Rp<br><br>
-            - يجب إرسال موقعك لبدأ تنفيذ الطلب..<br>
-            - جميع طرق الدفع متوفرة سواء اونلاين او كاش<br>
-        `;
-
-        // Function to clean up order information
-        function cleanOrderInfo(orderInfo) {
-            // Split the content into lines
-            let lines = orderInfo.split('<br>');
-
-            // Filter out lines where there is an "@" with no text after it
-            lines = lines.filter(line => {
-                return !line.trim().startsWith('@') || line.trim().replace('@', '').trim().length > 0;
-            });
-
-            // Join the cleaned lines back into a string
-            return lines.join('<br>');
-        }
-
-        // Clean up both finalArOrderInfo and finalIndoOrderInfo
-        finalArOrderInfo = cleanOrderInfo(finalArOrderInfo);
-        finalIndoOrderInfo = cleanOrderInfo(finalIndoOrderInfo);
-
-        // Get the div with the id 'final_order_pdf_content_container_div'
-        let pdfContainerDiv = document.getElementById('final_order_pdf_content_container_div');
-        // Clear existing content
-        pdfContainerDiv.innerHTML = '';
-
-        // Set the new content
-        pdfContainerDiv.innerHTML = `
-            <img src="../../كوكتيل-اندونيسيا/كوكتيل.jpg" alt="كوكتيل اندونيسيا - كوكتيل" title="كوكتيل اندونيسيا - كوكتيل">
-    
-            <h1 class="arabic_and_indo_order_upper_text_div_class">${mainFinalMessage}</h1>
-    
-            <div class="arabic_and_indo_order_text_div">
-                <h1 style="padding-right: 2px; border-bottom: 0.5px solid black; border-top: 0.5px solid black;">${finalArOrderInfo}</h1>
-                <h1 style="text-align: left; padding-left: 2px; border-bottom: 0.5px solid black;">${finalIndoOrderInfo}</h1>
-            </div>
-    
-            <div class="arabic_and_indo_order_bottom_text_div_class">
-                <h1>Bank Central Asia (BCA)<br>Name: samir<br>No Rekening: 1971025609</h1>
-                <h1>Dana: 087720208728</h1>
-            </div>
-        `;
+        📍 *يرجى إرسال موقعك لبدء تنفيذ الطلب.*
+        *جميع طرق الدفع متوفرة سواءً أونلاين أو كاش.*
 
 
 
-        /* Call a function to insert "Done" text in the google sheet */
-        insertDoneInColumn(1);
+        🔹 *Pesanan (Indonesian)*:
+        ${indoOrderInfo}
+        -----------------------------
+        - Tax: ${taxAmount.toLocaleString()} Rp
+        - Delivery: ${deliveryFees.toLocaleString()} Rp
+        - Total: ${grandTotal.toLocaleString()} Rp
 
+        📍 *Harus Kirim Lokasi Untuk Mulai Pemenuhan Pesanan..*
+        *Semua Metode Bayaran Tersedia, Baik Online Atau Tunai*
+    `;
 
-        /* Call a function to download the order pdf file */
-        downloadPdfWithCustomName(`re_${lastTwoNumbersOfTheCurrentYear}_${restaurant_mostTopEmptyCellRowNumberValue}`);
+        // Send the main message through Tidio chat widget
+        sendTheFinalOrderThroughLiveChatWidget(mainMessage);
     };
+
+
 
 
 
@@ -7408,55 +7334,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-async function downloadPdfWithCustomName(pdfName) {
-    let { jsPDF } = window.jspdf;
-
-    async function captureCanvas(section) {
-        try {
-            section.style.backgroundColor = "white"; // Ensure white background
-            let canvas = await html2canvas(section, {
-                scale: 2,
-                backgroundColor: "white",
-                useCORS: true,
-            });
-            return canvas;
-        } catch (error) {
-            console.error("Error capturing canvas:", error);
-            return null;
-        }
-    }
-
-    let section = document.getElementById("final_order_pdf_content_container_div");
-    let canvas = await captureCanvas(section);
-
-    if (!canvas) {
-        alert("Failed to capture content for PDF.");
-        return;
-    }
-
-    // Generate the PDF
-    let pdf = new jsPDF();
-    pdf.setFillColor(255, 255, 255); // White background
-    pdf.rect(0, 0, pdf.internal.pageSize.width, pdf.internal.pageSize.height, "F");
-    pdf.addImage(
-        canvas.toDataURL("image/jpeg"),
-        "JPEG",
-        10,
-        10,
-        190,
-        (canvas.height * 190) / canvas.width
-    );
-
-    // Convert PDF to Blob
-    let pdfBlob = pdf.output("blob");
-
-    // Use Tawk.to API to send the file
-    if (typeof Tawk_API !== "undefined" && Tawk_API.addFile) {
-        const file = new File([pdfBlob], `${pdfName}.pdf`, { type: "application/pdf" });
-        Tawk_API.addFile(file);
-        alert("PDF sent to the chat!");
+async function sendTheFinalOrderThroughLiveChatWidget(orderMessage) {
+    if (window.tidioChatApi) {
+        tidioChatApi.messageFromVisitor(orderMessage);
     } else {
-        alert("Tawk.to chat is not initialized or doesn't support file sharing.");
+        console.error("Tidio Chat API is not available.");
     }
 }
 

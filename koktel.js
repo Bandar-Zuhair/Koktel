@@ -4329,41 +4329,112 @@ if (document.getElementById("koktel_bread_order_details_body_id")) {
 /* Down Worker And Driver Booking Down */
 if (document.getElementById("koktel_choose_worker_type_section")) {
 
-    /* Create Home Worker WhatsApp Message */
     document.getElementById("koktel_whatsApp_worker_message").onclick = function () {
-
         // Get today's date
         let today = new Date();
         let formattedDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
+    
+        // Create the final message with Arabic and Indonesian translations
+        let finalMessage = "✨ طلب جديد حجز شغالة ✨\n"; // Arabic
+        finalMessage += "🕒 لمدة 8 ساعات\n"; // Arabic
+        finalMessage += `📅 تاريخ إرسال الطلب: ${formattedDate}\n\n`; // Arabic
+        finalMessage += "📍 يجب إرسال موقعك + رقم هاتفك لبدء تنفيذ الطلب..\n"; // Arabic
+        finalMessage += "💳 جميع طرق الدفع متوفرة سواء أونلاين أو كاش\n\n"; // Arabic
+        
+        
+        finalMessage += "✨ Permintaan Baru Pemesanan Pekerja Rumah Tangga ✨\n"; // Indonesian
+        finalMessage += "🕒 Untuk 8 Jam\n\n"; // Indonesian
+        finalMessage += `📅 Tanggal Permintaan Dikirim: ${formattedDate}\n`; // Indonesian
+        finalMessage += "📍 Harap Kirim Lokasi + Nomor Telepon Anda Untuk Memulai Pesanan..\n"; // Indonesian
+        finalMessage += "💳 Semua Metode Pembayaran Tersedia, Baik Online Maupun Tunai\n\n"; // Indonesian
+    
+    
+    
+        finalMessage += "🏦 Bank Central Asia (BCA)\n";
+        finalMessage += "🔹 Name: Samir\n";
+        finalMessage += "🔹 No Rekening: 1971025609\n\n";
+    
+        finalMessage += "💰 Dana: 087720208728";
+    
+        // Send the message to the live chat widget
+        sendTheFinalOrderThroughLiveChatWidget(finalMessage);
+    };
+    
 
-        // Create the final message And join all order details
-        let finalMessage = "طلب جديد حجز شغالة:\n";
-        finalMessage += "لمدة 8 ساعات\n";
-        finalMessage += `تاريخ إرسال الطلب: ${formattedDate}\n\n`; // Add today's date
-
-        // Append the grand total to the final message
-        finalMessage += `يجب إرسال موقعك لبدأ تنفيذ الطلب..\n`;
-        finalMessage += `جميع طرق الدفع متوفرة سواء اونلاين او كاش\n\n\n`;
 
 
-        finalMessage += `Permintaan Baru Pertanyaan Berfungsi\n`;
-        finalMessage += `Untuk 8 Jam\n\n`;
-        finalMessage += `Harus Kirim Lokasinya Untuk Mulai Pemenuhan Pesanan..\n`;
-        finalMessage += `Semua Metode Bayaran Tersedia, Baik Online Atau Tunai\n\n`;
 
 
-        finalMessage += `Bank Central Asia (BCA)\nName: samir\nNo Rekening: 1971025609\n\n\n`;
-        finalMessage += `Dana: 087720208728`;
 
-        // Encode the message using encodeURIComponent
-        let encodedMessage = encodeURIComponent(finalMessage);
+    /* Create Home Driver WhatsApp Message */
+    koktel_driverTypeWhatsAppMessage = function (driverType) {
+        let clickedDriverType;
+    
+        if (driverType === 'car') {
+            clickedDriverType = "🚗 طلب جديد حجز سائق سيارة"; // Arabic
+            clickedDriverType += "\n🚗 Permintaan Baru Pemesanan Sopir Mobil"; // Indonesian
+        } else if (driverType === 'motor') {
+            // Notify that the service isn't available and close the overlay
+            alert("❌ هذه الخدمة ليست متوفرة بعد..\n❌ Layanan Ini Belum Tersedia..");
+    
+            // Restore scrolling and close the overlay
+            document.body.style.position = '';
+            document.body.style.overflow = '';
+            window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+            document.body.style.top = '';
+            document.getElementById('koktel_choose_worker_type_section').removeChild(document.getElementById('koktel_driver_type_box_overlay'));
+            return;
+        } else {
+            // Cancel and close the overlay
+            document.body.style.position = '';
+            document.body.style.overflow = '';
+            window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+            document.body.style.top = '';
+            document.getElementById('koktel_choose_worker_type_section').removeChild(document.getElementById('koktel_driver_type_box_overlay'));
+            return;
+        }
+    
+        // Get today's date
+        let today = new Date();
+        let formattedDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
+    
+        // Create the message with translations
+        let finalMessage = `${clickedDriverType}\n\n`;
+    
+        finalMessage += "🕒 لمدة 8 ساعات\n"; // Arabic
+        finalMessage += `📅 تاريخ إرسال الطلب: ${formattedDate}\n`; // Arabic
+        finalMessage += "📍 يجب إرسال موقعك + رقم هاتفك لبدء تنفيذ الطلب..\n"; // Arabic
+        finalMessage += "💳 جميع طرق الدفع متوفرة سواء أونلاين أو كاش\n\n"; // Arabic
+        
 
-        // Create the WhatsApp URL
-        let whatsappURL = `https://wa.me/6287720208728?text=${encodedMessage}`;
+        finalMessage += "🕒 Untuk 8 Jam\n"; // Indonesian
+        finalMessage += `📅 Tanggal Permintaan Dikirim: ${formattedDate}\n`; // Indonesian
+        finalMessage += "📍 Harap Kirim Lokasi + Nomor Telepon Anda Untuk Memulai Pesanan..\n"; // Indonesian
+        finalMessage += "💳 Semua Metode Pembayaran Tersedia, Baik Online Maupun Tunai\n\n"; // Indonesian
+    
+    
+        finalMessage += "🏦 Bank Central Asia (BCA)\n";
+        finalMessage += "🔹 Name: Samir\n";
+        finalMessage += "🔹 No Rekening: 1971025609\n\n";
+    
+        finalMessage += "💰 Dana: 087720208728";
+    
+        // Send the message to the live chat widget
+        sendTheFinalOrderThroughLiveChatWidget(finalMessage);
+    
+        // Close the overlay and restore scrolling
+        document.body.style.position = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        document.body.style.top = '';
+        document.getElementById('koktel_choose_worker_type_section').removeChild(document.getElementById('koktel_driver_type_box_overlay'));
+    };
+    
 
-        // Open WhatsApp in a new window
-        window.open(whatsappURL, '_blank');
-    }
+
+
+
+
 
 
     /* Choose Driver Type Car Or Motor */
@@ -4381,96 +4452,35 @@ if (document.getElementById("koktel_choose_worker_type_section")) {
         driverTypeBox.id = 'koktel_driver_type_box_overlay';
 
         driverTypeBox.innerHTML = `
-            <div id="koktel_driver_type_box">
-                <div id="koktel_driver_type_box_title">
-
-                    <h3 class="arLangText">نوع السائق</h3>    
-                    <h3 class="indoLangText">Tipe pengemudi</h3>
-
-                </div>
-
-                <div id="koktel_driver_type_box_options">
-
-                    <h4 class="arLangText" onclick="koktel_driverTypeWhatsAppMessage('car')">سيارة</h4>
-                    <h4 class="indoLangText" onclick="koktel_driverTypeWhatsAppMessage('car')">Mobil</h4>
-
-                    <h4 class="arLangText" onclick="koktel_driverTypeWhatsAppMessage('motor')">دباب</h4>
-                    <h4 class="indoLangText" onclick="koktel_driverTypeWhatsAppMessage('motor')">Motor</h4>
-
-                    <h4 class="arLangText" onclick="koktel_driverTypeWhatsAppMessage('cancel')" style="background-color: gray;">إلغاء</h4>
-                    <h4 class="indoLangText" onclick="koktel_driverTypeWhatsAppMessage('cancel')" style="background-color: gray;">Cancel</h4>
-
-
-                </div>
-            </div
-        `;
+                <div id="koktel_driver_type_box">
+                    <div id="koktel_driver_type_box_title">
+    
+                        <h3 class="arLangText">نوع السائق</h3>    
+                        <h3 class="indoLangText">Tipe pengemudi</h3>
+    
+                    </div>
+    
+                    <div id="koktel_driver_type_box_options">
+    
+                        <h4 class="arLangText" onclick="koktel_driverTypeWhatsAppMessage('car')">سيارة</h4>
+                        <h4 class="indoLangText" onclick="koktel_driverTypeWhatsAppMessage('car')">Mobil</h4>
+    
+                        <h4 class="arLangText" onclick="koktel_driverTypeWhatsAppMessage('motor')">دباب</h4>
+                        <h4 class="indoLangText" onclick="koktel_driverTypeWhatsAppMessage('motor')">Motor</h4>
+    
+                        <h4 class="arLangText" onclick="koktel_driverTypeWhatsAppMessage('cancel')" style="background-color: gray;">إلغاء</h4>
+                        <h4 class="indoLangText" onclick="koktel_driverTypeWhatsAppMessage('cancel')" style="background-color: gray;">Cancel</h4>
+    
+    
+                    </div>
+                </div
+            `;
 
         document.getElementById('koktel_choose_worker_type_section').appendChild(driverTypeBox)
 
 
         // Call a function to make sure website using the correct language
         setWebsiteLanguage();
-    }
-
-    /* Create Home Driver WhatsApp Message */
-    koktel_driverTypeWhatsAppMessage = function (driverType) {
-        let clickedDriverType;
-
-        if (driverType === 'car') {
-            clickedDriverType = 'طلب جديد حجز سائق سيارة';
-        } else if (driverType === 'motor') {
-            /* clickedDriverType = 'طلب جديد حجز سائق دباب'; */
-
-            /* Delete The Following Code And UnComment The Upeer Code Once this Service is Avaliable */
-
-            // Re-enable scrolling
-            document.body.style.position = '';
-            document.body.style.overflow = '';
-            window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
-            document.body.style.top = '';
-
-            document.getElementById('koktel_choose_worker_type_section').removeChild(document.getElementById('koktel_driver_type_box_overlay'));
-            alert('هذه الخدمة ليست متوفر بعد..');
-            return;
-
-        } else {
-            // Re-enable scrolling
-            document.body.style.position = '';
-            document.body.style.overflow = '';
-            window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
-            document.body.style.top = '';
-
-            document.getElementById('koktel_choose_worker_type_section').removeChild(document.getElementById('koktel_driver_type_box_overlay'));
-            return;
-        }
-
-        // Get today's date
-        let today = new Date();
-        let formattedDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
-
-        // Create the final message and join all order details
-        let finalMessage = `${clickedDriverType}\n`; // Initial message
-        finalMessage += "لمدة 8 ساعات\n";
-        finalMessage += `تاريخ إرسال الطلب: ${formattedDate}\n\n`; // Add today's date
-
-        // Append additional information to the final message
-        finalMessage += `يجب إرسال موقعك لبدأ تنفيذ الطلب..\n`;
-        finalMessage += `جميع طرق الدفع متوفرة سواء اونلاين او كاش\n\n\n`;
-        finalMessage += `جميع طرق الدفع متوفرة سواء اونلاين او كاش\n\n\n`;
-
-
-
-        finalMessage += `Bank Central Asia (BCA)\nName: samir\nNo Rekening: 1971025609\n\n`;
-        finalMessage += `Dana: 087720208728`;
-
-        // Encode the message using encodeURIComponent
-        let encodedMessage = encodeURIComponent(finalMessage);
-
-        // Create the WhatsApp URL
-        let whatsappURL = `https://wa.me/6287720208728?text=${encodedMessage}`;
-
-        // Open WhatsApp in a new window
-        window.open(whatsappURL, '_blank');
     }
 }
 /* Up Worker And Driver Booking Up */
@@ -7300,7 +7310,7 @@ async function sendTheFinalOrderThroughLiveChatWidget(orderMessage) {
     if (window.tidioChatApi) {
         tidioChatApi.messageFromVisitor(orderMessage);
     } else {
-        
+
         // Retry the function after a short delay
         setTimeout(() => {
             sendTheFinalOrderThroughLiveChatWidget(orderMessage);

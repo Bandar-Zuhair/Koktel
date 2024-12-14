@@ -1449,6 +1449,10 @@ if (document.getElementById("koktel_meal_info_section")) {
     let originalMealPrice = parseFloat(originalMealPriceElement.innerText.replace(/[^0-9\.]+/g, ""));
     let currentMealPrice = originalMealPrice;
 
+
+    console.log(originalMealPrice);
+
+
     // Create element to display total price
     let koktel_totalPriceDiv = document.createElement('div');
     koktel_totalPriceDiv.id = 'koktel_product_bottom_counter_div';
@@ -1474,6 +1478,8 @@ if (document.getElementById("koktel_meal_info_section")) {
         currentMealPrices.forEach(price => {
             totalCurrentMealPrice += price;
         });
+
+        console.log(totalCurrentMealPrice);
 
         // Ensure total current meal price never goes below the original meal price
         totalCurrentMealPrice = Math.max(totalCurrentMealPrice, originalMealPrice);
@@ -1640,6 +1646,9 @@ if (document.getElementById("koktel_meal_info_section")) {
     /* Get The Summry Text of The Order And Save it For Later Use */
     koktel_createOrderText = function () {
 
+        
+
+
         // Function to dynamically find elements with IDs matching the pattern 'required_div_' + index
         function findRequiredDivs() {
             let index = 1;
@@ -1747,13 +1756,6 @@ if (document.getElementById("koktel_meal_info_section")) {
 
 
 
-        koktel_totalPriceDiv.style.pointerEvents = 'none';
-        koktel_totalPriceDiv.innerHTML = `<h6 class="arLangText" style="background: darkgray;">تمت إضافة<br>الطلب بنجاح</h6><h6 class="indoLangText" style="background: darkgray;">Permintaan Telah<br>Berhasil Ditambahkan</h6>`;
-
-        /* Call a function to show the correct website language */
-        setWebsiteLanguage();
-
-
         /* Play a sound effect */
         playSoundEffect('success');
 
@@ -1846,6 +1848,11 @@ if (document.getElementById("koktel_meal_info_section")) {
         let totalCurrentMealPriceText = document.getElementById('koktel_product_bottom_counter_div').querySelector('h6').textContent;
         let totalCurrentMealPrice = parseFloat(totalCurrentMealPriceText.replace(/[^\d.]/g, '')).toLocaleString() + ' Rp'; // Format with commas
 
+
+        /* Make the bottom total price green h6 element unclickable */
+        koktel_totalPriceDiv.innerHTML = `<h6 class="arLangText" style="background: darkgray;">تمت إضافة<br>الطلب بنجاح</h6><h6 class="indoLangText" style="background: darkgray;">Permintaan Telah<br>Berhasil Ditambahkan</h6>`;
+
+
         // Get the meal amount number
         let mealAmountNumber = parseInt(document.getElementById('koktel_amountNumberElement').innerText).toLocaleString(); // Format with commas
 
@@ -1869,6 +1876,8 @@ if (document.getElementById("koktel_meal_info_section")) {
             mealImgSrc: mealImgSrc // Save the exact image source
         };
 
+        console.log(totalCurrentMealPrice);
+        
         // Get existing restaurant orders from localStorage or initialize as an empty array if not present
         let existingOrders = JSON.parse(localStorage.getItem(ar_restaurantLocalStorageName)) || [];
 
